@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Montículos &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Arboles N-Arios" href="../../../4_Estructuras_Recursivas/introARBOL.html" />
+    <link rel="prev" title="Colas (Queues)" href="../5_SistemaImpresion/colas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Notas Clase, Computación y estructuras Discretas I - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Notas Clase, Computación y estructuras Discretas I - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Notas de Clase
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logica Formal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../1_Logica_Formal/intro.html">La lógica formal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/metodosDemos.html">Métodos de Demostración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Coq/IntroCoq.html">Introducción a Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Coq/demosCoq.html">Demostraciones Coq</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conjuntos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2_Conjuntos_Funciones/introConjuntosFunciones.html">Introducción a la teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.html">Fundamentos de Conjuntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.html">Interface Set</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../ENRecursivasIntro.html">Complejidad Algoritmica</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../1_ComplejidadTemp/complejidad.html">Complejidad Temporal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introGenericos.html">Generics</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../1_ListasEnlazadas/listaEnlazada.html">Listas Enlazadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_LinkedListPersonas/listaEnlazada2.html">Lista Enlazada Generica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Diccionario/diccionario.html">Tablas Hash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_EditorTexto/pilas.html">Pilas</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../5_SistemaImpresion/colas.html">Colas (Queues)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Montículos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../4_Estructuras_Recursivas/introARBOL.html">Arboles N-Arios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/1_ArbolBinario/ABB.html">Arboles Binarios</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html">Arboles AVL</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../5_Grafos/introGRAFOS.html">Definición Grafo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/1_BFS/BFS.html">BFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/2_DFS/DFS.html">DFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/3_Dijsktra/DIJSK.html">Dijsktra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/4_Floyd_Warshall/FLOYD.html">Floyd Warshall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/5_Prim/PRIM.html">Prim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/6_Kruskal/KRUS.html">Kruskal</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/marlongv098/Estructuras" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Montículos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-monticulo-o-heap">¿Qué es un montículo o heap?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-del-monticulo">Propiedades del montículo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altura-del-monticulo">Altura del montículo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-monticulo">Ejemplo de montículo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-del-monticulo-en-un-arreglo">Representación del montículo en un arreglo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-representacion-en-arreglo">Propiedades de la representación en arreglo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-monticulos">Tipos de montículos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-monticulos">Ejemplos de montículos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1">Ejemplo 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">Ejemplo 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-3">Ejemplo 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-4">Ejemplo 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-5">Ejemplo 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">Ejercicio 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">Ejercicio 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-en-el-arreglo">Almacenamiento en el arreglo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-adicional">Ejercicio adicional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-en-monticulos">Operaciones en montículos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-hace-la-operacion-heapify">¿Qué hace la operación HEAPIFY?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-hace-la-operacion-max-heapify">¿Qué hace la operación MAX-HEAPIFY?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo-max-heapify">Algoritmo MAX-HEAPIFY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona-el-max-heapify">¿Cómo funciona el MAX-HEAPIFY?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-max-heapify">Ejemplo de MAX-HEAPIFY</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicio 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejercicio 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-hace-la-operacion-build-max-heap">¿Qué hace la operación BUILD-MAX-HEAP?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo-build-max-heap">Algoritmo BUILD-MAX-HEAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-build-max-heap">Ejemplo de BUILD-MAX-HEAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ejercicio</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="monticulos">
+<h1>Montículos<a class="headerlink" href="#monticulos" title="Link to this heading">#</a></h1>
+<section id="que-es-un-monticulo-o-heap">
+<h2>¿Qué es un montículo o heap?<a class="headerlink" href="#que-es-un-monticulo-o-heap" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es un arreglo que puede verse como un árbol binario casi completo.</p></li>
+<li><p>Cada nodo del árbol corresponde a un elemento del arreglo.</p></li>
+<li><p>El árbol se encuentra lleno en casi todos sus niveles:
+- Con la excepción de posiblemente el nivel más bajo.
+- Este se encuentra lleno desde la izquierda hasta cierto punto.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="propiedades-del-monticulo">
+<h2>Propiedades del montículo<a class="headerlink" href="#propiedades-del-monticulo" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué nos dice esta última propiedad sobre la forma de un montículo?</strong></p>
+<ul class="simple">
+<li><p>El árbol está lleno en casi todos sus niveles con excepción de posiblemente el último.<br />
+- La longitud de toda rama es <span class="math notranslate nohighlight">\(h\)</span> o <span class="math notranslate nohighlight">\(h-1\)</span>, donde <span class="math notranslate nohighlight">\(h\)</span> es la altura del árbol.</p></li>
+<li><p>El último nivel se llena de izquierda a derecha.
+- No puede existir una rama de longitud <span class="math notranslate nohighlight">\(h\)</span> a la derecha de una rama de longitud <span class="math notranslate nohighlight">\(h-1\)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="altura-del-monticulo">
+<h2>Altura del montículo<a class="headerlink" href="#altura-del-monticulo" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuál es la altura de un nodo del montículo?</strong></p>
+<ul class="simple">
+<li><p>Es el número de aristas en el camino simple más largo desde el nodo hasta la hoja.</p></li>
+</ul>
+<p><strong>¿Cuál es la altura del montículo?</strong></p>
+<ul class="simple">
+<li><p>Al estar basado en un árbol binario completo, es:<br />
+$<span class="math notranslate nohighlight">\(\Theta (\log n)\)</span>$</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="ejemplo-de-monticulo">
+<h2>Ejemplo de montículo<a class="headerlink" href="#ejemplo-de-monticulo" title="Link to this heading">#</a></h2>
+<p><strong>Ejemplo de un montículo:</strong></p>
+<p><a class="reference download internal" download="" href="../../../_downloads/b717051c92f715d68ddd6c78d4ed732a/heap.pdf"><span class="xref download myst">Heap</span></a></p>
+<hr class="docutils" />
+</section>
+<section id="representacion-del-monticulo-en-un-arreglo">
+<h2>Representación del montículo en un arreglo<a class="headerlink" href="#representacion-del-monticulo-en-un-arreglo" title="Link to this heading">#</a></h2>
+<p><strong>¿Cómo es ese arreglo <span class="math notranslate nohighlight">\(A\)</span> que representa al montículo?</strong></p>
+<ul class="simple">
+<li><p>Es un arreglo con dos atributos:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(A.length\)</span> → Número de elementos del arreglo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A.heap\_size\)</span> → Número de elementos del montículo dentro del arreglo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A[1..A.length]\)</span> puede contener números.</p></li>
+<li><p>Solamente los elementos $<span class="math notranslate nohighlight">\(A[1..A.heap\_size]\)</span><span class="math notranslate nohighlight">\(, donde \)</span><span class="math notranslate nohighlight">\(0 \leq A.heap\_size \leq A.length\)</span>$, son válidos.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="propiedades-de-la-representacion-en-arreglo">
+<h2>Propiedades de la representación en arreglo<a class="headerlink" href="#propiedades-de-la-representacion-en-arreglo" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué más se puede decir de ese arreglo <span class="math notranslate nohighlight">\(A\)</span>?</strong></p>
+<ul class="simple">
+<li><p>La raíz del árbol es <span class="math notranslate nohighlight">\(A[1]\)</span>.</p></li>
+<li><p>El padre de <span class="math notranslate nohighlight">\(A[i]\)</span> es:<br />
+$<span class="math notranslate nohighlight">\(A[\lfloor i/2 \rfloor]\)</span>$</p></li>
+<li><p>El hijo izquierdo de <span class="math notranslate nohighlight">\(A[i]\)</span> es:<br />
+$<span class="math notranslate nohighlight">\(A[2i]\)</span>$</p></li>
+<li><p>El hijo derecho de <span class="math notranslate nohighlight">\(A[i]\)</span> es:<br />
+$<span class="math notranslate nohighlight">\(A[2i+1]\)</span>$</p></li>
+<li><p>El cómputo de estas operaciones es rápido utilizando la representación binaria.</p></li>
+</ul>
+</section>
+<section id="tipos-de-monticulos">
+<h2>Tipos de montículos<a class="headerlink" href="#tipos-de-monticulos" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuáles son los dos tipos de montículos?</strong></p>
+<ul class="simple">
+<li><p><strong>Max-heap</strong></p>
+<ul>
+<li><p>Para todos los nodos $<span class="math notranslate nohighlight">\(i\)</span><span class="math notranslate nohighlight">\(, excluyendo la raíz:  
+\)</span><span class="math notranslate nohighlight">\(A[Padre(i)] \geq A[i]\)</span>$</p></li>
+</ul>
+</li>
+<li><p><strong>Min-heap</strong></p>
+<ul>
+<li><p>Para todos los nodos $<span class="math notranslate nohighlight">\(i\)</span><span class="math notranslate nohighlight">\(, excluyendo la raíz:  
+\)</span><span class="math notranslate nohighlight">\(A[Padre(i)] \leq A[i]\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="ejemplos-de-monticulos">
+<h2>Ejemplos de montículos<a class="headerlink" href="#ejemplos-de-monticulos" title="Link to this heading">#</a></h2>
+<p><strong>Analicemos las propiedades de orden y forma de estos montículos:</strong></p>
+<section id="ejemplo-1">
+<h3>Ejemplo 1<a class="headerlink" href="#ejemplo-1" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/ac02e04f5242bae278d4bd5a6645596e/heap1.pdf"><span class="xref download myst">Heap 1</span></a></p>
+</section>
+<section id="ejemplo-2">
+<h3>Ejemplo 2<a class="headerlink" href="#ejemplo-2" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/e38a768ef37cd0863263d98e37ab9c77/heap2.pdf"><span class="xref download myst">Heap 2</span></a></p>
+</section>
+<section id="ejemplo-3">
+<h3>Ejemplo 3<a class="headerlink" href="#ejemplo-3" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/46ac5915b94e4de6a2919d2bbc1e4ffc/heap3.pdf"><span class="xref download myst">Heap 3</span></a></p>
+</section>
+<section id="ejemplo-4">
+<h3>Ejemplo 4<a class="headerlink" href="#ejemplo-4" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/6157efc116a1336a88f9303990a1d714/heap4.pdf"><span class="xref download myst">Heap 4</span></a></p>
+</section>
+<section id="ejemplo-5">
+<h3>Ejemplo 5<a class="headerlink" href="#ejemplo-5" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/cee410570222bf40fb3e12705f2b26e6/heap5.pdf"><span class="xref download myst">Heap 5</span></a></p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<p><strong>Indique si se cumplen las propiedades de orden y de forma para los siguientes montículos:</strong></p>
+<section id="ejercicio-1">
+<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/d299533c2ec3f13cc93b2058da1d933b/heap6.pdf"><span class="xref download myst">Heap 6</span></a></p>
+</section>
+<section id="ejercicio-2">
+<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/cfb68a27b1cbd179f61ade3f57e0218f/heap7.pdf"><span class="xref download myst">Heap 7</span></a></p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="almacenamiento-en-el-arreglo">
+<h2>Almacenamiento en el arreglo<a class="headerlink" href="#almacenamiento-en-el-arreglo" title="Link to this heading">#</a></h2>
+<p><strong>¿Cómo se almacenan los elementos de un montículo en el arreglo?</strong></p>
+<ul class="simple">
+<li><p>Los datos se almacenan en el arreglo recorriendo, por niveles, de izquierda a derecha.</p></li>
+</ul>
+<p><a class="reference internal" href="#heap8.pdf"><span class="xref myst">Heap 8</span></a></p>
+<hr class="docutils" />
+</section>
+<section id="ejercicio-adicional">
+<h2>Ejercicio adicional<a class="headerlink" href="#ejercicio-adicional" title="Link to this heading">#</a></h2>
+<p><strong>Indique si se cumplen las propiedades de orden y de forma para:</strong></p>
+<ol class="arabic">
+<li><div class="math notranslate nohighlight">
+\[A=\{20, 10, 5, 4, 3, 1\}$$ donde $$heap\_size[A]=6$$ y $$length[A]=6\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[A=\{8, 4, 2, 1, 7, 9\}$$ donde $$heap\_size[A]=4$$ y $$length[A]=6\]</div>
+</li>
+</ol>
+</section>
+<section id="ejercicio">
+<h2>Ejercicio<a class="headerlink" href="#ejercicio" title="Link to this heading">#</a></h2>
+<p><a class="reference download internal" download="" href="../../../_downloads/cdd18ef9234f22f84f70d740c5fc2f85/heap9.pdf"><span class="xref download myst">Heap 9</span></a></p>
+<hr class="docutils" />
+</section>
+<section id="operaciones-en-monticulos">
+<h2>Operaciones en montículos<a class="headerlink" href="#operaciones-en-monticulos" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuáles son las operaciones más importantes que se realizan con montículos?</strong></p>
+<ul class="simple">
+<li><p><strong>HEAPIFY</strong>: $<span class="math notranslate nohighlight">\(O(\log n)\)</span>$</p></li>
+<li><p><strong>BUILD-HEAP</strong>: $<span class="math notranslate nohighlight">\(O(n)\)</span>$</p></li>
+<li><p><strong>HEAPSORT</strong>: $<span class="math notranslate nohighlight">\(O(n \log n)\)</span>$</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="que-hace-la-operacion-heapify">
+<h2>¿Qué hace la operación HEAPIFY?<a class="headerlink" href="#que-hace-la-operacion-heapify" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es importante para manipular montículos.</p></li>
+<li><p>Se usa para garantizar la propiedad de orden del montículo.</p></li>
+</ul>
+</section>
+<section id="que-hace-la-operacion-max-heapify">
+<h2>¿Qué hace la operación MAX-HEAPIFY?<a class="headerlink" href="#que-hace-la-operacion-max-heapify" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Se usa para garantizar la propiedad de orden del <strong>max-heap</strong>.</p></li>
+<li><p>Antes de aplicar MAX-HEAPIFY, <span class="math notranslate nohighlight">\(A[i]\)</span> puede ser menor que sus hijos.</p></li>
+<li><p>Se asume que los subárboles izquierdos y derechos son max-heaps.</p></li>
+<li><p>Luego de MAX-HEAPIFY, el subárbol con raíz <span class="math notranslate nohighlight">\(i\)</span> es un max-heap.</p></li>
+</ul>
+</section>
+<section id="algoritmo-max-heapify">
+<h2>Algoritmo MAX-HEAPIFY<a class="headerlink" href="#algoritmo-max-heapify" title="Link to this heading">#</a></h2>
+<p><a class="reference download internal" download="" href="../../../_downloads/8e839042cfbb0239cf1791258c718854/heap10.pdf"><span class="xref download myst">MAX-HEAPIFY</span></a></p>
+</section>
+<section id="como-funciona-el-max-heapify">
+<h2>¿Cómo funciona el MAX-HEAPIFY?<a class="headerlink" href="#como-funciona-el-max-heapify" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Compara $<span class="math notranslate nohighlight">\(A[i], A[LEFT(i)], A[RIGHT(i)]\)</span>$.</p></li>
+<li><p>Si es necesario, intercambia <span class="math notranslate nohighlight">\(A[i]\)</span> con el mayor de sus hijos para preservar la propiedad del max-heap.</p></li>
+<li><p>Continúa con el proceso bajando sobre el montículo hasta que el subárbol con raíz <span class="math notranslate nohighlight">\(i\)</span> sea un max-heap.</p></li>
+</ul>
+<section id="ejemplo-de-max-heapify">
+<h3>Ejemplo de MAX-HEAPIFY<a class="headerlink" href="#ejemplo-de-max-heapify" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/37794acfe950d16ed508a77af93f7d63/heap11.pdf"><span class="xref download myst">Heap 11</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/f81e19878ed94f1547500c02321212f0/heap12.pdf"><span class="xref download myst">Heap 12</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/b0538cf66671c41e0111fb78fae4dc9a/heap13.pdf"><span class="xref download myst">Heap 13</span></a></p>
+</section>
+</section>
+<section id="id1">
+<h2>Ejercicios<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Aplicar el algoritmo MAX-HEAPIFY(A, 1) en los siguientes casos:</strong></p>
+<section id="id2">
+<h3>Ejercicio 1<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/c1f6022a43063f7744a8cd4a53af0ed8/heap14.pdf"><span class="xref download myst">Heap 14</span></a></p>
+</section>
+<section id="id3">
+<h3>Ejercicio 2<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><a class="reference download internal" download="" href="../../../_downloads/ba70742a08e05a38e6d367d4cea65171/heap15.pdf"><span class="xref download myst">Heap 15</span></a></p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="que-hace-la-operacion-build-max-heap">
+<h2>¿Qué hace la operación BUILD-MAX-HEAP?<a class="headerlink" href="#que-hace-la-operacion-build-max-heap" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Utiliza MAX-HEAPIFY para convertir un arreglo <span class="math notranslate nohighlight">\(A[1..n]\)</span> en un max-heap.</p></li>
+</ul>
+</section>
+<section id="algoritmo-build-max-heap">
+<h2>Algoritmo BUILD-MAX-HEAP<a class="headerlink" href="#algoritmo-build-max-heap" title="Link to this heading">#</a></h2>
+<p><a class="reference download internal" download="" href="../../../_downloads/f2dcaa87adb5b8e788c150619070435a/buildmax.pdf"><span class="xref download myst">BUILD-MAX-HEAP</span></a></p>
+</section>
+<section id="ejemplo-de-build-max-heap">
+<h2>Ejemplo de BUILD-MAX-HEAP<a class="headerlink" href="#ejemplo-de-build-max-heap" title="Link to this heading">#</a></h2>
+<p><a class="reference download internal" download="" href="../../../_downloads/68d573c71446afeee8ab5cfe02d718ca/b1.pdf"><span class="xref download myst">Paso 1</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/26dfc71fb0ed85d0e9365c781f547ef1/b2.pdf"><span class="xref download myst">Paso 2</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/163ed8f3eb66a5adc09f48ce30ed804d/b3.pdf"><span class="xref download myst">Paso 3</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/72e6d56a5eeceb4795c71fd60362a8ef/b4.pdf"><span class="xref download myst">Paso 4</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/e9fe740df69bacb91b0e3335afa91455/b5.pdf"><span class="xref download myst">Paso 5</span></a><br />
+<a class="reference download internal" download="" href="../../../_downloads/1c5f9b55d3b1e29acbb7a059dcff8119/b6.pdf"><span class="xref download myst">Paso 6</span></a></p>
+</section>
+<section id="id4">
+<h2>Ejercicio<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><strong>Aplique BUILD-HEAP(A) para:</strong></p>
+<div class="math notranslate nohighlight">
+\[A=\{5, 7, 10, 1, 4, 6, 8, 2, 9, 12\}$$ con $$heapsize(A) = 10\]</div>
+<hr class="docutils" />
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../5_SistemaImpresion/colas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Colas (Queues)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../4_Estructuras_Recursivas/introARBOL.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arboles N-Arios</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-monticulo-o-heap">¿Qué es un montículo o heap?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-del-monticulo">Propiedades del montículo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altura-del-monticulo">Altura del montículo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-monticulo">Ejemplo de montículo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-del-monticulo-en-un-arreglo">Representación del montículo en un arreglo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-la-representacion-en-arreglo">Propiedades de la representación en arreglo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-monticulos">Tipos de montículos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-monticulos">Ejemplos de montículos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-1">Ejemplo 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-2">Ejemplo 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-3">Ejemplo 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-4">Ejemplo 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-5">Ejemplo 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-1">Ejercicio 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-2">Ejercicio 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-en-el-arreglo">Almacenamiento en el arreglo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-adicional">Ejercicio adicional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-en-monticulos">Operaciones en montículos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-hace-la-operacion-heapify">¿Qué hace la operación HEAPIFY?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-hace-la-operacion-max-heapify">¿Qué hace la operación MAX-HEAPIFY?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo-max-heapify">Algoritmo MAX-HEAPIFY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona-el-max-heapify">¿Cómo funciona el MAX-HEAPIFY?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-max-heapify">Ejemplo de MAX-HEAPIFY</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicio 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejercicio 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-hace-la-operacion-build-max-heap">¿Qué hace la operación BUILD-MAX-HEAP?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo-build-max-heap">Algoritmo BUILD-MAX-HEAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-build-max-heap">Ejemplo de BUILD-MAX-HEAP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ejercicio</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez, Andres Aristizabal.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

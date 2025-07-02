@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Definición Grafo &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_Grafos/introGRAFOS';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BFS" href="1_BFS/BFS.html" />
+    <link rel="prev" title="Arboles AVL" href="../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Notas Clase, Computación y estructuras Discretas I - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Notas Clase, Computación y estructuras Discretas I - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Notas de Clase
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logica Formal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_Logica_Formal/intro.html">La lógica formal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/metodosDemos.html">Métodos de Demostración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Coq/IntroCoq.html">Introducción a Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Coq/demosCoq.html">Demostraciones Coq</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conjuntos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2_Conjuntos_Funciones/introConjuntosFunciones.html">Introducción a la teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.html">Fundamentos de Conjuntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.html">Interface Set</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/ENRecursivasIntro.html">Complejidad Algoritmica</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/1_ComplejidadTemp/complejidad.html">Complejidad Temporal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/introGenericos.html">Generics</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.html">Listas Enlazadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.html">Lista Enlazada Generica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario.html">Tablas Hash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/pilas.html">Pilas</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/5_SistemaImpresion/colas.html">Colas (Queues)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.html">Montículos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_Estructuras_Recursivas/introARBOL.html">Arboles N-Arios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_Estructuras_Recursivas/1_ArbolBinario/ABB.html">Arboles Binarios</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html">Arboles AVL</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Definición Grafo</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_BFS/BFS.html">BFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_DFS/DFS.html">DFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Dijsktra/DIJSK.html">Dijsktra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Floyd_Warshall/FLOYD.html">Floyd Warshall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Prim/PRIM.html">Prim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Kruskal/KRUS.html">Kruskal</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/marlongv098/Estructuras" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F5_Grafos/introGRAFOS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/5_Grafos/introGRAFOS.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Definición Grafo</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-de-los-puentes-de-konisberg">El problema de los puentes de Könisberg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-del-grafo">Elementos del grafo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-grafos">Tipos de grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-con-grafos">Modelos con grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adyacencia">Adyacencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-grafos-simples">Tipos de grafos simples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos-bipartitos">Grafos bipartitos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-graficos">Ejemplos gráficos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-entre-grafos">Operaciones entre grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-de-grafos">Representación de Grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caminos-circuitos-y-conexion">Caminos, circuitos y conexión</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="definicion-grafo">
+<h1>Definición Grafo<a class="headerlink" href="#definicion-grafo" title="Link to this heading">#</a></h1>
+<p><strong>¿Cuándo fueron presentadas las ideas básicas sobre grafos?</strong></p>
+<p>Las ideas básicas fueron presentadas por el matemático suizo <strong>Leonhard Euler</strong> en el siglo XVIII.</p>
+<p><strong>¿Para qué utilizó Euler la noción de grafo?</strong></p>
+<p>Para resolver el famoso <strong>problema de los puentes de Könisberg</strong>.</p>
+<p><strong>¿Para qué se emplean los grafos?</strong></p>
+<ul class="simple">
+<li><p>Diferenciar dos compuestos químicos con la misma fórmula molecular, pero diferente estructura.</p></li>
+<li><p>Estudiar la estructura de la <strong>Red de Internet</strong>.</p></li>
+</ul>
+<section id="el-problema-de-los-puentes-de-konisberg">
+<h2>El problema de los puentes de Könisberg<a class="headerlink" href="#el-problema-de-los-puentes-de-konisberg" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuál es el problema?</strong></p>
+<p>Es un célebre problema matemático que fue resuelto por <strong>Leonhard Euler</strong> en 1736 y dio origen a la teoría de grafos.</p>
+<ul class="simple">
+<li><p>Dos islas en el río Pregel que cruza Könisberg se unen entre ellas y con la tierra firme mediante siete puentes.</p></li>
+<li><p>¿Es posible dar un paseo empezando por cualquiera de las cuatro partes de tierra firme, cruzando cada puente una sola vez y volviendo al punto de partida?</p></li>
+<li><p>Euler, replanteando el problema usando teoría de grafos, descubrió que <strong>no tiene solución</strong>.</p></li>
+</ul>
+<p><img alt="Puentes de Könisberg" src="5_Grafos/konisberg" /></p>
+</section>
+<section id="elementos-del-grafo">
+<h2>Elementos del grafo<a class="headerlink" href="#elementos-del-grafo" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué son los vértices?</strong></p>
+<ul class="simple">
+<li><p>Son uno de los elementos que forman un grafo.</p></li>
+<li><p>La teoría de grafos no se interesa por lo que <em>son</em> los vértices, sino por cómo se conectan.</p></li>
+<li><p>Pueden verse simplemente como <strong>objetos</strong>.</p></li>
+<li><p>Situaciones con objetos y relaciones que cumplen la definición de grafo pueden representarse como tal y analizarse con esta teoría.</p></li>
+</ul>
+<p><strong>¿Qué es un grafo?</strong></p>
+<p>Es una estructura discreta que consta de <strong>vértices</strong> y <strong>aristas</strong> que conectan entre sí esos vértices.</p>
+<p><img alt="Ejemplo de grafo" src="5_Grafos/grafo1" /></p>
+<p><strong>¿Cómo se diferencian los grafos?</strong></p>
+<ul class="simple">
+<li><p>Se diferencian por el tipo y número de aristas que pueden conectar cada par de vértices.</p></li>
+</ul>
+<p><strong>¿Cuáles serían algunos ejemplos de grafos?</strong></p>
+<p>Muchas redes de uso cotidiano pueden representarse como grafos:</p>
+<ul class="simple">
+<li><p>Una red de <strong>carreteras</strong> que conecta ciudades</p></li>
+<li><p>Una red <strong>eléctrica</strong></p></li>
+<li><p>El sistema de <strong>drenaje</strong> de una ciudad</p></li>
+<li><p>Una red de <strong>transferencia de datos digitales</strong></p></li>
+</ul>
+</section>
+<section id="tipos-de-grafos">
+<h2>Tipos de grafos<a class="headerlink" href="#tipos-de-grafos" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuáles son los tipos de grafos?</strong></p>
+<ul class="simple">
+<li><p>Grafo simple</p></li>
+<li><p>Multigrafo</p></li>
+<li><p>Pseudografo</p></li>
+<li><p>Grafo dirigido</p></li>
+<li><p>Multigrafo dirigido</p></li>
+</ul>
+<p><strong>¿Qué es un grafo simple?</strong></p>
+<p>Un grafo simple <span class="math notranslate nohighlight">\(G = (V, E)\)</span> consta de <span class="math notranslate nohighlight">\(V\)</span>, un conjunto no vacío de vértices, y de <span class="math notranslate nohighlight">\(E\)</span>, un conjunto de pares no ordenados de elementos distintos de <span class="math notranslate nohighlight">\(V\)</span>. A estos pares se les llama <strong>aristas</strong>.</p>
+<p><img alt="Grafo simple" src="5_Grafos/grafo2" /></p>
+<p><strong>¿Qué es un multigrafo?</strong></p>
+<p>Un multigrafo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> consta de un conjunto <span class="math notranslate nohighlight">\(V\)</span> de vértices, un conjunto <span class="math notranslate nohighlight">\(E\)</span> de aristas y una función <span class="math notranslate nohighlight">\(f\)</span> de <span class="math notranslate nohighlight">\(E\)</span> en</p>
+<p align="center">
+	{ { $u$, $v$ } | $u, v ∈ V, u ≠ v$ } 
+</p>
+<p>Se dice que las aristas <span class="math notranslate nohighlight">\(e_1\)</span> y <span class="math notranslate nohighlight">\(e_2\)</span> son <strong>múltiples o paralelas</strong> si <span class="math notranslate nohighlight">\(f(e_1) = f(e_2)\)</span>.</p>
+<p><img alt="Multigrafo" src="5_Grafos/grafo3" /></p>
+<p><strong>¿Qué es un pseudografo?</strong></p>
+<p>Un pseudografo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> consta de un conjunto <span class="math notranslate nohighlight">\(V\)</span> de vértices, un conjunto <span class="math notranslate nohighlight">\(E\)</span> de aristas y una función <span class="math notranslate nohighlight">\(f\)</span> de <span class="math notranslate nohighlight">\(E\)</span> en</p>
+<p align="center"> 
+	{ { $u$, $v$ } | $u, v \in V$ }.  
+ </p>
+<p>Una arista <span class="math notranslate nohighlight">\(e\)</span> es un <strong>bucle o lazo</strong> si <span class="math notranslate nohighlight">\(f(e) =\)</span> { <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(u\)</span> }= { <span class="math notranslate nohighlight">\(u\)</span> } para algún <span class="math notranslate nohighlight">\(u \in V\)</span>.</p>
+<p><img alt="Pseudografo" src="5_Grafos/grafo4" /></p>
+<p><strong>¿Qué es un grafo dirigido?</strong></p>
+<p>Un grafo dirigido <span class="math notranslate nohighlight">\(G = (V, E)\)</span> consta de un conjunto <span class="math notranslate nohighlight">\(V\)</span> de vértices y de un conjunto <span class="math notranslate nohighlight">\(E\)</span> de aristas, que son <strong>pares ordenados</strong> de elementos de <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p><img alt="Grafo dirigido" src="5_Grafos/grafo5" /></p>
+<p><strong>¿Qué es un multigrafo dirigido?</strong></p>
+<ul class="simple">
+<li><p>Un multigrafo dirigido <span class="math notranslate nohighlight">\(G = (V, E)\)</span> consta de un conjunto <span class="math notranslate nohighlight">\(V\)</span> de vértices, un conjunto <span class="math notranslate nohighlight">\(E\)</span> de aristas y una función <span class="math notranslate nohighlight">\(f\)</span> de <span class="math notranslate nohighlight">\(E\)</span> en</p></li>
+</ul>
+<p align="center"> 
+	{ { $u, v$ } | $u, v \in V$ }
+ </p>
+<p>Se dice que las aristas <span class="math notranslate nohighlight">\(e_1\)</span> y <span class="math notranslate nohighlight">\(e_2\)</span> son <strong>múltiples</strong> si <span class="math notranslate nohighlight">\(f(e_1)=f(e_2)\)</span>.</p>
+<p><img alt="Multigrafo dirigido" src="5_Grafos/directedmg" /></p>
+<p><strong>¿Cuál es la terminología en teoría de grafos?</strong></p>
+<p><img alt="Terminología en grafos" src="5_Grafos/grafo7" /></p>
+</section>
+<section id="modelos-con-grafos">
+<h2>Modelos con grafos<a class="headerlink" href="#modelos-con-grafos" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuáles son algunos modelos con grafos?</strong></p>
+<ul class="simple">
+<li><p>Grafos de solapamiento de nichos en Ecología</p></li>
+<li><p>Grafos de conocidos</p></li>
+<li><p>Grafos de influencia</p></li>
+<li><p>Grafo de Hollywood</p></li>
+<li><p>Torneos de todos contra todos</p></li>
+<li><p>Grafos de colaboración</p></li>
+<li><p>Grafos de llamadas</p></li>
+<li><p>Grafo de la web</p></li>
+<li><p>Grafos de precedencia y procesamiento concurrente</p></li>
+</ul>
+<p><strong>¿Cuáles son los grafos de solapamiento de nichos en Ecología?</strong></p>
+<p>Una arista no dirigida conecta dos vértices si las dos especies representadas por esos vértices <strong>compiten entre sí</strong>.</p>
+<p><img alt="Grafo de nichos ecológicos" src="5_Grafos/grafo8" /></p>
+<p><strong>¿Cuáles son los grafos de conocidos?</strong></p>
+<p>Se utilizan para representar <strong>relaciones entre personas</strong>.<br />
+Cada vértice representa una persona y las aristas conectan personas que <strong>se conocen</strong>.</p>
+<p><img alt="Grafo de conocidos" src="5_Grafos/grafo9" /></p>
+<p><strong>¿Cuáles son los grafos de influencia?</strong></p>
+<p>Representan la <strong>influencia de unas personas sobre otras</strong>.</p>
+<p><strong>¿Cuál es el grafo de Hollywood?</strong></p>
+<p>Cada vértice representa un actor y hay una arista entre dos actores si <strong>han trabajado juntos</strong> en una película.</p>
+<p><strong>¿Cuál es el grafo de torneos de todos contra todos?</strong></p>
+<p>Cada vértice representa un equipo, y existe una arista de un equipo a otro si <strong>le ha ganado</strong>.</p>
+<p><strong>¿Cuáles son los grafos de colaboración?</strong></p>
+<p>Representan a personas y su <strong>colaboración en artículos de investigación</strong>.</p>
+<p><strong>¿Cuáles son los grafos de llamadas?</strong></p>
+<p>Representan las <strong>llamadas telefónicas</strong> en una red.</p>
+<p><strong>¿Cuál es el grafo de la Web?</strong></p>
+<p>La Web puede representarse como un grafo en el que:</p>
+<ul class="simple">
+<li><p>Cada <strong>vértice</strong> es un recurso accesible por una URL</p></li>
+<li><p>Existe una <strong>arista</strong> de un vértice a otro si hay un <strong>enlace entre las páginas</strong></p></li>
+</ul>
+<p><strong>¿Cuáles son los grafos de precedencia y procesamiento concurrente?</strong></p>
+<p>Representan la <strong>dependencia de ejecución</strong> de sentencias respecto a otras que deben ejecutarse <strong>previamente</strong>.</p>
+</section>
+<section id="adyacencia">
+<h2>Adyacencia<a class="headerlink" href="#adyacencia" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuándo son dos vértices adyacentes en un grafo no dirigido?</strong></p>
+<p>Se dice que dos vértices <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span> de un grafo no dirigido <span class="math notranslate nohighlight">\(G\)</span> son adyacentes (vecinos) en <span class="math notranslate nohighlight">\(G\)</span> si { <span class="math notranslate nohighlight">\(u, v\)</span> } es una arista de <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p><strong>¿Qué más se puede decir a partir de la definición anterior?</strong></p>
+<p>Si <span class="math notranslate nohighlight">\(e =\)</span> { <span class="math notranslate nohighlight">\(u, v\)</span> }, se dice que la arista <span class="math notranslate nohighlight">\(e\)</span> es incidente con los vértices <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span>. También se dice que la arista <span class="math notranslate nohighlight">\(e\)</span> conecta <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span>. Se dice que los vértices <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span> son extremos de la arista <span class="math notranslate nohighlight">\(e\)</span>.</p>
+<p><strong>¿Cuál es el grado de un vértice en un grafo no dirigido?</strong></p>
+<p>El grado de un vértice de un grafo no dirigido es el número de aristas incidentes con él,  exceptuando los bucles, cada uno de los cuales contribuye con <strong>dos unidades</strong> al grado del vértice.  El grado del vértice se denota por:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta(v)
+\]</div>
+<p><strong>¿Cuáles son los vértices aislados?</strong></p>
+<p>A los vértices de grado cero se les llama <strong>aislados</strong>.  Claramente, un vértice aislado <strong>no es adyacente</strong> a ningún otro vértice.</p>
+<p><strong>¿Qué es un vértice colgante?</strong></p>
+<p>Se dice que un vértice es <strong>colgante</strong>, o que es una <strong>hoja</strong>, si y sólo si tiene grado uno.</p>
+<p><strong>¿Qué se puede decir si <span class="math notranslate nohighlight">\((u, v)\)</span> es una arista del grafo dirigido <span class="math notranslate nohighlight">\(G\)</span>?</strong></p>
+<p>Si <span class="math notranslate nohighlight">\((u, v)\)</span> es una arista del grafo dirigido <span class="math notranslate nohighlight">\(G\)</span>, se dice que:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> es adyacente a <span class="math notranslate nohighlight">\(v\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> es adyacente desde <span class="math notranslate nohighlight">\(u\)</span></p></li>
+</ul>
+<p>Al vértice <span class="math notranslate nohighlight">\(u\)</span> se le llama <strong>vértice inicial</strong> de <span class="math notranslate nohighlight">\((u, v)\)</span> y a <span class="math notranslate nohighlight">\(v\)</span> se le llama <strong>vértice final</strong> o <strong>terminal</strong> de <span class="math notranslate nohighlight">\((u, v)\)</span>. Los vértices inicial y final de un <strong>bucle</strong> coinciden.</p>
+<p><strong>¿Cuál es el teorema del apretón de manos?</strong></p>
+<p><strong>Teorema:</strong><br />
+Sea <span class="math notranslate nohighlight">\(G = (V,E)\)</span> un grafo no dirigido con <span class="math notranslate nohighlight">\(e\)</span> aristas. Entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+2e = \sum\limits_{v \in V} \delta(v)
+\]</div>
+<ul class="simple">
+<li><p>Esto es cierto incluso cuando hay <strong>aristas múltiples</strong> y <strong>bucles</strong> en el grafo.</p></li>
+<li><p>¿Cuántas aristas hay en un grafo con <strong>10 vértices</strong>, cada uno con grado <strong>6</strong>?</p></li>
+</ul>
+<p><strong>¿Qué característica especial tienen los vértices de un grafo no dirigido?</strong></p>
+<p>Todo grafo no dirigido tiene un número <strong>par</strong> de vértices de <strong>grado impar</strong>.</p>
+<p><strong>¿Cuál es el grado de entrada de un vértice en un grafo dirigido?</strong></p>
+<p>En un grafo dirigido, el grado de <strong>entrada</strong> de un vértice <span class="math notranslate nohighlight">\(v\)</span>, denotado por <span class="math notranslate nohighlight">\(\delta^-(v)\)</span>, es el número de aristas que tienen a <span class="math notranslate nohighlight">\(v\)</span> como vértice final.</p>
+<p><strong>¿Cuál es el grado de salida de un vértice en un grafo dirigido?</strong></p>
+<p>En un grafo dirigido, el grado de <strong>salida</strong> de un vértice <span class="math notranslate nohighlight">\(v\)</span>, denotado por <span class="math notranslate nohighlight">\(\delta^+(v)\)</span>, es el número de aristas que tienen a <span class="math notranslate nohighlight">\(v\)</span> como vértice inicial.</p>
+<p><strong>¿Cuál es la relación entre la sumatoria de los grados de entrada y salida en un grafo dirigido?</strong></p>
+<p>Sea <span class="math notranslate nohighlight">\(G = (V,E)\)</span> un grafo dirigido. Entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\limits_{v \in V} \delta^-(v) = \sum\limits_{v \in V} \delta^+(v) = |E|
+\]</div>
+</section>
+<section id="tipos-de-grafos-simples">
+<h2>Tipos de grafos simples<a class="headerlink" href="#tipos-de-grafos-simples" title="Link to this heading">#</a></h2>
+<p><strong>¿Cuáles son los tipos de grafos simples?</strong></p>
+<ul class="simple">
+<li><p>Grafos completos</p></li>
+<li><p>Ciclos</p></li>
+<li><p>Ruedas</p></li>
+<li><p>n-Cubos</p></li>
+</ul>
+<p><strong>¿Cuáles son los grafos completos?</strong></p>
+<p>Un grafo completo de <span class="math notranslate nohighlight">\(n\)</span> vértices, que se denota por:</p>
+<div class="math notranslate nohighlight">
+\[
+K_n
+\]</div>
+<p>es el grafo simple que contiene exactamente <strong>una arista entre cada par de vértices distintos</strong>.</p>
+<p><img alt="Grafo completo" src="5_Grafos/grafo11" /></p>
+<p><strong>¿Cuáles son los ciclos?</strong></p>
+<p>El ciclo <span class="math notranslate nohighlight">\(C_n\)</span>, con <span class="math notranslate nohighlight">\(n \geq 3\)</span>, consta de los vértices:</p>
+<div class="math notranslate nohighlight">
+\[
+v_1, v_2, \dots, v_n
+\]</div>
+<p>y las aristas:</p>
+<p align="center"> 
+	{ $v_1, v_2$ }, { $v_2, v_3$ }, $\dots$, { $v_{n-1}, v_n$ }, { $v_n, v_1$ }
+ </p>
+<p><img alt="Ciclo" src="5_Grafos/grafo12" /></p>
+<p><strong>¿Cuáles son las ruedas?</strong></p>
+<p>Obtenemos la rueda <span class="math notranslate nohighlight">\(W_n\)</span> cuando añadimos un vértice adicional al ciclo <span class="math notranslate nohighlight">\(C_n\)</span>, con <span class="math notranslate nohighlight">\(n \geq 3\)</span>, y conectamos este nuevo vértice con cada uno de los <span class="math notranslate nohighlight">\(n\)</span> vértices de <span class="math notranslate nohighlight">\(C_n\)</span> mediante una nueva arista.</p>
+<p><img alt="Rueda" src="5_Grafos/grafo13" /></p>
+<p><strong>¿Cuáles son los n-Cubos?</strong></p>
+<p>El <strong>cubo n-dimensional</strong>, o <strong>n-cubo</strong>, denotado por:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_n
+\]</div>
+<p>es el grafo cuyos vértices representan las <span class="math notranslate nohighlight">\(2^n\)</span> cadenas de bits de longitud <span class="math notranslate nohighlight">\(n\)</span>.<br />
+Dos vértices son adyacentes <strong>si y solo si</strong> las cadenas de bits que representan difieren <strong>exactamente en un bit</strong>.</p>
+<p><img alt="n-Cubo" src="5_Grafos/grafo14" /></p>
+</section>
+<section id="grafos-bipartitos">
+<h2>Grafos bipartitos<a class="headerlink" href="#grafos-bipartitos" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es un grafo bipartito?</strong></p>
+<p>Se dice que un grafo simple <span class="math notranslate nohighlight">\(G\)</span> es bipartito si su conjunto de vértices <span class="math notranslate nohighlight">\(V\)</span> se puede dividir en dos conjuntos disjuntos <span class="math notranslate nohighlight">\(V_1\)</span> y <span class="math notranslate nohighlight">\(V_2\)</span> tales que cada arista del grafo conecta un vértice de <span class="math notranslate nohighlight">\(V_1\)</span> con un vértice de <span class="math notranslate nohighlight">\(V_2\)</span>, de manera que no haya ninguna arista que conecte entre sí dos vértices de <span class="math notranslate nohighlight">\(V_1\)</span> ni tampoco dos vértices de <span class="math notranslate nohighlight">\(V_2\)</span>.</p>
+<p><strong>Características adicionales</strong></p>
+<ul class="simple">
+<li><p>Un grafo es bipartito si, y solo si, se pueden colorear los vértices del grafo con dos colores de modo que ningún par de vértices adyacentes sean del mismo color.</p></li>
+<li><p>También se considera grafo bipartito si cumple con la condición de que no sea posible empezar en un vértice y regresar a ese mismo vértice después de recorrer un número impar de aristas distintas.</p></li>
+<li><p>El grafo bipartito completo <span class="math notranslate nohighlight">\(K_{m, n}\)</span> es el grafo cuyo conjunto de vértices está formado por dos subconjuntos con <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(n\)</span> vértices, respectivamente, y hay una arista entre dos vértices si, y sólo si, un vértice está en el primer subconjunto y el otro en el segundo.</p></li>
+</ul>
+</section>
+<section id="ejemplos-graficos">
+<h2>Ejemplos gráficos<a class="headerlink" href="#ejemplos-graficos" title="Link to this heading">#</a></h2>
+<p><img alt="Grafo bipartito completo" src="5_Grafos/grafo20" /></p>
+<p><img alt="Otro ejemplo de grafo bipartito" src="5_Grafos/grafo15" /></p>
+</section>
+<section id="operaciones-entre-grafos">
+<h2>Operaciones entre grafos<a class="headerlink" href="#operaciones-entre-grafos" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es un subgrafo?</strong></p>
+<p>Un <strong>subgrafo</strong> de un grafo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> es un grafo <span class="math notranslate nohighlight">\(H = (W, F)\)</span> tal que:</p>
+<div class="math notranslate nohighlight">
+\[
+W \subseteq V \quad \text{y} \quad F \subseteq E
+\]</div>
+<p><img alt="Subgrafo" src="5_Grafos/grafo16" /></p>
+<p><strong>¿Cómo es la unión entre grafos?</strong></p>
+<p>La <strong>unión</strong> de dos grafos simples <span class="math notranslate nohighlight">\(G_1 = (V_1, E_1)\)</span> y <span class="math notranslate nohighlight">\(G_2 = (V_2, E_2)\)</span> es el grafo simple cuyo conjunto de vértices es:</p>
+<div class="math notranslate nohighlight">
+\[
+V_1 \cup V_2
+\]</div>
+<p>y cuyo conjunto de aristas es:</p>
+<div class="math notranslate nohighlight">
+\[
+E_1 \cup E_2
+\]</div>
+<p>La unión de <span class="math notranslate nohighlight">\(G_1\)</span> y <span class="math notranslate nohighlight">\(G_2\)</span> se denota por <span class="math notranslate nohighlight">\(G_1 \cup G_2\)</span>.</p>
+<p><strong>¿Cómo es el grafo complementario?</strong></p>
+<p>El <strong>grafo complementario</strong> <span class="math notranslate nohighlight">\(\overline{G}\)</span> de un grafo simple <span class="math notranslate nohighlight">\(G\)</span> tiene los <strong>mismos vértices</strong> que <span class="math notranslate nohighlight">\(G\)</span>, y dos vértices son adyacentes en <span class="math notranslate nohighlight">\(\overline{G}\)</span> <strong>si, y sólo si</strong>, <strong>no son adyacentes en</strong> <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p><strong>¿Cómo es el grafo recíproco?</strong></p>
+<p>El <strong>recíproco</strong> de un grafo dirigido <span class="math notranslate nohighlight">\(G = (V, E)\)</span>, que se denota por <span class="math notranslate nohighlight">\(G^c\)</span>, es el grafo dirigido <span class="math notranslate nohighlight">\(G^c = (V, F)\)</span> tal que:</p>
+<div class="math notranslate nohighlight">
+\[
+(u, v) \in F \quad \text{si, y sólo si,} \quad (v, u) \in E
+\]</div>
+</section>
+<section id="representacion-de-grafos">
+<h2>Representación de Grafos<a class="headerlink" href="#representacion-de-grafos" title="Link to this heading">#</a></h2>
+<p><strong>¿Cómo representar un grafo?</strong></p>
+<ul class="simple">
+<li><p>Existen muchas maneras útiles de representación de grafos.</p></li>
+<li><p>Al trabajar con un grafo, conviene tener la posibilidad de elegir su representación más conveniente.</p></li>
+<li><p>Entre las posibilidades de representación se encuentran:</p>
+<ul>
+<li><p>Listas de aristas</p></li>
+<li><p>Listas de adyacencia</p></li>
+<li><p>Matrices de adyacencia</p></li>
+<li><p>Matrices de incidencia</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>¿Qué es una lista de adyacencia?</strong></p>
+<ul class="simple">
+<li><p>Es una forma de representar grafos sin aristas múltiples.</p></li>
+<li><p>Especifica los vértices que son adyacentes a cada uno de los vértices del grafo.</p></li>
+</ul>
+<p><img alt="Lista de adyacencia" src="5_Grafos/grafo21" /></p>
+<p><strong>¿Qué ocurre cuando el grafo es dirigido?</strong></p>
+<ul class="simple">
+<li><p>Cuando el grafo es dirigido, una representación por listas de adyacencia enumera todos los vértices finales de las aristas que salen de cada uno de los vértices del grafo.</p></li>
+</ul>
+<p><img alt="Grafo dirigido con listas" src="5_Grafos/grafo22" /></p>
+<p><strong>¿Qué es una matriz de adyacencia?</strong></p>
+<ul class="simple">
+<li><p>Sea <span class="math notranslate nohighlight">\(G = (V, E)\)</span> un grafo simple con <span class="math notranslate nohighlight">\(|V| = n\)</span>.</p></li>
+<li><p>Se enumeran los vértices de <span class="math notranslate nohighlight">\(G\)</span> de manera arbitraria como <span class="math notranslate nohighlight">\(v_1, v_2, ..., v_n\)</span>.</p></li>
+<li><p>La matriz de adyacencia <span class="math notranslate nohighlight">\(A\)</span> (o <span class="math notranslate nohighlight">\(A_G\)</span>) de <span class="math notranslate nohighlight">\(G\)</span> con respecto a este listado de los vértices es la matriz booleana <span class="math notranslate nohighlight">\(n \times n\)</span> que tiene un <span class="math notranslate nohighlight">\(1\)</span> en la posición <span class="math notranslate nohighlight">\((i, j)\)</span> si <span class="math notranslate nohighlight">\(v_i\)</span> y <span class="math notranslate nohighlight">\(v_j\)</span> son adyacentes, y tiene un <span class="math notranslate nohighlight">\(0\)</span> en la posición <span class="math notranslate nohighlight">\((i, j)\)</span> si no lo son.</p></li>
+<li><p>También se expresa como: si la matriz de adyacencia es <span class="math notranslate nohighlight">\(A = [a_{ij}]\)</span>, entonces:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_{ij} =
+\begin{cases}
+1, &amp; \text{si } \{v_i, v_j\} \text{ es una arista de } G \\
+0, &amp; \text{en caso contrario}
+\end{cases}
+\end{split}\]</div>
+<p><strong>¿Qué más se puede decir sobre una matriz de adyacencia?</strong></p>
+<ul class="simple">
+<li><p>Las matrices de adyacencia pueden usarse para representar grafos dirigidos con bucles y con aristas múltiples.</p></li>
+<li><p>Un bucle en el vértice <span class="math notranslate nohighlight">\(a_i\)</span> se representa por medio de un <span class="math notranslate nohighlight">\(1\)</span> en la posición <span class="math notranslate nohighlight">\((i, i)\)</span> de la matriz de adyacencia.</p></li>
+<li><p>Cuando hay aristas múltiples, la matriz de adyacencia deja de ser booleana, ya que el elemento en la posición <span class="math notranslate nohighlight">\((i, j)\)</span> de esta matriz es igual al número de aristas asociadas con <span class="math notranslate nohighlight">\(\{a_i, a_j\}\)</span>.</p></li>
+<li><p>Todos los grafos no dirigidos, incluyendo multigrafos y pseudografos, tienen matrices de adyacencia simétricas.</p></li>
+<li><p>La matriz de un grafo dirigido <span class="math notranslate nohighlight">\(G = (V, E)\)</span> tiene un <span class="math notranslate nohighlight">\(1\)</span> en su posición <span class="math notranslate nohighlight">\((i, j)\)</span> si hay una arista de <span class="math notranslate nohighlight">\(v_i\)</span> a <span class="math notranslate nohighlight">\(v_j\)</span>, siendo <span class="math notranslate nohighlight">\(v_1, v_2, ..., v_n\)</span> un listado arbitrario de los vértices del grafo dirigido.</p></li>
+</ul>
+<p><img alt="Matriz de adyacencia grafo dirigido" src="5_Grafos/grafo23" /></p>
+<p><strong>¿Qué es una matriz de incidencia?</strong></p>
+<ul class="simple">
+<li><p>Sea <span class="math notranslate nohighlight">\(G = (V, E)\)</span> un grafo no dirigido y <span class="math notranslate nohighlight">\(v_1, v_2, ..., v_n\)</span> los vértices y <span class="math notranslate nohighlight">\(e_1, e_2, ..., e_m\)</span> las aristas de <span class="math notranslate nohighlight">\(G\)</span>.</p></li>
+<li><p>Entonces la matriz de incidencia con respecto a este ordenamiento de <span class="math notranslate nohighlight">\(V\)</span> y de <span class="math notranslate nohighlight">\(E\)</span> es la matriz <span class="math notranslate nohighlight">\(M = [m_{ij}]\)</span> de <span class="math notranslate nohighlight">\(n \times m\)</span> dada por:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+m_{ij} =
+\begin{cases}
+1, &amp; \text{si la arista } e_j \text{ es incidente con } v_i \\
+0, &amp; \text{en caso contrario}
+\end{cases}
+\end{split}\]</div>
+<p><img alt="Matriz de incidencia" src="5_Grafos/grafo24" /></p>
+</section>
+<section id="caminos-circuitos-y-conexion">
+<h2>Caminos, circuitos y conexión<a class="headerlink" href="#caminos-circuitos-y-conexion" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es un camino?</strong></p>
+<ul>
+<li><p>Un camino es una secuencia de aristas que comienza en un vértice del grafo y recorre ciertas aristas del grafo, siempre conectando pares de vértices adyacentes.</p></li>
+<li><p>Sea <span class="math notranslate nohighlight">\(n\)</span> un entero no negativo y sea <span class="math notranslate nohighlight">\(G\)</span> un grafo no dirigido.</p></li>
+<li><p>Un camino de longitud <span class="math notranslate nohighlight">\(n\)</span> de <span class="math notranslate nohighlight">\(u\)</span> a <span class="math notranslate nohighlight">\(v\)</span> en <span class="math notranslate nohighlight">\(G\)</span> es una secuencia de <span class="math notranslate nohighlight">\(n\)</span> aristas <span class="math notranslate nohighlight">\(a_1, a_2, \ldots, a_n\)</span> de <span class="math notranslate nohighlight">\(G\)</span> tal que:</p>
+<div class="math notranslate nohighlight">
+\[
+  f(a_1) = \{x_0, x_1\},\quad f(a_2) = \{x_1, x_2\},\quad \ldots,\quad f(a_n) = \{x_{n-1}, x_n\},
+  \]</div>
+<p>donde <span class="math notranslate nohighlight">\(x_0 = u\)</span> y <span class="math notranslate nohighlight">\(x_n = v\)</span>.</p>
+</li>
+<li><p>Si el grafo es simple, denotamos este camino por su secuencia de vértices:<br />
+$<span class="math notranslate nohighlight">\(x_0, x_1, \ldots, x_n\)</span>$<br />
+(ya que enumerar estos vértices determina el camino de forma única).</p></li>
+</ul>
+<p><strong>¿Qué es un circuito?</strong></p>
+<ul class="simple">
+<li><p>El camino es un circuito si comienza y termina en el mismo vértice, esto es, si <span class="math notranslate nohighlight">\(u = v\)</span>, y tiene longitud mayor que cero.</p></li>
+<li><p>Se dice que el camino o circuito pasa por los vértices <span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_{n-1}\)</span> o también que recorre las aristas <span class="math notranslate nohighlight">\(a_1, a_2, \ldots, a_n\)</span>.</p></li>
+<li><p>Un camino o circuito es <em>simple</em> si no contiene la misma arista más de una vez.</p></li>
+</ul>
+<p><strong>¿Cómo es la conexión en grafos no dirigidos?</strong></p>
+<ul class="simple">
+<li><p>Se dice que un grafo no dirigido es <em>conexo</em> si hay un camino entre cada par de vértices distintos del grafo.</p></li>
+<li><p>Hay un camino simple entre cada par de vértices distintos de un grafo no dirigido conexo.</p></li>
+<li><p>Un grafo que no es conexo es la unión de dos o más subgrafos conexos que no tienen ningún vértice en común entre ellos.</p></li>
+</ul>
+<p><strong>¿Son conexos los siguientes grafos?</strong></p>
+<p><img alt="Conexos" src="5_Grafos/grafo29" /></p>
+<p><strong>¿Qué es un vértice de corte?</strong></p>
+<ul class="simple">
+<li><p>Se le llama <em>vértice de corte</em> o <em>punto de articulación</em> a aquel vértice que, al ser eliminado junto a todas las aristas incidentes en él, produce un subgrafo con más componentes conexas.</p></li>
+<li><p>Eliminar un vértice de corte de un grafo conexo produce un grafo que no es conexo.</p></li>
+</ul>
+<p><strong>¿Qué es una arista de corte?</strong></p>
+<ul class="simple">
+<li><p>Una arista cuya eliminación produce un grafo con más componentes conexas que el grafo original se llama <em>arista de corte</em> o <em>puente</em>.</p></li>
+</ul>
+<p><strong>¿Cuáles son los vértices de corte y aristas de corte del siguiente grafo?</strong></p>
+<p><img alt="Ejemplo" src="5_Grafos/grafo30" /></p>
+<p><strong>¿Cómo es la conexión en grafos dirigidos?</strong></p>
+<ul class="simple">
+<li><p>Considerando la dirección de las aristas, estos grafos pueden ser <em>fuertemente conexos</em> o <em>débilmente conexos</em>.</p></li>
+</ul>
+<p><strong>¿Cuándo un grafo dirigido es fuertemente conexo?</strong></p>
+<ul class="simple">
+<li><p>Se dice que un grafo dirigido es <em>fuertemente conexo</em> si hay un camino de <span class="math notranslate nohighlight">\(a\)</span> a <span class="math notranslate nohighlight">\(b\)</span> y un camino de <span class="math notranslate nohighlight">\(b\)</span> a <span class="math notranslate nohighlight">\(a\)</span> para cualesquiera dos vértices <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> del grafo.</p></li>
+</ul>
+<p><strong>¿Cuándo un grafo dirigido es débilmente conexo?</strong></p>
+<ul class="simple">
+<li><p>Se dice que un grafo dirigido es <em>débilmente conexo</em> si hay un camino entre cada dos vértices del grafo no dirigido subyacente.</p></li>
+</ul>
+<p><strong>¿Qué es un circuito euleriano?</strong></p>
+<p><strong>Definición:</strong><br />
+Un circuito euleriano de un grafo <span class="math notranslate nohighlight">\(G\)</span> es un circuito simple que contiene a todas las aristas de <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p><strong>¿Qué es un camino euleriano?</strong></p>
+<p><strong>Definición:</strong><br />
+Un camino euleriano es un camino simple que contiene a todas las aristas de <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p><strong>Ejemplo:</strong><br />
+¿Cuáles de los grafos no dirigidos de la siguiente figura contienen un circuito euleriano?<br />
+Entre aquellos que no lo contienen, ¿cuáles contienen un camino euleriano?</p>
+<p><img alt="graph3" src="5_Grafos/graph3" /></p>
+<p><strong>Solución:</strong><br />
+El grafo <span class="math notranslate nohighlight">\(G_1\)</span> contiene un circuito euleriano, por ejemplo, <span class="math notranslate nohighlight">\(a,e,c,d,e,b,a.\)</span><br />
+Ni <span class="math notranslate nohighlight">\(G_2\)</span> ni <span class="math notranslate nohighlight">\(G_3\)</span> contienen un circuito euleriano.<br />
+No obstante, <span class="math notranslate nohighlight">\(G_3\)</span> contiene un camino euleriano, a saber, <span class="math notranslate nohighlight">\(a,c,d,e,b,d,a,b.\)</span><br />
+El grafo <span class="math notranslate nohighlight">\(G_2\)</span> no contiene ningún camino euleriano.</p>
+<p><strong>Ejemplo:</strong><br />
+¿Cuáles de los grafos dirigidos de esta figura contienen un circuito euleriano?<br />
+Entre aquellos que no lo contienen, ¿cuáles contienen un camino euleriano?</p>
+<p><img alt="graph4" src="5_Grafos/graph4" /></p>
+<p><strong>¿Para qué pueden utilizarse los caminos y circuitos eulerianos?</strong></p>
+<ul class="simple">
+<li><p>Los caminos y circuitos eulerianos pueden utilizarse para resolver muchos problemas prácticos.</p></li>
+<li><p>En muchas aplicaciones se requiere hallar un camino o circuito que pase exactamente una vez por cada una de las calles de un barrio, cada una de las carreteras de una red vial, cada conexión de una red de distribución de agua, o cada enlace de una red de comunicaciones.</p></li>
+<li><p>Hallar un camino o un circuito euleriano en un modelo apropiado de grafos puede resolver este tipo de problemas.</p></li>
+<li><p>Por ejemplo, si un cartero puede hallar un camino euleriano en el grafo de las calles por las que debe repartir la correspondencia, este camino produce una ruta que pasa por cada calle exactamente una vez.</p></li>
+<li><p>Si no hay ningún camino euleriano, el cartero tendrá que pasar más de una vez por alguna de las calles.</p></li>
+<li><p>Otras áreas en las que se aplican los circuitos y caminos eulerianos son el diseño de circuitos impresos, redes de multidifusión, y también la biología molecular, donde se utilizan para secuenciar el ADN.</p></li>
+</ul>
+<p><strong>¿Qué es un camino hamiltoniano?</strong>
+Un camino <span class="math notranslate nohighlight">\(x_0, x_1,..., x_{n-1},x_n\)</span> del grafo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> es hamiltoniano si<br />
+<span class="math notranslate nohighlight">\(V=\{x_0,x_1,..., x_{n-1},x_n\}\)</span> y <span class="math notranslate nohighlight">\(x_i 
+eq x_j\)</span> para <span class="math notranslate nohighlight">\(0 \leq i&lt; j \leq n.\)</span></p>
+<p><strong>¿Qué es un circuito hamiltoniano?</strong>
+Un circuito <span class="math notranslate nohighlight">\(x_0, x_1,..., x_{n-1},x_n,x_0\)</span> con <span class="math notranslate nohighlight">\(n &gt; 1\)</span> del grafo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> es hamiltoniano si<br />
+<span class="math notranslate nohighlight">\(x_0,x_1,..., x_{n-1},x_n\)</span> es un camino hamiltoniano.</p>
+<p><strong>¿Cuál es el origen de esta terminología?</strong></p>
+<ul class="simple">
+<li><p>El origen es un juego, el juego icosiano, inventado en 1857 por el matemático irlandés Sir William Rowan Hamilton.</p></li>
+<li><p>Consistía en un dodecaedro de madera, un poliedro de 12 caras, cada una un pentágono regular, con un alfiler saliendo de cada vértice y un trozo de cuerda.</p></li>
+</ul>
+<p><img alt="ham1" src="5_Grafos/ham1" /></p>
+<ul class="simple">
+<li><p>Los 20 vértices estaban etiquetados con el nombre de distintas ciudades del mundo.</p></li>
+<li><p>El objetivo era comenzar en una ciudad, viajar siguiendo las aristas visitando cada una de las otras 19 ciudades exactamente una vez, y terminar en la primera.</p></li>
+<li><p>El circuito seguido se marcaba utilizando la cuerda y los alfileres.</p></li>
+</ul>
+<p><strong>¿Qué pregunta puede ser equivalente al juego?</strong></p>
+<ul class="simple">
+<li><p>¿Hay algún circuito en el grafo, que se muestra a continuación, que pase por cada vértice exactamente una vez?</p></li>
+</ul>
+<p><img alt="ham2" src="5_Grafos/ham2" /></p>
+<ul class="simple">
+<li><p>Esto resuelve el juego, ya que este grafo es isomorfo al grafo de vértices y aristas del dodecaedro.</p></li>
+</ul>
+<p><strong>Solución visual:</strong><br />
+En la siguiente figura se presenta una solución del juego de Hamilton.</p>
+<p><img alt="ham3" src="5_Grafos/ham3" /></p>
+<p><strong>Ejemplo:</strong><br />
+¿Cuáles de los grafos simples de esta figura contienen un circuito hamiltoniano o, si no, un camino hamiltoniano?<br />
+<br />
+<img alt="ham4" src="5_Grafos/ham4" /></p>
+<p><strong>Solución:</strong><br />
+<span class="math notranslate nohighlight">\(G_1\)</span> contiene un circuito hamiltoniano: <span class="math notranslate nohighlight">\(a, b, c, d, e, a.\)</span><br />
+No hay circuitos hamiltonianos en <span class="math notranslate nohighlight">\(G_2\)</span> (cualquier circuito que pase por todos los vértices debe contener dos veces la arista { <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> }).<br />
+Pero <span class="math notranslate nohighlight">\(G_2\)</span> contiene un camino hamiltoniano: <span class="math notranslate nohighlight">\(a, b, c, d.\)</span><br />
+El grafo <span class="math notranslate nohighlight">\(G_3\)</span> no contiene ni circuito ni camino hamiltoniano, ya que cualquier camino debe usar más de una vez alguna de las aristas { <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> }, { <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(f\)</span> } o { <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(d\)</span> }.</p>
+<p><strong>Tarea:</strong><br />
+Comience la implementación de su estructura grafo utilizando listas de adyacencia y matriz de adyacencia.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./5_Grafos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Arboles AVL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1_BFS/BFS.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">BFS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-de-los-puentes-de-konisberg">El problema de los puentes de Könisberg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-del-grafo">Elementos del grafo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-grafos">Tipos de grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-con-grafos">Modelos con grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adyacencia">Adyacencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-grafos-simples">Tipos de grafos simples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos-bipartitos">Grafos bipartitos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-graficos">Ejemplos gráficos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-entre-grafos">Operaciones entre grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-de-grafos">Representación de Grafos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caminos-circuitos-y-conexion">Caminos, circuitos y conexión</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez, Andres Aristizabal.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
