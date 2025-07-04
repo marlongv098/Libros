@@ -200,20 +200,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Complejidad Algoritmica</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="1_ComplejidadTemp/complejidad.html">Complejidad Temporal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/introGenericos.html">Generics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Complejidad Algoritmica</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/1_ListasEnlazadas/listaEnlazada.html">Listas Enlazadas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/2_LinkedListPersonas/listaEnlazada2.html">Lista Enlazada Generica</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/3_Diccionario/diccionario.html">Tablas Hash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/4_EditorTexto/pilas.html">Pilas</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/5_SistemaImpresion/colas.html">Colas (Queues)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_Generics/6_GestorTareas/monticulos.html">Montículos</a></li>
-</ul>
-</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
 <ul class="nav bd-sidenav">
@@ -439,6 +427,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Complejidad Algoritmica</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son-las-clases-de-complejidad">¿Qué son las clases de complejidad?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-p">¿Qué es la clase de complejidad <strong>P</strong>?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-np">¿Qué es la clase de complejidad <strong>NP</strong>?</a></li>
@@ -453,12 +442,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo">Indique cuántas líneas de código se ejecutan en el siguiente algoritmo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-modelo-de-computacion">¿Qué es un modelo de computación?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-modelos-de-computacion-existen">¿Qué modelos de computación existen?</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-modelo-de-computacion">¿Qué es un modelo de computación?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-modelos-de-computacion-existen">¿Qué modelos de computación existen?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ram">Modelo RAM</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-debe-tener-en-cuenta-en-el-modelo-ram">¿Qué se debe tener en cuenta en el modelo RAM?</a></li>
 </ul>
@@ -467,6 +456,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatas-finitos">Autómatas Finitos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maquinas-de-turing">Máquinas de Turing</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -566,7 +558,7 @@ document.write(`
 <ul class="simple">
 <li><p>Es el subconjunto de los problemas en <strong>NP</strong> tal que todo problema en <strong>NP</strong> se puede reducir en cada uno de los problemas de <strong>NP-completo</strong>.</p></li>
 </ul>
-<p><img alt="Complejidad" src="3_Estructuras_NO_Recursivas/Images/complejidad.png" /></p>
+<p><img alt="Complejidad" src="../_images/complejidad.png" /></p>
 </section>
 <section id="por-que-resultan-tan-interesantes-los-problemas-np-completo">
 <h2>¿Por qué resultan tan interesantes los problemas <strong>NP-completo</strong>?<a class="headerlink" href="#por-que-resultan-tan-interesantes-los-problemas-np-completo" title="Link to this heading">#</a></h2>
@@ -613,11 +605,12 @@ document.write(`
 </ul>
 </section>
 </section>
+</section>
 <hr class="docutils" />
-<section id="modelos-de-computacion">
-<h2>Modelos de Computación<a class="headerlink" href="#modelos-de-computacion" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="modelos-de-computacion">
+<h1>Modelos de Computación<a class="headerlink" href="#modelos-de-computacion" title="Link to this heading">#</a></h1>
 <section id="que-es-un-modelo-de-computacion">
-<h3>¿Qué es un modelo de computación?<a class="headerlink" href="#que-es-un-modelo-de-computacion" title="Link to this heading">#</a></h3>
+<h2>¿Qué es un modelo de computación?<a class="headerlink" href="#que-es-un-modelo-de-computacion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Una definición formal y abstracta de un computador.</p></li>
 <li><p>Un modelo abstracto que describe una forma de computar.</p></li>
@@ -626,7 +619,7 @@ document.write(`
 </ul>
 </section>
 <section id="que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">
-<h3>¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?<a class="headerlink" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion" title="Link to this heading">#</a></h3>
+<h2>¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?<a class="headerlink" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Representación de las entradas y salidas.</p></li>
 <li><p>Operaciones elementales.</p></li>
@@ -634,7 +627,7 @@ document.write(`
 </ul>
 </section>
 <section id="que-modelos-de-computacion-existen">
-<h3>¿Qué modelos de computación existen?<a class="headerlink" href="#que-modelos-de-computacion-existen" title="Link to this heading">#</a></h3>
+<h2>¿Qué modelos de computación existen?<a class="headerlink" href="#que-modelos-de-computacion-existen" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Existe una amplia variedad de modelos de computación que difieren en el conjunto de operaciones permitidas y su costo de computación.</p></li>
 <li><p>Máquinas de acceso aleatorio (RAM).</p></li>
@@ -643,7 +636,6 @@ document.write(`
 <li><p>Máquinas de Turing.</p></li>
 <li><p>…</p></li>
 </ul>
-</section>
 </section>
 <hr class="docutils" />
 <section id="modelo-ram">
@@ -771,6 +763,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Complejidad Algoritmica</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son-las-clases-de-complejidad">¿Qué son las clases de complejidad?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-p">¿Qué es la clase de complejidad <strong>P</strong>?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-np">¿Qué es la clase de complejidad <strong>NP</strong>?</a></li>
@@ -785,12 +778,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo">Indique cuántas líneas de código se ejecutan en el siguiente algoritmo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-modelo-de-computacion">¿Qué es un modelo de computación?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-modelos-de-computacion-existen">¿Qué modelos de computación existen?</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-modelo-de-computacion">¿Qué es un modelo de computación?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-modelos-de-computacion-existen">¿Qué modelos de computación existen?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ram">Modelo RAM</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-debe-tener-en-cuenta-en-el-modelo-ram">¿Qué se debe tener en cuenta en el modelo RAM?</a></li>
 </ul>
@@ -799,6 +792,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatas-finitos">Autómatas Finitos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maquinas-de-turing">Máquinas de Turing</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
