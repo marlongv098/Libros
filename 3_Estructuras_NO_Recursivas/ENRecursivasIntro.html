@@ -491,8 +491,17 @@ document.write(`
 <p><strong>¿Cuál es la sucesión de Fibonacci?</strong></p>
 <ul class="simple">
 <li><p>Es la sucesión que comienza con los números <span class="math notranslate nohighlight">\(0\)</span> y <span class="math notranslate nohighlight">\(1\)</span>, y a partir de estos, cada término es la suma de los dos anteriores.</p></li>
-<li><p>Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia: $<span class="math notranslate nohighlight">\(f_n = f_{n-1} + f_{n-2} \quad \text{para } n \geq 2\)</span><span class="math notranslate nohighlight">\( Con valores iniciales: \)</span><span class="math notranslate nohighlight">\(f_0 = 0, \quad f_1 = 1\)</span>$</p></li>
+<li><p>Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+  f_n = f_{n-1} + f_{n-2} \quad
+\]</div>
+<p>para  <span class="math notranslate nohighlight">\(n \geq 2\)</span>. Con valores iniciales:</p>
+<div class="math notranslate nohighlight">
+\[
+  f_0 = 0, \quad f_1 = 1
+\]</div>
 <p><strong>¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?</strong></p>
 <ul class="simple">
 <li><p>Recursiva</p></li>
