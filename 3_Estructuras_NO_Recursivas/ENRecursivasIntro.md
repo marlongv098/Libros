@@ -14,7 +14,10 @@
 **¿Cuál es la sucesión de Fibonacci?**
 
 * Es la sucesión que comienza con los números $0$ y $1$, y a partir de estos, cada término es la suma de los dos anteriores.  
-* Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia: $$f_n = f_{n-1} + f_{n-2} \quad \text{para } n \geq 2$$ Con valores iniciales: $$f_0 = 0, \quad f_1 = 1$$
+* Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia: 
+$$f_n = f_{n-1} + f_{n-2} \quad \text{para } n \geq 2$$ 
+Con valores iniciales:
+$$f_0 = 0, \quad f_1 = 1$$
 
 **¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?**
 
