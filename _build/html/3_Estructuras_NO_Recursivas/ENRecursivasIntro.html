@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -490,7 +490,7 @@ document.write(`
 </ul>
 <p><strong>¿Cuál es la sucesión de Fibonacci?</strong></p>
 <ul class="simple">
-<li><p>Es la sucesión que comienza con los números 0 y 1, y a partir de estos, cada término es la suma de los dos anteriores.</p></li>
+<li><p>Es la sucesión que comienza con los números <span class="math notranslate nohighlight">\(0\)</span> y <span class="math notranslate nohighlight">\(1\)</span>, y a partir de estos, cada término es la suma de los dos anteriores.</p></li>
 <li><p>Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia: $<span class="math notranslate nohighlight">\(f_n = f_{n-1} + f_{n-2} \quad \text{para } n \geq 2\)</span><span class="math notranslate nohighlight">\( Con valores iniciales: \)</span><span class="math notranslate nohighlight">\(f_0 = 0, \quad f_1 = 1\)</span>$</p></li>
 </ul>
 <p><strong>¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?</strong></p>
@@ -498,7 +498,9 @@ document.write(`
 <li><p>Recursiva</p></li>
 <li><p>Iterativa</p></li>
 </ul>
-<p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/Fibonacci">Fibonacci</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/Fibonacci">Fibonacci</a></p></li>
+</ul>
 <p><strong>¿Para qué utilizamos algoritmos?</strong></p>
 <ul class="simple">
 <li><p>En ciencias de la computación utilizamos algoritmos para resolver problemas.</p></li>
@@ -595,10 +597,10 @@ document.write(`
 <section id="indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo">
 <h3>Indique cuántas líneas de código se ejecutan en el siguiente algoritmo<a class="headerlink" href="#indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaLineal">Busqueda_Lineal</a></p></li>
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaBinaria">Busqueda_Binaria</a></p></li>
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/OrdenamientoBurbuja">Ordenamiento_Burbuja</a></p></li>
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/QuickSort">Quick_Sort</a></p></li>
+<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/BusquedaLineal">Busqueda_Lineal</a></p></li>
+<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/BusquedaBinaria">Busqueda_Binaria</a></p></li>
+<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/OrdenamientoBurbuja">Ordenamiento_Burbuja</a></p></li>
+<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/QuickSort">Quick_Sort</a></p></li>
 </ul>
 </section>
 </section>
@@ -637,7 +639,7 @@ document.write(`
 <hr class="docutils" />
 <section id="modelo-ram">
 <h2>Modelo RAM<a class="headerlink" href="#modelo-ram" title="Link to this heading">#</a></h2>
-<p><img alt="Modelo RAM" src="3_Estructuras_NO_Recursivas/Images/ram.jpg" /></p>
+<p><img alt="Modelo RAM" src="../_images/ram.jpg" /></p>
 <ul class="simple">
 <li><p>Es un modelo simple de cómo los computadores se desempeñan.</p></li>
 <li><p>Bajo el modelo RAM se mide el tiempo de ejecución de un algoritmo al contar la cantidad de pasos que se toma para una instancia de problema dada.</p></li>
@@ -657,7 +659,7 @@ document.write(`
 <hr class="docutils" />
 <section id="circuitos-combinacionales">
 <h2>Circuitos Combinacionales<a class="headerlink" href="#circuitos-combinacionales" title="Link to this heading">#</a></h2>
-<p><img alt="Compuertas lógicas" src="3_Estructuras_NO_Recursivas/Images/compuertas.png" /></p>
+<p><img alt="Compuertas lógicas" src="../_images/compuertas.png" /></p>
 <ul class="simple">
 <li><p><strong>Entradas:</strong> codificación binaria.</p></li>
 <li><p><strong>Salidas:</strong> codificación binaria.</p></li>
@@ -667,7 +669,7 @@ document.write(`
 <hr class="docutils" />
 <section id="automatas-finitos">
 <h2>Autómatas Finitos<a class="headerlink" href="#automatas-finitos" title="Link to this heading">#</a></h2>
-<p><img alt="Autómata" src="3_Estructuras_NO_Recursivas/Images/automata.png" /></p>
+<p><img alt="Autómata" src="../_images/automata.png" /></p>
 <ul class="simple">
 <li><p>Procesan cadenas de entrada, las cuales son aceptadas o rechazadas.</p></li>
 <li><p>Leen símbolos escritos sobre una cinta semi infinita, dividida en celdas, sobre la cual se escribe una cadena de entrada.</p></li>
@@ -677,7 +679,7 @@ document.write(`
 <hr class="docutils" />
 <section id="maquinas-de-turing">
 <h2>Máquinas de Turing<a class="headerlink" href="#maquinas-de-turing" title="Link to this heading">#</a></h2>
-<p><img alt="Máquina de Turing" src="3_Estructuras_NO_Recursivas/Images/turing.png" /></p>
+<p><img alt="Máquina de Turing" src="../_images/turing.png" /></p>
 <ul class="simple">
 <li><p>Es el modelo de autómata con máxima capacidad computacional.</p></li>
 <li><p><strong>Entradas:</strong> cinta sin fin formada por celdas que almacenan símbolos.</p></li>

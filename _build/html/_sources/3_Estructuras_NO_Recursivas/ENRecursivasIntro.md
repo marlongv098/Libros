@@ -13,7 +13,7 @@
 
 **¿Cuál es la sucesión de Fibonacci?**
 
-* Es la sucesión que comienza con los números 0 y 1, y a partir de estos, cada término es la suma de los dos anteriores.  
+* Es la sucesión que comienza con los números $0$ y $1$, y a partir de estos, cada término es la suma de los dos anteriores.  
 * Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia: $$f_n = f_{n-1} + f_{n-2} \quad \text{para } n \geq 2$$ Con valores iniciales: $$f_0 = 0, \quad f_1 = 1$$
 
 **¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?**
@@ -21,7 +21,7 @@
 * Recursiva 
 * Iterativa
 
-[Fibonacci](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/Fibonacci)
+- [Fibonacci](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/Fibonacci)
 
 **¿Para qué utilizamos algoritmos?**
 
@@ -107,10 +107,10 @@
 
 ### Indique cuántas líneas de código se ejecutan en el siguiente algoritmo
 
-* [Busqueda_Lineal](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaLineal)
-* [Busqueda_Binaria](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaBinaria)
-* [Ordenamiento_Burbuja](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/OrdenamientoBurbuja)
-* [Quick_Sort](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/QuickSort)
+* [Busqueda_Lineal](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/BusquedaLineal)
+* [Busqueda_Binaria](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/BusquedaBinaria)
+* [Ordenamiento_Burbuja](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/OrdenamientoBurbuja)
+* [Quick_Sort](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/QuickSort)
 
 ---
 
@@ -143,7 +143,7 @@
 
 ## Modelo RAM
 
-![Modelo RAM](Images/ram.jpg)
+![Modelo RAM](/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/Images/ram.jpg)
 
 - Es un modelo simple de cómo los computadores se desempeñan.
 - Bajo el modelo RAM se mide el tiempo de ejecución de un algoritmo al contar la cantidad de pasos que se toma para una instancia de problema dada.
@@ -161,7 +161,7 @@
 
 ## Circuitos Combinacionales
 
-![Compuertas lógicas](Images/compuertas.png)
+![Compuertas lógicas](/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/Images/compuertas.png)
 
 - **Entradas:** codificación binaria.
 - **Salidas:** codificación binaria.
@@ -171,7 +171,7 @@
 
 ## Autómatas Finitos
 
-![Autómata](Images/automata.png)
+![Autómata](/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/Images/automata.png)
 
 - Procesan cadenas de entrada, las cuales son aceptadas o rechazadas.
 - Leen símbolos escritos sobre una cinta semi infinita, dividida en celdas, sobre la cual se escribe una cadena de entrada.
@@ -181,7 +181,7 @@
 
 ## Máquinas de Turing
 
-![Máquina de Turing](Images/turing.png)
+![Máquina de Turing](/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/Images/turing.png)
 
 - Es el modelo de autómata con máxima capacidad computacional.
 - **Entradas:** cinta sin fin formada por celdas que almacenan símbolos.
