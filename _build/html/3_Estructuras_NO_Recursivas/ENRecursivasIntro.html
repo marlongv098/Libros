@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '3_Estructuras_NO_Recursivas/ENRecursivasIntro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Complejidad Temporal" href="1_ComplejidadTemp/complejidad.html" />
+    <link rel="next" title="Análisis de Complejidad Temporal" href="1_ComplejidadTemp/src/ComTemporal.html" />
     <link rel="prev" title="Interface Set" href="../2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -200,8 +200,25 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Complejidad Algoritmica</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Complejidad Algoritmica</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad Temporal</a></li>
 
+
+
+<li class="toctree-l2"><a class="reference internal" href="2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_TAD/tad.html">Tipo Abstracto de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Generics/introGenericos.html">Generics</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="3_Generics/3_Diccionario/diccionario.html">Tablas Hash</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="3_Generics/4_EditorTexto/EstrucDatosSec.html">Estructuras de datos secuenciales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="3_Generics/4_EditorTexto/pilas.html">Pilas</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="3_Generics/5_SistemaImpresion/colas.html">Colas (Queues)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Generics/6_GestorTareas/monticulos.html">Montículos</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
 <ul class="nav bd-sidenav">
@@ -427,38 +444,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Complejidad Algoritmica</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son-las-clases-de-complejidad">¿Qué son las clases de complejidad?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-p">¿Qué es la clase de complejidad <strong>P</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-np">¿Qué es la clase de complejidad <strong>NP</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-np-completo">¿Qué es la clase de complejidad <strong>NP-completo</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-resultan-tan-interesantes-los-problemas-np-completo">¿Por qué resultan tan interesantes los problemas <strong>NP-completo</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-y-complejidad">Algoritmos y Complejidad</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cual-es-el-objetivo-del-analisis-de-algoritmos">¿Cuál es el objetivo del análisis de algoritmos?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-traves-de-que-se-pueden-comparar">¿A través de qué se pueden comparar?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-complejidad-temporal">Análisis de Complejidad Temporal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo">Indique cuántas líneas de código se ejecutan en el siguiente algoritmo</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-modelo-de-computacion">¿Qué es un modelo de computación?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-modelos-de-computacion-existen">¿Qué modelos de computación existen?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ram">Modelo RAM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-debe-tener-en-cuenta-en-el-modelo-ram">¿Qué se debe tener en cuenta en el modelo RAM?</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ram">Modelo RAM</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuitos-combinacionales">Circuitos Combinacionales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatas-finitos">Autómatas Finitos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maquinas-de-turing">Máquinas de Turing</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -471,37 +462,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="complejidad-algoritmica">
 <h1>Complejidad Algoritmica<a class="headerlink" href="#complejidad-algoritmica" title="Link to this heading">#</a></h1>
-<p><strong>¿Cuál sería una primera aproximación para medir el desempeño en tiempo de un algoritmo?</strong></p>
-<ul class="simple">
-<li><p>Establecer distintos tamaños de entradas y tomar el tiempo que el algoritmo se demora en resolver el problema.</p></li>
-<li><p>Para obtener una idea del comportamiento temporal del algoritmo, se grafica tamaño de entrada vs tiempo para la solución.</p></li>
-</ul>
-<p><strong>¿Cómo compararía el desempeño temporal de dos algoritmos que solucionan el mismo problema?</strong></p>
-<ul class="simple">
-<li><p>Graficando tamaño de entradas vs tiempo.</p></li>
-</ul>
-<p><strong>¿Cuál es la sucesión de Fibonacci?</strong></p>
-<ul class="simple">
-<li><p>Es la sucesión que comienza con los números <span class="math notranslate nohighlight">\(0\)</span> y <span class="math notranslate nohighlight">\(1\)</span>, y a partir de estos, cada término es la suma de los dos anteriores.</p></li>
-<li><p>Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-  f_n = f_{n-1} + f_{n-2} \quad
-\]</div>
-<p>para  <span class="math notranslate nohighlight">\(n \geq 2\)</span>. Con valores iniciales:</p>
-<div class="math notranslate nohighlight">
-\[
-  f_0 = 0, \quad f_1 = 1
-\]</div>
-<p><strong>¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?</strong></p>
-<ul class="simple">
-<li><p>Recursiva</p></li>
-<li><p>Iterativa</p></li>
-</ul>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/Fibonacci">Fibonacci</a></p></li>
-</ul>
 <p><strong>¿Para qué utilizamos algoritmos?</strong></p>
 <ul class="simple">
 <li><p>En ciencias de la computación utilizamos algoritmos para resolver problemas.</p></li>
@@ -530,38 +490,29 @@ document.write(`
 <ul class="simple">
 <li><p>Es la rama de la teoría de la computación que se enfoca en la clasificación de problemas computacionales de acuerdo a su dificultad inherente y en la relación que existe entre dichas clases de complejidad.</p></li>
 </ul>
-<section id="que-son-las-clases-de-complejidad">
-<h2>¿Qué son las clases de complejidad?<a class="headerlink" href="#que-son-las-clases-de-complejidad" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué son las clases de complejidad?</strong></p>
 <ul class="simple">
 <li><p>Son las categorías en las cuales se han clasificado los problemas de acuerdo con la complejidad de los algoritmos que los resuelven de forma más eficiente.</p></li>
 <li><p>Existen diversas clases de complejidad, incluso hay una clase para los problemas para los que <strong>NO</strong> existe un algoritmo que entregue la solución.</p></li>
 <li><p>A estos problemas se les llama <strong>indecidibles o irresolubles</strong>.</p></li>
 </ul>
-</section>
-<section id="que-es-la-clase-de-complejidad-p">
-<h2>¿Qué es la clase de complejidad <strong>P</strong>?<a class="headerlink" href="#que-es-la-clase-de-complejidad-p" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es la clase de complejidad P?</strong></p>
 <ul class="simple">
 <li><p>Pertenecen a esta clase todos los problemas que pueden ser resueltos por un algoritmo eficiente.</p></li>
 <li><p>Formalmente, la clase <strong>P</strong> consiste de todos aquellos problemas de decisión que pueden ser resueltos en una máquina determinista secuencial en un período de tiempo polinómico en proporción a los datos de entrada.</p></li>
 </ul>
-</section>
-<section id="que-es-la-clase-de-complejidad-np">
-<h2>¿Qué es la clase de complejidad <strong>NP</strong>?<a class="headerlink" href="#que-es-la-clase-de-complejidad-np" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es la clase de complejidad NP?</strong></p>
 <ul class="simple">
 <li><p>Esta compuesta por los problemas que son verificables de manera eficiente. Es decir, si se ofrece una alternativa de solución, ésta puede ser verificada (indicar si es correcta o no) de manera eficiente.</p></li>
 <li><p><strong>NP</strong> es el acrónimo en inglés de <em>nondeterministic polynomial time</em>, es decir, tiempo polinomial no determinista.</p></li>
 <li><p>Es el conjunto de problemas que pueden ser resueltos en tiempo polinómico por una máquina de Turing no determinista.</p></li>
 </ul>
-</section>
-<section id="que-es-la-clase-de-complejidad-np-completo">
-<h2>¿Qué es la clase de complejidad <strong>NP-completo</strong>?<a class="headerlink" href="#que-es-la-clase-de-complejidad-np-completo" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es la clase de complejidad NP-completo?</strong></p>
 <ul class="simple">
 <li><p>Es el subconjunto de los problemas en <strong>NP</strong> tal que todo problema en <strong>NP</strong> se puede reducir en cada uno de los problemas de <strong>NP-completo</strong>.</p></li>
 </ul>
 <p><img alt="Complejidad" src="../_images/complejidad.png" /></p>
-</section>
-<section id="por-que-resultan-tan-interesantes-los-problemas-np-completo">
-<h2>¿Por qué resultan tan interesantes los problemas <strong>NP-completo</strong>?<a class="headerlink" href="#por-que-resultan-tan-interesantes-los-problemas-np-completo" title="Link to this heading">#</a></h2>
+<p><strong>¿Por qué resultan tan interesantes los problemas NP-completo?</strong></p>
 <ul class="simple">
 <li><p>La razón es que de tenerse una solución polinómica para un problema <strong>NP-completo</strong>, todos los problemas de <strong>NP</strong> tendrían también una solución en tiempo polinómico.</p></li>
 <li><p>Si se demostrase que un problema <strong>NP-completo</strong>, llamémoslo <strong>A</strong>, no se pudiese resolver en tiempo polinómico, el resto de los problemas <strong>NP-completos</strong> tampoco se podrían resolver en tiempo polinómico.</p></li>
@@ -572,62 +523,22 @@ document.write(`
 <li><p>Al poder reconocer un problema como <strong>NP-completo</strong> se puede evitar realizar un trabajo infructuoso tratando de conseguir la mejor solución.</p></li>
 <li><p>Si se prueba que el problema encontrado es <strong>NP-completo</strong>, se puede dedicar el tiempo a encontrar un algoritmo que dé una solución correcta, aunque no sea la óptima.</p></li>
 </ul>
-</section>
-<section id="algoritmos-y-complejidad">
-<h2>Algoritmos y Complejidad<a class="headerlink" href="#algoritmos-y-complejidad" title="Link to this heading">#</a></h2>
-<section id="cual-es-el-objetivo-del-analisis-de-algoritmos">
-<h3>¿Cuál es el objetivo del análisis de algoritmos?<a class="headerlink" href="#cual-es-el-objetivo-del-analisis-de-algoritmos" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Comparar algoritmos que resuelven un mismo problema.</p></li>
-</ul>
-</section>
-<section id="a-traves-de-que-se-pueden-comparar">
-<h3>¿A través de qué se pueden comparar?<a class="headerlink" href="#a-traves-de-que-se-pueden-comparar" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Correctitud</strong></p></li>
-<li><p><strong>Eficiencia</strong></p></li>
-<li><p><strong>Tiempo</strong></p></li>
-<li><p><strong>Espacio</strong></p></li>
-<li><p><strong>Estructuras de datos</strong></p></li>
-<li><p><strong>El tipo y número de datos con los que se trabaja</strong></p></li>
-</ul>
-</section>
-</section>
-<section id="analisis-de-complejidad-temporal">
-<h2>Análisis de Complejidad Temporal<a class="headerlink" href="#analisis-de-complejidad-temporal" title="Link to this heading">#</a></h2>
-<section id="indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo">
-<h3>Indique cuántas líneas de código se ejecutan en el siguiente algoritmo<a class="headerlink" href="#indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/BusquedaLineal">Busqueda_Lineal</a></p></li>
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/BusquedaBinaria">Busqueda_Binaria</a></p></li>
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/OrdenamientoBurbuja">Ordenamiento_Burbuja</a></p></li>
-<li><p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/QuickSort">Quick_Sort</a></p></li>
-</ul>
-</section>
-</section>
-</section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="modelos-de-computacion">
-<h1>Modelos de Computación<a class="headerlink" href="#modelos-de-computacion" title="Link to this heading">#</a></h1>
-<section id="que-es-un-modelo-de-computacion">
-<h2>¿Qué es un modelo de computación?<a class="headerlink" href="#que-es-un-modelo-de-computacion" title="Link to this heading">#</a></h2>
+<section id="modelos-de-computacion">
+<h2>Modelos de Computación<a class="headerlink" href="#modelos-de-computacion" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué es un modelo de computación?</strong></p>
 <ul class="simple">
 <li><p>Una definición formal y abstracta de un computador.</p></li>
 <li><p>Un modelo abstracto que describe una forma de computar.</p></li>
 <li><p>Es la definición de un conjunto de operaciones permitidas utilizadas en el cómputo y sus respectivos costos.</p></li>
 <li><p>Al asumir un cierto modelo de computación es posible analizar los recursos de cómputo requeridos, como el tiempo de ejecución o el espacio de memoria, o discutir las limitaciones de algoritmos o computadores.</p></li>
 </ul>
-</section>
-<section id="que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">
-<h2>¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?<a class="headerlink" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</strong></p>
 <ul class="simple">
 <li><p>Representación de las entradas y salidas.</p></li>
 <li><p>Operaciones elementales.</p></li>
 <li><p>Combinación de las operaciones para el desarrollo del programa.</p></li>
 </ul>
-</section>
-<section id="que-modelos-de-computacion-existen">
-<h2>¿Qué modelos de computación existen?<a class="headerlink" href="#que-modelos-de-computacion-existen" title="Link to this heading">#</a></h2>
+<p><strong>¿Qué modelos de computación existen?</strong></p>
 <ul class="simple">
 <li><p>Existe una amplia variedad de modelos de computación que difieren en el conjunto de operaciones permitidas y su costo de computación.</p></li>
 <li><p>Máquinas de acceso aleatorio (RAM).</p></li>
@@ -646,8 +557,7 @@ document.write(`
 <li><p>Bajo el modelo RAM se mide el tiempo de ejecución de un algoritmo al contar la cantidad de pasos que se toma para una instancia de problema dada.</p></li>
 <li><p>Está formado por una cinta de entrada, una de salida, un conjunto de registros y un programa (secuencia de instrucciones).</p></li>
 </ul>
-<section id="que-se-debe-tener-en-cuenta-en-el-modelo-ram">
-<h3>¿Qué se debe tener en cuenta en el modelo RAM?<a class="headerlink" href="#que-se-debe-tener-en-cuenta-en-el-modelo-ram" title="Link to this heading">#</a></h3>
+<p><strong>¿Qué se debe tener en cuenta en el modelo RAM?</strong></p>
 <ul class="simple">
 <li><p>Cada operación simple solo toma un paso.</p></li>
 <li><p>Los ciclos y las subrutinas no se consideran operaciones simples.</p></li>
@@ -655,7 +565,6 @@ document.write(`
 <li><p>Cada acceso a memoria toma un solo paso.</p></li>
 <li><p>El modelo RAM no tiene en cuenta si un elemento está en caché o en disco, lo cual simplifica el análisis.</p></li>
 </ul>
-</section>
 </section>
 <hr class="docutils" />
 <section id="circuitos-combinacionales">
@@ -739,11 +648,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="1_ComplejidadTemp/complejidad.html"
+       href="1_ComplejidadTemp/src/ComTemporal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Complejidad Temporal</p>
+        <p class="prev-next-title">Análisis de Complejidad Temporal</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -763,38 +672,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Complejidad Algoritmica</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son-las-clases-de-complejidad">¿Qué son las clases de complejidad?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-p">¿Qué es la clase de complejidad <strong>P</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-np">¿Qué es la clase de complejidad <strong>NP</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-clase-de-complejidad-np-completo">¿Qué es la clase de complejidad <strong>NP-completo</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-resultan-tan-interesantes-los-problemas-np-completo">¿Por qué resultan tan interesantes los problemas <strong>NP-completo</strong>?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-y-complejidad">Algoritmos y Complejidad</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cual-es-el-objetivo-del-analisis-de-algoritmos">¿Cuál es el objetivo del análisis de algoritmos?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-traves-de-que-se-pueden-comparar">¿A través de qué se pueden comparar?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-complejidad-temporal">Análisis de Complejidad Temporal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indique-cuantas-lineas-de-codigo-se-ejecutan-en-el-siguiente-algoritmo">Indique cuántas líneas de código se ejecutan en el siguiente algoritmo</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-un-modelo-de-computacion">¿Qué es un modelo de computación?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aspectos-se-deben-tener-en-cuenta-al-definir-un-modelo-de-computacion">¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-modelos-de-computacion-existen">¿Qué modelos de computación existen?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ram">Modelo RAM</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-debe-tener-en-cuenta-en-el-modelo-ram">¿Qué se debe tener en cuenta en el modelo RAM?</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-computacion">Modelos de Computación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ram">Modelo RAM</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuitos-combinacionales">Circuitos Combinacionales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatas-finitos">Autómatas Finitos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maquinas-de-turing">Máquinas de Turing</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
