@@ -33,14 +33,18 @@ parts:
     chapters:
       - file: 3_Estructuras_NO_Recursivas/ENRecursivasIntro.md
         sections:
-          - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/complejidad.md
+          - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/ComTemporal.md
           - file: 3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado/desacoplado.md
+          - file: 3_Estructuras_NO_Recursivas/4_TAD/tad.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/introGenericos.md
-          - file: 3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.md
-          - file: 3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.md
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario.md
-          - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/pilas.md
-          - file: 3_Estructuras_NO_Recursivas/3_Generics/5_SistemaImpresion/colas.md
+          - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/EstrucDatosSec.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/pilas.md
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/5_SistemaImpresion/colas.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.md
   - caption: Estructuras Recursivas
     chapters:

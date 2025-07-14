@@ -82,7 +82,7 @@ $$
 
 * Es el subconjunto de los problemas en **NP** tal que todo problema en **NP** se puede reducir en cada uno de los problemas de **NP-completo**.
 
-![Complejidad](Images/complejidad.png)
+![Complejidad](/3_Estructuras_NO_Recursivas/1_ComplejidadTemp/Images/complejidad.png)
 
 ### ¿Por qué resultan tan interesantes los problemas **NP-completo**?
 
@@ -124,7 +124,7 @@ $$
 
 ---
 
-## Modelos de Computación
+# Modelos de Computación
 
 
 #### ¿Qué es un modelo de computación?
