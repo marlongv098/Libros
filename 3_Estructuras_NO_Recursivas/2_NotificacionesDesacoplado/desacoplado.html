@@ -198,8 +198,25 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ENRecursivasIntro.html">Complejidad Algoritmica</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../ENRecursivasIntro.html">Complejidad Algoritmica</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad Temporal</a></li>
 
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Desacoplado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_TAD/tad.html">Tipo Abstracto de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Generics/introGenericos.html">Generics</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3_Generics/3_Diccionario/diccionario.html">Tablas Hash</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../3_Generics/4_EditorTexto/EstrucDatosSec.html">Estructuras de datos secuenciales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Generics/4_EditorTexto/pilas.html">Pilas</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../3_Generics/5_SistemaImpresion/colas.html">Colas (Queues)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Generics/6_GestorTareas/monticulos.html">Montículos</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
 <ul class="nav bd-sidenav">
@@ -425,15 +442,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-esta-desacoplado">¿Por qué está desacoplado?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilita-la-mantenibilidad-del-codigo">Facilita la mantenibilidad del código</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promueve-el-uso-de-interfaces-y-abstraccion">Promueve el uso de interfaces y abstracción</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mejora-la-reutilizacion-del-codigo">Mejora la reutilización del código</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilita-la-inyeccion-de-dependencias">Facilita la inyección de dependencias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilita-las-pruebas-unitarias">Facilita las pruebas unitarias</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a></li>
 </ul>
             </nav>
         </div>
@@ -447,6 +456,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="desacoplado">
 <h1>Desacoplado<a class="headerlink" href="#desacoplado" title="Link to this heading">#</a></h1>
+<p>El diseño desacoplado es un principio fundamental en el desarrollo de software que busca reducir las dependencias entre los distintos componentes de un sistema. Al desacoplar módulos, clases o servicios, se logra una arquitectura más flexible, mantenible y escalable, en la que los cambios en una parte del sistema no afectan directamente a otras. Este enfoque promueve una mayor reutilización de código y facilita la realización de pruebas automatizadas y el trabajo en equipo.</p>
+<p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado">Desacoplado</a></p>
 <p>📦 src</p>
 <p>┣ 📂 notificacion   –&gt; (Contiene la interfaz y las implementaciones concretas)</p>
 <p>┃ ┣ 📜 Notificador.java</p>
@@ -457,52 +468,40 @@ document.write(`
 <p>┃ ┗ 📜 ServicioNotificacion.java</p>
 <p>┣ 📂 main           –&gt; (Contiene la clase principal que ejecuta el programa)</p>
 <p>┃ ┗ 📜 Main.java</p>
-<section id="por-que-esta-desacoplado">
-<h2>¿Por qué está desacoplado?<a class="headerlink" href="#por-que-esta-desacoplado" title="Link to this heading">#</a></h2>
+<p><strong>¿Por qué está desacoplado?</strong></p>
 <ul class="simple">
 <li><p>La clase ServicioNotificacion no depende de una implementación específica de notificación.</p></li>
 <li><p>Si queremos agregar NotificadorWhatsApp, solo implementamos la interfaz sin modificar el código existente.</p></li>
 <li><p>Se facilita la prueba con mocks y la extensión sin romper código.</p></li>
 </ul>
-</section>
 <section id="conclusiones">
 <h2>Conclusiones<a class="headerlink" href="#conclusiones" title="Link to this heading">#</a></h2>
-<section id="facilita-la-mantenibilidad-del-codigo">
-<h3>Facilita la mantenibilidad del código<a class="headerlink" href="#facilita-la-mantenibilidad-del-codigo" title="Link to this heading">#</a></h3>
+<p><strong>Facilita la mantenibilidad del código</strong></p>
 <ul class="simple">
 <li><p>Permite modificar o mejorar partes del código sin afectar otras, lo que reduce errores y facilita la evolución del software.</p></li>
 <li><p>Si se necesita cambiar la forma de enviar notificaciones (por ejemplo, agregar WhatsApp), solo se crea una nueva implementación de Notificador sin modificar ServicioNotificacion.</p></li>
 </ul>
-</section>
-<section id="promueve-el-uso-de-interfaces-y-abstraccion">
-<h3>Promueve el uso de interfaces y abstracción<a class="headerlink" href="#promueve-el-uso-de-interfaces-y-abstraccion" title="Link to this heading">#</a></h3>
+<p><strong>Promueve el uso de interfaces y abstracción</strong></p>
 <ul class="simple">
 <li><p>Separa la definición (Notificador) de la implementación (NotificadorEmail, NotificadorSMS), lo que permite cambiar comportamientos fácilmente.</p></li>
 <li><p>Sigue el Principio de Inversión de Dependencias (D en SOLID): las clases dependen de abstracciones y no de implementaciones concretas.</p></li>
 </ul>
-</section>
-<section id="mejora-la-reutilizacion-del-codigo">
-<h3>Mejora la reutilización del código<a class="headerlink" href="#mejora-la-reutilizacion-del-codigo" title="Link to this heading">#</a></h3>
+<p><strong>Mejora la reutilización del código</strong></p>
 <ul class="simple">
 <li><p>Componentes desacoplados pueden ser usados en diferentes proyectos sin depender del resto del código.</p></li>
 <li><p>Notificador puede utilizarse en otros sistemas sin necesidad de modificar su lógica interna.</p></li>
 </ul>
-</section>
-<section id="facilita-la-inyeccion-de-dependencias">
-<h3>Facilita la inyección de dependencias<a class="headerlink" href="#facilita-la-inyeccion-de-dependencias" title="Link to this heading">#</a></h3>
+<p><strong>Facilita la inyección de dependencias</strong></p>
 <ul class="simple">
 <li><p>Permite usar frameworks como Spring para inyectar dependencias sin necesidad de instanciar clases directamente en Main.</p></li>
 <li><p>Evita el uso excesivo de new, lo que hace que el código sea más flexible y testable.</p></li>
 </ul>
-</section>
-<section id="facilita-las-pruebas-unitarias">
-<h3>Facilita las pruebas unitarias<a class="headerlink" href="#facilita-las-pruebas-unitarias" title="Link to this heading">#</a></h3>
+<p><strong>Facilita las pruebas unitarias</strong></p>
 <ul class="simple">
 <li><p>Se pueden crear mocks o stubs para probar ServicioNotificacion sin depender de implementaciones reales de Notificador.</p></li>
 <li><p>Ejemplo: Se puede probar ServicioNotificacion con un Notificador falso (Mock) sin realmente enviar emails o SMS.</p></li>
 </ul>
 <p><strong>El desacoplamiento en Java mejora la modularidad, reutilización, escalabilidad y testabilidad del código. Usando interfaces, abstracción e inyección de dependencias, se logra un diseño más limpio y flexible, reduciendo la complejidad en el mantenimiento del software.</strong></p>
-</section>
 </section>
 </section>
 
@@ -570,15 +569,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-esta-desacoplado">¿Por qué está desacoplado?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilita-la-mantenibilidad-del-codigo">Facilita la mantenibilidad del código</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promueve-el-uso-de-interfaces-y-abstraccion">Promueve el uso de interfaces y abstracción</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mejora-la-reutilizacion-del-codigo">Mejora la reutilización del código</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilita-la-inyeccion-de-dependencias">Facilita la inyección de dependencias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilita-las-pruebas-unitarias">Facilita las pruebas unitarias</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">Conclusiones</a></li>
 </ul>
   </nav></div>
 

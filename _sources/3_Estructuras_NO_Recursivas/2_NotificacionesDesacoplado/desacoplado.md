@@ -1,5 +1,9 @@
 # Desacoplado
 
+El diseño desacoplado es un principio fundamental en el desarrollo de software que busca reducir las dependencias entre los distintos componentes de un sistema. Al desacoplar módulos, clases o servicios, se logra una arquitectura más flexible, mantenible y escalable, en la que los cambios en una parte del sistema no afectan directamente a otras. Este enfoque promueve una mayor reutilización de código y facilita la realización de pruebas automatizadas y el trabajo en equipo.
+
+[Desacoplado](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado)
+
 📦 src
 
  ┣ 📂 notificacion   --> (Contiene la interfaz y las implementaciones concretas)
@@ -21,7 +25,7 @@
  ┃ ┗ 📜 Main.java
 
 
-## ¿Por qué está desacoplado?
+**¿Por qué está desacoplado?**
 
 * La clase ServicioNotificacion no depende de una implementación específica de notificación.
 *  Si queremos agregar NotificadorWhatsApp, solo implementamos la interfaz sin modificar el código existente.
@@ -30,27 +34,27 @@
 
 ## Conclusiones
 
-### Facilita la mantenibilidad del código
+**Facilita la mantenibilidad del código**
 
 * Permite modificar o mejorar partes del código sin afectar otras, lo que reduce errores y facilita la evolución del software.
 * Si se necesita cambiar la forma de enviar notificaciones (por ejemplo, agregar WhatsApp), solo se crea una nueva implementación de Notificador sin modificar ServicioNotificacion.
 
-### Promueve el uso de interfaces y abstracción
+**Promueve el uso de interfaces y abstracción**
 
 * Separa la definición (Notificador) de la implementación (NotificadorEmail, NotificadorSMS), lo que permite cambiar comportamientos fácilmente.
 * Sigue el Principio de Inversión de Dependencias (D en SOLID): las clases dependen de abstracciones y no de implementaciones concretas.
 
-### Mejora la reutilización del código
+**Mejora la reutilización del código**
 
 * Componentes desacoplados pueden ser usados en diferentes proyectos sin depender del resto del código.
 * Notificador puede utilizarse en otros sistemas sin necesidad de modificar su lógica interna.
 
-###  Facilita la inyección de dependencias
+**Facilita la inyección de dependencias**
 
 * Permite usar frameworks como Spring para inyectar dependencias sin necesidad de instanciar clases directamente en Main.
 * Evita el uso excesivo de new, lo que hace que el código sea más flexible y testable.
 
-### Facilita las pruebas unitarias
+**Facilita las pruebas unitarias**
 
 * Se pueden crear mocks o stubs para probar ServicioNotificacion sin depender de implementaciones reales de Notificador.
 * Ejemplo: Se puede probar ServicioNotificacion con un Notificador falso (Mock) sin realmente enviar emails o SMS.
