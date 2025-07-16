@@ -1,16 +1,16 @@
 # Generics
 
-### ¿Por qué Generics?
+**¿Por qué Generics?**
 
 - Generics permite que, al definir una clase, interfaz o método, se puedan utilizar tipos (clases o interfaces) como parámetros.  
 - Busca independizar el proceso del tipo de datos sobre los que se aplica.  
 - Definición de modelos generales.  
 
-### ¿Y esto que acarrea?
+**¿Y esto que acarrea?**
 
 * Al utilizar parámetros en la definición de clases, interfaces y métodos, se provee una nueva manera de reutilizar código.
 
-### Beneficios de un código que usa Generics
+**Beneficios de un código que usa Generics**
 
 - Chequeos de tipos más rigurosos en tiempo de compilación.  
 - Eliminación de casts.  
@@ -26,19 +26,19 @@ lista.add("Hola");
 String cadena = lista.get(0);
 ```
 
-### ¿Se pueden utilizar tipos primitivos con Generics?
+**¿Se pueden utilizar tipos primitivos con Generics?**
 
 - No se pueden utilizar con primitivos pero sí con las clases que corresponden con ellos.
 - No se puede hacer un genérico tipo `int`, pero sí un `Integer`.
 - Autoboxing a las clases wrappers.
 
-### Relación entre sobrecarga de métodos y Generics
+**Relación entre sobrecarga de métodos y Generics**
 
 - Si las operaciones realizadas por varios métodos sobrecargados son idénticas, pueden codificarse de manera compacta utilizando un método genérico.  
 - Con base en los tipos de los argumentos que se pasan al método genérico, el compilador maneja cada llamada al método de manera apropiada.  
 - Además de establecer las llamadas a los métodos, el compilador determina si las operaciones en el cuerpo del método se pueden aplicar a los elementos del tipo almacenado en el argumento de la clase genérica (arreglo, `ArrayList`).  
 
-## Tipos Genéricos
+**Tipos Genéricos**
 
 ```java
 public class Caja {
@@ -54,17 +54,17 @@ public class Caja {
 }
 ```
 
-### Problemas con una clase no genérica
+**Problemas con una clase no genérica**
 
 - No se puede verificar en tiempo de compilación cómo se utiliza la clase.
 - Una parte del código puede ubicar un tipo de objeto en la `Caja` y esperar que se retorne un objeto de ese mismo tipo, mientras que, por error, en otra parte del código se le puede pasar otro tipo de objeto, generando un error en tiempo de ejecución.  
 
-### ¿Qué es mejor, un error en tiempo de compilación o en tiempo de ejecución?
+**¿Qué es mejor, un error en tiempo de compilación o en tiempo de ejecución?**
 
 - Un error en tiempo de compilación.  
 - Errores en tiempo de compilación son más fáciles de encontrar.  
 
-### Declaración de una clase genérica
+**Declaración de una clase genérica**
 
 - Al momento de declarar la clase, luego del nombre de ésta, se especifican los parámetros de tipos delimitados por `< >`.  
 - Los objetos a ser utilizados dentro de la clase se reemplazan por el tipo de parámetro de entrada.  
@@ -85,7 +85,7 @@ public class Caja<T> {
 }
 ```
 
-### Declaración de una variable de tipo genérica
+**Declaración de una variable de tipo genérica**
 
 ```java
 Caja<Integer> cajaEnteros;
@@ -94,21 +94,21 @@ Caja<String> cajaString;
 Caja<Caja<String>> cajaCajaString;
 ```
 
-### Creación de un objeto de tipo genérico
+**Creación de un objeto de tipo genérico**
 
 ```java
 Caja<Integer> cajaEnteros = new Caja<Integer>();
 Caja<Integer> cajaEnteros = new Caja<>();
 ```
 
-### ¿Por qué es válido `Caja<Integer> cajaEnteros = new Caja<>();`?
+**¿Por qué es válido `Caja<Integer> cajaEnteros = new Caja<>();`?**
 
 - Al invocar el constructor de una clase genérica se pueden reemplazar los argumentos de tipo con un conjunto vacío siempre y cuando el compilador pueda determinarlos o inferirlos a partir del contexto.  
 - Como este conjunto vacío se denota como `< >` se denomina notación diamante.  
 
-# Clase con múltiples parámetros de tipos
+## Clase con múltiples parámetros de tipos
 
-### Definición de la interfaz genérica ITerna
+**Definición de la interfaz genérica ITerna**
 
 ```java
 interface ITerna<T, U, V> {
@@ -121,7 +121,7 @@ interface ITerna<T, U, V> {
 }
 ```
 
-### Implementación de la clase genérica Terna con 7 constructores
+**Implementación de la clase genérica Terna con 7 constructores**
 
 ```java
 class Terna<T, U, V> implements ITerna<T, U, V> {
@@ -217,7 +217,7 @@ class Terna<T, U, V> implements ITerna<T, U, V> {
 }
 ```
 
-### Clase principal con ejemplos de uso
+**Clase principal con ejemplos de uso**
 
 ```java
 public class Main {
@@ -265,12 +265,12 @@ public class Main {
 }
 ```
 
-### ¿Cual sería una interfaz genérica estándar en java?
+**¿Cual sería una interfaz genérica estándar en java?**
 
-[Lista](Images/list.pdf)
+![Lista](/3_Estructuras_NO_Recursivas/3_Generics/Images/list.png)
 
 
-### ¿Se pueden restringir los tipos genéricos?
+**¿Se pueden restringir los tipos genéricos?**
 
 - Se pueden restringir los tipos genéricos de tal manera que se pueda trabajar con un tipo específico y sus subtipos.  
 - Para establecer el límite superior, se coloca después del nombre del parámetro de tipo la palabra clave `extends` y el nombre de la clase o interfaz que representa dicha restricción. 
@@ -288,7 +288,7 @@ public class CajaNumeros<T extends Number> {
 }
 ```
 
-### Tipos Raw
+## Tipos Raw
 
 - Es el nombre de una clase o interfaz genérica cuando no se le pasa ningún argumento de tipo.  
 
@@ -299,7 +299,7 @@ public class CajaNumeros<T extends Number> {
 - En este caso, $Caja$ es un tipo raw de $Caja<T>$.  
 - Un tipo de clase o interfaz no genérica no es un tipo raw.  
 
-### ¿Qué advertencias se pueden presentar al utilizar tipos raw?
+**¿Qué advertencias se pueden presentar al utilizar tipos raw?**
 
 Se presenta una advertencia ya que a un tipo parametrizado se le asigna un tipo
 raw.
@@ -317,7 +317,7 @@ genérico y así pasa su manejo de código inseguro a tiempo de ejecución.
 	Caja cajaCruda = stringCa
 ```
 
-### ¿Qué son los métodos genéricos?
+**¿Qué son los métodos genéricos?**
 
 - Son aquellos métodos que introducen su propio tipo de parámetros.
 - Es similar a la declaración de tipo genérica, pero el alcance del parámetro está limitado al método donde se declara.
@@ -351,7 +351,7 @@ public static void main(String args[]) {
 	printArray(charArray);
 ```
 
-### ¿Se puede utilizar el operador relacional con tipos referenciados?
+**¿Se puede utilizar el operador relacional con tipos referenciados?**
 
 * No, sin embargo, es posible comparar dos objetos de la misma clase, si esa clase implementa a la interfaz genérica Comparable<T>.
 * Los objetos de clases que implementan Comparable<T> tienen el método compareTo(T t).
@@ -377,18 +377,20 @@ class GenericInsertionSorter {
 ```
 
 
-### Wildcards
+## Wildcards
 
 - El signo de interrogación `?`, también denominado comodín o wildcard representa un tipo no conocido.  
 - Ejemplos: $Collection<?>$, $List<? extends Number>$, $Pair<String,?>$.  
 - Los comodines pueden utilizarse en gran variedad de situaciones, como tipo del parámetro, campo o variable local.  
 - Los wildcard nunca se utilizan como un argumento de tipo para una invocación de un método genérico o una creación de una instancia de una clase genérica.
 
-### ¿Qué no permite Generics?
+**¿Qué no permite Generics?**
 
 * No se puede definir un miembro de una clase como estático genérico parametrizado. Cualquier intento de este tipo produce un error de compilación, pues hace una referencia estática a un tipo T no estático.
 * No se pueden crear instancias de tipo T (tipo genérico).
 * Generics no es compatible con tipos de datos primitivos. Aunque si se pueden utilizar las clases wrappers en lugar de los tipos de datos primitivos y luego usar los primitivos cuando se pasan los valores.
 * No se puede crear una clase Excepción genérica.
+
+
 
 

@@ -1,6 +1,6 @@
 # Arboles AVL
 
-## **¿Qué es un árbol AVL?**
+**¿Qué es un árbol AVL?**
 
 - Es un árbol binario de búsqueda balanceado en altura.  
 - Su nombre proviene de las iniciales de sus dos creadores, Adelson-Velskii y Landis.  
@@ -9,29 +9,30 @@
 
 ---
 
-## **¿Cuál sería un concepto clave a la hora de hablar de balanceo en altura?**
+**¿Cuál sería un concepto clave a la hora de hablar de balanceo en altura?**
 
 **Definición de factor de balanceo**  
-Se define el factor de balanceo de un nodo $v$ de un árbol binario como:
+
+* Se define el factor de balanceo de un nodo $v$ de un árbol binario como:
 
 $$
 fb(v) = \text{altura del subárbol derecho de } v - \text{altura del subárbol izquierdo de } v
 $$
 
-Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo tiene un `fb`.
+  Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo tiene un $fb$.
 
-## **¿Cuándo estaría balanceado en altura un árbol binario?**
+**¿Cuándo estaría balanceado en altura un árbol binario?**
 
 - Estaría balanceado en altura si para cada nodo $v$, $|fb(v)| \leq 1.$  
-- En particular, cada nodo de un AVL tendría un factor de balanceo 0, 1 o -1.
+- En particular, cada nodo de un AVL tendría un factor de balanceo $0$, $1$ o $-1$.
 
-## **¿Qué propiedades debe cumplir un ABB para ser un árbol AVL?**
+**¿Qué propiedades debe cumplir un ABB para ser un árbol AVL?**
 
-1. Los subárboles de cada nodo difieren en altura en 1 como máximo.  
-2. Cada subárbol es un árbol AVL.
+* Los subárboles de cada nodo difieren en altura en 1 como máximo.  
+* Cada subárbol es un árbol AVL.
 
 
-## **¿Qué beneficios brinda un árbol AVL?**
+**¿Qué beneficios brinda un árbol AVL?**
 
 - Gracias al balanceo se garantiza que sus operaciones tengan un coste logarítmico.
 
@@ -42,22 +43,22 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-## Imágenes de AVL
+**Imágenes de AVL**
 
-![AVL Ejemplo 1](Images/avl1.pdf)
+![AVL Ejemplo 1](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl1.png)
 
-![AVL Ejemplo 2](Images/avl2.pdf)
+![AVL Ejemplo 2](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl2.png)
 
 
-## **¿Cuál sería el esquema de operaciones para la inserción y la eliminación en un árbol AVL?**
+**¿Cuál sería el esquema de operaciones para la inserción y la eliminación en un árbol AVL?**
 
 1. Realizar la operación como en un ABB.  
 2. Rebalancear aquellos nodos desbalanceados.
 
 
-# Rotaciones
+## Rotaciones
 
-## **¿Cómo solucionamos el problema de los nodos desbalanceados?**
+**¿Cómo solucionamos el problema de los nodos desbalanceados?**
 
 - Se realiza, sobre ciertos nodos, una clase de operaciones que se conocen como *rotaciones*.  
 - El objetivo es recuperar la condición de AVL:  
@@ -65,18 +66,18 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
   - Mantener el invariante de ABB  
 
 
-## **¿Qué operaciones de rotación se utilizan?**
+**¿Qué operaciones de rotación se utilizan?**
 
 - Rotación a la izquierda  
 - Rotación a la derecha  
 
 
-## Imagen de rotaciones
+**Rotaciones**
 
-![Rotaciones AVL](Images/avl3.pdf)
+![Rotaciones AVL](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl3.png)
 
 
-## **¿Qué se ha de notar con respecto a estas rotaciones?**
+**¿Qué se ha de notar con respecto a estas rotaciones?**
 
 - Estas operaciones son independientes de cualquier noción de balanceo.  
 - Son aplicables en cualquier ABB, puesto que preservan el invariante de representación de estos árboles.  
@@ -84,9 +85,9 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 - Las dos operaciones son una inversa de la otra.  
 
 
-## ¿Qué hace `LEFT-ROTATE(x)`?
+**¿Qué hace $LEFT-ROTATE(x)$?**
 
-![Rotación izquierda](Images/avl3.pdf)
+![Rotación izquierda](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl3.png)
 
 - Toma un nodo $x$, que debe tener un hijo derecho $y$  
 - Rota hacia la izquierda a $x$, dejando a $y$ como raíz del subárbol  
@@ -95,16 +96,15 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-## ¿Qué hace `RIGHT-ROTATE(y)`?
+**¿Qué hace $RIGHT-ROTATE(y)$?**
 
-![Rotación derecha](Images/avl3.pdf)
+![Rotación derecha](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl3.png)
 
 - Toma un nodo $y$, que debe tener un hijo izquierdo $x$  
 - Rota hacia la derecha a $y$, dejando a $x$ como raíz del subárbol  
 - Cuelga a la izquierda de $y$ el subárbol derecho de $x$ (si hubiera uno).  
 - Nótese que al rotar a $y$ a la derecha, estamos bajando a este nodo y levantando al nodo $x$.  
 
-## Rotaciones en ABB
 
 **¿Intuitivamente, cómo se utilizarán estas operaciones?**
 
@@ -114,9 +114,9 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-# Casos de desbalanceo
+## Casos de desbalanceo
 
-### **¿Qué se debe hacer cuando al realizar una inserción o eliminación algunos factores de balanceo son estrictamente mayores que 1?**
+**¿Qué se debe hacer cuando al realizar una inserción o eliminación algunos factores de balanceo son estrictamente mayores que 1?**
 
 - Resulta conveniente resolver cada uno de estos problemas progresivamente.  
 - Rebalanceando los nodos más profundos.  
@@ -125,9 +125,9 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-## Análisis de caso: fb(p) = 2
+**Análisis de caso: fb(p) = 2**
 
-![Subárbol desbalanceado](Images/avl4.pdf)
+![Subárbol desbalanceado](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl4.png)
 
 - Llamemos $p$ a la raíz de un subárbol.  
 - Se toma el caso $fb(p) = 2$.  
@@ -136,41 +136,39 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 - Este subárbol derecho debe tener al menos dos nodos, con lo cual podemos nombrar $q$ a su raíz.  
 
 
-## **¿Qué hacemos ahora?**
+**¿Qué hacemos ahora?**
 
 - Dividimos nuevamente en casos, según el valor de $fb(q)$.  
 - Como asumimos que todos los nodos debajo de $p$ están balanceados, debe ser $fb(q) \in \{-1, 0, 1\}$.  
 
 
-## Caso A: $fb(q) = 1$
+**Caso A: $fb(q) = 1$**
 
 - Esto determina las alturas de ambos subárboles de $q$.  
 - Como el subárbol derecho de $p$ es mucho más alto que el izquierdo, debemos realizar algún tipo de rotación que traslade peso desde la derecha hacia la izquierda.  
-- Se ejecuta `LEFT-ROTATE(p)` y se restablece el balance.  
+- Se ejecuta $LEFT-ROTATE(p)$ y se restablece el balance.  
 
-![Caso A](Images/avl5.pdf)
+![Caso A](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl5.png)
 
 ---
 
-## Caso B: $fb(q) = 0$
+**Caso B: $fb(q) = 0$**
 
 - De nuevo, el subárbol derecho de $p$ es más alto que el izquierdo.  
-- Se ejecuta `LEFT-ROTATE(p)` y se restablece el balance.  
+- Se ejecuta $LEFT-ROTATE(p)$ y se restablece el balance.  
 
-![Caso B](Images/avl6.pdf)
+![Caso B](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl6.png)
 
 ---
 
-## Caso C: $fb(q) = -1`
+**Caso C: $fb(q) = -1$**
 
 - Este caso requiere un tratamiento especial.  
-- Se verá con una doble rotación: primero `RIGHT-ROTATE(q)`, luego `LEFT-ROTATE(p)`.
+- Se verá con una doble rotación: primero $RIGHT-ROTATE(q)$, luego $LEFT-ROTATE(p)$.
 
-![Caso C](Images/avl7.pdf)
+![Caso C](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl7.png)
 
 ---
-
-## Casos de desbalanceo (continuación)
 
 **¿Qué casos restan?**
 
@@ -181,27 +179,27 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-## Caso D: $fb(q) = -1$
+**Caso D: $fb(q) = -1$**
 
-![Caso D](Iamges/avl8.pdf)
-
----
-
-## Caso E: $fb(q) = 0$
-
-![Caso E](Images/avl9.pdf)
+![Caso D](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl8.png)
 
 ---
 
-### Caso F: $fb(q) = 1$
+**Caso E: $fb(q) = 0$**
 
-![Caso F](Images/avl10.pdf)
+![Caso E](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl9.png)
 
 ---
 
-# Inserción
+**Caso F: $fb(q) = 1$**
 
-## **¿Cómo es la inserción de un nodo en un árbol AVL?**
+![Caso F](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl10.png)
+
+---
+
+## Inserción
+
+**¿Cómo es la inserción de un nodo en un árbol AVL?**
 
 - La inserción en un AVL agrega un nuevo nodo como una hoja del árbol.  
 - Esto implica que sólo pueden cambiar los factores de balanceo de nodos que se encuentren en el camino entre la raíz y el nodo agregado.  
@@ -210,29 +208,27 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-### **¿Cuál es el pseudocódigo para el algoritmo de inserción en un árbol AVL?**
+**¿Cuál es el pseudocódigo para el algoritmo de inserción en un árbol AVL?**
 
-![Pseudocódigo de inserción](Images/avl11.pdf)
-
----
-
-## **¿Cuál es el pseudocódigo para el rebalanceo en un árbol AVL?**
-
-![Pseudocódigo de rebalanceo](Images/avl12.pdf)
+![Pseudocódigo de inserción](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl11.png)
 
 ---
 
+**¿Cuál es el pseudocódigo para el rebalanceo en un árbol AVL?**
+
+![Pseudocódigo de rebalanceo](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl12.png)
+
 ---
 
-# Eliminación
+## Eliminación
 
-## **¿Cómo es la eliminación de un nodo en un árbol AVL?**
+**¿Cómo es la eliminación de un nodo en un árbol AVL?**
 
 - Al igual que en la inserción, el borrado de nodos sólo modifica, a lo sumo en una unidad, los factores de balanceo de nodos entre cierto nodo particular (que depende del caso de borrado del ABB) y la raíz.  
 - Si se logra rebalancear cada factor desbalanceado a lo largo de este camino, se restablecería el balance en todo el árbol.  
 
 ---
 
-## **¿Cuál es el pseudocódigo para el algoritmo de eliminación en un árbol AVL?**
+**¿Cuál es el pseudocódigo para el algoritmo de eliminación en un árbol AVL?**
 
-![Pseudocódigo de eliminación](Images/avl13.pdf)
+![Pseudocódigo de eliminación](/4_Estructuras_Recursivas/2_ArbolAVL/Images/avl13.png)

@@ -1,4 +1,4 @@
-# Introducción a la teoría de conjuntos
+# Teoría de conjuntos
 
 La teoría de conjuntos constituye uno de los fundamentos esenciales de las matemáticas modernas. Proporciona el lenguaje y las estructuras básicas para definir, organizar y relacionar objetos matemáticos. Desde los números y las funciones hasta los espacios vectoriales y topológicos, prácticamente todos los conceptos matemáticos se pueden describir en términos de conjuntos.
 

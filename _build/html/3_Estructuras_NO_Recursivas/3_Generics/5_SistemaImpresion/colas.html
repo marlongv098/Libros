@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Colas (Queues) &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>Colas &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -192,7 +192,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conjuntos</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2_Conjuntos_Funciones/introConjuntosFunciones.html">Introducción a la teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2_Conjuntos_Funciones/introConjuntosFunciones.html">Teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.html">Fundamentos de Conjuntos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.html">Interface Set</a></li>
 </ul>
@@ -200,20 +200,26 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../ENRecursivasIntro.html">Complejidad Algoritmica</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad Temporal</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../1_ComplejidadTemp/IntroENRecursiva.html">Estructuras No Recursivas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../ENRecursivas.html">Complejidad Algoritmica</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad</a></li>
 
-
-
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_TAD/tad.html">Tipo Abstracto de Datos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introGenericos.html">Generics</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../3_Diccionario/diccionario.html">Tablas Hash</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introGenericos.html">Generics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../1_ListasEnlazadas/listaEnlazada.html">Listas Enlazadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_LinkedListPersonas/listaEnlazada2.html">Lista Enlazada Generica</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../3_Diccionario/diccionario.html">Diccionarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Diccionario/TablasHash.html">Tablas Hash</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="../4_EditorTexto/EstrucDatosSec.html">Estructuras de datos secuenciales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../4_EditorTexto/pilas.html">Pilas</a></li>
-
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Colas (Queues)</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Colas</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../6_GestorTareas/monticulos.html">Montículos</a></li>
@@ -222,25 +228,17 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../4_Estructuras_Recursivas/introARBOL.html">Arboles N-Arios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../4_Estructuras_Recursivas/IntroEstrucRecursivas.html">Estructuras Recursivas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/ARBOLNario.html">Arboles N-Arios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/1_ArbolBinario/ABB.html">Arboles Binarios</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html">Arboles AVL</a></li>
-
-
-
-
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../5_Grafos/introGRAFOS.html">Definición Grafo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../5_Grafos/IntroGRAFOS.html">Teoría de Grafos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/GRAFOS.html">Problema Puentes de Könisberg</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/1_BFS/BFS.html">BFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/2_DFS/DFS.html">DFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/3_Dijsktra/DIJSK.html">Dijsktra</a></li>
@@ -434,7 +432,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Colas (Queues)</h1>
+    <h1>Colas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -444,17 +442,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-las-colas">Introducción a las Colas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-cola">¿Qué es una cola?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-grafica-de-una-cola">Representación gráfica de una cola:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-adicionales-en-la-cola-queue">Operaciones adicionales en la Cola (Queue)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#front"><code class="docutils literal notranslate"><span class="pre">front</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isempty"><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#destructor-de-la-cola">Destructor de la Cola</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-principales-en-la-interfaz-queue-en-java">Operaciones principales en la interfaz <code class="docutils literal notranslate"><span class="pre">Queue</span></code> en Java</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-del-constructor">Operaciones del Constructor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-modificadoras">Operaciones Modificadoras</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isempty"><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#destructor-de-la-cola">Destructor de la Cola</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt">Axiomas que deben garantizar las operaciones de acceso en una Cola ADT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-implementar-la-cola-adt">¿Cómo implementar la Cola ADT?</a></li>
 </ul>
@@ -468,12 +462,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="colas-queues">
-<h1>Colas (Queues)<a class="headerlink" href="#colas-queues" title="Link to this heading">#</a></h1>
-<section id="introduccion-a-las-colas">
-<h2>Introducción a las Colas<a class="headerlink" href="#introduccion-a-las-colas" title="Link to this heading">#</a></h2>
-<section id="que-es-una-cola">
-<h3>¿Qué es una cola?<a class="headerlink" href="#que-es-una-cola" title="Link to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="colas">
+<h1>Colas<a class="headerlink" href="#colas" title="Link to this heading">#</a></h1>
+<p><strong>¿Qué es una cola?</strong></p>
 <ul class="simple">
 <li><p>Es un contenedor de objetos donde se pueden insertar y extraer elementos siguiendo el principio <strong>FIFO</strong> (First In, First Out).</p></li>
 <li><p>Tiene dos operaciones básicas:</p>
@@ -484,15 +475,10 @@ document.write(`
 </li>
 <li><p>Es una estructura de acceso limitado, ya que solo se puede insertar un elemento en la parte trasera y extraer desde el frente.</p></li>
 </ul>
-</section>
-<section id="representacion-grafica-de-una-cola">
-<h3>Representación gráfica de una cola:<a class="headerlink" href="#representacion-grafica-de-una-cola" title="Link to this heading">#</a></h3>
-<p><a class="reference download internal" download="" href="../../../_downloads/fd4a1f71244ad59b7df997a1b894b00c/queue.png"><span class="xref download myst">Cola</span></a></p>
+<p><strong>Representación gráfica de una cola:</strong></p>
+<p><img alt="Cola" src="../../../_images/queue.png" /></p>
 <hr class="docutils" />
-</section>
-</section>
-<section id="operaciones-principales-en-la-interfaz-queue-en-java">
-<h2>Operaciones principales en la interfaz <code class="docutils literal notranslate"><span class="pre">Queue</span></code> en Java<a class="headerlink" href="#operaciones-principales-en-la-interfaz-queue-en-java" title="Link to this heading">#</a></h2>
+<p><strong>Operaciones principales en la interfaz <code class="docutils literal notranslate"><span class="pre">Queue</span></code> en Java</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">isEmpty()</span></code> → Determina si la cola está vacía.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">peek()</span></code> → Devuelve el elemento en el frente sin eliminarlo (<code class="docutils literal notranslate"><span class="pre">front()</span></code>).</p></li>
@@ -500,84 +486,92 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">offer(E</span> <span class="pre">item)</span></code> → Inserta un elemento al final de la cola (<code class="docutils literal notranslate"><span class="pre">enqueue(E</span> <span class="pre">item)</span></code>).</p></li>
 </ul>
 <hr class="docutils" />
-</section>
 <section id="definicion-del-tad-cola-queue-adt">
 <h2>Definición del TAD Cola (Queue ADT)<a class="headerlink" href="#definicion-del-tad-cola-queue-adt" title="Link to this heading">#</a></h2>
 <p><strong>Nombre:</strong><br />
 TAD Cola</p>
 <p><strong>Objeto abstracto:</strong></p>
-<div class="math notranslate nohighlight">
-\[Queue = \langle \langle e_1,e_2,e_3,...,e_n \rangle, front, back \rangle\]</div>
+<p><span class="math notranslate nohighlight">\(Queue = \langle \langle e_1,e_2,e_3,...,e_n \rangle, front, back \rangle\)</span></p>
 <p><strong>Invariante:</strong></p>
-<div class="math notranslate nohighlight">
-\[0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, back = e_n\]</div>
+<p><span class="math notranslate nohighlight">\(0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, back = e_n\)</span></p>
 <hr class="docutils" />
-</section>
-<section id="operaciones-del-constructor">
-<h2>Operaciones del Constructor<a class="headerlink" href="#operaciones-del-constructor" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">Queue</span></code></strong></p>
+<p><strong>Operaciones del Constructor</strong></p>
 <ul>
-<li><p><strong>Tipo:</strong> $<span class="math notranslate nohighlight">\(- \longrightarrow Queue\)</span>$</p></li>
+<li><p><em>Queue</em></p>
+<ul class="simple">
+<li><p><strong>Tipo:</strong></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(~ \longrightarrow Queue\)</span></p>
+<ul class="simple">
 <li><p><strong>Descripción:</strong> Construye una cola vacía.</p></li>
 <li><p><strong>Precondiciones:</strong> Ninguna.</p></li>
-<li><p><strong>Postcondiciones:</strong> $<span class="math notranslate nohighlight">\(Queue \, q = \emptyset\)</span>$.</p></li>
+<li><p><strong>Postcondiciones:</strong></p></li>
 </ul>
+<p><span class="math notranslate nohighlight">\(Queue  = \emptyset\)</span></p>
 </li>
 </ul>
 <hr class="docutils" />
-</section>
-<section id="operaciones-modificadoras">
-<h2>Operaciones Modificadoras<a class="headerlink" href="#operaciones-modificadoras" title="Link to this heading">#</a></h2>
+<p><strong>Operaciones Modificadoras</strong></p>
 <ul>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">enqueue</span></code></strong></p>
-<ul>
-<li><p><strong>Tipo:</strong> $<span class="math notranslate nohighlight">\(Queue \times Element \longrightarrow Queue\)</span>$</p></li>
-<li><p><strong>Descripción:</strong> Inserta un nuevo elemento $<span class="math notranslate nohighlight">\(e\)</span><span class="math notranslate nohighlight">\( al final de la cola \)</span><span class="math notranslate nohighlight">\(q\)</span>$.</p></li>
+<li><p><em>enqueue</em></p>
+<ul class="simple">
+<li><p><strong>Tipo:</strong></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(Queue \times Element \longrightarrow Queue\)</span></p>
+<ul class="simple">
+<li><p><strong>Descripción:</strong> Inserta un nuevo elemento <span class="math notranslate nohighlight">\(e\)</span> al final de la cola <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
 <li><p><strong>Precondiciones:</strong></p>
 <ul>
-<li><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}q = \langle e_1,e_2,e_3,...,e_n \rangle$$ y un elemento $$e$$,  
-    - o $$q = \emptyset$$ y un elemento $$e$$.  
-  - **Postcondiciones:**  
-    - $$q = \langle e_1,e_2,e_3,...,e_n, e \rangle$$,  
-    - o $$q = \langle e \rangle$$.\\- **`dequeue`**  
-  - **Tipo:** $$Queue \longrightarrow Element\end{aligned}\end{align} \]</div>
-</li>
+<li><p><span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n \rangle\)</span> y un elemento <span class="math notranslate nohighlight">\(e\)</span>,</p></li>
+<li><p>o <span class="math notranslate nohighlight">\(q = \emptyset\)</span> y un elemento <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
 </ul>
 </li>
-<li><p><strong>Descripción:</strong> Extrae el elemento del frente de la cola $<span class="math notranslate nohighlight">\(q\)</span>$.</p></li>
-<li><p><strong>Precondiciones:</strong> $<span class="math notranslate nohighlight">\(q \neq \emptyset\)</span><span class="math notranslate nohighlight">\(, es decir, \)</span><span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n \rangle\)</span>$.</p></li>
 <li><p><strong>Postcondiciones:</strong></p>
 <ul>
-<li><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}q = \langle e_2,e_3,e_4,...,e_{n-1} \rangle$$.  
-    - Elemento devuelto: $$e_1$$.\\### Operaciones adicionales en la Cola (Queue)\\### `front`
-- **Tipo:**  
-  $$Queue \longrightarrow Element\end{aligned}\end{align} \]</div>
-</li>
+<li><p><span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n, e \rangle\)</span>,</p></li>
+<li><p>o <span class="math notranslate nohighlight">\(q = \langle e \rangle\)</span>.</p></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><p><em>dequeue</em></p>
+<ul class="simple">
+<li><p><strong>Tipo:</strong> <span class="math notranslate nohighlight">\(Queue \longrightarrow Element\)</span></p></li>
+<li><p><strong>Descripción:</strong> Extrae el elemento del frente de la cola <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
+<li><p><strong>Precondiciones:</strong> <span class="math notranslate nohighlight">\(q \neq \emptyset\)</span>, es decir, <span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n \rangle\)</span>.</p></li>
+<li><p><strong>Postcondiciones:</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(q = \langle e_2,e_3,e_4,...,e_{n-1} \rangle\)</span>.</p></li>
+<li><p>Elemento devuelto: <span class="math notranslate nohighlight">\(e_1\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="operaciones-adicionales-en-la-cola-queue">
+<h3>Operaciones adicionales en la Cola (Queue)<a class="headerlink" href="#operaciones-adicionales-en-la-cola-queue" title="Link to this heading">#</a></h3>
+</section>
+<section id="front">
+<h3><code class="docutils literal notranslate"><span class="pre">front</span></code><a class="headerlink" href="#front" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Tipo:</strong><br />
+<span class="math notranslate nohighlight">\(Queue \longrightarrow Element\)</span></p></li>
 <li><p><strong>Descripción:</strong> Recupera el valor del elemento en el frente de la cola.</p></li>
 <li><p><strong>Precondiciones:</strong></p>
 <ul>
-<li><div class="math notranslate nohighlight">
-\[q \neq \emptyset$$, es decir, $$q = \langle e_1,e_2,e_3,...,e_n \rangle\]</div>
-</li>
+<li><p><span class="math notranslate nohighlight">\(q \neq \emptyset\)</span>, es decir, <span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n \rangle\)</span></p></li>
 </ul>
 </li>
 <li><p><strong>Postcondiciones:</strong></p>
-<ul class="simple">
-<li><p>Retorna el elemento $<span class="math notranslate nohighlight">\(e_1\)</span>$.</p></li>
+<ul>
+<li><p>Retorna el elemento <span class="math notranslate nohighlight">\(e_1\)</span>.</p></li>
 </ul>
 </li>
 </ul>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="isempty">
-<h2><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code><a class="headerlink" href="#isempty" title="Link to this heading">#</a></h2>
+<h3><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code><a class="headerlink" href="#isempty" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Descripción:</strong> Determina si la cola <span class="math notranslate nohighlight">\(q\)</span> está vacía o no.</p></li>
 <li><p><strong>Precondiciones:</strong></p>
@@ -587,15 +581,15 @@ TAD Cola</p>
 </li>
 <li><p><strong>Postcondiciones:</strong></p>
 <ul>
-<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> si $<span class="math notranslate nohighlight">\(q = \emptyset\)</span>$</p></li>
-<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">False</span></code> si $<span class="math notranslate nohighlight">\(q \neq \emptyset\)</span>$</p></li>
+<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> si <span class="math notranslate nohighlight">\(q = \emptyset\)</span></p></li>
+<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">False</span></code> si <span class="math notranslate nohighlight">\(q \neq \emptyset\)</span></p></li>
 </ul>
 </li>
 </ul>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="destructor-de-la-cola">
-<h2>Destructor de la Cola<a class="headerlink" href="#destructor-de-la-cola" title="Link to this heading">#</a></h2>
+<h3>Destructor de la Cola<a class="headerlink" href="#destructor-de-la-cola" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">~Queue</span></code></strong></p>
 <ul>
@@ -613,6 +607,7 @@ TAD Cola</p>
 </ul>
 </li>
 </ul>
+</section>
 </section>
 <section id="axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt">
 <h2>Axiomas que deben garantizar las operaciones de acceso en una Cola ADT<a class="headerlink" href="#axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt" title="Link to this heading">#</a></h2>
@@ -702,17 +697,13 @@ TAD Cola</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-las-colas">Introducción a las Colas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-cola">¿Qué es una cola?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacion-grafica-de-una-cola">Representación gráfica de una cola:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-adicionales-en-la-cola-queue">Operaciones adicionales en la Cola (Queue)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#front"><code class="docutils literal notranslate"><span class="pre">front</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isempty"><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#destructor-de-la-cola">Destructor de la Cola</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-principales-en-la-interfaz-queue-en-java">Operaciones principales en la interfaz <code class="docutils literal notranslate"><span class="pre">Queue</span></code> en Java</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-del-constructor">Operaciones del Constructor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-modificadoras">Operaciones Modificadoras</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isempty"><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#destructor-de-la-cola">Destructor de la Cola</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt">Axiomas que deben garantizar las operaciones de acceso en una Cola ADT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-implementar-la-cola-adt">¿Cómo implementar la Cola ADT?</a></li>
 </ul>

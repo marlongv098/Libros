@@ -31,9 +31,11 @@ parts:
           - file: 2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.md
   - caption: Estructuras No recursivas
     chapters:
-      - file: 3_Estructuras_NO_Recursivas/ENRecursivasIntro.md
+      - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/IntroENRecursiva.md
         sections:
-          - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/ComTemporal.md
+          - file: 3_Estructuras_NO_Recursivas/ENRecursivas.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/ComTemporal.md
           - file: 3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado/desacoplado.md
           - file: 3_Estructuras_NO_Recursivas/4_TAD/tad.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/introGenericos.md
@@ -41,6 +43,8 @@ parts:
               - file: 3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.md
               - file: 3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/TablasHash.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/EstrucDatosSec.md
             sections:
               - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/pilas.md
@@ -48,14 +52,16 @@ parts:
           - file: 3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.md
   - caption: Estructuras Recursivas
     chapters:
-      - file: 4_Estructuras_Recursivas/introARBOL.md
+      - file: 4_Estructuras_Recursivas/IntroEstrucRecursivas.md
         sections:
+          - file: 4_Estructuras_Recursivas/ARBOLNario.md
           - file: 4_Estructuras_Recursivas/1_ArbolBinario/ABB.md
           - file: 4_Estructuras_Recursivas/2_ArbolAVL/AVL.md
   - caption: Grafos
     chapters:
-      - file: 5_Grafos/introGRAFOS.md
+      - file: 5_Grafos/IntroGRAFOS.md
         sections:
+          - file: 5_Grafos/GRAFOS.md
           - file: 5_Grafos/1_BFS/BFS.md
           - file: 5_Grafos/2_DFS/DFS.md
           - file: 5_Grafos/3_Dijsktra/DIJSK.md
