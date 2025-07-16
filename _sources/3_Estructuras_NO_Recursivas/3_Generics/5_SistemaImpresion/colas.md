@@ -1,21 +1,20 @@
-# Colas (Queues)
+# Colas
 
-### Introducción a las Colas
+**¿Qué es una cola?**
 
-#### ¿Qué es una cola?
 - Es un contenedor de objetos donde se pueden insertar y extraer elementos siguiendo el principio **FIFO** (First In, First Out).
 - Tiene dos operaciones básicas:
   - **Enqueue** (insertar un elemento).
   - **Dequeue** (extraer un elemento).
 - Es una estructura de acceso limitado, ya que solo se puede insertar un elemento en la parte trasera y extraer desde el frente.
 
-#### Representación gráfica de una cola:
+**Representación gráfica de una cola:**
 
-[Cola](Images/queue.png)
+![Cola](/3_Estructuras_NO_Recursivas/3_Generics/5_SistemaImpresion/Images/queue.png)
 
 ---
 
-### Operaciones principales en la interfaz `Queue` en Java
+**Operaciones principales en la interfaz `Queue` en Java**
 
 - `boolean isEmpty()` → Determina si la cola está vacía.
 - `E peek()` → Devuelve el elemento en el frente sin eliminarlo (`front()`).
@@ -24,61 +23,69 @@
 
 ---
 
-### Definición del TAD Cola (Queue ADT)
+## Definición del TAD Cola (Queue ADT)
 
 **Nombre:**  
 TAD Cola
 
 **Objeto abstracto:**  
 
-$$Queue = \langle \langle e_1,e_2,e_3,...,e_n \rangle, front, back \rangle$$
+$Queue = \langle \langle e_1,e_2,e_3,...,e_n \rangle, front, back \rangle$
 
 **Invariante:**  
 
-$$0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, back = e_n$$
+$0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, back = e_n$
 
 ---
 
-### Operaciones del Constructor
+**Operaciones del Constructor**
 
-- **`Queue`**  
-  - **Tipo:** $$- \longrightarrow Queue$$  
+- *Queue* 
+  - **Tipo:** 
+  
+  $~ \longrightarrow Queue$  
+  
   - **Descripción:** Construye una cola vacía.  
   - **Precondiciones:** Ninguna.  
-  - **Postcondiciones:** $$Queue \, q = \emptyset$$.
+  - **Postcondiciones:** 
+  
+  $Queue  = \emptyset$
 
 ---
 
-### Operaciones Modificadoras
+**Operaciones Modificadoras**
 
-- **`enqueue`**  
-  - **Tipo:** $$Queue \times Element \longrightarrow Queue$$  
-  - **Descripción:** Inserta un nuevo elemento $$e$$ al final de la cola $$q$$.  
+- *enqueue*  
+  - **Tipo:** 
+  
+  $Queue \times Element \longrightarrow Queue$  
+  
+  - **Descripción:** Inserta un nuevo elemento $e$ al final de la cola $q$.  
   - **Precondiciones:**  
-    - $$q = \langle e_1,e_2,e_3,...,e_n \rangle$$ y un elemento $$e$$,  
-    - o $$q = \emptyset$$ y un elemento $$e$$.  
+    - $q = \langle e_1,e_2,e_3,...,e_n \rangle$ y un elemento $e$,  
+    - o $q = \emptyset$ y un elemento $e$.  
   - **Postcondiciones:**  
-    - $$q = \langle e_1,e_2,e_3,...,e_n, e \rangle$$,  
-    - o $$q = \langle e \rangle$$.
+    - $q = \langle e_1,e_2,e_3,...,e_n, e \rangle$,  
+    - o $q = \langle e \rangle$.
 
-- **`dequeue`**  
-  - **Tipo:** $$Queue \longrightarrow Element$$  
-  - **Descripción:** Extrae el elemento del frente de la cola $$q$$.  
-  - **Precondiciones:** $$q \neq \emptyset$$, es decir, $$q = \langle e_1,e_2,e_3,...,e_n \rangle$$.  
+- *dequeue*  
+  - **Tipo:** $Queue \longrightarrow Element$ 
+  - **Descripción:** Extrae el elemento del frente de la cola $q$.  
+  - **Precondiciones:** $q \neq \emptyset$, es decir, $q = \langle e_1,e_2,e_3,...,e_n \rangle$.  
   - **Postcondiciones:**  
-    - $$q = \langle e_2,e_3,e_4,...,e_{n-1} \rangle$$.  
-    - Elemento devuelto: $$e_1$$.
+    - $q = \langle e_2,e_3,e_4,...,e_{n-1} \rangle$.  
+    - Elemento devuelto: $e_1$.
 
 ### Operaciones adicionales en la Cola (Queue)
 
 ### `front`
 - **Tipo:**  
-  $$Queue \longrightarrow Element$$
+  $Queue \longrightarrow Element$
 - **Descripción:** Recupera el valor del elemento en el frente de la cola.  
 - **Precondiciones:**  
-  - $$q \neq \emptyset$$, es decir, $$q = \langle e_1,e_2,e_3,...,e_n \rangle$$  
+  - $q \neq \emptyset$, es decir, $q = \langle e_1,e_2,e_3,...,e_n \rangle$  
 - **Postcondiciones:**  
-  - Retorna el elemento $$e_1$$.
+  - Retorna el elemento $e_1$.
 
 ---
 
@@ -87,8 +94,8 @@ $$0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, b
 - **Precondiciones:**  
   - Existe una cola $q$  
 - **Postcondiciones:**  
-  - Retorna `True` si $$q = \emptyset$$  
-  - Retorna `False` si $$q \neq \emptyset$$  
+  - Retorna `True` si $q = \emptyset$ 
+  - Retorna `False` si $q \neq \emptyset$ 
 
 ---
 

@@ -37,7 +37,7 @@
 
 **¿Cómo se especifica un TAD de manera formal?**
 
-![Especificación formal del TAD](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad.png)
+![Especificación formal del TAD](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad.jpg)
 
 ---
 
@@ -65,7 +65,7 @@
 
 **¿Cómo se describen formalmente las operaciones?**
 
-![Descripción formal de las operaciones](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad1.png)
+![Descripción formal de las operaciones](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad1.jpg)
 
 ---
 
@@ -88,28 +88,28 @@
 
 ## Primera aproximación al TAD Empleado
 
-![Primera aproximación](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad2.png)
+![Primera aproximación](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad2.jpg)
 
 **Operaciones formales:**
 
 - **CrearEmpleado**  
-![Empleado](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad3.png)
+![Empleado](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad3.jpg)
 - **AgregarNombre**  
-![AgregarNombre](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad4.png)
+![AgregarNombre](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad4.jpg)
 - **AgregarCedula**  
-![AgregarCedula](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad5.png)
+![AgregarCedula](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad5.jpg)
 - **CambiarSalario**  
-![CambiarSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad6.png)
+![CambiarSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad6.jpg)
 - **CambiarCargo**  
-![CambiarCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad7.png)
+![CambiarCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad7.jpg)
 - **CambiarFoto**  
-![CambiarFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad8.png)
+![CambiarFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad8.jpg)
 - **InfoSalario**  
-![InfoSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad9.png)
+![InfoSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad9.jpg)
 - **InfoCargo**  
-![InfoCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad10.png)
+![InfoCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad10.jpg)
 - **TieneFoto**  
-![TieneFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad11.png)
+![TieneFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad11.jpg)
 
 ---
 
@@ -122,28 +122,28 @@
 
 ## Segunda aproximación al TAD Empleado
 
-![Segunda aproximación](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad12.png)
+![Segunda aproximación](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad12.jpg)
 
 **Operaciones formales:**
 
 - **CrearEmpleado**  
-![CrearEmpleado](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad13.png)
+![CrearEmpleado](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad13.jpg)
 - **AgregarNombre**  
-![AgregarNombre](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad14.png)
+![AgregarNombre](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad14.jpg)
 - **AgregarCedula**  
-![AgregarCedula](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad15.png)
+![AgregarCedula](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad15.jpg)
 - **CambiarSalario**  
-![CambiarSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad16.png)
+![CambiarSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad16.jpg)
 - **CambiarCargo**  
-![CambiarCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad17.png)
+![CambiarCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad17.jpg)
 - **CambiarFoto**  
-![CambiarFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad18.png)
+![CambiarFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad18.jpg)
 - **InfoSalario**  
-![InfoSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad19.png)
+![InfoSalario](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad19.jpg)
 - **InfoCargo**  
-![InfoCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad20.png)
+![InfoCargo](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad20.jpg)
 - **TieneFoto**  
-![TieneFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad21.png)
+![TieneFoto](/3_Estructuras_NO_Recursivas/4_TAD/Images/tad21.jpg)
 
 ---
 

@@ -6,13 +6,15 @@ Cada nodo contiene:
 - Un *dato* (*valor almacenado*).
 - Una *referencia al siguiente nodo* en la lista.
 
-### Tipos de Listas Enlazadas
+## Tipos de Listas Enlazadas
 
 - *Lista Enlazada Simple (SLL)*: Cada nodo apunta al siguiente. Se recorre en una sola dirección.
 - *Lista Doblemente Enlazada (DLL)*: Cada nodo apunta al siguiente y al anterior. Se puede recorrer en ambas direcciones.
 - *Lista Circular*:
   - En la versión *simple*, el último nodo apunta al primero.
   - En la versión *doble*, el primer y el último nodo están conectados en ambos sentidos.
+
+[Listas](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas)
 
 📦 Listas Enlazadas
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tablas Hash &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>Diccionarios &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Estructuras de datos secuenciales" href="../4_EditorTexto/EstrucDatosSec.html" />
+    <link rel="next" title="Tablas Hash" href="TablasHash.html" />
     <link rel="prev" title="Lista Enlazada Generica" href="../2_LinkedListPersonas/listaEnlazada2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,7 +192,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conjuntos</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2_Conjuntos_Funciones/introConjuntosFunciones.html">Introducción a la teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2_Conjuntos_Funciones/introConjuntosFunciones.html">Teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.html">Fundamentos de Conjuntos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.html">Interface Set</a></li>
 </ul>
@@ -200,20 +200,26 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../ENRecursivasIntro.html">Complejidad Algoritmica</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad Temporal</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../1_ComplejidadTemp/IntroENRecursiva.html">Estructuras No Recursivas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../ENRecursivas.html">Complejidad Algoritmica</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad</a></li>
 
-
-
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_TAD/tad.html">Tipo Abstracto de Datos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introGenericos.html">Generics</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tablas Hash</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introGenericos.html">Generics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../1_ListasEnlazadas/listaEnlazada.html">Listas Enlazadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_LinkedListPersonas/listaEnlazada2.html">Lista Enlazada Generica</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Diccionarios</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="TablasHash.html">Tablas Hash</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../4_EditorTexto/EstrucDatosSec.html">Estructuras de datos secuenciales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../4_EditorTexto/pilas.html">Pilas</a></li>
-
-<li class="toctree-l3"><a class="reference internal" href="../5_SistemaImpresion/colas.html">Colas (Queues)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5_SistemaImpresion/colas.html">Colas</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../6_GestorTareas/monticulos.html">Montículos</a></li>
@@ -222,25 +228,17 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../4_Estructuras_Recursivas/introARBOL.html">Arboles N-Arios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../4_Estructuras_Recursivas/IntroEstrucRecursivas.html">Estructuras Recursivas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/ARBOLNario.html">Arboles N-Arios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/1_ArbolBinario/ABB.html">Arboles Binarios</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../../../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html">Arboles AVL</a></li>
-
-
-
-
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../5_Grafos/introGRAFOS.html">Definición Grafo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../5_Grafos/IntroGRAFOS.html">Teoría de Grafos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/GRAFOS.html">Problema Puentes de Könisberg</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/1_BFS/BFS.html">BFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/2_DFS/DFS.html">DFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../5_Grafos/3_Dijsktra/DIJSK.html">Dijsktra</a></li>
@@ -421,9 +419,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -434,36 +430,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tablas Hash</h1>
+    <h1>Diccionarios</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona-una-tabla-hash">Cómo Funciona una Tabla Hash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-colisiones">Manejo de Colisiones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuando-usar-una-tabla-hash">¿Cuándo Usar una Tabla Hash?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios">Diccionarios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direccionamiento-directo">Direccionamiento Directo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendimiento-promedio">Rendimiento promedio</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-busqueda">Casos de búsqueda:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas">Teoremas:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-hash">Funciones Hash</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-para-crear-funciones-hash">Métodos para crear funciones hash</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-division">Método de división</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-multiplicacion">Método de multiplicación</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-universal">Hashing universal</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -473,65 +444,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tablas-hash">
-<h1>Tablas Hash<a class="headerlink" href="#tablas-hash" title="Link to this heading">#</a></h1>
-<p>Una <strong>tabla hash</strong> es una estructura de datos que asocia claves (<strong>keys</strong>) con valores (<strong>values</strong>) mediante una función de hash. Su objetivo es permitir búsquedas, inserciones y eliminaciones rápidas en tiempo promedio <strong>O(1)</strong>.</p>
-<section id="caracteristicas-principales">
-<h2>Características Principales<a class="headerlink" href="#caracteristicas-principales" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Almacenamiento basado en clave-valor.</p></li>
-<li><p>Uso de una función hash para calcular la posición de almacenamiento.</p></li>
-<li><p>Eficiencia alta en búsquedas, inserciones y eliminaciones (<strong>O(1)</strong> en promedio).</p></li>
-<li><p>Puede manejar colisiones mediante técnicas como <strong>encadenamiento</strong> o <strong>direccionamiento abierto</strong>.</p></li>
-</ul>
-</section>
-<section id="como-funciona-una-tabla-hash">
-<h2>Cómo Funciona una Tabla Hash<a class="headerlink" href="#como-funciona-una-tabla-hash" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Función Hash</strong>: Convierte una clave (<strong>key</strong>) en un índice de la tabla.</p></li>
-<li><p><strong>Inserción</strong>: El valor se almacena en la posición dada por la función hash.</p></li>
-<li><p><strong>Búsqueda</strong>: Se usa la clave para calcular la posición y acceder rápidamente al valor.</p></li>
-<li><p><strong>Colisiones</strong>: Cuando dos claves generan el mismo índice, se maneja con estrategias como listas enlazadas.</p></li>
-</ul>
-</section>
-<section id="manejo-de-colisiones">
-<h2>Manejo de Colisiones<a class="headerlink" href="#manejo-de-colisiones" title="Link to this heading">#</a></h2>
-<p>Cuando dos claves producen el mismo índice en la tabla hash, se usa una estrategia para resolverlo:</p>
-<ul class="simple">
-<li><p><strong>Encadenamiento (Chaining)</strong>: Se usa una lista enlazada en cada celda para almacenar múltiples valores.</p></li>
-<li><p><strong>Direccionamiento Abierto (Open Addressing)</strong>: Se buscan otras posiciones libres dentro de la tabla.</p></li>
-</ul>
-<p><strong>Nota</strong>: En Java, <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> usa encadenamiento para manejar colisiones.</p>
-</section>
-<section id="cuando-usar-una-tabla-hash">
-<h2>¿Cuándo Usar una Tabla Hash?<a class="headerlink" href="#cuando-usar-una-tabla-hash" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Cuando necesitas búsquedas rápidas por clave.</p></li>
-<li><p>Cuando no importa el orden de los elementos.</p></li>
-<li><p>Cuando el número de elementos es grande y necesitas eficiencia.</p></li>
-</ul>
-<p>📦  Diccionario</p>
-<p>┣ 📂 src</p>
-<p>┃ ┣ 📂 main</p>
-<p>┃ ┃ ┣ 📂 java</p>
-<p>┃ ┃ ┃ ┣ 📂 diccionario</p>
-<p>┃ ┃ ┃ ┃ ┣   📜  Diccionario</p>
-<p>┃ ┃ ┃ ┃ ┣  📜  DiccionarioIntefaz</p>
-<p>┃ ┃ ┃ ┣ 📂 tablahash</p>
-<p>┃ ┃ ┃ ┃ ┣  📜 TablaHash</p>
-<p>┃ ┃ ┃ ┃ ┣  📜  TablaHashInterfaz</p>
-<p>┃ ┃ ┃ ┣ 📂 ui</p>
-<p>┃ ┃ ┃ ┃ ┣  📜  Main</p>
-<p>┃ ┣ 📂 test</p>
-<p>┃ ┃ ┣ 📂  java</p>
-<p>┃ ┃ ┃ ┣ 📂 diccionario</p>
-<p>┃ ┃ ┃ ┃ ┣   📜 DiccionarioTest</p>
-<p>┃ ┃ ┃ ┣ 📂 tablahash</p>
-<p>┃ ┃ ┃ ┃ ┣   📜  TablaHashTest</p>
-</section>
-<hr class="docutils" />
-<section id="diccionarios">
-<h2>Diccionarios<a class="headerlink" href="#diccionarios" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="diccionarios">
+<h1>Diccionarios<a class="headerlink" href="#diccionarios" title="Link to this heading">#</a></h1>
 <p><strong>¿Qué es una estructura de datos de tipo Diccionario?</strong></p>
 <ul class="simple">
 <li><p>Es una estructura utilizada para manipular objetos en la que se insertan y extraen elementos periódicamente.</p></li>
@@ -569,8 +483,42 @@ document.write(`
 </ul>
 <hr class="docutils" />
 <p><strong>¿En qué ejemplos del mundo real se pueden usar diccionarios?</strong></p>
+<p>Este proyecto implementa un diccionario digital personalizado utilizando una tabla hash como estructura base para el almacenamiento eficiente de pares clave-valor. El código se organiza en varios paquetes con responsabilidades claramente definidas:</p>
+<ul class="simple">
+<li><p>diccionario: contiene las clases Diccionario y DiccionarioInterfaz, que encapsulan la lógica de alto nivel para la gestión del diccionario. Esta capa representa la funcionalidad principal accesible para el usuario, como agregar, buscar o eliminar palabras.</p></li>
+<li><p>tablahash: proporciona la implementación de la estructura TablaHash y su interfaz correspondiente. Esta capa es responsable del almacenamiento interno y la resolución de colisiones, asegurando eficiencia en las operaciones de búsqueda.</p></li>
+<li><p>ui: incluye la clase Main, que actúa como punto de entrada del programa. Allí se instancia el diccionario y se realiza una demostración de su uso mediante una interfaz de usuario simple o una prueba manual.</p></li>
+<li><p>test: agrupa las pruebas automatizadas. DiccionarioTest y TablaHashTest aseguran el correcto funcionamiento de los métodos clave, validando la robustez y fiabilidad del sistema.</p></li>
+</ul>
 <p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/src/main/java/diccionario">Diccionario</a></p>
+<p>📦  Diccionario</p>
+<p>┣ 📂 src</p>
+<p>┃ ┣ 📂 main</p>
+<p>┃ ┃ ┣ 📂 java</p>
+<p>┃ ┃ ┃ ┣ 📂 diccionario</p>
+<p>┃ ┃ ┃ ┃ ┣   📜  Diccionario</p>
+<p>┃ ┃ ┃ ┃ ┣  📜  DiccionarioIntefaz</p>
+<p>┃ ┃ ┃ ┣ 📂 tablahash</p>
+<p>┃ ┃ ┃ ┃ ┣  📜 TablaHash</p>
+<p>┃ ┃ ┃ ┃ ┣  📜  TablaHashInterfaz</p>
+<p>┃ ┃ ┃ ┣ 📂 ui</p>
+<p>┃ ┃ ┃ ┃ ┣  📜  Main</p>
+<p>┃ ┣ 📂 test</p>
+<p>┃ ┃ ┣ 📂  java</p>
+<p>┃ ┃ ┃ ┣ 📂 diccionario</p>
+<p>┃ ┃ ┃ ┃ ┣   📜 DiccionarioTest</p>
+<p>┃ ┃ ┃ ┣ 📂 tablahash</p>
+<p>┃ ┃ ┃ ┃ ┣   📜  TablaHashTest</p>
 <hr class="docutils" />
+<p><strong>¿Algunos ejemplos?</strong></p>
+<ul class="simple">
+<li><p><strong>Compiladores</strong> (traductores de lenguajes de programación):</p>
+<ul>
+<li><p>Mantienen una <strong>tabla de símbolos</strong>.</p></li>
+<li><p>En ella, las claves son <strong>cadenas de caracteres arbitrarias</strong> que corresponden a identificadores en el lenguaje.</p></li>
+</ul>
+</li>
+</ul>
 <p><strong>¿Cuál es la diferencia entre un array y un diccionario?</strong></p>
 <ul class="simple">
 <li><p>En un <strong>array</strong>, la clave debe ser un número (entero positivo o no negativo).</p></li>
@@ -601,299 +549,8 @@ document.write(`
 <li><p>Muchas aplicaciones requieren un conjunto dinámico que soporte únicamente las operaciones <strong>INSERTAR, BUSCAR y ELIMINAR</strong>.</p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>¿Algunos ejemplos?</strong></p>
-<ul class="simple">
-<li><p><strong>Compiladores</strong> (traductores de lenguajes de programación):</p>
-<ul>
-<li><p>Mantienen una <strong>tabla de símbolos</strong>.</p></li>
-<li><p>En ella, las claves son <strong>cadenas de caracteres arbitrarias</strong> que corresponden a identificadores en el lenguaje.</p></li>
-</ul>
-</li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Cuál es una forma eficiente de implementar diccionarios?</strong></p>
-<ul class="simple">
-<li><p>Utilizando tablas hash.</p></li>
-</ul>
-<p><a class="reference external" href="https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/src/main/java/tablahash">Tabla Hash</a></p>
-<hr class="docutils" />
-<p><strong>¿Por qué?</strong></p>
-<ul class="simple">
-<li><p>Aunque en el peor caso la búsqueda en una tabla hash puede tardar <strong>Θ(n)</strong>, en la práctica el rendimiento es muy bueno.</p></li>
-<li><p>Bajo suposiciones razonables, el <strong>tiempo promedio de búsqueda</strong> en una tabla hash es <strong>O(1)</strong>.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Qué hace una tabla hash?</strong></p>
-<ul class="simple">
-<li><p>Generaliza la noción de un <em>array ordinario</em>.</p></li>
-<li><p><em>Acceder directamente</em> a una posición en un array se hace en <em><span class="math notranslate nohighlight">\(O(1)\)</span></em>.</p></li>
-<li><p>Cuando se pueden asignar posiciones a todas las claves posibles, <em>los arrays son eficientes</em>.</p></li>
-<li><p>Si el número de claves almacenadas es pequeño en comparación con el número total de claves posibles, las <em>tablas hash son una alternativa efectiva</em>.</p></li>
-</ul>
-<section id="direccionamiento-directo">
-<h3>Direccionamiento Directo<a class="headerlink" href="#direccionamiento-directo" title="Link to this heading">#</a></h3>
-<p><strong>¿Qué es el direccionamiento directo?</strong></p>
-<ul class="simple">
-<li><p>Es una técnica sencilla que funciona bien cuando el universo <span class="math notranslate nohighlight">\(U\)</span> de claves es relativamente pequeño.</p></li>
-<li><p>Supongamos que una aplicación necesita un conjunto dinámico en el que cada elemento tiene una clave tomada del universo <span class="math notranslate nohighlight">\(U = {0,1,...,m-1}\)</span>, donde <span class="math notranslate nohighlight">\(m\)</span> no es muy grande y no hay dos elementos con la misma clave.</p>
-<ul>
-<li><p>Para representar el conjunto dinámico, se usa un <strong>array</strong> o <strong>tabla de direccionamiento directo</strong>, denotado como <span class="math notranslate nohighlight">\(T[0..m-1]\)</span>.</p></li>
-<li><p>Cada posición o <strong>slot</strong> en el array corresponde a una clave en el universo <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
-<li><p>El <strong>slot <span class="math notranslate nohighlight">\(k\)</span></strong> apunta a un elemento del conjunto con clave <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-<li><p>Si el conjunto no contiene un elemento con clave <span class="math notranslate nohighlight">\(k\)</span>, entonces <span class="math notranslate nohighlight">\(T[k] = NIL\)</span>.</p></li>
-</ul>
-</li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Cómo sería la implementación de operaciones en un diccionario usando direccionamiento directo?</strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Búsqueda en direccionamiento directo</span>
-<span class="n">T</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span>
-
-<span class="c1">// Inserción en direccionamiento directo</span>
-<span class="n">T</span><span class="o">[</span><span class="n">x</span><span class="p">.</span><span class="na">key</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span>
-
-<span class="c1">// Eliminación en direccionamiento directo</span>
-<span class="n">T</span><span class="o">[</span><span class="n">x</span><span class="p">.</span><span class="na">key</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NIL</span><span class="w"> </span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-<p>Cada una de estas operaciones tiene un tiempo de ejecución de <span class="math notranslate nohighlight">\(O(1)\)</span>.</p>
-<hr class="docutils" />
-<p><strong>Ejemplo</strong></p>
-<p>Dado el universo <span class="math notranslate nohighlight">\(U={0,1,...,9}\)</span> y el conjunto de claves <span class="math notranslate nohighlight">\(K={2,3,5,8}\)</span>:</p>
-<p><a class="reference download internal" download="" href="../../../_downloads/7a7da0f24dc57de5c170cdc0848e2141/hash.pdf"><span class="xref download myst">Directo</span></a></p>
-<hr class="docutils" />
-<p><strong>¿Cuál es la desventaja del direccionamiento directo?</strong></p>
-<ul class="simple">
-<li><p>Si el universo <span class="math notranslate nohighlight">\(U\)</span> es muy grande, almacenar una tabla <span class="math notranslate nohighlight">\(T\)</span> de tamaño <span class="math notranslate nohighlight">\(|U|\)</span> puede ser impráctico o incluso imposible debido a las limitaciones de memoria de un ordenador típico.</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(|K|&lt;&lt;|U|\)</span> la mayor parte del espacio reservado para <span class="math notranslate nohighlight">\(T\)</span> sería desperdiciado.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Qué hacer si <span class="math notranslate nohighlight">\(|K|&lt;&lt;|U|\)</span>?</strong></p>
-<ul class="simple">
-<li><p>Usar una tabla hash, ya que requiere mucho menos almacenamiento que una tabla de direccionamiento directo.</p></li>
-<li><p>Se puede reducir el requisito de almacenamiento a <span class="math notranslate nohighlight">\(Θ(|K|)\)</span>.</p></li>
-<li><p>Se mantiene la ventaja de que la búsqueda de un elemento en la tabla hash sigue requiriendo solo <span class="math notranslate nohighlight">\(O(1)\)</span> en el caso promedio. Sin embargo, en el peor caso puede tomar más tiempo.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Qué es el hashing?</strong></p>
-<ul class="simple">
-<li><p>Mientras que en el direccionamiento directo un elemento con clave <span class="math notranslate nohighlight">\(k\)</span> se almacena en la posición <span class="math notranslate nohighlight">\(k\)</span>, con hashing se almacena en la posición <span class="math notranslate nohighlight">\(h(k)\)</span>. Se utiliza una función hash <span class="math notranslate nohighlight">\(h\)</span> para calcular la posición a partir de la clave <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-<li><p>La función <span class="math notranslate nohighlight">\(h\)</span> mapea el universo <span class="math notranslate nohighlight">\(U\)</span> de claves en los slots de una tabla hash <span class="math notranslate nohighlight">\(T[0..m−1]\)</span>.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>Representación matemática</strong></p>
-<div class="math notranslate nohighlight">
-\[
-h:U→{0,1,...,m−1}
-\]</div>
-<ul class="simple">
-<li><p>Donde <span class="math notranslate nohighlight">\(m&lt;&lt;|U|\)</span> y cada elemento tiene una clave distinta <span class="math notranslate nohighlight">\(h(k)\)</span> es el valor hash de la clave <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-<li><p>La función hash reduce el rango de índices del array y, por lo tanto, el tamaño del array.</p></li>
-<li><p>En lugar de tener un tamaño de <span class="math notranslate nohighlight">\(|U|\)</span>, la tabla puede tener un tamaño de <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
-</ul>
-<p><a class="reference download internal" download="" href="../../../_downloads/8b2502d73ead1aed45d7f40e3696d806/hash1.pdf"><span class="xref download myst">HashMap</span></a></p>
-<p><strong>¿Cuál es el problema con esta solución?</strong></p>
-<ul class="simple">
-<li><p><em>Dos claves pueden generar el mismo valor hash</em>, es decir, pueden ser asignadas al mismo espacio en la tabla.</p></li>
-<li><p>A esta situación se le llama <em>colisión</em>.</p></li>
-</ul>
-<p><strong>¿Cómo resolver el problema de las colisiones?</strong></p>
-<ul class="simple">
-<li><p>La solución ideal sería evitarlas por completo:</p>
-<ul>
-<li><p>Elegir una función de hash <span class="math notranslate nohighlight">\(h\)</span> adecuada.</p></li>
-<li><p>Hacer que <span class="math notranslate nohighlight">\(h\)</span> parezca aleatoria para minimizar las colisiones.</p></li>
-<li><p>Sin embargo, dado que <span class="math notranslate nohighlight">\(|U| &gt; m\)</span>, al menos dos claves deben compartir el mismo valor hash, por lo que <strong>es imposible evitarlas por completo</strong>.</p></li>
-</ul>
-</li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Cuál es otra manera de resolver este problema?</strong></p>
-<ul class="simple">
-<li><p>Mediante técnicas de <strong>resolución de colisiones</strong>, como <strong>encadenamiento</strong>.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>¿Qué es el encadenamiento?</strong></p>
-<ul class="simple">
-<li><p>Es un mecanismo donde todos los elementos que generan el mismo hash se agrupan en una <strong>lista enlazada</strong>.</p></li>
-<li><p>El <strong>espacio <span class="math notranslate nohighlight">\(j\)</span> de la tabla contiene un puntero</strong> a la cabeza de la lista de elementos que tienen el mismo hash.</p></li>
-<li><p>Si no hay elementos en ese espacio, <strong>contiene NIL</strong>.</p></li>
-</ul>
-<p><a class="reference download internal" download="" href="../../../_downloads/4ffd2cc51dc0cd76b4447f9ef0d33639/hash2.pdf"><span class="xref download myst">Encadenamiento</span></a></p>
-<hr class="docutils" />
-<p><strong>Implementación de operaciones en diccionario usando hash y encadenamiento</strong></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Inserción en hash con encadenamiento</span>
-<span class="n">CHAINED</span><span class="o">-</span><span class="n">HASH</span><span class="o">-</span><span class="n">INSERT</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
-<span class="w">  </span><span class="n">insertar</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">al</span><span class="w"> </span><span class="n">inicio</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">T</span><span class="o">[</span><span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="na">key</span><span class="p">)</span><span class="o">]</span>
-
-<span class="c1">// Búsqueda en hash con encadenamiento</span>
-<span class="n">CHAINED</span><span class="o">-</span><span class="n">HASH</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
-<span class="w">  </span><span class="n">buscar</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">elemento</span><span class="w"> </span><span class="n">con</span><span class="w"> </span><span class="n">clave</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">T</span><span class="o">[</span><span class="n">h</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">]</span>
-
-<span class="c1">// Eliminación en hash con encadenamiento</span>
-<span class="n">CHAINED</span><span class="o">-</span><span class="n">HASH</span><span class="o">-</span><span class="n">DELETE</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
-<span class="w">  </span><span class="n">eliminar</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="n">T</span><span class="o">[</span><span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="na">key</span><span class="p">)</span><span class="o">]</span>
-</pre></div>
-</div>
-<p><strong>¿Cuáles son los tiempos de ejecución de estas operaciones?</strong></p>
-<ul class="simple">
-<li><p>Inserción: <span class="math notranslate nohighlight">\(O(1)\)</span> en el peor caso.</p></li>
-<li><p>Búsqueda: depende de la longitud de la lista, en el peor caso puede ser <span class="math notranslate nohighlight">\(O(n)\)</span>.</p></li>
-<li><p>Eliminación: <span class="math notranslate nohighlight">\(O(1)\)</span> si las listas están doblemente enlazadas.</p></li>
-</ul>
-<p>Nota: En la eliminación, la función CHAINED-HASH-DELETE recibe el elemento <span class="math notranslate nohighlight">\(x\)</span> en lugar de su clave <span class="math notranslate nohighlight">\(k\)</span>, para evitar una búsqueda adicional.</p>
-<hr class="docutils" />
-<p><strong>¿Cuánto tiempo toma buscar un elemento en una tabla hash con encadenamiento?</strong></p>
-<ul class="simple">
-<li><p>Sea una tabla hash <span class="math notranslate nohighlight">\(T\)</span> con <span class="math notranslate nohighlight">\(m\)</span> espacios y <span class="math notranslate nohighlight">\(n\)</span> elementos. Se define el factor de carga <span class="math notranslate nohighlight">\(α\)</span> como: <span class="math notranslate nohighlight">\(\alpha\)</span> de <span class="math notranslate nohighlight">\(T\)</span> como <span class="math notranslate nohighlight">\(\frac{n}{m}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> representa el número promedio de elementos en cada lista.</p></li>
-<li><p>En el peor caso, todas las claves colisionan en el mismo espacio, generando una lista de longitud <span class="math notranslate nohighlight">\(n\)</span>. En este caso, el tiempo de búsqueda sería <span class="math notranslate nohighlight">\(Θ(n)\)</span>, más el tiempo para calcular la función hash.</p></li>
-<li><p>Conclusión: No usamos tablas hash por su rendimiento en el peor caso, sino por su rendimiento en promedio.</p></li>
-</ul>
-</section>
-<section id="rendimiento-promedio">
-<h3>Rendimiento promedio<a class="headerlink" href="#rendimiento-promedio" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>El rendimiento promedio del hashing con encadenamiento depende de qué tan bien la función hash <span class="math notranslate nohighlight">\(h\)</span> distribuya uniformemente los elementos.</p></li>
-<li><p>Se asume hashing uniforme simple, donde cada elemento es igualmente probable de ser asignado a cualquier espacio en la tabla.</p></li>
-</ul>
-</section>
-<section id="casos-de-busqueda">
-<h3>Casos de búsqueda:<a class="headerlink" href="#casos-de-busqueda" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Búsqueda sin éxito: no hay un elemento con clave <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-<li><p>Búsqueda exitosa: encontramos un elemento con clave <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-</ul>
-</section>
-<section id="teoremas">
-<h3>Teoremas:<a class="headerlink" href="#teoremas" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Búsqueda sin éxito: en promedio, toma tiempo <span class="math notranslate nohighlight">\(Θ(1+\alpha)\)</span>.</p></li>
-<li><p>Búsqueda exitosa: en promedio, toma tiempo <span class="math notranslate nohighlight">\(Θ(1+\alpha)\)</span>.</p></li>
-</ul>
-<p><em>Nota:</em> ambos resultados bajo el supuesto de estar haciendo hashing uniforme.</p>
-<hr class="docutils" />
-<p><strong>¿Qué significa este análisis?</strong></p>
-<ul class="simple">
-<li><p>Si el número de espacios en la tabla es proporcional al número de elementos, es decir, <span class="math notranslate nohighlight">\(n=O(m)\)</span></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
- \alpha=\frac{O(m)}{m}=O(1)
-\]</div>
-<ul class="simple">
-<li><p>La búsqueda toma tiempo constante en promedio.</p></li>
-<li><p>Todas las operaciones del diccionario pueden realizarse en <span class="math notranslate nohighlight">\(O(1)\)</span> en promedio.</p></li>
-</ul>
-</section>
-<section id="funciones-hash">
-<h3>Funciones Hash<a class="headerlink" href="#funciones-hash" title="Link to this heading">#</a></h3>
-<p><strong>¿Qué hace que una función hash sea buena?</strong></p>
-<ul class="simple">
-<li><p>Que satisfaga (aproximadamente) la suposición de hashing uniforme simple.</p></li>
-<li><p>Es decir, que cada clave tenga la misma probabilidad de dispersarse en cualquiera de los <span class="math notranslate nohighlight">\(m\)</span> espacios, independientemente de dónde hayan sido asignadas otras claves.</p></li>
-<li><p>Desafortunadamente, típicamente no tenemos forma de verificar esta condición.</p></li>
-<li><p>Rara vez conocemos la distribución de probabilidad de la que provienen las claves.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>Ejemplo: Identificadores similares</strong></p>
-<ul class="simple">
-<li><p>Es bastante común en un programa tener nombres de identificadores similares, como <code class="docutils literal notranslate"><span class="pre">var1</span></code>, <code class="docutils literal notranslate"><span class="pre">var2</span></code>, etc.</p></li>
-<li><p>Una buena función hash debe asignarlos a diferentes espacios.</p></li>
-<li><p>De esta manera, se puede observar la independencia entre cada par de claves.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>Ejemplo: Distribución conocida de claves</strong></p>
-<ul class="simple">
-<li><p>Ocasionalmente, conocemos la distribución de las claves.</p></li>
-<li><p>Si sabemos que las claves son números reales aleatorios  <span class="math notranslate nohighlight">\(k\)</span>, distribuidos de manera uniforme e independiente en el rango <span class="math notranslate nohighlight">\(0 \leq k \leq 1\)</span>, entonces la función hash:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-h(k) = \lfloor km \rfloor
-\]</div>
-<p>satisface la condición de hashing uniforme simple.</p>
-<hr class="docutils" />
-<p><strong>¿Qué hacer si las claves son cadenas de texto?</strong></p>
-<ul class="simple">
-<li><p>La mayoría de las funciones hash asumen que el universo de claves es el conjunto <span class="math notranslate nohighlight">\(\mathbb{N} = \{0,1,...\}\)</span>.</p></li>
-<li><p>Si las claves no son números naturales, debemos encontrar una forma de interpretarlas como tales.</p></li>
-<li><p>Para interpretar una cadena de texto, podemos usar la tabla ASCII, que asigna valores entre 0 y 127 a los caracteres.</p></li>
-<li><p>Podemos interpretar el identificador <span class="math notranslate nohighlight">\(pt\)</span> como el par de enteros decimales <span class="math notranslate nohighlight">\((112, 116)\)</span>, ya que en ASCII:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(p = 112\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(t = 116\)</span></p></li>
-</ul>
-</li>
-<li><p>Finalmente, lo expresamos como un número en base 128:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-pt = 112 \times 128^1 + 116 \times 128^0 = 14452
-\]</div>
-</section>
-<section id="metodos-para-crear-funciones-hash">
-<h3>Métodos para crear funciones hash<a class="headerlink" href="#metodos-para-crear-funciones-hash" title="Link to this heading">#</a></h3>
-<section id="metodo-de-division">
-<h4>Método de división<a class="headerlink" href="#metodo-de-division" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(h(k) = k \mod m\)</span></p></li>
-<li><p>En este caso, <span class="math notranslate nohighlight">\(m\)</span> no debe ser una potencia de <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(m = 2^p\)</span>, entonces <span class="math notranslate nohighlight">\(h(k)\)</span> son simplemente los <span class="math notranslate nohighlight">\(p\)</span> bits menos significativos de <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
-<li><p>Una buena elección para <span class="math notranslate nohighlight">\(m\)</span> suele ser un número primo que no esté demasiado cerca de una potencia de <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
-</ul>
-<hr class="docutils" />
-<p>**Ejemplo: **</p>
-<p>Método de división con <span class="math notranslate nohighlight">\(m = 2^3 = 8\)</span>. Aquí, <span class="math notranslate nohighlight">\(h(k)\)</span> corresponde a los 3 bits menos significativos de <span class="math notranslate nohighlight">\(k\)</span>:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(k = 8 \quad \longrightarrow \quad 8 \mod 8 = 0 \quad \longrightarrow \quad 1\underline{000}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k = 16 \quad \longrightarrow \quad 16 \mod 8 = 0 \quad \longrightarrow \quad 10\underline{000}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k = 24 \quad \longrightarrow \quad 24 \mod 8 = 0 \quad \longrightarrow \quad 11\underline{000}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k = 4 \quad \longrightarrow \quad 4 \mod 8 = 4 \quad \longrightarrow \quad \underline{100}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k = 12 \quad \longrightarrow \quad 12 \mod 8 = 4 \quad \longrightarrow \quad 1\underline{100}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k = 20 \quad \longrightarrow \quad 20 \mod 8 = 4 \quad \longrightarrow \quad 10\underline{100}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(k = 28 \quad \longrightarrow \quad 28 \mod 8 = 4 \quad \longrightarrow \quad 11\underline{100}\)</span></p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="metodo-de-multiplicacion">
-<h4>Método de multiplicación<a class="headerlink" href="#metodo-de-multiplicacion" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(h(k) = \lfloor m \times (k \cdot A \mod 1) \rfloor\)</span></p></li>
-<li><p>Donde <span class="math notranslate nohighlight">\(k \cdot A \mod 1\)</span> es la parte fraccionaria de <span class="math notranslate nohighlight">\(k \cdot A\)</span>, es decir, <span class="math notranslate nohighlight">\((k \cdot A - \lfloor k \cdot A \rfloor)\)</span>.</p></li>
-<li><p>Se debe cumplir que  <span class="math notranslate nohighlight">\(0 &lt; A &lt; 1\)</span>.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>Consideraciones sobre el método de multiplicación</strong></p>
-<ul class="simple">
-<li><p>El valor de <span class="math notranslate nohighlight">\(m\)</span> no es crítico.</p></li>
-<li><p>No es necesario evitar ciertos valores de <span class="math notranslate nohighlight">\(m\)</span> como en el método de división.</p></li>
-<li><p>Comúnmente, <span class="math notranslate nohighlight">\(m\)</span> se elige como una potencia de <span class="math notranslate nohighlight">\(2\)</span> ( <span class="math notranslate nohighlight">\(m = 2^p\)</span> para algún entero <span class="math notranslate nohighlight">\(p\)</span>).</p></li>
-<li><p>Esto simplifica los cálculos.</p></li>
-</ul>
-<hr class="docutils" />
-<p><strong>Elección óptima del valor de <span class="math notranslate nohighlight">\(A\)</span></strong></p>
-<ul class="simple">
-<li><p>Aunque este método funciona con cualquier valor de la constante <span class="math notranslate nohighlight">\(A\)</span>, algunos valores ofrecen mejores resultados.</p></li>
-<li><p>La elección óptima depende de las características de los datos a dispersar. <strong>Knuth</strong> sugiere usar</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-A \approx \frac{(\sqrt{5} - 1)}{2}=0.6180339887...
-\]</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="hashing-universal">
-<h3>Hashing universal<a class="headerlink" href="#hashing-universal" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>En el hashing universal, al inicio de la ejecución se selecciona aleatoriamente una función hash de una clase cuidadosamente diseñada.</p></li>
-<li><p>Sea <span class="math notranslate nohighlight">\(\mathcal{H} = \{h_1, h_2, ..., h_l\}\)</span> una colección finita de funciones hash que asignan un universo <span class="math notranslate nohighlight">\(U\)</span> de claves al rango <span class="math notranslate nohighlight">\(\{0,1,...,m-1\}\)</span>.</p></li>
-<li><p>Dicha colección se considera <strong>universal</strong> si, para cada par de claves distintas <span class="math notranslate nohighlight">\(x, y \in U\)</span>, la cantidad de funciones hash <span class="math notranslate nohighlight">\(h \in \mathcal{H}\)</span> que cumplen <span class="math notranslate nohighlight">\(h(x) = h(y)\)</span> es como máximo <span class="math notranslate nohighlight">\(|\mathcal{H}| / m\)</span>.</p></li>
-<li><p>En otras palabras, al elegir una función hash al azar de <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, la probabilidad de colisión entre dos claves distintas  <span class="math notranslate nohighlight">\(x, y\)</span> no es mayor que <span class="math notranslate nohighlight">\(1/m\)</span>, lo que equivale a una asignación aleatoria e independiente en el rango <span class="math notranslate nohighlight">\(\{0,1,...,m-1\}\)</span>.</p></li>
-</ul>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -936,11 +593,11 @@ A \approx \frac{(\sqrt{5} - 1)}{2}=0.6180339887...
       </div>
     </a>
     <a class="right-next"
-       href="../4_EditorTexto/EstrucDatosSec.html"
+       href="TablasHash.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Estructuras de datos secuenciales</p>
+        <p class="prev-next-title">Tablas Hash</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -950,38 +607,6 @@ A \approx \frac{(\sqrt{5} - 1)}{2}=0.6180339887...
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funciona-una-tabla-hash">Cómo Funciona una Tabla Hash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-de-colisiones">Manejo de Colisiones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuando-usar-una-tabla-hash">¿Cuándo Usar una Tabla Hash?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios">Diccionarios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direccionamiento-directo">Direccionamiento Directo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendimiento-promedio">Rendimiento promedio</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-busqueda">Casos de búsqueda:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas">Teoremas:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-hash">Funciones Hash</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-para-crear-funciones-hash">Métodos para crear funciones hash</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-division">Método de división</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-multiplicacion">Método de multiplicación</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing-universal">Hashing universal</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -1,4 +1,6 @@
-# Análisis de Complejidad Temporal
+# Análisis de Complejidad 
+
+## Complejidad Temporal
 
 **¿Cuál sería una primera aproximación para medir el desempeño en tiempo de un algoritmo?**
 
@@ -59,7 +61,7 @@ Sean tres algoritmos A, B, C tal que:
 
 ---
 
-# Notación Asintótica
+## Notación Asintótica
 
 **¿Qué es la notación asintótica?**
 
@@ -374,7 +376,7 @@ Indique cuántas líneas de código se ejecutan en el siguiente algoritmo
 
 ---
 
-# Análisis Complejidad Espacial
+## Complejidad Espacial
 
 **¿Para qué se requiere memoria dentro de un algoritmo?**
 
