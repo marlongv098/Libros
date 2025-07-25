@@ -1,19 +1,21 @@
-# Notas de Clase
+# Notas de clase. 
 
-Computación y Estructuras Discretas I [Repositorio del curso](https://github.com/marlongv098/Estructuras).
+## Matemáticas aplicadas II
 
-<div style="text-align: justify">
-Estas notas de clase recopilan los temas centrales del curso sobre estructuras discretas y fundamentos teóricos de la computación, organizado en bloques temáticos progresivos que combinan lógica, conjuntos, algoritmos y estructuras de datos.
+En este curso abordaremos las matemáticas aplicadas no como una disciplina abstracta, sino como una herramienta fundamental para modelar, analizar y resolver problemas en diversas áreas del conocimiento, desde la ingeniería y la economía hasta la biología y la ciencia de datos.
 
-El curso inicia con una introducción a la lógica formal, donde se abordan distintos métodos de demostración —tanto directos como indirectos—, y se introduce el uso de Coq, un asistente de pruebas formales, para reforzar el razonamiento matemático y la verificación automática de proposiciones.
+Exploraremos tres ejes temáticos principales:
 
-A continuación, se desarrolla la teoría de conjuntos y funciones, abordando nociones fundamentales como la relación de pertenencia, operaciones entre conjuntos, tipos de funciones (inyectivas, sobreyectivas, biyectivas), funciones inversas y funciones especiales, así como las propiedades del álgebra de funciones.
+Ecuaciones Diferenciales de Primer Orden
+Estudiaremos cómo modelar fenómenos dinámicos, tales como el crecimiento poblacional, la disipación de sustancias o el enfriamiento de objetos, mediante ecuaciones que describen tasas de cambio.
 
-En la siguiente unidad se estudian estructuras discretas no recursivas y el análisis de algoritmos, con énfasis en la complejidad temporal y espacial, la notación asintótica, y conceptos clave de diseño como generics, desacoplamiento y tipos abstractos de datos. También se exploran estructuras clásicas como tablas hash, pilas, colas, montículos y colas de prioridad.
+Vectores y Matrices
+Analizaremos estructuras fundamentales para representar magnitudes con dirección, organizar datos, resolver sistemas lineales y transformar objetos, esenciales en campos como la física, el álgebra lineal y el aprendizaje automático.
 
-La parte final del curso aborda las estructuras discretas recursivas, como los árboles N-arios, los árboles de búsqueda binaria y los árboles AVL, para luego introducir la teoría de grafos, incluyendo sus definiciones, representaciones, algoritmos de recorrido (BFS y DFS), cálculo de caminos mínimos y construcción de árboles de expansión mínima.
+Optimización en Varias Variables
+Veremos cómo identificar soluciones óptimas bajo restricciones, aplicando estos principios en contextos como la economía, la ingeniería y la inteligencia artificial.
 
-Estas notas están diseñadas como un recurso de apoyo para el estudio, reforzando tanto la teoría como su aplicación práctica en el contexto de la ingeniería y las ciencias de la computación.
+El curso combina fundamentos teóricos con aplicaciones prácticas y computacionales, preparando a los estudiantes para enfrentar problemas reales con herramientas matemáticas rigurosas y eficientes.
 
-</div>
-
+```{tableofcontents}
+```
