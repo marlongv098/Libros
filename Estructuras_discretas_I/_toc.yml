@@ -1,0 +1,74 @@
+# Formato del libro
+format: jb-book
+
+# La página principal o de introducción del libro
+# Puedes cambiar 'intro.md' por el nombre de tu archivo de introducción.
+root: intro.md
+
+# Configuración por defecto:
+# - numbered: true para numerar capítulos y secciones automáticamente
+# - titlesonly: true para que el índice lateral muestre solo los títulos definidos aquí
+
+defaults:
+  numbered: false
+  titlesonly: false
+
+# Definición de los capítulos principales
+
+parts:
+  - caption: Logica Formal
+    chapters:
+      - file: 1_Logica_Formal/intro.md
+        sections:
+          - file: 1_Logica_Formal/metodosDemos.md
+          - file: 1_Logica_Formal/Coq/IntroCoq.md
+          - file: 1_Logica_Formal/Coq/demosCoq.md
+  - caption: Conjuntos
+    chapters:
+      - file: 2_Conjuntos_Funciones/introConjuntosFunciones.md
+        sections:
+          - file: 2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.md
+          - file: 2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.md
+      - file: 2_Conjuntos_Funciones/2_Funciones/FuncionesIntro.md
+        sections:
+          - file: 2_Conjuntos_Funciones/2_Funciones/Funciones.md
+          - file: 2_Conjuntos_Funciones/2_Funciones/Funciones_Tipos.md
+  - caption: Estructuras No recursivas
+    chapters:
+      - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/IntroENRecursiva.md
+        sections:
+          - file: 3_Estructuras_NO_Recursivas/ENRecursivas.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/ComTemporal.md
+          - file: 3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado/desacoplado.md
+          - file: 3_Estructuras_NO_Recursivas/4_TAD/tad.md
+          - file: 3_Estructuras_NO_Recursivas/3_Generics/introGenericos.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.md
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.md
+          - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/TablasHash.md
+          - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/EstrucDatosSec.md
+            sections:
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/pilas.md
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/5_SistemaImpresion/colas.md
+          - file: 3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.md
+  - caption: Estructuras Recursivas
+    chapters:
+      - file: 4_Estructuras_Recursivas/IntroEstrucRecursivas.md
+        sections:
+          - file: 4_Estructuras_Recursivas/ARBOLNario.md
+          - file: 4_Estructuras_Recursivas/1_ArbolBinario/ABB.md
+          - file: 4_Estructuras_Recursivas/2_ArbolAVL/AVL.md
+  - caption: Grafos
+    chapters:
+      - file: 5_Grafos/IntroGRAFOS.md
+        sections:
+          - file: 5_Grafos/GRAFOS.md
+          - file: 5_Grafos/1_BFS/BFS.md
+          - file: 5_Grafos/2_DFS/DFS.md
+          - file: 5_Grafos/3_Dijsktra/DIJSK.md
+          - file: 5_Grafos/4_Floyd_Warshall/FLOYD.md
+          - file: 5_Grafos/5_Prim/PRIM.md
+          - file: 5_Grafos/6_Kruskal/KRUS.md

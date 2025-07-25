@@ -1,0 +1,133 @@
+Traceback (most recent call last):
+  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+#Function to solve the dot product
+def Dot_Product (x,y,a,b):
+    #Perfroms the dot product
+    #takes the absolute value of the dot product
+
+    DProduct = abs((x * a) + (y * b))
+
+    return DProduct
+
+#Finds the Magnitude of the vector
+def Magnitude (x,y,a,b):
+    #finds the magnitude of the first vector
+
+    Mag1 = ((x ** 2 )+ (y ** 2)) ** 0.5
+
+    #Find the magnitude of the second vector
+
+    Mag2 = ((a ** 2) + (b ** 2)) ** 0.5
+
+    #Mulitplies the magnitudes together to be used in the Law of cosine
+
+    Magfinal = Mag1 * Mag2
+
+    return Magfinal
+
+#Calculates the law of cosine
+def Law_of_Cosine (DP,M):
+    #DP is Dot product and M is magnitude
+    #This is the formula for the Law of Cosine
+    u = (DP) / M
+    LOC = math.acos(u)
+
+    #This turns it from radians into degrees
+
+    LOC = LOC * (180/math.pi)
+
+    return LOC
+
+
+
+#User inputs the values of the two vectors
+#can be integers or numbers with decimals
+
+x = float(input("What is the first value of the first vector? "))
+y = float(input ("Second value of the first vector? "))
+a = float(input("First value of the second vector? "))
+b = float(input('Second value of the second vector? '))
+
+#Blank line to make final output more readable
+print()
+
+#Calls the Dot Product function and is set equal to the dot product of the vectors
+DotProduct = Dot_Product(x,y,a,b)
+
+#Calls the Magnitude function and is set equal to the magnitude of the vecotrs
+Magnitude_of_Vector = Magnitude(x,y,a,b)
+
+
+#Calculates the angle between the vector in degrees
+Angle = Law_of_Cosine(DotProduct, Magnitude_of_Vector)
+
+#display and round to two decimal places
+print(f'The angle between the two vecotrs is: {Angle:.2f} degrees')
+print(f'The dot product of the two vectors is: {DotProduct:.2f}')
+print(f'The magnitude of the two vectors is:{Magnitude_of_Vector:.2f}')
+#blank line
+print()
+
+def plot(v1,v2,r1,r2):
+    orgin = [0], [0]
+    ax = plt.axes
+    plt.grid()
+    plt.title("The Law of Cosines by: Reed Hunsaker", fontsize=10)
+    u1 = np.array((v1))
+    u2 = np.array((v2))
+    u3 = np.array((r1))
+    u4 = np.array((r2))
+    #graphs the vecotrs using the quiver function
+    q1 = plt.quiver(*orgin, u1, u2, scale = 1)
+    # plt.quiverkey(q1, X = 0.1, Y = 0.3, U = 10, label="Vector 1")
+    plt.quiver(*orgin, u3, u4, scale = 1)
+    plt.xlim = (-10, 10)
+    plt.ylim = (-10, 10)
+    plt.show()
+
+plot(x,y,a,b)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Cell [0;32mIn[3], line 48[0m
+[1;32m     41[0m     [38;5;28;01mreturn[39;00m LOC
+[1;32m     45[0m [38;5;66;03m#User inputs the values of the two vectors[39;00m
+[1;32m     46[0m [38;5;66;03m#can be integers or numbers with decimals[39;00m
+[0;32m---> 48[0m x [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mWhat is the first value of the first vector? [39;49m[38;5;124;43m"[39;49m[43m)[49m)
+[1;32m     49[0m y [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28minput[39m ([38;5;124m"[39m[38;5;124mSecond value of the first vector? [39m[38;5;124m"[39m))
+[1;32m     50[0m a [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28minput[39m([38;5;124m"[39m[38;5;124mFirst value of the second vector? [39m[38;5;124m"[39m))
+
+File [0;32m~/jbook_env/lib/python3.10/site-packages/ipykernel/kernelbase.py:1281[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
+[1;32m   1279[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[1;32m   1280[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[0;32m-> 1281[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[1;32m   1282[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[1;32m   1283[0m     [38;5;28mstr[39m(prompt),
+[1;32m   1284[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[1;32m   1285[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[1;32m   1286[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m   1287[0m )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+
