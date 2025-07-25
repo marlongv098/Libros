@@ -59,7 +59,7 @@ Representación gráfica de conjuntos.
 
 **Ejemplo:**  
 
-![Diagrama de Venn](venn-numbers)
+![Diagrama de Venn](/2_Conjuntos_Funciones/1_Conjuntos/Images/venn-numbers.png)
 
 *Nota: Asegúrate de tener la imagen "venn-numbers" en la ruta adecuada o ajusta el path según corresponda.*
 
