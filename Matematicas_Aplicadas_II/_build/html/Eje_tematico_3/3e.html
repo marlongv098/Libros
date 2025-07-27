@@ -182,47 +182,56 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_1/1a.html">Densidad lineal de una varilla</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Densidad lineal de una varilla</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_1/1d.html">Antiderivadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Antiderivadas</a></li>
 
 
 
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_2/2b.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2b.html">Matrices</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la derivada.</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="3a.html">Cuádricas</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="3intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="3a.html">Cuádricas</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="3b.html">Diferenciación de funciones  en varias variables</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="3c.html">Aproximación lineal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3b.html">Diferenciación de funciones  en varias variables</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="3d.html">Funciones en varias variables</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3c.html">Aproximación lineal</a></li>
 
 
+
+<li class="toctree-l2"><a class="reference internal" href="3d.html">Funciones en varias variables</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Optimización</a></li>
+
+
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -438,7 +447,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-transporte">Problema Transporte</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejemplo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejemplo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-de-transporte-de-las-cervezas-utilizando-pulp">Problema de transporte de las cervezas utilizando pulp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-de-transporte-de-las-cervezas-utilizando-pyomo">Problema de transporte de las cervezas utilizando Pyomo</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -486,15 +499,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Definir la función y su gradiente</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0.]
 </pre></div>
 </div>
 </div>
@@ -512,7 +517,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.11022302e-16 2.22044605e-16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.00000000e+00 2.22044605e-16]
 </pre></div>
 </div>
 </div>
@@ -530,7 +535,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.11022302e-16 2.22044605e-16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.00000000e+00 2.22044605e-16]
 </pre></div>
 </div>
 </div>
@@ -629,51 +634,15 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="optimizacion-con-pulp-cvxopt-pyomo">
 <h1>Optimización con pulp, cvxopt, pyomo<a class="headerlink" href="#optimizacion-con-pulp-cvxopt-pyomo" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pulp</span>
+<p>Para correr el probrama debes instalar los modulos</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pip install pyomo
+pip install pulp
+!apt-get install -y -qq glpk-utils
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pulp
-  Downloading PuLP-2.9.0-py3-none-any.whl.metadata (5.4 kB)
-Downloading PuLP-2.9.0-py3-none-any.whl (17.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.7/17.7 MB</span> <span class=" -Color -Color-Red">52.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hInstalling collected packages: pulp
-Successfully installed pulp-2.9.0
+<p>Si estas en mac debes instalar</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">glpk</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyomo</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyomo
-  Downloading Pyomo-6.8.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.0 kB)
-Collecting ply (from pyomo)
-  Downloading ply-3.11-py2.py3-none-any.whl.metadata (844 bytes)
-Downloading Pyomo-6.8.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.3/13.3 MB</span> <span class=" -Color -Color-Red">42.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hDownloading ply-3.11-py2.py3-none-any.whl (49 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.6/49.6 kB</span> <span class=" -Color -Color-Red">3.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hInstalling collected packages: ply, pyomo
-Successfully installed ply-3.11 pyomo-6.8.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>pyomo
-<span class="o">!</span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-qq<span class="w"> </span>glpk-utils
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -689,6 +658,20 @@ Successfully installed ply-3.11 pyomo-6.8.0
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1984</span><span class="p">)</span> <span class="c1">#replicar random</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">cvxopt</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pulp</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pyomo.environ</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;cvxopt&#39;
 </pre></div>
 </div>
 </div>
@@ -744,7 +727,7 @@ este tipo de problema se puede resolver utilizando el método L-BFGS-B que nos o
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27c479e2d6e1b1281ba97ff04fe9a2768e7e2d10099f40a392076be41f9d18a0.png" src="../_images/27c479e2d6e1b1281ba97ff04fe9a2768e7e2d10099f40a392076be41f9d18a0.png" />
+<img alt="../_images/4c932dc4c4f376a29c1a319b1a74cc42c1b1992ef00cd59ffddb14c499d8e26f.png" src="../_images/4c932dc4c4f376a29c1a319b1a74cc42c1b1992ef00cd59ffddb14c499d8e26f.png" />
 </div>
 </div>
 </section>
@@ -787,7 +770,7 @@ este tipo de problema se puede resolver utilizando el método L-BFGS-B que nos o
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71bf2f1393e2d1603f3e058059086e5782c76aaa4ebf39355b290601ec91a848.png" src="../_images/71bf2f1393e2d1603f3e058059086e5782c76aaa4ebf39355b290601ec91a848.png" />
+<img alt="../_images/4c32cb8cdcdd43375a58782099abb23d14e4d00528d6e385f514f529e3cef4b9.png" src="../_images/4c32cb8cdcdd43375a58782099abb23d14e4d00528d6e385f514f529e3cef4b9.png" />
 </div>
 </div>
 </section>
@@ -827,17 +810,12 @@ Cer_b&amp;|&amp; 3 &amp; 1 &amp; 3 &amp; 2 &amp; 3 \
 </div>
 </div>
 </div>
+<section id="problema-de-transporte-de-las-cervezas-utilizando-pulp">
+<h3>Problema de transporte de las cervezas utilizando pulp<a class="headerlink" href="#problema-de-transporte-de-las-cervezas-utilizando-pulp" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo del problema de transporte de las cervezas utilizando PuLP</span>
-<span class="c1"># Creamos la variable prob que contiene los datos del problema</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creamos la variable prob que contiene los datos del problema</span>
 <span class="n">prob</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Problema de distribución de cerveza&quot;</span><span class="p">,</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpMinimize</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/pulp/pulp.py:1298: UserWarning: Spaces are not permitted in the name. Converted to &#39;_&#39;
-  warnings.warn(&quot;Spaces are not permitted in the name. Converted to &#39;_&#39;&quot;)
 </pre></div>
 </div>
 </div>
@@ -912,7 +890,48 @@ Cer_b&amp;|&amp; 3 &amp; 1 &amp; 3 &amp; 2 &amp; 3 \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: Optimal
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - /Users/marlong/Library/Python/3.10/lib/python/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/gy/tr524sw56ynd5kmftbk5d2nw0000gn/T/1b28e78638da46ff88eddffaa506b612-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /var/folders/gy/tr524sw56ynd5kmftbk5d2nw0000gn/T/1b28e78638da46ff88eddffaa506b612-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 12 COLUMNS
+At line 63 RHS
+At line 71 BOUNDS
+At line 82 ENDATA
+Problem MODEL has 7 rows, 10 columns and 20 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 8600 - 0.00 seconds
+Cgl0004I processed model has 7 rows, 10 columns (10 integer (0 of which binary)) and 20 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0012I Integer solution of 8600 found by DiveCoefficient after 0 iterations and 0 nodes (0.01 seconds)
+Cbc0001I Search completed - best objective 8600, took 0 iterations and 0 nodes (0.01 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 8600 to 8600
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                8600.00000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.00
+Time (Wallclock seconds):       0.01
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.02
+
+Status: Optimal
 ruta_Cervecería_A_Bar_1 = 300.0
 ruta_Cervecería_A_Bar_2 = 0.0
 ruta_Cervecería_A_Bar_3 = 0.0
@@ -929,154 +948,79 @@ Costo total de transporte = 8600.0
 </div>
 </div>
 <p>Como se ve, la solución óptima que encontramos con la ayuda de PuLP, nos dice que deberíamos enviar desde la Cervecería A, 300 cajas al Bar 1 y 700 cajas al Bar 5; y que desde la Cervecería B deberíamos enviar 200 cajas al Bar 1, 900 cajas al Bar 2, 1800 cajas al Bar 3 y 200 cajas al Bar 4. De esta forma podemos minimizar el costo de transporte a un total de 8600.</p>
+</section>
+<section id="problema-de-transporte-de-las-cervezas-utilizando-pyomo">
+<h3>Problema de transporte de las cervezas utilizando Pyomo<a class="headerlink" href="#problema-de-transporte-de-las-cervezas-utilizando-pyomo" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo del problema de transporte de las cervezas utilizando Pyomo</span>
-<span class="c1"># Creamos el modelo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyomo.environ</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="c1"># Crear modelo</span>
 <span class="n">modelo</span> <span class="o">=</span> <span class="n">ConcreteModel</span><span class="p">()</span>
 
-<span class="c1"># Creamos los nodos de oferta y demanda</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="n">initialize</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">],</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Cervecerías&#39;</span><span class="p">)</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">j</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="n">initialize</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Bar 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 4&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">],</span>
-               <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Bares&#39;</span><span class="p">)</span>
+<span class="c1"># Sets de oferta y demanda</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="n">initialize</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">])</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">j</span> <span class="o">=</span> <span class="n">Set</span><span class="p">(</span><span class="n">initialize</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Bar 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 4&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">])</span>
 
-<span class="c1"># Definimos las capacidades de oferta y demanda</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">:</span><span class="mi">4000</span><span class="p">},</span>
-                 <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Capacidad de oferta de las cervecerías&#39;</span><span class="p">)</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bar 1&#39;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="s1">&#39;Bar 2&#39;</span><span class="p">:</span><span class="mi">900</span><span class="p">,</span><span class="s1">&#39;Bar 3&#39;</span><span class="p">:</span><span class="mi">1800</span><span class="p">,</span>
-                                      <span class="s1">&#39;Bar 4&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">:</span><span class="mi">700</span> <span class="p">},</span>
-                 <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Demanda de cada bar&#39;</span><span class="p">)</span>
+<span class="c1"># Parámetros de oferta y demanda</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">:</span><span class="mi">4000</span><span class="p">})</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bar 1&#39;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="s1">&#39;Bar 2&#39;</span><span class="p">:</span><span class="mi">900</span><span class="p">,</span><span class="s1">&#39;Bar 3&#39;</span><span class="p">:</span><span class="mi">1800</span><span class="p">,</span><span class="s1">&#39;Bar 4&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">:</span><span class="mi">700</span><span class="p">})</span>
 
 <span class="c1"># Costo de transporte</span>
 <span class="n">costos</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 1&#39;</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 2&#39;</span><span class="p">):</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 3&#39;</span><span class="p">):</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 4&#39;</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">):</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 1&#39;</span><span class="p">):</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 2&#39;</span><span class="p">):</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 3&#39;</span><span class="p">):</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 4&#39;</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">):</span> <span class="mi">3</span>
-    <span class="p">}</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="n">costos</span><span class="p">,</span>
-                <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Costo de transporte&#39;</span><span class="p">)</span>
+    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 1&#39;</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 2&#39;</span><span class="p">):</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 3&#39;</span><span class="p">):</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 4&#39;</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Cervecería A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">):</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 1&#39;</span><span class="p">):</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 2&#39;</span><span class="p">):</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 3&#39;</span><span class="p">):</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 4&#39;</span><span class="p">):</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Cervecería B&#39;</span><span class="p">,</span> <span class="s1">&#39;Bar 5&#39;</span><span class="p">):</span> <span class="mi">3</span>
+<span class="p">}</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="n">costos</span><span class="p">)</span>
 
-<span class="c1"># definimos el costo de tranporte</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">f_costo</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">modelo</span><span class="o">.</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="n">f_costo</span><span class="p">,</span>
-                <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Costo de transporte&#39;</span><span class="p">)</span>
+<span class="c1"># Variable de decisión</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="n">NonNegativeReals</span><span class="p">)</span>
 
-<span class="c1"># definimos variable x con las cantidades de cajas enviadas</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span>
-              <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Cantidad de cajas&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Definimos las restricciones ##</span>
-<span class="c1"># Límite de oferta</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">f_oferta</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">oferta</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">rule</span><span class="o">=</span><span class="n">f_oferta</span><span class="p">,</span>
-                           <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Límites oferta de cada Cervecería&#39;</span><span class="p">)</span>
-
-<span class="c1"># Límite de demanda</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">f_demanda</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">demanda</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">rule</span><span class="o">=</span><span class="n">f_demanda</span><span class="p">,</span>
-                            <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Límites demanda de cada bar&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Definimos la función objetivo y resolvemos el problema ##</span>
 <span class="c1"># Función objetivo</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">f_objetivo</span><span class="p">(</span><span class="n">modelo</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">i</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">)</span>
-<span class="n">modelo</span><span class="o">.</span><span class="n">objetivo</span> <span class="o">=</span> <span class="n">Objective</span><span class="p">(</span><span class="n">rule</span><span class="o">=</span><span class="n">f_objetivo</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">minimize</span><span class="p">,</span>
-                           <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Función Objetivo&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">i</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">)</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">objetivo</span> <span class="o">=</span> <span class="n">Objective</span><span class="p">(</span><span class="n">rule</span><span class="o">=</span><span class="n">f_objetivo</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">minimize</span><span class="p">)</span>
 
-<span class="c1"># resolvemos el problema e imprimimos resultados</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">pyomo_postprocess</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+<span class="c1"># Restricción de oferta</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">restriccion_oferta</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">restriccion_oferta</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">rule</span><span class="o">=</span><span class="n">restriccion_oferta</span><span class="p">)</span>
 
-<span class="c1"># utilizamos solver glpk</span>
+<span class="c1"># Restricción de demanda</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">restriccion_demanda</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">modelo</span><span class="o">.</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">modelo</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">restriccion_demanda</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">rule</span><span class="o">=</span><span class="n">restriccion_demanda</span><span class="p">)</span>
 
-<span class="n">opt</span> <span class="o">=</span> <span class="n">SolverFactory</span><span class="p">(</span><span class="s1">&#39;glpk&#39;</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s1">&#39;/usr/bin/glpsol&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">modelo</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
-<span class="c1">#resultados = opt.solve(modelo)</span>
+<span class="c1"># Resolver el modelo</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">SolverFactory</span><span class="p">(</span><span class="s1">&#39;glpk&#39;</span><span class="p">)</span>  <span class="c1"># usa el path completo solo si es necesario</span>
+<span class="n">resultados</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">modelo</span><span class="p">)</span>
 
-<span class="c1"># imprimimos resultados</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Solución óptima encontrada</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
-<span class="n">pyomo_postprocess</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<span class="c1"># Mostrar resultados</span>
+<span class="n">modelo</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:pyomo.core:Implicitly replacing the Component attribute objetivo (type=&lt;class &#39;pyomo.core.base.objective.ScalarObjective&#39;&gt;) on block unknown with a new Component (type=&lt;class &#39;pyomo.core.base.objective.ScalarObjective&#39;&gt;).
-This is usually indicative of a modelling error.
-To avoid this warning, use block.del_component() and block.add_component().
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># ==========================================================
-# = Solver Results                                         =
-# ==========================================================
-# ----------------------------------------------------------
-#   Problem Information
-# ----------------------------------------------------------
-Problem: 
-- Name: unknown
-  Lower bound: 8600.0
-  Upper bound: 8600.0
-  Number of objectives: 1
-  Number of constraints: 7
-  Number of variables: 10
-  Number of nonzeros: 20
-  Sense: minimize
-# ----------------------------------------------------------
-#   Solver Information
-# ----------------------------------------------------------
-Solver: 
-- Status: ok
-  Termination condition: optimal
-  Statistics: 
-    Branch and bound: 
-      Number of bounded subproblems: 0
-      Number of created subproblems: 0
-  Error rc: 0
-  Time: 0.00536799430847168
-# ----------------------------------------------------------
-#   Solution Information
-# ----------------------------------------------------------
-Solution: 
-- number of solutions: 0
-  number of solutions displayed: 0
-
-Solución óptima encontrada
---------------------------------------------------------------------------------
-x : Cantidad de cajas
-    Size=10, Index=i*j
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x : Size=10, Index=i*j
     Key                       : Lower : Value  : Upper : Fixed : Stale : Domain
-    (&#39;Cervecería A&#39;, &#39;Bar 1&#39;) :   0.0 :  300.0 :  None : False : False :  Reals
-    (&#39;Cervecería A&#39;, &#39;Bar 2&#39;) :   0.0 :    0.0 :  None : False : False :  Reals
-    (&#39;Cervecería A&#39;, &#39;Bar 3&#39;) :   0.0 :    0.0 :  None : False : False :  Reals
-    (&#39;Cervecería A&#39;, &#39;Bar 4&#39;) :   0.0 :    0.0 :  None : False : False :  Reals
-    (&#39;Cervecería A&#39;, &#39;Bar 5&#39;) :   0.0 :  700.0 :  None : False : False :  Reals
-    (&#39;Cervecería B&#39;, &#39;Bar 1&#39;) :   0.0 :  200.0 :  None : False : False :  Reals
-    (&#39;Cervecería B&#39;, &#39;Bar 2&#39;) :   0.0 :  900.0 :  None : False : False :  Reals
-    (&#39;Cervecería B&#39;, &#39;Bar 3&#39;) :   0.0 : 1800.0 :  None : False : False :  Reals
-    (&#39;Cervecería B&#39;, &#39;Bar 4&#39;) :   0.0 :  200.0 :  None : False : False :  Reals
-    (&#39;Cervecería B&#39;, &#39;Bar 5&#39;) :   0.0 :    0.0 :  None : False : False :  Reals
+    (&#39;Cervecería A&#39;, &#39;Bar 1&#39;) :     0 :  300.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería A&#39;, &#39;Bar 2&#39;) :     0 :    0.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería A&#39;, &#39;Bar 3&#39;) :     0 :    0.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería A&#39;, &#39;Bar 4&#39;) :     0 :    0.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería A&#39;, &#39;Bar 5&#39;) :     0 :  700.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería B&#39;, &#39;Bar 1&#39;) :     0 :  200.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería B&#39;, &#39;Bar 2&#39;) :     0 :  900.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería B&#39;, &#39;Bar 3&#39;) :     0 : 1800.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería B&#39;, &#39;Bar 4&#39;) :     0 :  200.0 :  None : False : False : NonNegativeReals
+    (&#39;Cervecería B&#39;, &#39;Bar 5&#39;) :     0 :    0.0 :  None : False : False : NonNegativeReals
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -1155,7 +1099,11 @@ x : Cantidad de cajas
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-transporte">Problema Transporte</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejemplo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejemplo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-de-transporte-de-las-cervezas-utilizando-pulp">Problema de transporte de las cervezas utilizando pulp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-de-transporte-de-las-cervezas-utilizando-pyomo">Problema de transporte de las cervezas utilizando Pyomo</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
