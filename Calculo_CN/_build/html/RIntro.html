@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introducción R Y RStudio &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RIntro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Funciones" href="Funciones.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="1intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="1intro.html">Welcome to your Jupyter Book</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introducción R Y RStudio</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Funciones.html">Funciones</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Integrales.html">Integral Indefinida y Definida</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="EDO.html">Ecuaciones diferenciales</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FRIntro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/RIntro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción R Y RStudio</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción R Y RStudio</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-r">¿Qué es R?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-rstudio">¿Qué es RStudio?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-r-y-rstudio">¿Por qué usar R y RStudio?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-r-y-rstudio">Instalación de R y RStudio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comenzando-con-r-conceptos-basicos">Comenzando con R: Conceptos Básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-en-r">Variables en R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-variables">Uso de variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-distingue-entre-mayusculas-y-minusculas">R distingue entre mayúsculas y minúsculas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-variable">Tipo de variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-r">Características de R</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-secuencia">Crear una secuencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-vector-numerico">Crear un vector numérico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-estadisticas-basicas-de-un-vector">Calcular estadísticas básicas de un vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-vector-de-texto">Crear un vector de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinar-vectores-en-un-data-frame">Combinar vectores en un data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-columnas-de-un-data-frame">Acceder a columnas de un data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-basicos-en-r">Gráficos básicos en R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion">Gráfico de dispersión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-cajas-boxplot">Diagrama de cajas (boxplot)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-r-y-rstudio">
+<h1>Introducción R Y RStudio<a class="headerlink" href="#introduccion-r-y-rstudio" title="Link to this heading">#</a></h1>
+<section id="que-es-r">
+<h2>¿Qué es R?<a class="headerlink" href="#que-es-r" title="Link to this heading">#</a></h2>
+<p><strong>R</strong> es un lenguaje de programación y entorno de software libre orientado al análisis estadístico y la visualización de datos. Es ampliamente utilizado en ciencia de datos, análisis estadístico, modelado y gráficos. Cuenta con una gran comunidad y miles de paquetes que amplían sus funcionalidades.</p>
+</section>
+<section id="que-es-rstudio">
+<h2>¿Qué es RStudio?<a class="headerlink" href="#que-es-rstudio" title="Link to this heading">#</a></h2>
+<p><strong>RStudio</strong> es un Entorno de Desarrollo Integrado (IDE) para R. Facilita la escritura, ejecución y depuración de código R, al ofrecer una interfaz amigable con consola, editor, visor de variables, salida de gráficos y más.</p>
+<ul class="simple">
+<li><p>Componentes de RStudio <a class="reference external" href="https://www.youtube.com/watch?v=RYV2R-SOa0M&amp;amp;t=576s">https://www.youtube.com/RStudio</a></p></li>
+</ul>
+</section>
+<section id="por-que-usar-r-y-rstudio">
+<h2>¿Por qué usar R y RStudio?<a class="headerlink" href="#por-que-usar-r-y-rstudio" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>R está diseñado específicamente para análisis estadístico y visualización.</p></li>
+<li><p>RStudio mejora la experiencia de uso con herramientas interactivas.</p></li>
+<li><p>Juntos permiten realizar todo el flujo de análisis de datos: importar, transformar, modelar y visualizar.</p></li>
+</ul>
+</section>
+<section id="instalacion-de-r-y-rstudio">
+<h2>Instalación de R y RStudio<a class="headerlink" href="#instalacion-de-r-y-rstudio" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Descarga e instala R desde <a class="reference external" href="https://cran.r-project.org">https://cran.r-project.org</a></p></li>
+<li><p>Descarga e instala RStudio desde <a class="reference external" href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></p></li>
+</ul>
+</section>
+<section id="comenzando-con-r-conceptos-basicos">
+<h2>Comenzando con R: Conceptos Básicos<a class="headerlink" href="#comenzando-con-r-conceptos-basicos" title="Link to this heading">#</a></h2>
+<section id="variables-en-r">
+<h3>Variables en R<a class="headerlink" href="#variables-en-r" title="Link to this heading">#</a></h3>
+<p>Una variable almacena un valor. Se asigna con el operador <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+</pre></div>
+</div>
+<p>También es posible usar <code class="docutils literal notranslate"><span class="pre">=</span></code>, aunque en R se prefiere <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+</section>
+<section id="uso-de-variables">
+<h3>Uso de variables<a class="headerlink" href="#uso-de-variables" title="Link to this heading">#</a></h3>
+<p>Una vez definidas, las variables pueden usarse en operaciones:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suma</span>
+<span class="n">total</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+
+<span class="c1"># Multiplicación</span>
+<span class="n">producto</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">producto</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="r-distingue-entre-mayusculas-y-minusculas">
+<h3>R distingue entre mayúsculas y minúsculas<a class="headerlink" href="#r-distingue-entre-mayusculas-y-minusculas" title="Link to this heading">#</a></h3>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">valor</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100</span>
+<span class="n">Valor</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">200</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span><span class="w">  </span><span class="c1"># imprime 100</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">Valor</span><span class="p">)</span><span class="w">  </span><span class="c1"># imprime 200</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="tipo-de-variable">
+<h2>Tipo de variable<a class="headerlink" href="#tipo-de-variable" title="Link to this heading">#</a></h2>
+<p>R maneja distintos tipos de datos:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numérico</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
+<span class="nf">is.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">  </span><span class="c1"># TRUE</span>
+
+<span class="c1"># Texto</span>
+<span class="n">nombre</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Ana&quot;</span>
+<span class="nf">is.character</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span><span class="w">  </span><span class="c1"># TRUE</span>
+
+<span class="c1"># Lógico</span>
+<span class="n">bandera</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">TRUE</span>
+<span class="nf">is.logical</span><span class="p">(</span><span class="n">bandera</span><span class="p">)</span><span class="w">  </span><span class="c1"># TRUE</span>
+</pre></div>
+</div>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Asigna el valor 20 a una variable llamada <code class="docutils literal notranslate"><span class="pre">edad</span></code> y muestra su contenido.</p></li>
+<li><p>Crea dos variables numéricas y muestra su suma, resta, multiplicación y división.</p></li>
+<li><p>Crea una variable con tu nombre y verifica si es de tipo carácter.</p></li>
+<li><p>Prueba definir dos variables con el mismo nombre pero con diferente capitalización. ¿Qué observas?</p></li>
+<li><p>Escribe una línea de código que determine si un número es lógico.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="caracteristicas-de-r">
+<h1>Características de R<a class="headerlink" href="#caracteristicas-de-r" title="Link to this heading">#</a></h1>
+<p>Una de las características principales de R es su versatilidad, tanto para crear conjuntos de datos como para trabajar con ellos.</p>
+<section id="crear-una-secuencia">
+<h2>Crear una secuencia<a class="headerlink" href="#crear-una-secuencia" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">secuencia</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">secuencia</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="crear-un-vector-numerico">
+<h2>Crear un vector numérico<a class="headerlink" href="#crear-un-vector-numerico" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">notas</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3.5</span><span class="p">,</span><span class="w"> </span><span class="m">4.0</span><span class="p">,</span><span class="w"> </span><span class="m">2.8</span><span class="p">,</span><span class="w"> </span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="calcular-estadisticas-basicas-de-un-vector">
+<h2>Calcular estadísticas básicas de un vector<a class="headerlink" href="#calcular-estadisticas-basicas-de-un-vector" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span><span class="w">       </span><span class="c1"># Promedio</span>
+<span class="nf">sd</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span><span class="w">         </span><span class="c1"># Desviación estándar</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span><span class="w">    </span><span class="c1"># Resumen estadístico</span>
+</pre></div>
+</div>
+</section>
+<section id="crear-un-vector-de-texto">
+<h2>Crear un vector de texto<a class="headerlink" href="#crear-un-vector-de-texto" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nombres</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Luis&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Carlos&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">nombres</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="combinar-vectores-en-un-data-frame">
+<h2>Combinar vectores en un data frame<a class="headerlink" href="#combinar-vectores-en-un-data-frame" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">edades</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">23</span><span class="p">,</span><span class="w"> </span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
+<span class="n">personas</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombres</span><span class="p">,</span><span class="w"> </span><span class="n">Edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edades</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">personas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="acceder-a-columnas-de-un-data-frame">
+<h2>Acceder a columnas de un data frame<a class="headerlink" href="#acceder-a-columnas-de-un-data-frame" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">personas</span><span class="o">$</span><span class="n">Nombre</span>
+<span class="n">personas</span><span class="o">$</span><span class="n">Edad</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Ejercicios<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="6">
+<li><p>Crea un vector de 5 números decimales y calcula su media.</p></li>
+<li><p>Construye un <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> con dos columnas: una de nombres y otra de edades.</p></li>
+<li><p>Accede a cada columna de ese <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> usando <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p></li>
+<li><p>Utiliza la función summary() sobre el vector de edades y analiza el resultado.</p></li>
+<li><p>Crea un vector lógico que indique si cada persona del data.frame tiene más de 24 años.</p></li>
+</ol>
+</section>
+<section id="graficos-basicos-en-r">
+<h2>Gráficos básicos en R<a class="headerlink" href="#graficos-basicos-en-r" title="Link to this heading">#</a></h2>
+<p>Una de las capacidades más potentes de R es su capacidad para generar gráficos de forma sencilla.</p>
+<section id="grafico-de-dispersion">
+<h3>Gráfico de dispersión<a class="headerlink" href="#grafico-de-dispersion" title="Link to this heading">#</a></h3>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="o">^</span><span class="m">2</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Gráfico de x vs x^2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x^2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="histograma">
+<h3>Histograma<a class="headerlink" href="#histograma" title="Link to this heading">#</a></h3>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">notas</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3.5</span><span class="p">,</span><span class="w"> </span><span class="m">4.0</span><span class="p">,</span><span class="w"> </span><span class="m">2.8</span><span class="p">,</span><span class="w"> </span><span class="m">5.0</span><span class="p">,</span><span class="w"> </span><span class="m">4.5</span><span class="p">,</span><span class="w"> </span><span class="m">3.7</span><span class="p">,</span><span class="w"> </span><span class="m">4.1</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">notas</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lightblue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Histograma de notas&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Nota&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="diagrama-de-cajas-boxplot">
+<h3>Diagrama de cajas (boxplot)<a class="headerlink" href="#diagrama-de-cajas-boxplot" title="Link to this heading">#</a></h3>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">boxplot</span><span class="p">(</span><span class="n">notas</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Diagrama de cajas de notas&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Nota&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Ejercicios<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="11">
+<li><p>Crea un gráfico de dispersión de <code class="docutils literal notranslate"><span class="pre">x</span></code> contra <code class="docutils literal notranslate"><span class="pre">x^2</span></code> usando la función <code class="docutils literal notranslate"><span class="pre">plot()</span></code>.</p></li>
+<li><p>A partir de un vector con al menos 10 notas, crea un histograma.</p></li>
+<li><p>Utiliza <code class="docutils literal notranslate"><span class="pre">boxplot()</span></code> para visualizar la distribución de ese vector de notas.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Funciones.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funciones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción R Y RStudio</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-r">¿Qué es R?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-rstudio">¿Qué es RStudio?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-r-y-rstudio">¿Por qué usar R y RStudio?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-r-y-rstudio">Instalación de R y RStudio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comenzando-con-r-conceptos-basicos">Comenzando con R: Conceptos Básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-en-r">Variables en R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-variables">Uso de variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-distingue-entre-mayusculas-y-minusculas">R distingue entre mayúsculas y minúsculas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-variable">Tipo de variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-r">Características de R</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-una-secuencia">Crear una secuencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-vector-numerico">Crear un vector numérico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-estadisticas-basicas-de-un-vector">Calcular estadísticas básicas de un vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-vector-de-texto">Crear un vector de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinar-vectores-en-un-data-frame">Combinar vectores en un data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceder-a-columnas-de-un-data-frame">Acceder a columnas de un data frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-basicos-en-r">Gráficos básicos en R</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersion">Gráfico de dispersión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma">Histograma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrama-de-cajas-boxplot">Diagrama de cajas (boxplot)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

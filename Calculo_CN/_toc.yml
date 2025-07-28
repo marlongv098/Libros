@@ -1,0 +1,26 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md # Se recomienda usar la extensión .md para el archivo root
+
+# Opcional: Configuración predeterminada para todos los capítulos/secciones
+defaults:
+  numbered: false # Numera automáticamente capítulos y secciones
+  titlesonly: false # Solo muestra los títulos en la tabla de contenido, no los encabezados internos de cada página
+
+# Puedes organizar tu libro en 'parts' (partes) o directamente en 'chapters' (capítulos)
+# Usar 'parts' es útil si tienes grandes secciones temáticas
+parts:
+  - caption: Aplicaciones de la integral y las ecuaciones diferenciales.
+    chapters:
+      - file: 1intro.md        
+        sections:
+          - file: RIntro.md
+          - file: Funciones.md
+          - file: Integrales.md
+          - file: EDO.md

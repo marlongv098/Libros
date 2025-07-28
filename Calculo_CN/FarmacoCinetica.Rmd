@@ -1,0 +1,121 @@
+---
+title: "Cinética de un Fármaco"
+author: "CN"
+date: "2025-03-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Cinética de Eliminación de un Fármaco en el Cuerpo (Orden 1)
+
+Un paciente recibe una inyección intravenosa de un fármaco con una concentración inicial de $c_o =100$ mg/L en el plasma. La eliminación del fármaco sigue una cinética de primer orden con una constante de eliminación de $k=0.2$ 
+
+## Preguntas:
+
+* ¿Cuál será la concentración del fármaco después de 5 horas?
+
+* ¿Cuánto tiempo tomará para que la concentración del fármaco se reduzca a 10 mg/L?
+
+* ¿Cuanto tiempo tomara en bajar la concentración por debajo de 20 mg/L?
+
+
+## Ejemplo: 
+
+Resolviendo una ecuación diferencial de primer orden en R. Ecuación diferencial a resolver:
+$$\frac{dC}{dt}=−kC$$
+Donde:
+
+- $C(t)$ es la concentración de un fármaco en el cuerpo.
+
+- $k$ es la constante de eliminación.
+
+- $c_0=100$ mg/L es la concentración inicial.
+
+### ¿Encuentre $C(t)$ para $t\in[0,20]$ horas, con $k=0.2$.
+
+
+```{r}
+# Instalar paquete si no está instalado
+if (!require("deSolve")) install.packages("deSolve", dependencies=TRUE)
+library(deSolve)
+
+# Definir la ecuación diferencial dC/dt = -kC
+modelo <- function(t, C, params) {
+  k <- params["k"]  # Constante de eliminación
+  dCdt <- -k * C  # Ecuación diferencial
+  return(list(dCdt))
+}
+
+# Parámetros y condiciones iniciales
+params <- c(k = 0.2)       # Constante de eliminación
+C_inicial <- 100           # Concentración inicial (mg/L)
+tiempo <- seq(0, 20, by=0.1)  # Intervalo de tiempo
+
+# Resolver la ecuación diferencial
+solucion <- ode(y = C_inicial, times = tiempo, func = modelo, parms = params)
+
+```
+
+
+```{r}
+# Graficar la solución
+plot(solucion[, "time"], solucion[, "1"], type="l", col="blue", lwd=2,
+     xlab="Tiempo (h)", ylab="Concentración (mg/L)", 
+     main="Eliminación del Fármaco en el Cuerpo")
+
+```
+
+
+## Obtener la concentración en un tiempo específico
+
+Si quieres saber la concentración en un tiempo específico (por ejemplo, $t=10$ horas), puedes usar el siguiente código:
+
+```{r}
+# Encontrar la concentración en t = 10 horas
+t_deseado <- 10
+C_en_t <- solucion[solucion[, "time"] == t_deseado, "1"]
+print(C_en_t)
+
+```
+
+## Añadir una línea de referencia en la gráfica
+
+Si quieres resaltar un punto específico en la gráfica, puedes agregar una línea vertical o un punto:
+
+```{r}
+plot(solucion[, "time"], solucion[, "1"], type="l", col="blue", lwd=2,
+     xlab="Tiempo (h)", ylab="Concentración (mg/L)", 
+     main="Eliminación del Fármaco en el Cuerpo")
+
+# Agregar una línea vertical en t = 10
+abline(v=t_deseado, col="red", lty=2)
+
+# Agregar un punto en t = 10
+points(t_deseado, C_en_t, col="red", pch=16, cex=1.5)
+
+
+```
+
+## Encontrar el tiempo cuando la concentración cae por debajo de un valor dado
+
+Si quieres saber en qué momento la concentración baja de 20 mg/L, puedes usar:
+
+```{r}
+# Encontrar todos los valores de tiempo donde la concentración es menor a 20
+t_menor_20 <- solucion[solucion[, "1"] < 20, "time"]
+print(t_menor_20)
+
+```
+
+Encontrar el primer valor 
+
+```{r}
+# Encontrar el primer tiempo en que la concentración es menor a 20
+t_menor_20 <- solucion[solucion[, "1"] < 20, "time"][1]
+print(t_menor_20)
+
+```
+

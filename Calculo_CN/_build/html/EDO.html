@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ecuaciones diferenciales &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'EDO';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Integral Indefinida y Definida" href="Integrales.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="1intro.html">Welcome to your Jupyter Book</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RIntro.html">Introducción R Y RStudio</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Funciones.html">Funciones</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Integrales.html">Integral Indefinida y Definida</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ecuaciones diferenciales</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEDO.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/EDO.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ecuaciones diferenciales</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ecuaciones diferenciales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-diferenciales-ordinarias-edo">Ecuaciones Diferenciales Ordinarias (EDO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-valor-inicial-pvi">Problemas de Valor Inicial (PVI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-metapoblaciones">Ejemplos DE METAPOBLACIONES:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-gotelli">Modelo Gotelli.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales">
+<h1>Ecuaciones diferenciales<a class="headerlink" href="#ecuaciones-diferenciales" title="Link to this heading">#</a></h1>
+<section id="librerias">
+<h2>Librerias<a class="headerlink" href="#librerias" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">deSolve</span><span class="p">)</span><span class="w">   </span><span class="c1">#PVI,ESD,EDP y EDO</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ReacTran</span><span class="p">)</span><span class="w"> </span><span class="c1">#EDP</span>
+<span class="c1">##library(bvpSolve) #PVI</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rootSolve</span><span class="p">)</span><span class="w"> </span><span class="c1">#EDO</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">PBSddesolve</span><span class="p">)</span><span class="w"> </span><span class="c1">#DDE</span>
+</pre></div>
+</div>
+</section>
+<section id="ecuaciones-diferenciales-ordinarias-edo">
+<h2>Ecuaciones Diferenciales Ordinarias (EDO)<a class="headerlink" href="#ecuaciones-diferenciales-ordinarias-edo" title="Link to this heading">#</a></h2>
+<p>Las ecuaciones diferenciales ordinarias describen el cambio de una variable de estado <span class="math notranslate nohighlight">\(y\)</span> como una función <span class="math notranslate nohighlight">\(f\)</span> de una variable independiente <span class="math notranslate nohighlight">\(t\)</span> (por ejemplo, tiempo o espacio), de sí mismo y, opcionalmente, un conjunto de otras variables <span class="math notranslate nohighlight">\(p\)</span>, a menudo llamadas parámetros:</p>
+<div class="math notranslate nohighlight">
+\[y′=\frac{dy}{dt}=f(t,y,p)\]</div>
+<p>en ocasiones para dar solución a una EDO se necesitan valores extras, por lo general son condiciones iniciales y/o los llamados valores en la frontera que se describen mas adelante.</p>
+</section>
+<section id="problemas-de-valor-inicial-pvi">
+<h2>Problemas de Valor Inicial (PVI)<a class="headerlink" href="#problemas-de-valor-inicial-pvi" title="Link to this heading">#</a></h2>
+<p>Si en la ecuación diferencial hay una condición extra se les llama problemas de valor inicial por las condiciones iniciales corresponden a información de la función en un punto.(ejemplo: <span class="math notranslate nohighlight">\(y(x=0)=0\)</span>).</p>
+<p>Existen varios algoritmos numéricos usados para resolver estos problemas, entre los cuales tenemos: Método de Euler y el método Runge-Kutta. Otra distinción importante es entre los métodos explícito y métodos implícitos, donde los últimos métodos pueden resolver una clase particular de ecuaciones (llamadas ecuaciones “rígidas”) y los métodos explícitos tienen problemas con estabilidad y eficiencia. La rigidez ocurre, por ejemplo, si un problema tiene componentes con diferentes tasas de variación según la variable independiente. Muy a menudo habrá una compensación entre el uso de métodos explícitos que requieren poco trabajo por paso de integración y métodos implícitos que son capaces de dar pasos de integración más grandes, pero necesita (mucho) más trabajo para un paso.</p>
+<p>En R, los problema de valor inicial se resuelven con la función del paquete desolve, cuya implementación nos permite resolver muchas EDO del código vode,las ecuaciones diferenciales algebraicas se resuelven con daspk,todas estas funciones pertenecen a los métodos multipasos y comprenden otros metodos de diferenciación hacia atrás. Los primeros métodos son explícitos, los últimos implícitos. Además, este paquete contiene una implementación de-novo de un solucionador de Runge-Kutta bastante general. Finalmente, el método implícito de Runge Kutta radau ha sido añadido recientemente.</p>
+</section>
+<section id="ejemplo">
+<h2>Ejemplo:<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h2>
+<p>Considere la famosa ecuación de van der Pol, que describe un oscilador no conservativo con amortiguamiento no lineal y que fue desarrollado originalmente para circuitos eléctricos que emplean tubos de vacío. La oscilación se describe mediante una EDO de segundo orden:</p>
+<div class="math notranslate nohighlight">
+\[z″−μ(1−z^2)z′+z=0\]</div>
+<p>Tal sistema se puede reescribir rutinariamente como un sistema de dos EDO de 1er orden, si sustituimos <span class="math notranslate nohighlight">\(y_1=z\)</span>.
+$<span class="math notranslate nohighlight">\(y_1=z −−− Derivando --- y_{1}'=z′=y_2 −−− Derivando---z″=y_{2}'\)</span>$
+Escribimos nuestro sistema de EDO.</p>
+<div class="math notranslate nohighlight">
+\[y_{1}'=y_2\]</div>
+<div class="math notranslate nohighlight">
+\[y_{2}'=μ(1−y^{2}_{1})y_2−y_1\]</div>
+<p>Hay un parámetro, <span class="math notranslate nohighlight">\(μ\)</span>, y dos diferenciales variables, <span class="math notranslate nohighlight">\(y_1\)</span> e <span class="math notranslate nohighlight">\(y_2\)</span> con valores iniciales (en <span class="math notranslate nohighlight">\(t=0\)</span>):
+$<span class="math notranslate nohighlight">\(y_1(t=0)=2\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(y_2(t=0)=0\)</span>$
+La ecuación de van der Pol se usa a menudo como prueba problema para los solucionadores de ODE, ya que, para μ grandes, su dinámica consiste en partes donde la solución cambia muy lentamente, alternando con regiones de muy agudo cambios. Esta “rigidez” hace que la ecuación sea bastante desafiante de resolver.</p>
+<p>En R, este modelo se implementa como una función de van der Pol(vdpol) cuyas entradas son el tiempo actual (t), los valores de las variables de estado (y) y los parámetros (mu); la función devuelve una lista con como primer elemento el derivados, concatenados.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">vdpol</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">mu</span><span class="p">){</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="m">2</span><span class="p">],</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="m">1</span><span class="p">]))}</span><span class="w"> </span><span class="c1">#Escritura del sistema</span>
+</pre></div>
+</div>
+<p>Después de definir la condición inicial del estado variables (c_inicial), el modelo se resuelve y la salida escrito en puntos de tiempo (tiempos) seleccionados, usando la función de integración ode de Solve. La rutina predeterminada lsoda, que ode invoca automáticamente cambia entre métodos rígidos y no rígidos, dependiendo del problema. Ejecutamos el modelo para una rigidez típica (mu = 1000) y no rígido (mu = 1) situación:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">deSolve</span><span class="p">)</span>
+<span class="n">c_inicial</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w">   </span><span class="c1">#Valores iniciales </span>
+<span class="n">rigido</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ode</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c_inicial</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vdpol</span><span class="p">,</span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="m">3000</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span>
+<span class="n">no_rigido</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ode</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c_inicial</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vdpol</span><span class="p">,</span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.01</span><span class="p">),</span><span class="n">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>El modelo devuelve una matriz, de clase deSolve, con en su primera columna los valores de tiempo, seguido de los valores de las variables de estado:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">rigido</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">no_rigido</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Las cifras se generan utilizando el método de trazado S3 para objetos de la clase deSolve:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">rigido</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;y1&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PVI EDO, Rigido&quot;</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">no_rigido</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;y1&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PVI EDO,No Rigido&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ejemplos-de-metapoblaciones">
+<h1>Ejemplos DE METAPOBLACIONES:<a class="headerlink" href="#ejemplos-de-metapoblaciones" title="Link to this heading">#</a></h1>
+<p>DOS TIPOS DE METAPOBLACIONES: colección de sitios conectados por dispersión y cada uno sujeto de extinción. Ambos modelos  calculan la proporción de sitios que están ocupados.</p>
+<ul class="simple">
+<li><p>Una población estructurada espacialmente: población cerrada donde los individuos ocupan sitios en un contexto espacial implícito. un sitios es ocupado por un individuo. Cuanto más sitios estén ocupados, menor será la chance de que un propágulo alcance un sitio desocupado. Los sitios se liberan al morir los individuos.</p></li>
+<li><p>Metapoblación: población de poblaciones. Cada sitio es una localización que contiene o no una población. La metapoblación es cerrada (existe un número finito de sitios que puede intercambiar migrantes).</p></li>
+</ul>
+<p>se asume que todos los sitios presentan iguales tasas. La siguiente herramienta matemática describe nuestros dos tipos de modelos. consideraremos cómo la tasa total de colonización C y extinción E influye en la tasa de cambio p, la proporción de sitios que está ocupado</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\frac{dp}{dt}=C-E$$.\\permutaciones de cómo representar las tasas de colonización y extinción.
+ 
+# Modelo de Levins\\Modelo de Levins
+ 
+Levins. modelo de Levins clásico: $$\frac{dp}{dt}=c_i*p*(1-p)-e*p\end{aligned}\end{align} \]</div>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">levins</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="m">1</span><span class="p">];</span><span class="w"> </span><span class="nf">with</span><span class="p">(</span><span class="nf">as.list</span><span class="p">(</span><span class="n">parms</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ci</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nf">library</span><span class="p">(</span><span class="n">deSolve</span><span class="p">);</span><span class="w"> </span><span class="n">prms</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.15</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">);</span><span class="w"> </span><span class="n">Initial.p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.01</span><span class="p">;</span><span class="w"> </span><span class="n">out.L</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="nf">ode</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Initial.p</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">levins</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prms</span><span class="p">))</span>
+<span class="w">  </span><span class="nf">plot</span><span class="p">(</span><span class="n">out.L</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">out.L</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="n">ylab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="p">)</span>
+
+<span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">  </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="w">  </span><span class="nf">with</span><span class="p">(</span><span class="nf">as.list</span><span class="p">(</span><span class="n">parms</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="n">dp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ci</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">dp</span><span class="p">))</span><span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">deSolve</span><span class="p">)</span>
+<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ci</span><span class="o">=</span><span class="n">.</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="o">=</span><span class="m">0.01</span><span class="p">)</span>
+<span class="n">time</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">initialN</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.3</span>
+<span class="n">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ode</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">initialN</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="o">=</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="o">=</span><span class="n">levins</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">[,</span><span class="m">-1</span><span class="p">],</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&#39;l&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modelo-gotelli">
+<h1>Modelo Gotelli.<a class="headerlink" href="#modelo-gotelli" title="Link to this heading">#</a></h1>
+<p>lluvia de propágulos o modelo isla-continente de Gotelli: $<span class="math notranslate nohighlight">\(\frac{dp}{dt}=ci*(1-p)-e*p\)</span>$  los propáculos pueden venir de fuera de la colección de sitios que se monitorizan si la colección de sitios no está cerrada. Si asumimmos que la colección de sitios tiene lluvia continua de propáculso desde fuentes externas y solo estos propágulos son importantes, asumimos un flujo constante de propágulos que no dependen de la proporción p y la extinción solo es mediada por la proporción de sitios ocupados, y tiene una tasa constante por sitio.</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gotelli</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="m">1</span><span class="p">];</span><span class="w"> </span><span class="nf">with</span><span class="p">(</span><span class="nf">as.list</span><span class="p">(</span><span class="n">parms</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ce</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Utilizando el paquete “deSolve” la simulación se reduce a:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">  </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="w">  </span><span class="nf">with</span><span class="p">(</span><span class="nf">as.list</span><span class="p">(</span><span class="n">parms</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="n">dp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ce</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="kr">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">dp</span><span class="p">))})</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">deSolve</span><span class="p">)</span>
+<span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ce</span><span class="o">=</span><span class="n">.</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="o">=</span><span class="n">.</span><span class="m">01</span><span class="p">)</span>
+<span class="n">time</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">initialN</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">.</span><span class="m">3</span>
+<span class="n">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ode</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">initialN</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="o">=</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="o">=</span><span class="n">gotelli</span><span class="p">,</span><span class="w"> </span><span class="n">parms</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">[,</span><span class="m">-1</span><span class="p">],</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&#39;l&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Integrales.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Integral Indefinida y Definida</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Ecuaciones diferenciales</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-diferenciales-ordinarias-edo">Ecuaciones Diferenciales Ordinarias (EDO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-valor-inicial-pvi">Problemas de Valor Inicial (PVI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-metapoblaciones">Ejemplos DE METAPOBLACIONES:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-gotelli">Modelo Gotelli.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
