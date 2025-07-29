@@ -53,3 +53,12 @@ parts:
             #title: Titulo cuarto cuaderno # Corregido
           - file: Eje_tematico_3/3e.ipynb
             #title: Titulo quinto cuaderno # Corregido
+
+  - caption: Ejemplo de Entregas
+    chapters:
+      - file: Entregables/Enunciado.md
+        sections:
+          #- file: Entregables/1_Cuaderno.ipynb
+          #- file: Entregables/2_Cuaderno.ipynb
+          - file: Entregables/4_Cuaderno.ipynb
+          #- file: Entregables/4_Cuaderno.ipynb
