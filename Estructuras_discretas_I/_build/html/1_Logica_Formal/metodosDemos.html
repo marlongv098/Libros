@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -450,6 +450,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-directa">Demostración Directa</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-contraposicion">Demostración por Contraposición</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-reduccion-al-absurdo">Demostración por Reducción al Absurdo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disyuncion-por-casos">Disyunción por casos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-contraejemplo">Demostración por contraejemplo:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-equivalencia">Demostración por equivalencia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-induccion-matematica">Demostración por Inducción Matemática</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
 </ul>
@@ -514,6 +517,141 @@ document.write(`
     (2k)^2 = 2q^2 \Rightarrow 4k^2 = 2q^2 \Rightarrow q^2 = 2k^2
 \]</div>
 <p>Por lo tanto, <span class="math notranslate nohighlight">\(q^2\)</span> es par, lo que implica que <span class="math notranslate nohighlight">\(q\)</span> también es par. Pero esto contradice la suposición de que <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(q\)</span> son primos entre sí. Por lo tanto, <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> es irracional.</p>
+</section>
+<section id="disyuncion-por-casos">
+<h2>Disyunción por casos<a class="headerlink" href="#disyuncion-por-casos" title="Link to this heading">#</a></h2>
+<p>Si una afirmación se cumple en todos los casos posibles, entonces se cumple siempre.</p>
+<p><strong>Ejemplo</strong></p>
+<p>De muestre que <span class="math notranslate nohighlight">\(|xy| = |x||y|\)</span> para <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span></p>
+<p>Recordemos la definición del valor absoluto:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|a| =
+\begin{cases}
+a &amp; \text{si } a \geq 0 \\
+-a &amp; \text{si } a &lt; 0
+\end{cases}
+\end{split}\]</div>
+<p><strong>Demostración</strong></p>
+<p>Procedemos por casos, considerando los signos de <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<p><strong>Caso 1:</strong> <span class="math notranslate nohighlight">\(x \geq 0\)</span>, <span class="math notranslate nohighlight">\(y \geq 0\)</span></p>
+<p>Entonces <span class="math notranslate nohighlight">\(xy \geq 0\)</span>, por lo que:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|x| = x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|y| = y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|xy| = xy\)</span></p></li>
+</ul>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+|xy| = xy = x \cdot y = |x||y|
+\]</div>
+<hr class="docutils" />
+<p><strong>Caso 2:</strong> <span class="math notranslate nohighlight">\(x \geq 0\)</span>, <span class="math notranslate nohighlight">\(y &lt; 0\)</span></p>
+<p>Entonces <span class="math notranslate nohighlight">\(xy &lt; 0\)</span>, por lo que:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|x| = x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|y| = -y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|xy| = -(xy) = -x \cdot y\)</span></p></li>
+</ul>
+<p>Pero <span class="math notranslate nohighlight">\(|x||y| = x \cdot (-y) = -xy\)</span></p>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+|xy| = -xy = |x||y|
+\]</div>
+<p><strong>Caso 3:</strong> <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, <span class="math notranslate nohighlight">\(y \geq 0\)</span></p>
+<p>Análogo al caso anterior. <span class="math notranslate nohighlight">\(xy &lt; 0\)</span>, entonces:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|x| = -x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|y| = y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|xy| = -(xy) = -x \cdot y\)</span></p></li>
+</ul>
+<p>Y:</p>
+<div class="math notranslate nohighlight">
+\[
+|x||y| = (-x) \cdot y = -xy = |xy|
+\]</div>
+<p><strong>Caso 4:</strong> <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, <span class="math notranslate nohighlight">\(y &lt; 0\)</span></p>
+<p>Entonces <span class="math notranslate nohighlight">\(xy &gt; 0\)</span>, porque el producto de dos negativos es positivo. Entonces:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|x| = -x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|y| = -y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|xy| = xy\)</span></p></li>
+</ul>
+<p>Y:</p>
+<div class="math notranslate nohighlight">
+\[
+|x||y| = (-x)(-y) = xy = |xy|
+\]</div>
+<p><strong>Conclusión:</strong></p>
+<p>En todos los casos se cumple que:</p>
+<div class="math notranslate nohighlight">
+\[
+|xy| = |x||y|
+\]</div>
+<p>Por tanto, para todo <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\boxed{|xy| = |x||y|}
+\]</div>
+</section>
+<section id="demostracion-por-contraejemplo">
+<h2>Demostración por contraejemplo:<a class="headerlink" href="#demostracion-por-contraejemplo" title="Link to this heading">#</a></h2>
+<p>Una demostración por contraejemplo se utiliza para refutar una afirmación universal, es decir, una afirmación que dice que algo es cierto para todos los elementos de un conjunto.</p>
+<p><strong>Ejemplo</strong></p>
+<p>Todos los números primos son impares</p>
+<p><strong>Demostración</strong></p>
+<p>Consideremos el número:</p>
+<div class="math notranslate nohighlight">
+\[
+2
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2\)</span> es <strong>mayor que 1</strong></p></li>
+<li><p>Los únicos divisores positivos de <span class="math notranslate nohighlight">\(2\)</span> son <span class="math notranslate nohighlight">\(1\)</span> y <span class="math notranslate nohighlight">\(2\)</span></p></li>
+<li><p>Entonces, <strong><span class="math notranslate nohighlight">\(2\)</span> es primo</strong></p></li>
+<li><p>Pero <strong><span class="math notranslate nohighlight">\(2\)</span> es par</strong></p></li>
+</ul>
+<p><strong>Conclusión:</strong></p>
+<p>Hemos encontrado un número primo que <strong>no es impar</strong>: el número <strong>2</strong>.</p>
+<p>Por lo tanto, la afirmación:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{&quot;Todos los números primos son impares&quot;}
+\]</div>
+<p>es <strong>falsa</strong>.</p>
+</section>
+<section id="demostracion-por-equivalencia">
+<h2>Demostración por equivalencia<a class="headerlink" href="#demostracion-por-equivalencia" title="Link to this heading">#</a></h2>
+<p>Una demostración por equivalencia se usa cuando queremos probar que dos afirmaciones son lógicamente iguales, es decir, que una es verdadera si y solo si la otra también lo es.</p>
+<p><strong>Ejemplo:</strong></p>
+<p>Demuestre que si <span class="math notranslate nohighlight">\(n\)</span> es par si y solo si <span class="math notranslate nohighlight">\((n+1)\)</span> es impar</p>
+<p>Esto es una proposición de equivalencia lógica. Escribimos:</p>
+<p><strong>Demostración</strong></p>
+<p>Para probar una equivalencia, debemos demostrar <strong>ambas direcciones</strong>:</p>
+<p><strong>Caso 1:</strong> Si <span class="math notranslate nohighlight">\(n\)</span> es par, entonces <span class="math notranslate nohighlight">\((n+1)\)</span> es impar</p>
+<p>Por definición:</p>
+<ul class="simple">
+<li><p>Un número <strong>par</strong> es un entero que se puede escribir como <span class="math notranslate nohighlight">\(n = 2k\)</span> para algún <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p></li>
+<li><p>Entonces, <span class="math notranslate nohighlight">\((n+1) = 2k + 1\)</span>.</p></li>
+</ul>
+<p>Esto es exactamente la forma de un número <strong>impar</strong>.</p>
+<p>Por lo tanto, si <span class="math notranslate nohighlight">\(n\)</span> es par, entonces <span class="math notranslate nohighlight">\((n+1)\)</span> es impar.</p>
+<p><strong>Caso 2:</strong> Si <span class="math notranslate nohighlight">\((n+1)\)</span> es impar, entonces <span class="math notranslate nohighlight">\(n\)</span> es par</p>
+<p>Si <span class="math notranslate nohighlight">\((n+1)\)</span> es impar, entonces por definición:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((n+1) = 2k + 1\)</span> para algún <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p></li>
+<li><p>Entonces, <span class="math notranslate nohighlight">\(n = (2k + 1) - 1 = 2k\)</span>.</p></li>
+</ul>
+<p>Esto es exactamente la forma de un número <strong>par</strong>.</p>
+<p>Por lo tanto, <span class="math notranslate nohighlight">\(n\)</span> es par.</p>
+<p><strong>Conclusión:</strong></p>
+<p>Como se ha demostrado <strong>en ambos sentidos</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+n \text{ es par } \iff (n+1) \text{ es impar}
+\]</div>
 </section>
 <section id="demostracion-por-induccion-matematica">
 <h2>Demostración por Inducción Matemática<a class="headerlink" href="#demostracion-por-induccion-matematica" title="Link to this heading">#</a></h2>
@@ -622,6 +760,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-directa">Demostración Directa</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-contraposicion">Demostración por Contraposición</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-reduccion-al-absurdo">Demostración por Reducción al Absurdo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disyuncion-por-casos">Disyunción por casos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-contraejemplo">Demostración por contraejemplo:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-equivalencia">Demostración por equivalencia</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demostracion-por-induccion-matematica">Demostración por Inducción Matemática</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
 </ul>

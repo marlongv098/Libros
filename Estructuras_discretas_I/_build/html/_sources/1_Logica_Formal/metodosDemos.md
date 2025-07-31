@@ -68,6 +68,180 @@ $$
 
 Por lo tanto, $q^2$ es par, lo que implica que $q$ también es par. Pero esto contradice la suposición de que $p$ y $q$ son primos entre sí. Por lo tanto, $\sqrt{2}$ es irracional.
 
+## Disyunción por casos
+Si una afirmación se cumple en todos los casos posibles, entonces se cumple siempre.
+
+**Ejemplo**
+
+De muestre que $|xy| = |x||y|$ para $x, y \in \mathbb{R}$
+
+Recordemos la definición del valor absoluto:
+
+$$
+|a| =
+\begin{cases}
+a & \text{si } a \geq 0 \\
+-a & \text{si } a < 0
+\end{cases}
+$$
+
+**Demostración**
+
+Procedemos por casos, considerando los signos de $x$ y $y$:
+
+**Caso 1:** $x \geq 0$, $y \geq 0$
+
+Entonces $xy \geq 0$, por lo que:
+
+- $|x| = x$
+- $|y| = y$
+- $|xy| = xy$
+
+Luego:
+
+$$
+|xy| = xy = x \cdot y = |x||y|
+$$
+
+---
+
+**Caso 2:** $x \geq 0$, $y < 0$
+
+Entonces $xy < 0$, por lo que:
+
+- $|x| = x$
+- $|y| = -y$
+- $|xy| = -(xy) = -x \cdot y$
+
+Pero $|x||y| = x \cdot (-y) = -xy$
+
+Luego:
+
+$$
+|xy| = -xy = |x||y|
+$$
+
+**Caso 3:** $x < 0$, $y \geq 0$
+
+Análogo al caso anterior. $xy < 0$, entonces:
+
+- $|x| = -x$
+- $|y| = y$
+- $|xy| = -(xy) = -x \cdot y$
+
+Y:
+
+$$
+|x||y| = (-x) \cdot y = -xy = |xy|
+$$
+
+**Caso 4:** $x < 0$, $y < 0$
+
+Entonces $xy > 0$, porque el producto de dos negativos es positivo. Entonces:
+
+- $|x| = -x$
+- $|y| = -y$
+- $|xy| = xy$
+
+Y:
+
+$$
+|x||y| = (-x)(-y) = xy = |xy|
+$$
+
+**Conclusión:**
+
+En todos los casos se cumple que:
+
+$$
+|xy| = |x||y|
+$$
+
+Por tanto, para todo $x, y \in \mathbb{R}$:
+
+$$
+\boxed{|xy| = |x||y|}
+$$
+
+## Demostración por contraejemplo: 
+
+Una demostración por contraejemplo se utiliza para refutar una afirmación universal, es decir, una afirmación que dice que algo es cierto para todos los elementos de un conjunto.
+
+**Ejemplo**
+
+Todos los números primos son impares
+
+**Demostración**
+
+Consideremos el número:
+
+$$
+2
+$$
+
+- $2$ es **mayor que 1**
+- Los únicos divisores positivos de $2$ son $1$ y $2$
+- Entonces, **$2$ es primo**
+- Pero **$2$ es par**
+
+**Conclusión:**
+
+Hemos encontrado un número primo que **no es impar**: el número **2**.
+
+Por lo tanto, la afirmación:
+
+$$
+\text{"Todos los números primos son impares"}
+$$
+
+es **falsa**.
+
+## Demostración por equivalencia
+
+Una demostración por equivalencia se usa cuando queremos probar que dos afirmaciones son lógicamente iguales, es decir, que una es verdadera si y solo si la otra también lo es.
+
+**Ejemplo:**
+
+Demuestre que si $n$ es par si y solo si $(n+1)$ es impar
+
+Esto es una proposición de equivalencia lógica. Escribimos:
+
+**Demostración**
+
+Para probar una equivalencia, debemos demostrar **ambas direcciones**:
+
+**Caso 1:** Si $n$ es par, entonces $(n+1)$ es impar
+
+Por definición:
+
+- Un número **par** es un entero que se puede escribir como $n = 2k$ para algún $k \in \mathbb{Z}$.
+- Entonces, $(n+1) = 2k + 1$.
+
+Esto es exactamente la forma de un número **impar**.
+
+Por lo tanto, si $n$ es par, entonces $(n+1)$ es impar.
+
+
+**Caso 2:** Si $(n+1)$ es impar, entonces $n$ es par
+
+Si $(n+1)$ es impar, entonces por definición:
+
+- $(n+1) = 2k + 1$ para algún $k \in \mathbb{Z}$.
+- Entonces, $n = (2k + 1) - 1 = 2k$.
+
+Esto es exactamente la forma de un número **par**.
+
+Por lo tanto, $n$ es par.
+
+**Conclusión:**
+
+Como se ha demostrado **en ambos sentidos**:
+
+$$
+n \text{ es par } \iff (n+1) \text{ es impar}
+$$
+
+
 ## Demostración por Inducción Matemática
 
 Se usa para demostrar afirmaciones sobre los números naturales.
