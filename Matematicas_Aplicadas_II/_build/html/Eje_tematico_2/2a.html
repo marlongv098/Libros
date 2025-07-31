@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vectores &#8212; Matematicas Aplicadas II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Eje_tematico_2/2a';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matrices" href="2b.html" />
+    <link rel="prev" title="Introducción" href="2intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Matematicas Aplicadas II - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Matematicas Aplicadas II - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Notas de clase.
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Vectores</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2b.html">Matrices</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="2c.html">Operaciones con matrices</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la derivada.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_3/3intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3a.html">Cuádricas</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3b.html">Diferenciación de funciones  en varias variables</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3c.html">Aproximación lineal</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3d.html">Funciones en varias variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3e.html">Optimización</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ejemplo de Entregas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Entregables/Enunciado.html">Propulsión de cohetes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Entregables/4_Cuaderno.html"><strong>RESPUESTAS</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEje_tematico_2/2a.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Eje_tematico_2/2a.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vectores</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Vectores</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">Definicion</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-con-vectores">Operaciones con vectores</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vectores">
+<h1>Vectores<a class="headerlink" href="#vectores" title="Link to this heading">#</a></h1>
+<p>La descripción matemática de ciertos fenómenos del mundo real requiere de una colección de números. Por ejemplo, un lugar sobre la superficie de la tierra es descrito por dos números, latitud y longitud. Para especificar una posición por encima del suelo sobre la tierra se requiere un tercer número, la altitud. Para describir el estado de un gas tenemos que especificar su densidad y temperatura; si es una mezcla de gases como el oxígeno y nitrógeno, tenemos que especificar su proporción. Tales situaciones se abstraen en el concepto de un vector.</p>
+<section id="definicion">
+<h2>Definicion<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h2>
+<p>Un vector es una lista finita ordenada de números. Los vectores generalmente se escriben de forma vertical u horizontal rodeados por corchetes,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}
+1.1\\
+0.0\\
+3.6\\
+7.2
+\end{array}\right]\quad\left[\begin{array}{rrrr}
+1.1 &amp; 0.0 &amp; 3.6 &amp; 7.2\end{array}\right].\end{split}\]</div>
+<p>También se pueden escribir como números separados por comas y rodeados de paréntesis. En este estilo de notación, el vector de arriba se escribe como</p>
+<div class="math notranslate nohighlight">
+\[(1.1, 0.0, 3.6, 7.2)\]</div>
+<p>Los elementos (o entradas, coeficientes, componentes) de un vector son los valores en el arreglo. El tamaño (también llamado dimensión) del vector es el número de
+elementos que contiene. El vector de arriba, por ejemplo, tiene tamaño cuatro; su tercera entrada
+es 3.6. Un vector de tamaño <span class="math notranslate nohighlight">\(n\)</span> se llama <span class="math notranslate nohighlight">\(n-\)</span>vector. Se considera que un <span class="math notranslate nohighlight">\(1-\)</span>vector es igual que un número, es decir, no distinguimos entre el <span class="math notranslate nohighlight">\(1-\)</span>vector <span class="math notranslate nohighlight">\([ 1.3 ]\)</span> y el
+número <span class="math notranslate nohighlight">\(1.3\)</span>.
+y muchos muchos mas. <span class="math notranslate nohighlight">\((\mathbb{R}^2)\)</span>.</p>
+<p>En Python, puede crear una lista usando corchetes como <span class="math notranslate nohighlight">\([1,2,3]\)</span>. Esto se llama una “lista de Python” y NO es un vector en la forma en que lo pensamos matemáticamente. Es simplemente una colección ordenada de objetos. Para construir vectores matemáticos en Python, necesitamos usar matrices numpy con np.array(). Por ejemplo, el vector anterior sería:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="s2">&quot;mathjax&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">3.6</span><span class="p">,</span><span class="mf">7.2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.1 0.  3.6 7.2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra manera de crear vectores es con el comando</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span>
+</pre></div>
+</div>
+<p>Como veremos en python se pueden crear listas de números aleatorios con la longitud que deseemos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">random_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.int64(70), np.int64(88), np.int64(49)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uno de los usos mas comunes en vectores son los colores. RGB significa rojo, verde y azul. Juntos representan el espectro de colores en el mundo digital. Al combinarse estos colores se pueden generar todos los colores donde cada uno de ellos tiene 8 bits, lo que tiene como significado que pueden ser representados por un entero de 0 a 255.</p>
+<p>También podemos es importante saber longitud de los vectores. Esto es util cuando queremos saber si se pueden realizar operaciones con los vectores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">dimension_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.65</span><span class="p">,</span> <span class="mf">1.82</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="mf">1.56</span><span class="p">,</span> <span class="mf">1.72</span><span class="p">,</span> <span class="mf">1.98</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">]</span>
+<span class="n">np_dimension_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dimension_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np_dimension_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sobre las listas podemos usar una variedad de métodos que nos permitiran encontrar elementos de dentro de las listas o relaizar operaciones con sus elementos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np_dimension_list</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># min(): Obtener el valor menor dentro del vector</span>
+<span class="n">np_dimension_list</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<span class="c1"># sort(): ordena los elementos del vector de mayor a menor</span>
+<span class="n">np_dimension_list</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="c1"># round(): Redondea los valores del vector</span>
+<span class="n">np_dimension_list</span><span class="o">.</span><span class="n">round</span><span class="p">()</span>
+
+<span class="c1"># sum(): Nos devuelve la suma de todos los valores del vector</span>
+<span class="n">np_dimension_list</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># put():Inserta un nuevo elemento en la matriz en la posición especificada</span>
+<span class="n">np_dimension_list</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.79</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="operaciones-con-vectores">
+<h1>Operaciones con vectores<a class="headerlink" href="#operaciones-con-vectores" title="Link to this heading">#</a></h1>
+<p>Las operaciones y sus propiedades son las mismas que usted conoce en los números reales. La diferencia radica en el tipo de objetos que usted está operando. En particular, vamos a introducir las operaciones de SUMA  y PRODUCTO POR UN ESCALAR para cualquier par de vectores <span class="math notranslate nohighlight">\(\mathbf{u}=(u_1,u_2,...u_n)\)</span> y <span class="math notranslate nohighlight">\(\mathbf{v}=(v_1,v_2,...,v_n)\)</span>:</p>
+<p><strong>SUMA:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \left[\begin{array}{c}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{array}\right]+\left[\begin{array}{c}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{array}\right]=\left[\begin{array}{c}
+u_1+v_1\\
+u_2+v_2\\
+\vdots\\
+u_n+v_n
+\end{array}\right]\end{split}\]</div>
+<p>un ejemplo de la suma entre vectores en python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">np_list1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">45</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">23</span> <span class="p">,</span><span class="mi">4</span> <span class="p">,</span><span class="mi">34</span><span class="p">])</span>
+<span class="n">np_list2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">77</span><span class="p">])</span>
+
+<span class="n">np_sum</span> <span class="o">=</span> <span class="n">np_list1</span> <span class="o">+</span> <span class="n">np_list2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np_sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 51  97  31  86 111]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>PRODUCTO POR ESCALAR:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+c\left[\begin{array}{c}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{array}\right]=\left[\begin{array}{c}
+c u_1\\
+c u_2\\
+\vdots\\
+c u_n
+\end{array}\right]
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np_product</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np_list1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np_product</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[180 260  92  16 136]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>PRODUCTO PUNTO:</strong></p>
+<p>Producto punto: Para cualquier par de <span class="math notranslate nohighlight">\(n-\)</span>vectores <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> y <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> se tiene que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}  \left[\begin{array}{c}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{array}\right]\cdotp\left[\begin{array}{c}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{array}\right]=u_1v_1+u_2v_2+...+u_nv_n=\sum_{i=1}^n u_iv_i\end{split}\]</div>
+<p>en python se pueden realizar porducto punto entre vectores de la siguiente forma</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dot_product</span> <span class="o">=</span> <span class="n">np_list1</span> <span class="o">@</span> <span class="n">np_list2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dot_product</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5480
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dot_product_1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np_list1</span><span class="p">,</span><span class="n">np_list2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dot_product_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5480
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>MAGNITUD:</strong></p>
+<p>Finalmente, debemos mencionar que geométricamente es fácil encontrar la magnitud de un vector utilizando el teorema de Pitágoras. La magnitud del vector <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> se denota con <span class="math notranslate nohighlight">\(||\cdot||\)</span> y se calcula como sigue:</p>
+<div class="math notranslate nohighlight">
+\[||\mathbf{u}||  = \sqrt{u_1^2+u_2^2+...+u_n^2}= \sqrt{\mathbf{u}\cdot\mathbf{u}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">array</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">norm_l2</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">norm_l2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4 5]
+7.416198487095663
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTA:</strong></p>
+<p>En particular, se puede estudiar el concepto de <strong>combinación lineal</strong> que involucra las dos operaciones anteriores. Una <strong>combinación lineal</strong> de los vectores <span class="math notranslate nohighlight">\(\mathbf{u}=(u_1,u_2,...u_n)\)</span> y <span class="math notranslate nohighlight">\(\mathbf{v}=(v_1,v_2,...,v_n)\)</span> se expresa como</p>
+<div class="math notranslate nohighlight">
+\[a \mathbf{u}+ b \mathbf{v},\qquad a,b\in \mathbb{R}\]</div>
+<p>Geometricamente podemos observar como se comporta una combinación lineal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title  { display-mode: &quot;form&quot; }</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">IP</span>
+
+<span class="n">iframe</span> <span class="o">=</span> <span class="n">IP</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span>
+  <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://www.geogebra.org/classic/xgqzppfx&quot;</span><span class="p">,</span>
+  <span class="n">width</span><span class="o">=</span><span class="s2">&quot;1020px&quot;</span><span class="p">,</span>
+  <span class="n">height</span><span class="o">=</span><span class="s2">&quot;480px&quot;</span>
+  <span class="p">)</span>
+
+<span class="n">IP</span><span class="o">.</span><span class="n">display_html</span><span class="p">(</span><span class="n">iframe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="1020px"
+            height="480px"
+            src="https://www.geogebra.org/classic/xgqzppfx"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Eje_tematico_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2b.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matrices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Vectores</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">Definicion</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-con-vectores">Operaciones con vectores</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

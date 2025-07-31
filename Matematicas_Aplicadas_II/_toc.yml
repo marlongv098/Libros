@@ -1,0 +1,64 @@
+
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md # Se recomienda usar la extensión .md para el archivo root
+
+# Opcional: Configuración predeterminada para todos los capítulos/secciones
+defaults:
+  numbered: false # Numera automáticamente capítulos y secciones
+  titlesonly: false # Solo muestra los títulos en la tabla de contenido, no los encabezados internos de cada página
+
+# Puedes organizar tu libro en 'parts' (partes) o directamente en 'chapters' (capítulos)
+# Usar 'parts' es útil si tienes grandes secciones temáticas
+parts:
+  - caption: Aplicaciones de la integral y las ecuaciones diferenciales.
+    chapters:
+      - file: Eje_tematico_1/1intro.md        
+        sections:
+          - file: Eje_tematico_1/1a.ipynb
+            #title: Título primer cuaderno # Corregido: Título directo sin null
+          - file: Eje_tematico_1/1b.ipynb
+            #title: Título segundo cuaderno # Corregido
+          - file: Eje_tematico_1/1c.ipynb
+            #title: Título tercer cuaderno # Corregido
+          - file: Eje_tematico_1/1d.ipynb
+            #title: Título cuarto capitulo # Corregido
+
+  - caption: Aplicaciones de los vectores y las matrices.
+    chapters:
+      - file: Eje_tematico_2/2intro.md
+        sections:
+          - file: Eje_tematico_2/2a.ipynb
+            #title: Titulo primer cuaderno # Corregido
+          - file: Eje_tematico_2/2b.ipynb
+            #title: Titulo segundo cuaderno # Corregido
+          - file: Eje_tematico_2/2c.ipynb
+            #title: Titulo tercer cuaderno # Corregido
+          - file: Eje_tematico_2/2d.ipynb
+            #title: Titulo cuarto cuaderno # Corregido
+
+  - caption: Aplicaciones de la derivada. # Corregido
+    chapters:
+      - file: Eje_tematico_3/3intro.md
+        sections:
+          - file: Eje_tematico_3/3a.ipynb
+            #title: Titulo primer cuaderno # Corregido
+          - file: Eje_tematico_3/3b.ipynb
+            #title: Titulo segundo cuaderno # Corregido
+          - file: Eje_tematico_3/3c.ipynb
+            #title: Titulo tercer cuaderno # Corregido
+          - file: Eje_tematico_3/3d.ipynb
+            #title: Titulo cuarto cuaderno # Corregido
+          - file: Eje_tematico_3/3e.ipynb
+            #title: Titulo quinto cuaderno # Corregido
+
+  - caption: Ejemplo de Entregas
+    chapters:
+      - file: Entregables/Enunciado.md
+        sections:
+          #- file: Entregables/1_Cuaderno.ipynb
+          #- file: Entregables/2_Cuaderno.ipynb
+          - file: Entregables/4_Cuaderno.ipynb
+          #- file: Entregables/4_Cuaderno.ipynb

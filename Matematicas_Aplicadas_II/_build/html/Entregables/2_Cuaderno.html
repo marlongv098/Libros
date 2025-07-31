@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Matematicas Aplicadas II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Entregables/2_Cuaderno';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Matematicas Aplicadas II - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Matematicas Aplicadas II - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Notas de clase.
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2b.html">Matrices</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la derivada.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_3/3intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3a.html">Cuádricas</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3b.html">Diferenciación de funciones  en varias variables</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3c.html">Aproximación lineal</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3d.html">Funciones en varias variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3e.html">Optimización</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ejemplo de Entregas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Enunciado.html">Propulsión de cohetes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Cuaderno.html"><strong>RESPUESTAS</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEntregables/2_Cuaderno.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Entregables/2_Cuaderno.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><font color='pink'  size=4><Strong> CUADERNO 1 -&gt; MAT. APLICADAS 2</p>
+<p><STRONG> <font color='pink'  size=4>INTEGRANTES:</p>
+<p><strong> Johan David Mora, Juan Pablo Cubillos, Valentina Martinez, Juan Felipe Zúñiga, Alejandro Murillo.</p>
+<p><font color='pink' face='times' size=5><strong>CONTEXTO</strong></p>
+<p><font color='pink' face='times' size=4><strong>1.a)</strong></p>
+<p><span class="math notranslate nohighlight">\(v(t) = v₀ − g * t + c * ln (\frac{m₀}{m₀ − βt})\)</span><br />
+Reemplazamos valores:<br />
+<span class="math notranslate nohighlight">\(v(30) = 0 − 9,81m/s * 30s + 2500\frac{m}{s} * ln (\frac{5000Kg}{5000Kg − 50\frac{kg}{s} * 30s})\)</span><br />
+<span class="math notranslate nohighlight">\(v(30) = 597,3873m/s\)</span></p>
+<p><font color='pink' face='times' size=4><strong>1.b)</strong></p>
+<p><span class="math notranslate nohighlight">\(m_1 = m₀ - βt_1\)</span><br />
+Despejamos t:<br />
+<span class="math notranslate nohighlight">\(-βt_1 = m_1 - m₀\)</span><br />
+<span class="math notranslate nohighlight">\(t1=-(\frac{m_1 - m₀}{β})\)</span><br />
+Reemplazamos los valores:<br />
+<span class="math notranslate nohighlight">\(t_1=-(\frac{1000kg - 5000kg}{50kg/s})\)</span><br />
+<span class="math notranslate nohighlight">\(t_1=80s\)</span></p>
+<p><font color='pink' face='times' size=4><strong>1.c)</strong></p>
+<p><span class="math notranslate nohighlight">\(v(t_1) = v₀ − g * t1 + c * ln (\frac{m₀}{m_1})\)</span><br />
+Reemplazamos valores:<br />
+<span class="math notranslate nohighlight">\(v(t_1) = 0 − 9,81m/s * 80s + 2500m/s * ln (\frac{5000Kg}{1000kg})\)</span><br />
+<span class="math notranslate nohighlight">\(v(t_1) = 3238.79m/s\)</span></p>
+<p><font color='pink' face='times' size=4><strong>1.d)</strong></p>
+<p><span class="math notranslate nohighlight">\(y(t) = - (\frac{1}{2})gt^2 + v_0t + ct(ln(m_o)) + (\frac{c}{β})(m_o-βt)(ln(m_o-βt)- 1) + y_0 − (\frac{c}{β}) (m_0) (ln(m_0)-1)\)</span><br />
+Reemplazamos valores:<br />
+<span class="math notranslate nohighlight">\(y(30)=  - (\frac{1}{2})9,81m/s*30s^2 + 0*30s + 2500m/s*30s(ln(5000kg)) + (\frac{2500m/s}{50kg/s})(5000kg-50kg/s*30s) (ln(5000kg-50kg/s*30s)- 1) + 0 − (\frac{2500m/s}{50kg/s}) (5000kg) (ln(5000kg)-1)\)</span><br />
+<span class="math notranslate nohighlight">\(y(30)=8167,38m\)</span></p>
+<hr class="docutils" />
+<p><strong> <font color='pink'  size=4>Preguntas
+1A y 1B: Entendiendo el desarrollo del problema</p>
+<p>Iniciamos con Segunda Ley de Newton, dado que es un movimiento vertical que involucra la aceleración del cohete.</p>
+<div class="math notranslate nohighlight">
+\[ F = m - a\]</div>
+<div class="math notranslate nohighlight">
+\[F = m ⋅ \frac {dv} {dt} \]</div>
+<div class="math notranslate nohighlight">
+\[ F = \frac {dm}{dt} \cdot \frac {dv}{dt}\]</div>
+<div class="math notranslate nohighlight">
+\[ F = \frac {d(m \cdot v)}{dt} → momentum \space P = m ⋅ v\]</div>
+<div class="math notranslate nohighlight">
+\[ F = \frac {dP}{dt}\]</div>
+<div class="math notranslate nohighlight">
+\[ΔP ≈ P_1 - P_0\]</div>
+<div class="math notranslate nohighlight">
+\[ ΔP ≈ (m + Δ m)(v + Δv)-(m \cdot v)\]</div>
+<p>Se aplica ley distributiva:
+$<span class="math notranslate nohighlight">\( ≈ mv + v Δm + m Δv + Δm Δv - mv \)</span><span class="math notranslate nohighlight">\(
+Se cancelan \)</span>mv<span class="math notranslate nohighlight">\( y \)</span>-mv<span class="math notranslate nohighlight">\(:
+\)</span><span class="math notranslate nohighlight">\( Δ P ≈ vΔm + m Δv + Δm Δv + (-Δm)(v-c)\)</span><span class="math notranslate nohighlight">\(
+Se aplica ley distributiva:
+\)</span><span class="math notranslate nohighlight">\( Δ P≈ v Δ m + m Δ v + Δm Δv - v Δ m + c Δm\)</span>$</p>
+<p>Se cancelan <span class="math notranslate nohighlight">\(vΔm\)</span> y <span class="math notranslate nohighlight">\(-v Δm\)</span>
+$<span class="math notranslate nohighlight">\(ΔP ≈ m Δ v + Δm Δv + c Δ m\)</span>$</p>
+<p>Ahora dividimos todo entre <span class="math notranslate nohighlight">\(Δt\)</span>, teniendo en cuenta que el factor tiempo es una variable muy relevante en este movimiento, cuyo <span class="math notranslate nohighlight">\(\Delta t\)</span> tenderá a 0. Considerando que los primeros 3 términos de izquierda a derecha tienden a la derivada de la variable en cuestión, evaluamos el efecto en la multiplicación de diferenciales <span class="math notranslate nohighlight">\(\Delta m \Delta v\)</span>. En este caso, <span class="math notranslate nohighlight">\(\Delta m * \frac{dv}{dt}\)</span> es igual a cero, dado que <span class="math notranslate nohighlight">\(\Delta m\)</span> tiende a cero.</p>
+<div class="math notranslate nohighlight">
+\[ \frac {ΔP}{Δt}= m \frac {Δv}{Δt} + c \frac {Δm}{Δt} + \frac {ΔmΔv}{Δt}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac {dP}{dt} = m \frac {dv}{dt} + c \frac {dm}{dt}\]</div>
+<div class="math notranslate nohighlight">
+\[F = m \frac {dv}{dt} + c \frac {dm}{dt}\]</div>
+<div class="math notranslate nohighlight">
+\[-mg -kv = m \frac {dv}{dt}+c \frac {dm}{dt}\]</div>
+<p>La masa disminuye con el tiempo, así que no es constante, es una función <span class="math notranslate nohighlight">\(m(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac {dm}{dt} = - β\]</div>
+<p>Integramos:</p>
+<div class="math notranslate nohighlight">
+\[ ∫ \frac {dm}{dt} = -β ∫ dt\]</div>
+<div class="math notranslate nohighlight">
+\[ m(t) = -βt + C\]</div>
+<div class="math notranslate nohighlight">
+\[m_0 = -β(0) + C\]</div>
+<div class="math notranslate nohighlight">
+\[ m_0 = C\]</div>
+<p>Reemplazamos <span class="math notranslate nohighlight">\(C\)</span> en la ecuacion:</p>
+<div class="math notranslate nohighlight">
+\[ m(t) = m_0 - βt \]</div>
+<p>Ahora reemplazamos <span class="math notranslate nohighlight">\(m(t)\)</span> en <span class="math notranslate nohighlight">\(m\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[-(m_0 - βt) g - kv = (m_0-βt)\frac {dv}{dt} - βc\]</div>
+<hr class="docutils" />
+<p>A continuación se encontrará la solución de la ecuación diferencial por medio del método del Factor integrante.</p>
+<p>Reordenamos para que los terminos que dependen de la aceleración <span class="math notranslate nohighlight">\(\frac {dv}{dt}\)</span> estén juntos:</p>
+<div class="math notranslate nohighlight">
+\[(m_0 - βt)\frac {dv}{dt} + kv = βc - (m_0-βt)g\]</div>
+<div class="math notranslate nohighlight">
+\[\frac {dv}{dt} + \frac {k}{m_0 - βt}\space v = \frac {βc}{m_0 - βt} - g\]</div>
+<div class="math notranslate nohighlight">
+\[P(t) = \frac {k}{m_0 - βt}\]</div>
+<div class="math notranslate nohighlight">
+\[Q(t) = \frac {βc}{m_0 - βt} - g \]</div>
+<p><strong> Factor de integración :</strong></p>
+<div class="math notranslate nohighlight">
+\[ μ (t) = e^{\int P(t) dt}\]</div>
+<div class="math notranslate nohighlight">
+\[ ∫ \frac {k}{m_0 - βt} \space dt\]</div>
+<div class="math notranslate nohighlight">
+\[ k ∫ \frac {1}{m_0- βt} \space dt \]</div>
+<div class="math notranslate nohighlight">
+\[ u = m_0 - βt\]</div>
+<div class="math notranslate nohighlight">
+\[du = -β \space dt\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac {du}{-β} = dt\]</div>
+<div class="math notranslate nohighlight">
+\[ k ∫ \frac {1}{u} ⋅ \frac {du}{-β}\]</div>
+<div class="math notranslate nohighlight">
+\[- \frac {k}{β} ∫\frac {1}{u} \space du\]</div>
+<div class="math notranslate nohighlight">
+\[ I = - \frac {k}{β} \space ln(u)\]</div>
+<div class="math notranslate nohighlight">
+\[ I = - \frac {k}{β} \space ln(m_0 - βt)\]</div>
+<div class="math notranslate nohighlight">
+\[ μ (t) = e ^ {- \frac {k}{β} ln (m_0-βt)}\]</div>
+<div class="math notranslate nohighlight">
+\[ μ (t) = e ^ { ln(m_0-βt) ^{- \frac {k}{β}} }\]</div>
+<div class="math notranslate nohighlight">
+\[ μ (t) = (m_0 - βt) ^ {- \frac {k}{β}}\]</div>
+<div class="math notranslate nohighlight">
+\[ (m_0 - βt) ^ {- \frac {k}{β}} \space \frac {dv}{dt}  + k (m_0 - βt) ^ {- \frac {k}{β}-1} v = \frac {βc}{m_0-βt}(m_0 - βt)^{- \frac {k}{β}} - g(m_0-βt)^{-\frac {k}{β}}\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac {d}{dt}((m_0 - βt) ^ {- \frac {k}{β}} v)= βc(m_0-βt)^{- \frac {k}{β}-1} - g(m_0-βt)^{-\frac {k}{β}}\]</div>
+<div class="math notranslate nohighlight">
+\[ (m_0 - βt)^{-\frac{k}{β}} v = ∫ βc (m_0 - βt)^ {- \frac {k}{β}-1} \space dt - ∫g (m_0 - βt)^{- \frac {k}{β}} \space dt \]</div>
+<p>Hacemos integracion por sustitución y usamos las mismas sustituciones que hicimos anteriormente:
+$<span class="math notranslate nohighlight">\( I_1 = ∫ βc (u) ^{- \frac {k}{β}-1} \frac {du}{-β}\)</span>$</p>
+<p>Cancelamos <span class="math notranslate nohighlight">\(β\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ = -c ∫ u ^{- \frac {k}{β}-1} \space du \]</div>
+<div class="math notranslate nohighlight">
+\[ = -c (\frac {u ^ {- \frac {k}{β}}}{-\frac {k}{β}})\]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac {c}{\frac {k}{β}} u ^ {- \frac {k}{β}}\]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac {c}{\frac {k}{β}} (m_0 - βt) ^ {- \frac {k}{β}}\]</div>
+<div class="math notranslate nohighlight">
+\[ I_1 = \frac {cβ}{k} (m_0-βt)^{- \frac {k}{β}}\]</div>
+<p>Hacemos la integral del segundo termino:
+$<span class="math notranslate nohighlight">\( I_2 = ∫g (m_0 - βt)^{- \frac {k}{β}} \space dt\)</span>$</p>
+<p>Usamos el mismo cambio de variable:</p>
+<div class="math notranslate nohighlight">
+\[I_2 = ∫g \space u ^{- \frac {k}{β}} \frac {du}{-β}\]</div>
+<div class="math notranslate nohighlight">
+\[ = - \frac {g}{β} ∫ u ^{- \frac {k}{β}} du \]</div>
+<div class="math notranslate nohighlight">
+\[ = - \frac {g}{β} ⋅ \frac {u ^{- \frac {k}{β}+1}}{- \frac {k}{β}+1}\]</div>
+<p><strong> Ahora presentamos la integral del lado derecho, representada como I2:</p>
+<div class="math notranslate nohighlight">
+\[ I_2 = \frac {g(m_0-βt)^{- \frac {k}{β}+1}}{β-k} \]</div>
+<p><Strong> Dando como resultado la siguiente ecuación general:</p>
+<div class="math notranslate nohighlight">
+\[\frac {cβ}{k} (m_0-βt)^{- \frac {k}{β}} + \frac {g(m_0-βt)^{- \frac {k}{β}+1}}{β-k} + D = (m_0 - βt)^{-\frac {k}{β}} v \]</div>
+<p><strong> A continuación se presenta la solución particular, dada por la condición inicial <span class="math notranslate nohighlight">\(t-&gt;0\)</span></p>
+<p><strong> Reemplazando:</p>
+<div class="math notranslate nohighlight">
+\[\frac {cβ}{k} (m_0-β(0))^{- \frac {k}{β}} + \frac {g(m_0-β(0))^{- \frac {k}{β}+1}}{β-k} + D = (m_0 - β(0))^{-\frac {k}{β}} v \]</div>
+<div class="math notranslate nohighlight">
+\[\frac {cβ}{k} (m_0)^{- \frac {k}{β}} + \frac {g(m_0)^{- \frac {k}{β}+1}}{β-k} + D = (m_0)^{-\frac {k}{β}} v \]</div>
+<p><strong> Acto seguido, multiplicaremos toda la ecuación por <span class="math notranslate nohighlight">\(m_0^\frac{k}{β}\)</span> con el fin de simplificar un poco la expresión:</p>
+<div class="math notranslate nohighlight">
+\[(m_0^\frac{k}{β})(\frac {cβ}{k} (m_0)^{- \frac {k}{β}} + \frac {g(m_0)^{- \frac {k}{β}+1}}{β-k} + D = (m_0)^{-\frac {k}{β}} v )\]</div>
+<div class="math notranslate nohighlight">
+\[V_0 = \frac{cβ}{k} + \frac{gm_0}{β-k} + Dm_0^\frac{k}{β}\]</div>
+<p><strong> Despejando D, obtenemos la solución particular a la ecuación diferencial propuesta. Quedándonos de esta manera:</p>
+<div class="math notranslate nohighlight">
+\[D = \frac{v_0-\frac{cβ}{k} - \frac{gm_0}{β-k}}{m_0^\frac{k}{β}}\]</div>
+<p><strong> Reemplazando la Constante que se acaba de encontrar:</p>
+<div class="math notranslate nohighlight">
+\[\frac {cβ}{k} (m_0-βt)^{- \frac {k}{β}} + \frac {g(m_0-βt)^{- \frac {k}{β}+1}}{β-k} + \frac{v_0-\frac{cβ}{k} - \frac{gm_0}{β-k}}{m_0^\frac{k}{β}} = (m_0 - βt)^{-\frac {k}{β}} v \]</div>
+<p><strong> De esta forma, encontramos la solución particular (aún no despejada) de nuestra ecuación diferencial inicial, considerando la fricción y resistencia del aire.</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<p><strong> <font color='pink'  size=4>Pregunta 2a: Caso sin Fricción Velocidad Y Posición</p>
+<p><strong> Se parte inicialmente de la Ecuación Diferencial que involucra la Fricción y la Gravedad:</p>
+<div class="math notranslate nohighlight">
+\[(m_0 -βt)\frac {dv}{dt} + kv = βc \space - \space (m_0-βt)g\]</div>
+<p><strong> Dado que el interés del ejercicio se concentra en la Ecuación Diferencial representativa del movimiento, con ausencia de fricción, hacemos <span class="math notranslate nohighlight">\(k=0\)</span> y despejamos <span class="math notranslate nohighlight">\(\frac{dv}{dt}\)</span>; quedando:</p>
+<div class="math notranslate nohighlight">
+\[\frac {dv} {dt} = - \frac {g(m_0-βt)+ βc}{(m_0- βt)} \]</div>
+<div class="math notranslate nohighlight">
+\[\frac {dv} {dt} = - \frac {g(m_0- βt)}{(m_0-βt)} + \frac {βc}{m_0- βt}\]</div>
+<div class="math notranslate nohighlight">
+\[ -g + \frac {βc}{m_0-βt}\]</div>
+<div class="math notranslate nohighlight">
+\[ v = -g ∫ dt + \int \frac {βc}{m_0-βt}\]</div>
+<div class="math notranslate nohighlight">
+\[ v = -gt + βc \int \frac {1}{m_0- βt}\]</div>
+<div class="math notranslate nohighlight">
+\[ = βc \int \frac {1}{m_0-βc} dt - gt\]</div>
+<div class="math notranslate nohighlight">
+\[ u = m_0- βt \]</div>
+<div class="math notranslate nohighlight">
+\[ du = -β \space dt\]</div>
+<div class="math notranslate nohighlight">
+\[ = c \int \frac {β}{m_0- βt} \space dt - gt\]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \int \frac {du}{u} - gt \]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space ln \space |u| - gt \]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space ln \space |m_0-βt| - gt\]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space ln \space (\frac {m_0(m_0- βt}{m_0}) - gt\]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space [ \space ln(m_0)+ln(\frac {m_o- βt}{m_o} )]- gt\]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space [ \space ln(m_0)+ (\space ln(m_0-βt)-ln(m_0))] - gt\]</div>
+<div class="math notranslate nohighlight">
+\[ V(t) = -c \space ln |m_0-βt| - gt +  D\]</div>
+<div class="math notranslate nohighlight">
+\[-c ∫ ln (m_0- βt) dt\]</div>
+<p>Hacemos integracion por sustitución:
+$<span class="math notranslate nohighlight">\( u = m_0 - βt\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ -β \space dt = du \]</div>
+<div class="math notranslate nohighlight">
+\[ dt = \frac {du}{- β}\]</div>
+<div class="math notranslate nohighlight">
+\[ -c ∫ ln (u) \space \frac {du}{-β}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac {c}{β} ∫ ln (u) \space du \]</div>
+<p>Hacemos integración por partes:
+$<span class="math notranslate nohighlight">\( z = ln (u) \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( dv = du \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( dz = \frac {1}{u}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(v=u\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ ln(u)\space u - ∫ u \space \frac {1}{u} \space du\]</div>
+<div class="math notranslate nohighlight">
+\[ ln(u) \space u - ∫ du\]</div>
+<div class="math notranslate nohighlight">
+\[ ln(u) \space u - u\]</div>
+<div class="math notranslate nohighlight">
+\[(ln(m_0 - βt) ⋅ (m_0 - βt) - (m_0-βt)) \frac {c}{β} - \frac {gt^2}{2} + D\]</div>
+<p><strong> <font color='pink'  size=4>Caso sin fricción </strong></p>
+<p><strong> De esta manera, establecemos <span class="math notranslate nohighlight">\(t=0\)</span> como condición inicial del problema para encontrar la Solución Particular de la velocidad:
+<span class="math notranslate nohighlight">\(\space\)</span></p>
+<div class="math notranslate nohighlight">
+\[ D → Constante → Condiciones \space Iniciales \space del \space problema\]</div>
+<div class="math notranslate nohighlight">
+\[ D → t = 0\]</div>
+<div class="math notranslate nohighlight">
+\[ V(0) = -c \space ln(m-0) + D \]</div>
+<div class="math notranslate nohighlight">
+\[ V(0) = V_0 \]</div>
+<div class="math notranslate nohighlight">
+\[ V_0 = -c \space ln (m_0) + D \]</div>
+<div class="math notranslate nohighlight">
+\[ D = V_0 + c \space ln(m_0)\]</div>
+<p><strong> Reemplazando <span class="math notranslate nohighlight">\(D\)</span> y Simplificando la Expresión, quedamos con:</p>
+<div class="math notranslate nohighlight">
+\[ V(t) = -c \space ln (m_0-βt) - gt + (V_0 + c \space ln (m_0)) \]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space ln (m_0-βt)-gt + c \space ln(m_O) + V_0 + c \space ln (m_0) \]</div>
+<div class="math notranslate nohighlight">
+\[ = c \space (-ln(m_0-βt) + ln (m_0)) - gt + V_0 \]</div>
+<div class="math notranslate nohighlight">
+\[ = c \space ln (\frac {m_0}{m_0-βt}) + V_0 - gt\]</div>
+<div class="math notranslate nohighlight">
+\[ V(t) = V_0 - gt + c \space ln (\frac {m_0}{m_0-βt}) → Sin \space fricción \]</div>
+<p>AQUÍ VA LA POSICIÓN SIN FRICCIÓN UNICAMENTE</p>
+<div class="math notranslate nohighlight">
+\[y(t) = ∫ v(t)\]</div>
+<div class="math notranslate nohighlight">
+\[y(t) = ∫ v_0 - gt + c \space ln |\frac {m_0}{m_0 - βt}| \space dt \]</div>
+<div class="math notranslate nohighlight">
+\[= V_0t - \frac {1}{2}gt^{2} + c ∫ ln |\frac {m_0}{m_0 - βt}| \space dt\]</div>
+<div class="math notranslate nohighlight">
+\[ c \space (∫ ln (m_0) dt \space - ∫ ln (m_0 - βt))\]</div>
+<div class="math notranslate nohighlight">
+\[ c(t \space ln (m_0) - ∫ ln (u) \space \frac {du}{-β})\]</div>
+<div class="math notranslate nohighlight">
+\[-\frac {1}{β} ∫ 1 ⋅ ln(u)\space du \]</div>
+<div class="math notranslate nohighlight">
+\[k = ln(u)\]</div>
+<div class="math notranslate nohighlight">
+\[dk=\frac{1}{u} \space du\]</div>
+<div class="math notranslate nohighlight">
+\[v=u\]</div>
+<div class="math notranslate nohighlight">
+\[dv = 1 \space du\]</div>
+<div class="math notranslate nohighlight">
+\[ -\frac {1}{β}(u \space ln \space u - u)+ D\]</div>
+<div class="math notranslate nohighlight">
+\[-\frac {1}{β}(m_0 - βt) \space ln \space |m_0-βt|-(m_0-βt) + D\]</div>
+<div class="math notranslate nohighlight">
+\[-\frac {1}{β}(m_0-βt)(ln \space |m_0-βt|-1)+D\]</div>
+<div class="math notranslate nohighlight">
+\[y(t) = -\frac {1}{2}gt^{2} + v_0 \space t + c\space t \space ln(m_0) + \frac {c}{β}\space (m_0-βt)\space (ln|m_0-βt|-1) + E\]</div>
+<div class="math notranslate nohighlight">
+\[ E → t = 0\]</div>
+<div class="math notranslate nohighlight">
+\[y(0) = y_0\]</div>
+<div class="math notranslate nohighlight">
+\[y_0 = 0 + 0 + 0 + \frac {c}{β}(m_0)\space (ln|m_0| - 1) + E\]</div>
+<div class="math notranslate nohighlight">
+\[D = y_0 - \frac {c}{β} \space (m_0) (lm|m_0|-1)\]</div>
+<hr class="docutils" />
+<p><strong> <font color='pink'  size=4>Pregunta 3:
+Comportamiento sin Gravedad ni Fricción</p>
+<p>Para este caso anulamos los términos que involucren <span class="math notranslate nohighlight">\(k\)</span> ó <span class="math notranslate nohighlight">\(g\)</span>, ya que son 0 para este escenario. Quedando únicamente con la siguiente expresión.</p>
+<div class="math notranslate nohighlight">
+\[ \frac {dv}{dt} = \frac {βc}{m_0 - βt}\]</div>
+<p><strong> Integrando:</p>
+<div class="math notranslate nohighlight">
+\[ v(t) = ∫\frac {βc}{m_0 - βt}\]</div>
+<div class="math notranslate nohighlight">
+\[ u = m_0 - βt\]</div>
+<div class="math notranslate nohighlight">
+\[ du = -β \space dt\]</div>
+<div class="math notranslate nohighlight">
+\[ dt = \frac {du}{-βt}\]</div>
+<div class="math notranslate nohighlight">
+\[ v(t) = ∫ \frac {βc}{u} ⋅ \frac {du}{- β}\]</div>
+<div class="math notranslate nohighlight">
+\[ = -c ∫ \frac {du}{u}\]</div>
+<div class="math notranslate nohighlight">
+\[ = -c \space ln \space |u| + D\]</div>
+<div class="math notranslate nohighlight">
+\[ v(t) = -c \space ln \space (m_0-βt)+ D\]</div>
+<p><strong> Encontremos la solución particular, estableciendo t=0:</p>
+<div class="math notranslate nohighlight">
+\[ v(0) = -c \space ln \space (m_0-β(0))+ D\]</div>
+<div class="math notranslate nohighlight">
+\[ v_0 + c \space ln \space (m_0) = D\]</div>
+<p><strong> Reemplazando la constante de integración:</p>
+<div class="math notranslate nohighlight">
+\[ = -c \space ln \space |m_0-βt| + v_0 + c \space ln \space (m_0)\]</div>
+<p><strong> Finalmente, acomodamos un poco la expresión:</p>
+<div class="math notranslate nohighlight">
+\[v(t) = v_0 + cln|\frac{m_0}{m_0-βt}|\]</div>
+<p>Para analizar el comportamiento de <span class="math notranslate nohighlight">\(v(t)\)</span> es necesario hacer tender el tiempo a infinito, como se presenta a continuación:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to \infty} v_0 + cln|\frac{m_0}{m_0-βt}|\]</div>
+<div class="math notranslate nohighlight">
+\[= v_0 + c*\lim_{t \to \infty} ln|\frac{m_0}{m_0-βt}|\]</div>
+<div class="math notranslate nohighlight">
+\[= v_0 + c*\lim_{t \to \infty} ln|\frac{m_0}{-\infty}|\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to \infty} \frac{m_0}{-\infty} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[= v_0 + c*\lim_{t \to \infty} ln|0|\]</div>
+<p><strng> Considerando que c es un valor negativo, y <span class="math notranslate nohighlight">\(ln(0)\)</span> tiende a <span class="math notranslate nohighlight">\(-\infty\)</span>, podemos concluir que el límite tiende a infinito.</p>
+<p>Expresión Completa:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to \infty} v_0 + ∞ = ∞\]</div>
+<p>De esta forma, habiendo analizado el límite a infinito de la función sin gravedad ni resistencia, podemos concluir que en el espacio exterior el cohete no se detendrá; y de hecho, acelerará indefnidamente (aunque estaría limitado por la cantidad de combustible disponible). No obstante, en un caso utópico e imaginario en donde el combustible sea ilimitado, la velocidad del cohete tenderá a infinito conforme pasa el tiempo.</p>
+<p>Ahora hallaremos la posición sin friccion y sin gravedad:</p>
+<div class="math notranslate nohighlight">
+\[v(t) = v_0 + cln|\frac{m_0}{m_0-βt}|\]</div>
+<div class="math notranslate nohighlight">
+\[y(t) = ∫ v(t)\]</div>
+<div class="math notranslate nohighlight">
+\[ = ∫ v_0 \space + c \space ∫ ln |\frac{m_0}{m_0-βt}|\]</div>
+<div class="math notranslate nohighlight">
+\[= v_0 \space t + c (∫ ln \space m_0 \space dt - ∫ ln(m_0-βt) \space dt)\]</div>
+<div class="math notranslate nohighlight">
+\[-∫ ln (m_0-βt) \space dt\]</div>
+<div class="math notranslate nohighlight">
+\[ u = (m_0-βt)\]</div>
+<div class="math notranslate nohighlight">
+\[ du = - β dt\]</div>
+<div class="math notranslate nohighlight">
+\[-∫ln(u) ⋅ \frac {du}{-β}\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac {1}{β} (∫ln(u) \space du)\]</div>
+<div class="math notranslate nohighlight">
+\[z = ln(u)\]</div>
+<div class="math notranslate nohighlight">
+\[dz = \frac {1}{u} \space du\]</div>
+<div class="math notranslate nohighlight">
+\[ dv = du\]</div>
+<div class="math notranslate nohighlight">
+\[ v = u\]</div>
+<div class="math notranslate nohighlight">
+\[= \frac {1}{β}(u \space ln (u) - ∫ u ⋅ \frac {1}{u}\space du)\]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac {1}{β}(u \space ln(u)-u)\]</div>
+<div class="math notranslate nohighlight">
+\[ y(t) = v_0 \space t + ct \space ln(m_0)+\frac {c(m_0-βt)}{β} (ln(m_0 - βt)-1) + E\]</div>
+<div class="math notranslate nohighlight">
+\[ E ⇒ t = 0\]</div>
+<div class="math notranslate nohighlight">
+\[y(o) = 0 + 0 + \frac {c}{β}(m_0)(ln(m_0)-1 + E)\]</div>
+<div class="math notranslate nohighlight">
+\[y_0 - \frac {c}{β}(m_0)(ln(m_0)-1) = E\]</div>
+<div class="math notranslate nohighlight">
+\[ y(t) = v_0 \space t + ct \space ln(m_0)+\frac {c(m_0-βt)}{β} (ln(m_0 - βt)-1) + y_0 - \frac {c}{β}(m_0)(ln(m_0)-1)\]</div>
+<p><font color='pink'  size=4>PARTE NUMERICA Y GEOMETRICA</p>
+<p><font color='pink'  size=4>EJERCICIOS CONTEXTO</p>
+<p><font color='pink'  size=4>1.a)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#DATOS (1)</span>
+
+<span class="n">v0</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#Velocidad inicial</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Masa inicial (kg)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Tasa de quema de combustible (kg/s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2500</span>  <span class="c1"># Velocidad de eyección de gases (m/s)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Gravedad terrestre (m/s^2)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Tiempo de 30 segundos</span>
+
+<span class="c1">#SIN friccion</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">velocidad_cohete_t</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">m0</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span> <span class="o">/</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">B</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span><span class="c1">#Esta es la formula de la velocidad del cohete en funcion del tiempo con la resistencia del aire despreciable</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velocidad del cohete sin friccion despues de 30 s = &quot;</span><span class="p">,</span><span class="n">velocidad_cohete_t</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">m0</span><span class="p">,</span><span class="n">B</span><span class="p">),</span><span class="s2">&quot;m/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Velocidad del cohete sin friccion despues de 30 s =  597.387359846831 m/s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe src=&quot;https://www.geogebra.org/classic/qaukd9nx&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/marlong/jbook_env/lib/python3.10/site-packages/IPython/core/display.py:475: UserWarning: Consider using IPython.display.IFrame instead
+  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
+</pre></div>
+</div>
+<div class="output text_html"><iframe src="https://www.geogebra.org/classic/qaukd9nx" width="800" height="600"></iframe></div></div>
+</div>
+<p>De acuerdo con el comportamiento del gráfico al mover el deslizador, puede evidenciarse que el cambio en la velocidad a través del tiempo se da de forma muy rápida. En efecto, la pendiente de la recta llega a ser casi vertical, muy pronunciada.</p>
+<p><font color='pink'  size=4>1.b)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#DATOS (2)</span>
+
+<span class="n">v0</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#Velocidad inicial</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Masa inicial (kg)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Masa final (kg)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Tasa de quema de combustible (kg/s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2500</span>  <span class="c1"># Velocidad de eyección de gases (m/s)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Gravedad terrestre (m/s^2)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Tiempo de 30 segundos</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">consumo_combustible_t</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span><span class="n">mf</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">mf</span><span class="p">)</span> <span class="o">/</span> <span class="n">B</span>     <span class="c1">#Esta formula es masa inicial menos la final para hallar cuanto combustible habia en el cohete, dividido la tasa de quemado kg/s para saber cuanto tiempo se demoró en vaciarse</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tiempo al cual el cohete se queda sin combustible =&quot;</span><span class="p">,</span><span class="n">consumo_combustible_t</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span><span class="n">mf</span><span class="p">,</span><span class="n">B</span><span class="p">),</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo al cual el cohete se queda sin combustible = 80.0 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Datos</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Masa inicial (kg)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Masa final (kg)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">50</span>     <span class="c1"># Tasa de quema de combustible (kg/s)</span>
+
+<span class="c1"># Tiempo en el que se vacía el combustible</span>
+<span class="n">t_vacio</span> <span class="o">=</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">mf</span><span class="p">)</span> <span class="o">/</span> <span class="n">B</span>
+
+<span class="c1"># Valores de tiempo desde 0 hasta t_vacio</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_vacio</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Masa en función del tiempo</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">m0</span> <span class="o">-</span> <span class="n">B</span> <span class="o">*</span> <span class="n">t</span>
+
+<span class="c1"># Graficar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Masa del cohete&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">mf</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Masa final&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Masa (kg)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Masa del cohete en función del tiempo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b46064f591f34a9867a8b91172937b62f1987ce10cce664d2bd076b09bb4f294.png" src="../_images/b46064f591f34a9867a8b91172937b62f1987ce10cce664d2bd076b09bb4f294.png" />
+</div>
+</div>
+<p><font color='pink'  size=4>1.c)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#DATOS (3)</span>
+
+<span class="n">v0</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#Velocidad inicial</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Masa inicial (kg)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Masa final (kg)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Tasa de quema de combustible (kg/s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2500</span>  <span class="c1"># Velocidad de eyección de gases (m/s)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Gravedad terrestre (m/s^2)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Tiempo de 30 segundos</span>
+
+<span class="c1">#tiempo cuando ya no queda combustible</span>
+<span class="n">t_sin_combustible</span> <span class="o">=</span> <span class="n">consumo_combustible_t</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span><span class="n">mf</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">velocidad_cohete_sin_combustible</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">m0</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_sin_combustible</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span> <span class="o">/</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">B</span> <span class="o">*</span> <span class="n">t_sin_combustible</span><span class="p">))</span><span class="c1">#Esta es la formula de la velocidad del cohete en funcion del tiempo, que en este caso es 80 segundos cuando el cohete ya no tiene mas combustible</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velocidad del cohete sin friccion despues de 80 s = &quot;</span><span class="p">,</span><span class="n">velocidad_cohete_sin_combustible</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">m0</span><span class="p">,</span><span class="n">B</span><span class="p">),</span><span class="s2">&quot;m/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Velocidad del cohete sin friccion despues de 80 s =  3238.7947810852506 m/s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Datos</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Velocidad inicial</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Masa inicial (kg)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Masa final (kg)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Tasa de quema de combustible (kg/s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2500</span>  <span class="c1"># Velocidad de eyección de gases (m/s)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Gravedad terrestre (m/s^2)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">consumo_combustible_t</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">mf</span><span class="p">)</span> <span class="o">/</span> <span class="n">B</span>
+
+
+<span class="n">t_sin_combustible</span> <span class="o">=</span> <span class="n">consumo_combustible_t</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">velocidad_cohete_sin_combustible</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m0</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_sin_combustible</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span> <span class="o">/</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">B</span> <span class="o">*</span> <span class="n">t_sin_combustible</span><span class="p">))</span>
+
+
+<span class="c1"># Tiempo para la gráfica</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_sin_combustible</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Velocidad del cohete en función del tiempo</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span> <span class="o">/</span> <span class="p">(</span><span class="n">m0</span> <span class="o">-</span> <span class="n">B</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span>
+
+
+<span class="c1"># Gráfica</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Velocidad del cohete&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Velocidad (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Velocidad del cohete en función del tiempo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c473610a62fb90e37f79a89d0fb4889d99c374dbd331a304e434085cd488a4df.png" src="../_images/c473610a62fb90e37f79a89d0fb4889d99c374dbd331a304e434085cd488a4df.png" />
+</div>
+</div>
+<p><font color='pink'  size=4>1.d)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#DATOS (4)</span>
+
+<span class="n">v0</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#Velocidad inicial</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># Masa inicial (kg)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Masa final (kg)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Tasa de quema de combustible (kg/s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2500</span>  <span class="c1"># Velocidad de eyección de gases (m/s)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Gravedad terrestre (m/s^2)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Tiempo de 30 segundos</span>
+<span class="n">y0</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#altura inicial</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">altura_cohete_t</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">m0</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+  <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">v0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span><span class="p">)))</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="n">B</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m0</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">y0</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="n">B</span><span class="p">)</span> <span class="o">*</span><span class="p">(</span><span class="n">m0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m0</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1"># Esta es la formula que sale de integrar la velocidad lo que nos da la altura en funcion de tiempo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Altura del cohete despues de 80 s = &quot;</span><span class="p">,</span><span class="n">altura_cohete_t</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">m0</span><span class="p">,</span><span class="n">B</span><span class="p">),</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Altura del cohete despues de 80 s =  8167.3848107217345 m
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="c1"># Definir el rango de tiempo</span>
+
+<span class="n">t_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># 100 puntos en el rango</span>
+
+<span class="c1"># Calcular altura en función del tiempo</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">altura_cohete_t</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">t_vals</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m0</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="c1"># Graficar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Altura del cohete&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Altura (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Altura del cohete en función del tiempo&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7093ae768b5cb8feee8f01d3bd2fbdff3e4c17607eac5ace4c20379b0d4efe95.png" src="../_images/7093ae768b5cb8feee8f01d3bd2fbdff3e4c17607eac5ace4c20379b0d4efe95.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Entregables"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
