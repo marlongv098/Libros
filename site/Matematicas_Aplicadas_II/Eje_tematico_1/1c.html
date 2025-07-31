@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Eje_tematico_1/1c';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Antiderivadas" href="1d.html" />
+    <link rel="next" title="Ecuaciones diferenciales de primer orden" href="1d.html" />
     <link rel="prev" title="Interpretación de la integral definida" href="1b.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,18 +184,12 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="1intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1a.html">Densidad lineal de una varilla</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="1b.html">Interpretación de la integral definida</a></li>
-
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Metodos numericos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1d.html">Antiderivadas</a></li>
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="1d.html">Ecuaciones diferenciales de primer orden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -230,6 +224,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3d.html">Funciones en varias variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_3/3e.html">Optimización</a></li>
 
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ejemplo de Entregas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Entregables/Enunciado.html">Propulsión de cohetes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Entregables/4_Cuaderno.html"><strong>RESPUESTAS</strong></a></li>
 
 </ul>
 </details></li>
@@ -429,8 +431,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-punto-medio">Método punto medio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-error-regla-punto-medio">Formula error regla punto medio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-trapecio">Método trapecio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-error-metodo-trapecio">Formula error método trapecio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-simpson">Método de Simpson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-error-metodo-de-simpson">Formula error Método de Simpson</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejemplo</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -505,6 +519,53 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="formula-error-regla-punto-medio">
+<h2>Formula error regla punto medio<a class="headerlink" href="#formula-error-regla-punto-medio" title="Link to this heading">#</a></h2>
+<p>El error de la <strong>fórmula compuesta del punto medio</strong> es:</p>
+<div class="math notranslate nohighlight">
+\[
+E_M = -\frac{(b - a)^3}{24 n^2} f''(\xi)
+\]</div>
+<p>para algún <span class="math notranslate nohighlight">\(\xi \in (a, b)\)</span>.</p>
+<p>Este error depende de la <strong>segunda derivada</strong> de <span class="math notranslate nohighlight">\(f(x)\)</span>, igual que en el método del trapecio, pero con una <strong>constante menor</strong> en el denominador, lo cual generalmente implica <strong>mayor precisión</strong> que el trapecio para funciones suaves.</p>
+<p><strong>Cálculo de una cota superior del error</strong></p>
+<p>Si se conoce una constante <span class="math notranslate nohighlight">\(M\)</span> tal que:</p>
+<div class="math notranslate nohighlight">
+\[
+|f''(x)| \leq M \quad \text{para todo } x \in [a, b]
+\]</div>
+<p>entonces el error se puede acotar por:</p>
+<div class="math notranslate nohighlight">
+\[
+|E_M| \leq \frac{(b - a)^3}{24 n^2} M
+\]</div>
+<p><strong>Pasos para calcular el error</strong></p>
+<ol class="arabic">
+<li><p>Determina el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> y el número de subintervalos <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>Calcula <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>.</p></li>
+<li><p>Estima o encuentra una cota <span class="math notranslate nohighlight">\(M\)</span> para <span class="math notranslate nohighlight">\(|f''(x)|\)</span> en <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p>Aplica la fórmula del error:</p>
+<div class="math notranslate nohighlight">
+\[
+   |E_M| \leq \frac{(b - a)^3}{24 n^2} M
+   \]</div>
+</li>
+</ol>
+<section id="ejemplo">
+<h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
+<p>Aproximar la integral <span class="math notranslate nohighlight">\(\int_0^1 e^x \, dx\)</span> usando el método del punto medio con <span class="math notranslate nohighlight">\(n = 4\)</span> y calcular una cota del error.</p>
+<p>Sabemos que:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = e^x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f''(x) = e^x \Rightarrow |f''(x)| \leq e\)</span> en <span class="math notranslate nohighlight">\([0, 1]\)</span></p></li>
+</ul>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+|E_M| \leq \frac{(1 - 0)^3}{24 \cdot 4^2} \cdot e = \frac{1}{384} \cdot e \approx 0.00708
+\]</div>
+</section>
+</section>
 <section id="metodo-trapecio">
 <h2>Método trapecio<a class="headerlink" href="#metodo-trapecio" title="Link to this heading">#</a></h2>
 <p>Es otra técnica numérica para aproximar la integral definida de una función <span class="math notranslate nohighlight">\(f(x)\)</span> en un intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>. Se basa en aproximar el área bajo la curva mediante una serie de trapecios.</p>
@@ -552,6 +613,51 @@ document.write(`
 <img alt="../_images/b50ef10447ebcbcd1ac62b32229b2a39439e343a845a3d2e18963ef6f9f3c712.png" src="../_images/b50ef10447ebcbcd1ac62b32229b2a39439e343a845a3d2e18963ef6f9f3c712.png" />
 </div>
 </div>
+</section>
+<section id="formula-error-metodo-trapecio">
+<h2>Formula error método trapecio<a class="headerlink" href="#formula-error-metodo-trapecio" title="Link to this heading">#</a></h2>
+<p>El error del método del trapecio compuesto está dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+E_T = -\frac{(b-a)^3}{12n^2} f''(\xi), \quad \text{para algún } \xi \in (a, b)
+\]</div>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f''(\xi)\)</span> es la segunda derivada de la función en un punto <span class="math notranslate nohighlight">\(\xi\)</span> del intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p>El signo negativo indica que la aproximación puede subestimar o sobrestimar el valor real, dependiendo de la concavidad de <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
+</ul>
+<p><strong>Cálculo de una <strong>cota superior</strong> del error</strong></p>
+<p>Si se conoce una cota <span class="math notranslate nohighlight">\(M\)</span> tal que:</p>
+<div class="math notranslate nohighlight">
+\[
+|f''(x)| \leq M \quad \text{para todo } x \in [a, b]
+\]</div>
+<p>Entonces se puede acotar el error absoluto:</p>
+<div class="math notranslate nohighlight">
+\[
+|E_T| \leq \frac{(b-a)^3}{12n^2} M
+\]</div>
+<p><strong>Pasos para calcular el error</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Determinar el intervalo</strong> <span class="math notranslate nohighlight">\([a, b]\)</span> y el número de subintervalos <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><strong>Calcular</strong> la longitud de subintervalos: <span class="math notranslate nohighlight">\(h = \frac{b-a}{n}\)</span>.</p></li>
+<li><p><strong>Calcular o estimar</strong> la segunda derivada <span class="math notranslate nohighlight">\(f''(x)\)</span>.</p></li>
+<li><p><strong>Encontrar una cota</strong> <span class="math notranslate nohighlight">\(M\)</span> tal que <span class="math notranslate nohighlight">\(|f''(x)| \leq M\)</span> en <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p><strong>Aplicar la fórmula del error</strong> con esa cota.</p></li>
+</ol>
+<section id="id1">
+<h3>Ejemplo<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Aproximar <span class="math notranslate nohighlight">\(\int_0^1 e^x \, dx\)</span> con <span class="math notranslate nohighlight">\(n = 4\)</span> y calcular la cota del error.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = e^x \Rightarrow f''(x) = e^x\)</span></p></li>
+<li><p>En <span class="math notranslate nohighlight">\([0, 1]\)</span>, se cumple: <span class="math notranslate nohighlight">\(|f''(x)| \leq e^1 = e \approx 2.718\)</span></p></li>
+<li><p>Entonces:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+|E_T| \leq \frac{(1 - 0)^3}{12 \cdot 4^2} \cdot e = \frac{1}{192} \cdot e \approx 0.01415
+\]</div>
+</section>
 </section>
 <section id="metodo-de-simpson">
 <h2>Método de Simpson<a class="headerlink" href="#metodo-de-simpson" title="Link to this heading">#</a></h2>
@@ -609,6 +715,54 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="formula-error-metodo-de-simpson">
+<h2>Formula error Método de Simpson<a class="headerlink" href="#formula-error-metodo-de-simpson" title="Link to this heading">#</a></h2>
+<p>El error del método de Simpson compuesto es:</p>
+<div class="math notranslate nohighlight">
+\[
+E_S = -\frac{(b - a)^5}{180 n^4} f^{(4)}(\xi)
+\]</div>
+<p>para algún <span class="math notranslate nohighlight">\(\xi \in (a, b)\)</span>.</p>
+<p>Este error depende de la <strong>cuarta derivada</strong> de <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p><strong>Cálculo de una cota superior del error</strong></p>
+<p>Si se conoce una constante <span class="math notranslate nohighlight">\(M\)</span> tal que:</p>
+<div class="math notranslate nohighlight">
+\[
+\left| f^{(4)}(x) \right| \leq M \quad \text{para todo } x \in [a, b]
+\]</div>
+<p>entonces se puede acotar el error:</p>
+<div class="math notranslate nohighlight">
+\[
+|E_S| \leq \frac{(b - a)^5}{180 n^4} M
+\]</div>
+<p><strong>Pasos para calcular el error</strong></p>
+<ol class="arabic">
+<li><p>Determina el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> y el número de subintervalos <span class="math notranslate nohighlight">\(n\)</span> (debe ser <strong>par</strong>).</p></li>
+<li><p>Calcula <span class="math notranslate nohighlight">\(h = \frac{b - a}{n}\)</span>.</p></li>
+<li><p>Estima o encuentra una cota <span class="math notranslate nohighlight">\(M\)</span> para <span class="math notranslate nohighlight">\(|f^{(4)}(x)|\)</span> en <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p>Aplica la fórmula del error:</p>
+<div class="math notranslate nohighlight">
+\[
+   |E_S| \leq \frac{(b - a)^5}{180 n^4} M
+   \]</div>
+</li>
+</ol>
+<section id="id2">
+<h3>Ejemplo<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Aproximar <span class="math notranslate nohighlight">\(\int_0^1 e^x \, dx\)</span> con <span class="math notranslate nohighlight">\(n = 4\)</span> y calcular una cota del error.</p>
+<p>Sabemos que:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = e^x \Rightarrow f^{(4)}(x) = e^x\)</span></p></li>
+<li><p>En <span class="math notranslate nohighlight">\([0, 1]\)</span>, <span class="math notranslate nohighlight">\(|f^{(4)}(x)| \leq e \approx 2.718\)</span></p></li>
+</ul>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+|E_S| \leq \frac{(1 - 0)^5}{180 \cdot 4^4} \cdot e
+= \frac{1}{46080} \cdot e \approx 0.000059
+\]</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -655,7 +809,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Antiderivadas</p>
+        <p class="prev-next-title">Ecuaciones diferenciales de primer orden</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -676,8 +830,20 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-punto-medio">Método punto medio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-error-regla-punto-medio">Formula error regla punto medio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-trapecio">Método trapecio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-error-metodo-trapecio">Formula error método trapecio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-simpson">Método de Simpson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-error-metodo-de-simpson">Formula error Método de Simpson</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejemplo</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Antiderivadas &#8212; Matematicas Aplicadas II</title>
+    <title>Ecuaciones diferenciales de primer orden &#8212; Matematicas Aplicadas II</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,18 +184,12 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="1intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1a.html">Densidad lineal de una varilla</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="1b.html">Interpretación de la integral definida</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="1c.html">Metodos numericos</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Antiderivadas</a></li>
-
-
-
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ecuaciones diferenciales de primer orden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -426,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Antiderivadas</h1>
+    <h1>Ecuaciones diferenciales de primer orden</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -436,27 +430,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Antiderivadas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antiderivadas">Antiderivadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-diferenciales-de-primer-orden">Ecuaciones diferenciales de primer orden</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-analitico">Modelo Analítico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-analitico-edo">Modelo Analítico EDO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-edo">Modelos de EDO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planteamiento-del-problema">Planteamiento del problema</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resolver-edo-separacion-de-variables">Resolver EDO. Separación de variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolver-edo-separacion-de-variables">Resolver EDO. Separación de variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-numerico">Método numérico</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-numerico">Método numérico</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soluciones-numericas-metodo-de-euler">Soluciones numéricas (Método de Euler)</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -467,21 +451,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="antiderivadas">
-<h1>Antiderivadas<a class="headerlink" href="#antiderivadas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales-de-primer-orden">
+<h1>Ecuaciones diferenciales de primer orden<a class="headerlink" href="#ecuaciones-diferenciales-de-primer-orden" title="Link to this heading">#</a></h1>
+<section id="antiderivadas">
+<h2>Antiderivadas<a class="headerlink" href="#antiderivadas" title="Link to this heading">#</a></h2>
 <p>La antiderivada es la relación inversa de la derivada. Por ejemplo, sabemos que la derivada de <span class="math notranslate nohighlight">\(x^2\)</span> es <span class="math notranslate nohighlight">\(2x\)</span>. Por tanto, la antiderivada de <span class="math notranslate nohighlight">\(2x\)</span> es <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[f'\text{ es la derivada  de }f \Longleftrightarrow f \text{ es la antiderivada  de } f'\]</div>
 <p>Cada función tiene una familia de antiderivadas.</p>
+</section>
 <section id="ejemplo">
 <h2>Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h2>
 <p>Las antiderivadas de <span class="math notranslate nohighlight">\(2x\)</span> tienen como familia las funciones <span class="math notranslate nohighlight">\(x^2+C\)</span> donde <span class="math notranslate nohighlight">\(C\)</span> representa cualquier número constante.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales-de-primer-orden">
-<h1>Ecuaciones diferenciales de primer orden<a class="headerlink" href="#ecuaciones-diferenciales-de-primer-orden" title="Link to this heading">#</a></h1>
-<section id="modelo-analitico">
-<h2>Modelo Analítico<a class="headerlink" href="#modelo-analitico" title="Link to this heading">#</a></h2>
+<section id="modelo-analitico-edo">
+<h2>Modelo Analítico EDO<a class="headerlink" href="#modelo-analitico-edo" title="Link to this heading">#</a></h2>
 <p>Una ecuación de la forma</p>
 <div class="math notranslate nohighlight">
 \[ \frac{dx}{dt}=\dot{x}(t)=f(t,x(t))\qquad (1)\]</div>
@@ -515,9 +499,8 @@ y la segunda ley del movimiento de Newton, leyes que con frecuencia conducen a c
 <p>o equivalentemente
 $<span class="math notranslate nohighlight">\(x(t)=x(t_0)+\int_{t_0}^{t} g(s)\,ds.\)</span>$</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="resolver-edo-separacion-de-variables">
-<h1>Resolver EDO. Separación de variables<a class="headerlink" href="#resolver-edo-separacion-de-variables" title="Link to this heading">#</a></h1>
+<section id="resolver-edo-separacion-de-variables">
+<h2>Resolver EDO. Separación de variables<a class="headerlink" href="#resolver-edo-separacion-de-variables" title="Link to this heading">#</a></h2>
 <p>Es un técnica para encontrar soluciones en forma cerrada para  EDOs,
 es decir, soluciones expresables en términos de las funciones elementales del cálculo. Consideraremos ecuaciones de la forma#</p>
 <div class="math notranslate nohighlight">
@@ -532,6 +515,7 @@ es decir, soluciones expresables en términos de las funciones elementales del c
 <div class="math notranslate nohighlight">
 \[ \int_{t_0}^t\frac{1}{g(x(s))}\dot x(s)\, ds=\int_{x_0}^x\frac{1}{g(u)}\, du=\int_{t_0}^th(s)\,ds.\quad (3)\]</div>
 <p>Por lo tanto, podemos resolver una ecuación con variables separables siempre que podamos evalúar las integrales en (3) y luego resolver la ecuación para <span class="math notranslate nohighlight">\(𝑥\)</span>.</p>
+</section>
 <section id="conclusion">
 <h2>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>Si <span class="math notranslate nohighlight">\(𝑔\)</span> y <span class="math notranslate nohighlight">\( ℎ\)</span> son funciones continuas de <span class="math notranslate nohighlight">\(𝑥\)</span> y <span class="math notranslate nohighlight">\(𝑡\)</span>, respectivamente, y <span class="math notranslate nohighlight">\(𝑥\)</span> satisface la ecuación diferencial</p>
@@ -542,10 +526,10 @@ es decir, soluciones expresables en términos de las funciones elementales del c
 \[\int_{x_0}^x\frac{1}{g(u)}\, du=\int_{t_0}^th(s)\,ds,\quad (3)\]</div>
 <p>siempre que <span class="math notranslate nohighlight">\(g(u)\not=0\)</span> para todo <span class="math notranslate nohighlight">\(u\)</span> entre <span class="math notranslate nohighlight">\(x_0\)</span> y <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="metodo-numerico">
-<h1>Método numérico<a class="headerlink" href="#metodo-numerico" title="Link to this heading">#</a></h1>
+<section id="metodo-numerico">
+<h2>Método numérico<a class="headerlink" href="#metodo-numerico" title="Link to this heading">#</a></h2>
 <p>La imposibilidad de resolver una ecuación diferencial se debe en parte a la imposibilidad de integrar la mayoría de las funciones. Si se tuviera que elegir funciones para integrar al azar, encontraríamos que la gran mayoría no tiene antiderivadas. La <em>historia en las EDO</em> es la misma: elija cualquier combinación de una función, sus derivadas y otras funciones de forzamiento y encontrará que no hay forma de llegar a una solución analítica que involucre las operaciones y funciones regulares de las matemáticas: combinaciones lineales, potencias , raíces, funciones trigonométricas, logaritmos, etc. Hay teoremas de ecuaciones diferenciales que garantizarán la existencia y unicidad de soluciones a muchas ecuaciones diferenciales, pero el simple hecho de saber que la solución existe no es suficiente para descubrirla. Las técnicas numéricas nos brindan una vía para al menos aproximarnos a estas soluciones</p>
+</section>
 <section id="soluciones-numericas-metodo-de-euler">
 <h2>Soluciones numéricas (Método de Euler)<a class="headerlink" href="#soluciones-numericas-metodo-de-euler" title="Link to this heading">#</a></h2>
 <p>La base de la mayoría de métodos numéricos para encontrar soluciones aproximadas de una ecuación diferencial</p>
@@ -681,27 +665,17 @@ es decir, soluciones expresables en términos de las funciones elementales del c
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Antiderivadas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antiderivadas">Antiderivadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-diferenciales-de-primer-orden">Ecuaciones diferenciales de primer orden</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-analitico">Modelo Analítico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-analitico-edo">Modelo Analítico EDO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-edo">Modelos de EDO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planteamiento-del-problema">Planteamiento del problema</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad">Velocidad</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resolver-edo-separacion-de-variables">Resolver EDO. Separación de variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolver-edo-separacion-de-variables">Resolver EDO. Separación de variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-numerico">Método numérico</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-numerico">Método numérico</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soluciones-numericas-metodo-de-euler">Soluciones numéricas (Método de Euler)</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

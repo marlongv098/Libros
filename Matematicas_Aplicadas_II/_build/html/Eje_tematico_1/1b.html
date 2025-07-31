@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Metodos numericos" href="1c.html" />
-    <link rel="prev" title="Densidad lineal de una varilla" href="1a.html" />
+    <link rel="prev" title="Teorema Fundamental del Cálculo" href="1a.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,18 +184,12 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="1intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1a.html">Densidad lineal de una varilla</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Interpretación de la integral definida</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="1c.html">Metodos numericos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1d.html">Antiderivadas</a></li>
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="1d.html">Ecuaciones diferenciales de primer orden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -436,7 +430,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interpretación de la integral definida</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-lineal-de-una-varilla">Densidad lineal de una varilla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacion-de-la-idea-anterior">Generalización de la idea anterior.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica">Estadística</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalidades">Generalidades</a></li>
 </ul>
@@ -445,16 +441,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingreso-total">Ingreso total</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-dinamicos">Sistemas dinámicos</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-integracion">Métodos de integración</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-sustitucion">Integración por sustitución</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-partes">Integración por partes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -467,6 +453,55 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interpretacion-de-la-integral-definida">
 <h1>Interpretación de la integral definida<a class="headerlink" href="#interpretacion-de-la-integral-definida" title="Link to this heading">#</a></h1>
+<section id="densidad-lineal-de-una-varilla">
+<h2>Densidad lineal de una varilla<a class="headerlink" href="#densidad-lineal-de-una-varilla" title="Link to this heading">#</a></h2>
+<p>Si se tiene la densidad lineal de una barra en función de la distancia. Se puede estableder un diferencial de masa en función de la diferencial de longitud.</p>
+<div class="math notranslate nohighlight">
+\[dm=(densidad)*dl\]</div>
+<p>para hallar la masa total de la barra solo es necesario encontrar la integral definida.</p>
+<div class="math notranslate nohighlight">
+\[m=\int_{a}^{b}(densidad)dl\]</div>
+<p>donde <span class="math notranslate nohighlight">\(b-a\)</span> representa la longitud de la barra.</p>
+</section>
+<section id="generalizacion-de-la-idea-anterior">
+<h2>Generalización de la idea anterior.<a class="headerlink" href="#generalizacion-de-la-idea-anterior" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(R(f, [a,b])\)</span> denota la masa de una porción de barra entre los puntos <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> del eje <span class="math notranslate nohighlight">\(x\)</span> y donde <span class="math notranslate nohighlight">\(f(x)\)</span> representa la densidad lineal de la barra en el valor <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<ul class="simple">
+<li><p>Si la densidad <span class="math notranslate nohighlight">\(f(x)\)</span> es constante se tiene que</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+R(f, [a,b]) = f(x)(b-a)
+\]</div>
+<ul class="simple">
+<li><p>Si la densidad <span class="math notranslate nohighlight">\(f(x)\)</span> es variable entonces</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+m\leq f(x)\leq M
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(m\)</span> representa la densidad lineal mínima de la barra y <span class="math notranslate nohighlight">\(M\)</span> representa la densidad lineal máxima de la barra. De lo anterior</p>
+<div class="math notranslate nohighlight">
+\[
+m(b-a) \leq f(x)(b-a)\leq M(b-a)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+m(b-a) \leq R(f, [a,b]) \leq M(b-a)
+\]</div>
+</section>
+<section id="conclusion">
+<h2>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Si se desea realizar una aproximación númerica de la masa de la barra solo es necesario realizar una partición del intervalo <span class="math notranslate nohighlight">\([a,b]\)</span></p>
+<div class="math notranslate nohighlight">
+\[\Delta x=\frac{b-a}{n}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(n\)</span> es un número entero positivo y <span class="math notranslate nohighlight">\(\Delta x\)</span> es la longitud de cada partición <span class="math notranslate nohighlight">\([a,c_i]\)</span>  con <span class="math notranslate nohighlight">\(c_i \in [a,b]\)</span>.</p>
+<p>Por tanto, entre más grande sea el valor <span class="math notranslate nohighlight">\(n\)</span> mejor será la aproximación de la masa de la barra, de esta manera, la masa de la barra se puede representar como sigue:</p>
+<div class="math notranslate nohighlight">
+\[
+R(f, [a,b]) = R(f, [a,c_1]) +...+ R(f, [c_n,b])
+\]</div>
+</section>
 <section id="estadistica">
 <h2>Estadística<a class="headerlink" href="#estadistica" title="Link to this heading">#</a></h2>
 <p>El área bajo la curva en estadistica es la probabilidad de que el resultado de un ensayo para un caso positivo elegido aleatoriamente supere el resultado para un caso negativo elegido aleatoriamente.</p>
@@ -552,89 +587,6 @@ document.write(`
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="metodos-de-integracion">
-<h1>Métodos de integración<a class="headerlink" href="#metodos-de-integracion" title="Link to this heading">#</a></h1>
-<section id="integracion-por-sustitucion">
-<h2>Integración por sustitución<a class="headerlink" href="#integracion-por-sustitucion" title="Link to this heading">#</a></h2>
-<p>A partir de la regla de la cadena para una función <span class="math notranslate nohighlight">\(F\)</span> (que puede ser la antiderivada de una función <span class="math notranslate nohighlight">\(f\)</span>) tenemos</p>
-<div class="math notranslate nohighlight">
-\[\left(F(g(x))\right)' = F'(g(x))g'(x)\]</div>
-<p>luego podemos deducir la siguiente fórmula para integrar.</p>
-<p><strong>Teorema (Cambio de variable)</strong> Sea <span class="math notranslate nohighlight">\(g\)</span> una función con derivada continua en un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, y sea <span class="math notranslate nohighlight">\(f\)</span> continua en el intervalo que contiene al rango de <span class="math notranslate nohighlight">\(g\)</span>. Entonces</p>
-<div class="math notranslate nohighlight">
-\[\int f(g(x))g'(x)\, dx=\int f(u) \frac{du}{dx} dx=\int f(u)\,du.\]</div>
-<p>o equivalentemente en el caso de una integral definida</p>
-<div class="math notranslate nohighlight">
-\[ \int_{g(a)}^{g(b)} f(u)\,du=\int_a^b f(g(x))g'(x)\, dx.\]</div>
-</section>
-<section id="ejemplo">
-<h2>Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h2>
-<p>La siguiente integral se resuelve por sustitución</p>
-<div class="math notranslate nohighlight">
-\[\int{\frac{x}{\sqrt{x-1}}} dx\]</div>
-<p>La sustitución recomendada para resolver la integral es la siguiente:</p>
-<p><span class="math notranslate nohighlight">\(u = x-1\)</span></p>
-<p><span class="math notranslate nohighlight">\(x = u+1\)</span></p>
-<p><span class="math notranslate nohighlight">\(du=dx\)</span></p>
-<p>Una vez derivada la función <span class="math notranslate nohighlight">\(u\)</span> se reemplazan los valores dentro de la integral. lo anterior conlleva a sobreescribir la integral de la siguiente forma:</p>
-<div class="math notranslate nohighlight">
-\[\int{\frac{u+1}{\sqrt{u+1-1}}} du\]</div>
-<p>Una vez realizada la la sustitucion procedemos a realizar las operaciones algebraicas correspondientes</p>
-<div class="math notranslate nohighlight">
-\[\int{\frac{u}{u^\frac{1}{2}}+\frac{1}{u^\frac{1}{2}}} du\]</div>
-<div class="math notranslate nohighlight">
-\[\int{\frac{u}{u^\frac{1}{2}}du+}\int{\frac{1}{u^\frac{1}{2}}} du\]</div>
-<p>en este punto resolvemos la integral usando las propiedad de la integral de una potencia</p>
-<div class="math notranslate nohighlight">
-\[\frac{2u^\frac{3}{2}}{3}+2\sqrt{u}+c\]</div>
-<p>se reeemplaza de nuevo por la variable <span class="math notranslate nohighlight">\(x\)</span></p>
-<div class="math notranslate nohighlight">
-\[\frac{2(x-1)\sqrt{x-1}}{3}+2\sqrt{x-1}+c\]</div>
-</section>
-<section id="integracion-por-partes">
-<h2>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Link to this heading">#</a></h2>
-<p>Ahora recordemos la regla del producto para derivadas</p>
-<div class="math notranslate nohighlight">
-\[(f g ) ' = f'g + g' f  ,\]</div>
-<p>luego si integramos sobre un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span> y suponiendo como antes que <span class="math notranslate nohighlight">\(f'\)</span> y <span class="math notranslate nohighlight">\(g'\)</span> son continuas, obtenemos</p>
-<p><strong>Teorema (Integral por partes)</strong> Sean <span class="math notranslate nohighlight">\(f'\)</span> y <span class="math notranslate nohighlight">\(g'\)</span>  continuas en un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>. Entonces</p>
-<div class="math notranslate nohighlight">
-\[\int f'(x)g(x)\, dx=f(x) g(x)-\int f(x)g'(x)\,dx.\]</div>
-</section>
-<section id="id1">
-<h2>Ejemplo<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Para usar el método de integración por partes, es necesario definir <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(dv\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx\]</div>
-<p>De la integral anterior se puede escoger <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(dv\)</span> de la siguiente manera:</p>
-<p>\begin{align*}
-u&amp;=(lnx)^2          &amp; dv=1dx \
-du&amp;=2lnx\frac{1}{x}dx         &amp;  v=x\
-\end{align*}</p>
-<p>gracias al anterior cambio en las variables se puede reescribir la integral inicial como sigue:</p>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx = x(lnx)^2-\int{2xlnx\frac{1}{x}}dx\]</div>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx = x(lnx)^2-2\int{lnx}dx\]</div>
-<p>este proceso nos llevo a encontrar otra integral que se resuelve por partes.</p>
-<div class="math notranslate nohighlight">
-\[2\int{lnx}dx\]</div>
-<p>De nuevo se debe escoger <span class="math notranslate nohighlight">\(u\)</span>  y  <span class="math notranslate nohighlight">\(dv\)</span>  de la siguiente manera:</p>
-<p>\begin{align*}
-u&amp;=lnx          &amp; dv=1dx \
-du&amp;=\frac{1}{x}dx         &amp;  v=x\
-\end{align*}</p>
-<p>gracias al anterior cambio en las variables se puede reescribir la integral inicial como sigue:</p>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-\int{x\frac{1}{x}}dx)\]</div>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-\int{1dx})\]</div>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-x)+c\]</div>
-<div class="math notranslate nohighlight">
-\[\int{(lnx)^2} dx = x(lnx)^2-2xlnx+2x+c\]</div>
-</section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -672,7 +624,7 @@ du&amp;=\frac{1}{x}dx         &amp;  v=x\
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Densidad lineal de una varilla</p>
+        <p class="prev-next-title">Teorema Fundamental del Cálculo</p>
       </div>
     </a>
     <a class="right-next"
@@ -700,7 +652,9 @@ du&amp;=\frac{1}{x}dx         &amp;  v=x\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interpretación de la integral definida</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-lineal-de-una-varilla">Densidad lineal de una varilla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacion-de-la-idea-anterior">Generalización de la idea anterior.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica">Estadística</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalidades">Generalidades</a></li>
 </ul>
@@ -709,16 +663,6 @@ du&amp;=\frac{1}{x}dx         &amp;  v=x\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingreso-total">Ingreso total</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-dinamicos">Sistemas dinámicos</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-integracion">Métodos de integración</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-sustitucion">Integración por sustitución</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-partes">Integración por partes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

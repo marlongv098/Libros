@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Densidad lineal de una varilla &#8212; Matematicas Aplicadas II</title>
+    <title>Teorema Fundamental del Cálculo &#8212; Matematicas Aplicadas II</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -184,18 +184,12 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="1intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Densidad lineal de una varilla</a></li>
-
-
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Teorema Fundamental del Cálculo</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="1b.html">Interpretación de la integral definida</a></li>
-
 <li class="toctree-l2"><a class="reference internal" href="1c.html">Metodos numericos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1d.html">Antiderivadas</a></li>
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="1d.html">Ecuaciones diferenciales de primer orden</a></li>
 </ul>
 </details></li>
 </ul>
@@ -426,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Densidad lineal de una varilla</h1>
+    <h1>Teorema Fundamental del Cálculo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -436,15 +430,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Densidad lineal de una varilla</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacion-de-la-idea-anterior">Generalización de la idea anterior.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Teorema Fundamental del Cálculo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-derivada-e-integral">Relación entre derivada e integral</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-derivada-e-integral">Relación entre derivada e integral</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-fundamentales-del-calculo">Teoremas Fundamentales del Cálculo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-definida">Integral Definida</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-del-valor-medio-en-integrales">Teorema del valor medio en integrales.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-definida">Integral Definida</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-del-valor-medio-en-integrales">Teorema del valor medio en integrales.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-integracion">Métodos de integración</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-sustitucion">Integración por sustitución</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-partes">Integración por partes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -457,66 +457,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="densidad-lineal-de-una-varilla">
-<h1>Densidad lineal de una varilla<a class="headerlink" href="#densidad-lineal-de-una-varilla" title="Link to this heading">#</a></h1>
-<p>Si se tiene la densidad lineal de una barra en función de la distancia. Se puede estableder un diferencial de masa en función de la diferencial de longitud.</p>
-<div class="math notranslate nohighlight">
-\[dm=(densidad)*dl\]</div>
-<p>para hallar la masa total de la barra solo es necesario encontrar la integral definida.</p>
-<div class="math notranslate nohighlight">
-\[m=\int_{a}^{b}(densidad)dl\]</div>
-<p>donde <span class="math notranslate nohighlight">\(b-a\)</span> representa la longitud de la barra.</p>
-<section id="generalizacion-de-la-idea-anterior">
-<h2>Generalización de la idea anterior.<a class="headerlink" href="#generalizacion-de-la-idea-anterior" title="Link to this heading">#</a></h2>
-<p>Sea <span class="math notranslate nohighlight">\(R(f, [a,b])\)</span> denota la masa de una porción de barra entre los puntos <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> del eje <span class="math notranslate nohighlight">\(x\)</span> y donde <span class="math notranslate nohighlight">\(f(x)\)</span> representa la densidad lineal de la barra en el valor <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<ul class="simple">
-<li><p>Si la densidad <span class="math notranslate nohighlight">\(f(x)\)</span> es constante se tiene que</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-R(f, [a,b]) = f(x)(b-a)
-\]</div>
-<ul class="simple">
-<li><p>Si la densidad <span class="math notranslate nohighlight">\(f(x)\)</span> es variable entonces</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-m\leq f(x)\leq M
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(m\)</span> representa la densidad lineal mínima de la barra y <span class="math notranslate nohighlight">\(M\)</span> representa la densidad lineal máxima de la barra. De lo anterior</p>
-<div class="math notranslate nohighlight">
-\[
-m(b-a) \leq f(x)(b-a)\leq M(b-a)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-m(b-a) \leq R(f, [a,b]) \leq M(b-a)
-\]</div>
-</section>
-<section id="conclusion">
-<h2>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>Si se desea realizar una aproximación númerica de la masa de la barra solo es necesario realizar una partición del intervalo <span class="math notranslate nohighlight">\([a,b]\)</span></p>
-<div class="math notranslate nohighlight">
-\[\Delta x=\frac{b-a}{n}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(n\)</span> es un número entero positivo y <span class="math notranslate nohighlight">\(\Delta x\)</span> es la longitud de cada partición <span class="math notranslate nohighlight">\([a,c_i]\)</span>  con <span class="math notranslate nohighlight">\(c_i \in [a,b]\)</span>.</p>
-<p>Por tanto, entre más grande sea el valor <span class="math notranslate nohighlight">\(n\)</span> mejor será la aproximación de la masa de la barra, de esta manera, la masa de la barra se puede representar como sigue:</p>
-<div class="math notranslate nohighlight">
-\[
-R(f, [a,b]) = R(f, [a,c_1]) +...+ R(f, [c_n,b])
-\]</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="relacion-entre-derivada-e-integral">
-<h1>Relación entre derivada e integral<a class="headerlink" href="#relacion-entre-derivada-e-integral" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p><strong>Nota:</strong> Si una función <span class="math notranslate nohighlight">\(F\)</span> se define como la integral de <span class="math notranslate nohighlight">\(f\)</span> desde <span class="math notranslate nohighlight">\(a\)</span> hasta <span class="math notranslate nohighlight">\(x\)</span>, entonces la derivada de <span class="math notranslate nohighlight">\(F\)</span> es <span class="math notranslate nohighlight">\(f\)</span>.</p>
-</div></blockquote>
-<p>En otras palabras la diferenciación y la integración son inversas. El argumento presentado a favor de esta proposición se basó en la intuición física, en particular, con  ejemplos como el de la masa de la varilla <span class="math notranslate nohighlight">\(R(x)\)</span> cuya densidad lineal es <span class="math notranslate nohighlight">\(f\)</span>, esto es,</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}f(x)=R'(x)$$ siempre que\\$$R(x)=I(f,[a,x]).\end{aligned}\end{align} \]</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="teoremas-fundamentales-del-calculo">
-<h1>Teoremas Fundamentales del Cálculo<a class="headerlink" href="#teoremas-fundamentales-del-calculo" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-fundamental-del-calculo">
+<h1>Teorema Fundamental del Cálculo<a class="headerlink" href="#teorema-fundamental-del-calculo" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Sea <span class="math notranslate nohighlight">\(f\)</span> cualquier función continua en <span class="math notranslate nohighlight">\([a, b]\)</span>. Entonces <span class="math notranslate nohighlight">\(f\)</span> es la derivada de alguna función diferenciable. De hecho, para <span class="math notranslate nohighlight">\(x\)</span> en <span class="math notranslate nohighlight">\([a, b]\)</span>,</p></li>
 </ol>
@@ -531,6 +473,18 @@ R(f, [a,b]) = R(f, [a,c_1]) +...+ R(f, [c_n,b])
 \[
 F(b)-F(a)=\int_a^b F' (x)\,dx
 \]</div>
+<section id="relacion-entre-derivada-e-integral">
+<h2>Relación entre derivada e integral<a class="headerlink" href="#relacion-entre-derivada-e-integral" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>Nota:</strong> Si una función <span class="math notranslate nohighlight">\(F\)</span> se define como la integral de <span class="math notranslate nohighlight">\(f\)</span> desde <span class="math notranslate nohighlight">\(a\)</span> hasta <span class="math notranslate nohighlight">\(x\)</span>, entonces la derivada de <span class="math notranslate nohighlight">\(F\)</span> es <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div></blockquote>
+<p>En otras palabras la diferenciación y la integración son inversas. El argumento presentado a favor de esta proposición se basa en la intuición física, en particular, con  ejemplos como el de la masa de la varilla <span class="math notranslate nohighlight">\(R(x)\)</span> cuya densidad lineal es <span class="math notranslate nohighlight">\(f\)</span>, esto es,</p>
+<div class="math notranslate nohighlight">
+\[f(x)=R'(x)\]</div>
+<p>siempre que</p>
+<div class="math notranslate nohighlight">
+\[R(x)=I(f,[a,x])\]</div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="integral-definida">
 <h1>Integral Definida<a class="headerlink" href="#integral-definida" title="Link to this heading">#</a></h1>
@@ -556,9 +510,8 @@ F(b)-F(a)=\int_a^b F' (x)\,dx
 <p>Todo lo anterior nos conduce a la aproximación de la integral en 2.</p>
 <div class="math notranslate nohighlight">
 \[ F(b)-F(a)=\sum_{i=1}^n  f(c_i)\Delta x_i\]</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="teorema-del-valor-medio-en-integrales">
-<h1>Teorema del valor medio en integrales.<a class="headerlink" href="#teorema-del-valor-medio-en-integrales" title="Link to this heading">#</a></h1>
+<section id="teorema-del-valor-medio-en-integrales">
+<h2>Teorema del valor medio en integrales.<a class="headerlink" href="#teorema-del-valor-medio-en-integrales" title="Link to this heading">#</a></h2>
 <p>Teorema del valor medio del cálculo diferencial,
 teorema del valor medio para integrales y el teorema fundamental del cálculo pueden relacionarse en una declaración unificadora.</p>
 <p><strong>Definición</strong> Si <span class="math notranslate nohighlight">\(F'\)</span> es continua en <span class="math notranslate nohighlight">\([a, b]\)</span>, luego para algún <span class="math notranslate nohighlight">\(c\)</span>,</p>
@@ -575,6 +528,90 @@ F'(c)=\frac{F(b)-F(a)}{b-a}
 \[
 F(b)-F(a)=F(x)|_a^b
 \]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="metodos-de-integracion">
+<h1>Métodos de integración<a class="headerlink" href="#metodos-de-integracion" title="Link to this heading">#</a></h1>
+<section id="integracion-por-sustitucion">
+<h2>Integración por sustitución<a class="headerlink" href="#integracion-por-sustitucion" title="Link to this heading">#</a></h2>
+<p>A partir de la regla de la cadena para una función <span class="math notranslate nohighlight">\(F\)</span> (que puede ser la antiderivada de una función <span class="math notranslate nohighlight">\(f\)</span>) tenemos</p>
+<div class="math notranslate nohighlight">
+\[\left(F(g(x))\right)' = F'(g(x))g'(x)\]</div>
+<p>luego podemos deducir la siguiente fórmula para integrar.</p>
+<p><strong>Teorema (Cambio de variable)</strong> Sea <span class="math notranslate nohighlight">\(g\)</span> una función con derivada continua en un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, y sea <span class="math notranslate nohighlight">\(f\)</span> continua en el intervalo que contiene al rango de <span class="math notranslate nohighlight">\(g\)</span>. Entonces</p>
+<div class="math notranslate nohighlight">
+\[\int f(g(x))g'(x)\, dx=\int f(u) \frac{du}{dx} dx=\int f(u)\,du.\]</div>
+<p>o equivalentemente en el caso de una integral definida</p>
+<div class="math notranslate nohighlight">
+\[ \int_{g(a)}^{g(b)} f(u)\,du=\int_a^b f(g(x))g'(x)\, dx.\]</div>
+</section>
+<section id="ejemplo">
+<h2>Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h2>
+<p>La siguiente integral se resuelve por sustitución</p>
+<div class="math notranslate nohighlight">
+\[\int{\frac{x}{\sqrt{x-1}}} dx\]</div>
+<p>La sustitución recomendada para resolver la integral es la siguiente:</p>
+<p><span class="math notranslate nohighlight">\(u = x-1\)</span></p>
+<p><span class="math notranslate nohighlight">\(x = u+1\)</span></p>
+<p><span class="math notranslate nohighlight">\(du=dx\)</span></p>
+<p>Una vez derivada la función <span class="math notranslate nohighlight">\(u\)</span> se reemplazan los valores dentro de la integral. lo anterior conlleva a sobreescribir la integral de la siguiente forma:</p>
+<div class="math notranslate nohighlight">
+\[\int{\frac{u+1}{\sqrt{u+1-1}}} du\]</div>
+<p>Una vez realizada la la sustitucion procedemos a realizar las operaciones algebraicas correspondientes</p>
+<div class="math notranslate nohighlight">
+\[\int{\frac{u}{u^\frac{1}{2}}+\frac{1}{u^\frac{1}{2}}} du\]</div>
+<div class="math notranslate nohighlight">
+\[\int{\frac{u}{u^\frac{1}{2}}du+}\int{\frac{1}{u^\frac{1}{2}}} du\]</div>
+<p>en este punto resolvemos la integral usando las propiedad de la integral de una potencia</p>
+<div class="math notranslate nohighlight">
+\[\frac{2u^\frac{3}{2}}{3}+2\sqrt{u}+c\]</div>
+<p>se reeemplaza de nuevo por la variable <span class="math notranslate nohighlight">\(x\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{2(x-1)\sqrt{x-1}}{3}+2\sqrt{x-1}+c\]</div>
+</section>
+<section id="integracion-por-partes">
+<h2>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Link to this heading">#</a></h2>
+<p>Ahora recordemos la regla del producto para derivadas</p>
+<div class="math notranslate nohighlight">
+\[(f g ) ' = f'g + g' f  ,\]</div>
+<p>luego si integramos sobre un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span> y suponiendo como antes que <span class="math notranslate nohighlight">\(f'\)</span> y <span class="math notranslate nohighlight">\(g'\)</span> son continuas, obtenemos</p>
+<p><strong>Teorema (Integral por partes)</strong> Sean <span class="math notranslate nohighlight">\(f'\)</span> y <span class="math notranslate nohighlight">\(g'\)</span>  continuas en un intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>. Entonces</p>
+<div class="math notranslate nohighlight">
+\[\int f'(x)g(x)\, dx=f(x) g(x)-\int f(x)g'(x)\,dx.\]</div>
+</section>
+<section id="id1">
+<h2>Ejemplo<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Para usar el método de integración por partes, es necesario definir <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(dv\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx\]</div>
+<p>De la integral anterior se puede escoger <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(dv\)</span> de la siguiente manera:</p>
+<p>\begin{align*}
+u&amp;=(lnx)^2          &amp; dv=1dx \
+du&amp;=2lnx\frac{1}{x}dx         &amp;  v=x\
+\end{align*}</p>
+<p>gracias al anterior cambio en las variables se puede reescribir la integral inicial como sigue:</p>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx = x(lnx)^2-\int{2xlnx\frac{1}{x}}dx\]</div>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx = x(lnx)^2-2\int{lnx}dx\]</div>
+<p>este proceso nos llevo a encontrar otra integral que se resuelve por partes.</p>
+<div class="math notranslate nohighlight">
+\[2\int{lnx}dx\]</div>
+<p>De nuevo se debe escoger <span class="math notranslate nohighlight">\(u\)</span>  y  <span class="math notranslate nohighlight">\(dv\)</span>  de la siguiente manera:</p>
+<p>\begin{align*}
+u&amp;=lnx          &amp; dv=1dx \
+du&amp;=\frac{1}{x}dx         &amp;  v=x\
+\end{align*}</p>
+<p>gracias al anterior cambio en las variables se puede reescribir la integral inicial como sigue:</p>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-\int{x\frac{1}{x}}dx)\]</div>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-\int{1dx})\]</div>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-x)+c\]</div>
+<div class="math notranslate nohighlight">
+\[\int{(lnx)^2} dx = x(lnx)^2-2xlnx+2x+c\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -641,15 +678,21 @@ F(b)-F(a)=F(x)|_a^b
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Densidad lineal de una varilla</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacion-de-la-idea-anterior">Generalización de la idea anterior.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Teorema Fundamental del Cálculo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-derivada-e-integral">Relación entre derivada e integral</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-derivada-e-integral">Relación entre derivada e integral</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremas-fundamentales-del-calculo">Teoremas Fundamentales del Cálculo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-definida">Integral Definida</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-del-valor-medio-en-integrales">Teorema del valor medio en integrales.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-definida">Integral Definida</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-del-valor-medio-en-integrales">Teorema del valor medio en integrales.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-integracion">Métodos de integración</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-sustitucion">Integración por sustitución</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-partes">Integración por partes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejemplo</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
