@@ -1,0 +1,305 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass report
+\begin_preamble
+\usepackage{latexsym}
+\usepackage{epsfig}\usepackage{multicol}\usepackage{anysize}\usepackage{graphicx}\usepackage[spanish]{babel}
+\parindent=0pt
+
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot} \DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\Arctan}{arctan}
+
+%NORMAS
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\Abs}[1]{\bigl\lvert #1 \bigr\rvert}
+\newcommand{\ABS}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\nor}[1]{\lVert #1 \rVert}
+\newcommand{\Nor}[1]{\bigl\lVert #1 \bigr\rVert}
+\newcommand{\NOR}[1]{\left\lVert#1\right\rVert}
+
+%PRODUCTOS
+\newcommand{\pro}[2]{\langle #1,#2 \rangle}
+\newcommand{\PRO}[2]{\left\langle #1,#2 \right\rangle}
+
+%LETRAS
+\newcommand{\ope}[1]{\mathcal{#1}}
+\newcommand{\dl}[1]{\mathbb{#1}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding iso8859-1
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\backgroundcolor #ebebeb
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Preguntas para el análisis de población universitaria
+\end_layout
+
+\begin_layout Subsection*
+Ejercicio introductorio
+\end_layout
+
+\begin_layout Standard
+Una universidad desea analizar la evolución de su población estudiantil
+ a lo largo del tiempo.
+ Sabe que cada año ingresan nuevos estudiantes, pero también ocurre un fenómeno
+ de deserción que depende del tamaño actual de la población.
+ En algunos casos, los estudiantes se gradúan después de un periodo fijo,
+ y en otros, los ingresos no logran compensar la salida de estudiantes.
+ Se desea modelar esta dinámica usando ecuaciones diferenciales y explorar
+ diversos escenarios para prever el comportamiento de la población en el
+ futuro.
+ A partir de este contexto, resuelva las siguientes preguntas.
+\end_layout
+
+\begin_layout Subsection*
+Parte técnica común 1.
+ 
+\end_layout
+
+\begin_layout Itemize
+encuentre la solución analítica de la ecuación
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=ax-bx^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+¿Qué representa el equilibrio poblacional? ¿Se alcanza un valor estable?
+ 
+\end_layout
+
+\begin_layout Itemize
+¿Cómo se comporta la solución cuando 
+\begin_inset Formula $t\to\infty$
+\end_inset
+
+ ? 
+\end_layout
+
+\begin_layout Itemize
+¿La solución simbólica coincide con el comportamiento gráfico? 
+\end_layout
+
+\begin_layout Itemize
+¿Cómo afecta el valor de 
+\begin_inset Formula $a$
+\end_inset
+
+ o 
+\begin_inset Formula $b$
+\end_inset
+
+ al crecimiento o decrecimiento poblacional?
+\end_layout
+
+\begin_layout Subsection*
+Escenario 1: Ingresos y deserción
+\end_layout
+
+\begin_layout Itemize
+¿Cuál es el comportamiento para diferentes condiciones iniciales 
+\begin_inset Formula $x(0)$
+\end_inset
+
+ ? 
+\end_layout
+
+\begin_layout Itemize
+¿En qué tiempo se estabiliza la población? 
+\end_layout
+
+\begin_layout Itemize
+¿Qué ocurre si duplicamos el valor de 
+\begin_inset Formula $a$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+¿Qué poblaciones iniciales tienden al mismo equilibrio?
+\end_layout
+
+\begin_layout Subsection*
+Escenario 2: Ingresos constantes y graduación a los 5 años 
+\end_layout
+
+\begin_layout Standard
+Explicación para el cálculo de la función por tramos (Escenario 2)
+\end_layout
+
+\begin_layout Standard
+En este escenario, los estudiantes ingresan a razón constante de 
+\begin_inset Formula $r$
+\end_inset
+
+ estudiantes por año y permanecen en la universidad exactamente 
+\begin_inset Formula $5$
+\end_inset
+
+ años.
+ Supondremos que la población acumulada crece linealmente hasta que los
+ primeros estudiantes comienzan a graduarse.
+\end_layout
+
+\begin_layout Standard
+Podemos modelar esta situación con una función por tramos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x(t)=\begin{cases}
+r\cdot t, & 0\leq t<5\\
+5r, & t\geq5
+\end{cases}
+\]
+
+\end_inset
+
+ Esto significa que:
+\end_layout
+
+\begin_layout Itemize
+Durante los primeros 5 años, nadie se gradúa, por lo que la población crece
+ linealmente.
+ 
+\end_layout
+
+\begin_layout Itemize
+A partir del quinto año, cada año se gradúa la misma cantidad que ingresa,
+ manteniendo una población constante.
+\end_layout
+
+\begin_layout Itemize
+¿Qué función representa el crecimiento por tramos?
+\end_layout
+
+\begin_layout Itemize
+¿Qué ocurre si el valor de ingreso anual 
+\begin_inset Formula $r$
+\end_inset
+
+ cambia? 
+\end_layout
+
+\begin_layout Itemize
+¿Cuándo alcanza la población su valor máximo? 
+\end_layout
+
+\begin_layout Itemize
+¿Qué pasa si no hay graduación (retención infinita)?
+\end_layout
+
+\begin_layout Subsection*
+Escenario 3: Ingresos menores que deserción 
+\end_layout
+
+\begin_layout Itemize
+¿Qué valor límite tiene la población si 
+\begin_inset Formula $a<0$
+\end_inset
+
+ ? 
+\end_layout
+
+\begin_layout Itemize
+¿Cómo varía el tiempo de desaparición según 
+\begin_inset Formula $x(0)$
+\end_inset
+
+ ? 
+\end_layout
+
+\begin_layout Itemize
+¿Puede mantenerse alguna población en equilibrio? 
+\end_layout
+
+\begin_layout Itemize
+¿Qué políticas se podrían proponer para revertir el descenso? 
+\end_layout
+
+\end_body
+\end_document

@@ -1,4 +1,6 @@
-# Demostraciones Coq
+# Coq
+
+Explora la herramienta, selecciona algunas proposiciones y describe las tácticas empleadas en cada una de las demostraciones realizadas.
 
 [Coq](https://jscoq.github.io/scratchpad.html)
 

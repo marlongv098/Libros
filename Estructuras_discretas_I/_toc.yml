@@ -22,6 +22,7 @@ parts:
         sections:
           - file: 1_Logica_Formal/metodosDemos.md
           - file: 1_Logica_Formal/Coq/IntroCoq.md
+          - file: 1_Logica_Formal/Coq/Tacticas.md 
           - file: 1_Logica_Formal/Coq/demosCoq.md
   - caption: Conjuntos
     chapters:
