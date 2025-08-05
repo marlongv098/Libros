@@ -99,3 +99,7 @@ El número de elementos distintos de un conjunto $A$ se denomina **Cardinalidad*
 
 **Definición adicional:**  
 Un conjunto **finito** es un conjunto con una cantidad finita de elementos. De lo contrario, se denomina conjunto **infinito**.
+
+# Ejercicios
+
+[Demostraciones Conjuntos](/2_Conjuntos_Funciones/1_Conjuntos/CyEDSesió4-Ejercicios.pdf)

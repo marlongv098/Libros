@@ -25,6 +25,7 @@ parts:
             #title: Título tercer cuaderno # Corregido
           - file: Eje_tematico_1/1d.ipynb
             #title: Título cuarto capitulo # Corregido
+          - file: Cuaderno1/preguntas_modelos_poblacionales.md
 
   - caption: Aplicaciones de los vectores y las matrices.
     chapters:
