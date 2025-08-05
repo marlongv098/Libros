@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introducción a Coq &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>Ejercicios en Coq &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '1_Logica_Formal/Coq/IntroCoq';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_Logica_Formal/Coq/EjerciciosCoq';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Demostraciones" href="Tacticas.html" />
-    <link rel="prev" title="Ejercicios Métodos formales" href="../Ejercicios.html" />
+    <link rel="next" title="Teoría de conjuntos" href="../../2_Conjuntos_Funciones/introConjuntosFunciones.html" />
+    <link rel="prev" title="Coq" href="demosCoq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,11 +185,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../metodosDemos.html">Métodos de Demostración</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Ejercicios.html">Ejercicios Métodos formales</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introducción a Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IntroCoq.html">Introducción a Coq</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tacticas.html">Demostraciones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="demosCoq.html">Coq</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="EjerciciosCoq.html">Ejercicios en Coq</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ejercicios en Coq</a></li>
 </ul>
 </details></li>
 </ul>
@@ -329,7 +329,7 @@
       
       
       
-      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F1_Logica_Formal/Coq/IntroCoq.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F1_Logica_Formal/Coq/EjerciciosCoq.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +359,7 @@
       
       
       
-      <li><a href="../../_sources/1_Logica_Formal/Coq/IntroCoq.md" target="_blank"
+      <li><a href="../../_sources/1_Logica_Formal/Coq/EjerciciosCoq.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -430,9 +430,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -443,28 +441,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introducción a Coq</h1>
+    <h1>Ejercicios en Coq</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-parametros">Funciones y parámetros</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-el-computo-de-funciones">Ejemplo sobre el cómputo de funciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-definicion-inductiva-en-coq">Ejemplo sobre definición inductiva en Coq</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-verificacion-de-tipo-de-sucesor">Ejemplo de verificación de tipo de sucesor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-verificacion-de-tipo-de-add">Ejemplo de verificación de tipo de <code class="docutils literal notranslate"><span class="pre">add</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiendo-funciones-recursivas-en-coq">Definiendo funciones recursivas en Coq</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-definir-la-funcion-factorial-en-coq">Ejemplo: Definir la función factorial en Coq</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-definir-la-multiplicacion-de-dos-numeros-n-y-m-en-coq">Ejemplo: Definir la multiplicación de dos números <code class="docutils literal notranslate"><span class="pre">n</span></code> y <code class="docutils literal notranslate"><span class="pre">m</span></code> en Coq</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -474,113 +455,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-coq">
-<h1>Introducción a Coq<a class="headerlink" href="#introduccion-a-coq" title="Link to this heading">#</a></h1>
-<section id="funciones-y-parametros">
-<h2>Funciones y parámetros<a class="headerlink" href="#funciones-y-parametros" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>En Coq se utiliza la noción de función de modo más formal que en otros lenguajes.</p></li>
-<li><p>Estamos acostumbrados a tener funciones que toman varios parámetros, como <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">suma(int</span> <span class="pre">a,</span> <span class="pre">b).</span></code></p></li>
-<li><p>En Coq las funciones toman un parámetro y devuelven un parámetro.</p></li>
-<li><p>Estas funciones se trabajan mediante el uso de funciones parciales y la técnica denominada “currying”.</p></li>
-<li><p>Una función como suma, en Coq, toma un número natural, devuelve una función que toma un sólo número natural, le suma el anterior, y devuelve el resultado, que es otro natural.</p></li>
-<li><p>A las funciones que toman o devuelven otras funciones como parámetros se las denomina funciones de orden superior.</p></li>
-<li><p>Simplemente, <code class="docutils literal notranslate"><span class="pre">add</span></code> es una función que, a efectos prácticos, toma dos naturales y nos devuelve otro, mediante una función intermedia de orden superior.</p></li>
-</ul>
-</section>
-<section id="ejemplo-sobre-el-computo-de-funciones">
-<h2>Ejemplo sobre el cómputo de funciones<a class="headerlink" href="#ejemplo-sobre-el-computo-de-funciones" title="Link to this heading">#</a></h2>
-<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Compute</span> <span class="n">Nat.add</span> <span class="mi">2</span> <span class="mi">3</span><span class="o">.</span>
-<span class="c">(* = 5 : nat *)</span>
-</pre></div>
-</div>
-<p><strong>¿Qué nos presenta el anterior ejemplo?</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code> se aplica sobre el parámetro <code class="docutils literal notranslate"><span class="pre">2</span></code> y retorna otra función que se aplica sobre <code class="docutils literal notranslate"><span class="pre">3</span></code> para retornarnos el valor <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p></li>
-<li><p>Adicionalmente nos indica el tipo del valor de retorno, un natural.</p></li>
-</ul>
-<p><strong>¿Pero qué es un tipo en Coq?</strong></p>
-<ul class="simple">
-<li><p>Función de primera clase (se puede tratar como otro valor del lenguaje).</p></li>
-<li><p>Se construye de manera inductiva.</p></li>
-</ul>
-</section>
-<section id="ejemplo-sobre-definicion-inductiva-en-coq">
-<h2>Ejemplo sobre definición inductiva en Coq<a class="headerlink" href="#ejemplo-sobre-definicion-inductiva-en-coq" title="Link to this heading">#</a></h2>
-<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Print</span> <span class="n">nat</span><span class="o">.</span>
-<span class="c">(* Inductive nat : Set := O : nat | S : nat -&gt; nat *)</span>
-</pre></div>
-</div>
-<p><strong>¿Qué nos presenta el anterior ejemplo?</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">nat</span></code> es un tipo inductivo (perteneciente a <code class="docutils literal notranslate"><span class="pre">Set</span></code> (conjunto)) que se puede formar mediante dos constructores:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">O</span></code> que representa el cero.</p></li>
-<li><p>Una función <code class="docutils literal notranslate"><span class="pre">S</span></code> (función sucesor) que toma un <code class="docutils literal notranslate"><span class="pre">nat</span></code> y devuelve otro <code class="docutils literal notranslate"><span class="pre">nat</span></code>.</p></li>
-</ol>
-</li>
-</ul>
-</section>
-<section id="ejemplo-de-verificacion-de-tipo-de-sucesor">
-<h2>Ejemplo de verificación de tipo de sucesor<a class="headerlink" href="#ejemplo-de-verificacion-de-tipo-de-sucesor" title="Link to this heading">#</a></h2>
-<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Check</span> <span class="n">S</span> <span class="o">(</span><span class="n">S</span> <span class="o">(</span><span class="n">S</span> <span class="n">O</span><span class="o">)).</span>
-<span class="c">(* 3 : nat *)</span>
-</pre></div>
-</div>
-<p><strong>¿Qué aprendemos del ejemplo anterior?</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> es simplemente azúcar sintáctico para <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">(S</span> <span class="pre">(S</span> <span class="pre">O))</span></code>.</p></li>
-<li><p>Es la codificación de Peano que vimos previamente.</p></li>
-<li><p>Utiliza un sólo dígito y aunque es poco eficiente permite realizar pruebas inductivas con mayor facilidad.</p></li>
-</ul>
-</section>
-<section id="ejemplo-de-verificacion-de-tipo-de-add">
-<h2>Ejemplo de verificación de tipo de <code class="docutils literal notranslate"><span class="pre">add</span></code><a class="headerlink" href="#ejemplo-de-verificacion-de-tipo-de-add" title="Link to this heading">#</a></h2>
-<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Print</span> <span class="n">Nat.add</span><span class="o">.</span>
-<span class="c">(*</span>
-<span class="c">Nat.add =</span>
-<span class="c">fix add (n m : nat) {struct n} : nat :=</span>
-<span class="c">  match n with</span>
-<span class="c">  | 0 =&gt; m</span>
-<span class="c">  | S p =&gt; S (add p m)</span>
-<span class="c">  end</span>
-<span class="c">     : nat -&gt; nat -&gt; nat</span>
-<span class="c">*)</span>
-</pre></div>
-</div>
-<p><strong>Explicación de <code class="docutils literal notranslate"><span class="pre">Nat.add</span></code></strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fix</span></code> es un operador para definir funciones recursivas (se llama a sí misma).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">m</span> <span class="pre">:</span> <span class="pre">nat)</span> <span class="pre">{struct</span> <span class="pre">n}</span> <span class="pre">:</span> <span class="pre">nat</span></code> indica que toma 2 parámetros, <code class="docutils literal notranslate"><span class="pre">n</span></code> y <code class="docutils literal notranslate"><span class="pre">m</span></code>, de tipo <code class="docutils literal notranslate"><span class="pre">nat</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">n</span></code> indica que la recursión es estructural en <code class="docutils literal notranslate"><span class="pre">n</span></code>, es decir, que cuando <code class="docutils literal notranslate"><span class="pre">add</span></code> se llama a sí misma, <code class="docutils literal notranslate"><span class="pre">n</span></code> va a ser siempre inferior.</p></li>
-<li><p>Esto garantiza que <code class="docutils literal notranslate"><span class="pre">add</span></code> siempre devuelva un resultado en tiempo finito.</p></li>
-<li><p>El último <code class="docutils literal notranslate"><span class="pre">nat</span></code> es el tipo del valor de retorno de la función.</p></li>
-<li><p>Decimos que toma dos parámetros porque el currying es automático.</p></li>
-</ul>
-</section>
-<section id="definiendo-funciones-recursivas-en-coq">
-<h2>Definiendo funciones recursivas en Coq<a class="headerlink" href="#definiendo-funciones-recursivas-en-coq" title="Link to this heading">#</a></h2>
-<section id="ejemplo-definir-la-funcion-factorial-en-coq">
-<h3>Ejemplo: Definir la función factorial en Coq<a class="headerlink" href="#ejemplo-definir-la-funcion-factorial-en-coq" title="Link to this heading">#</a></h3>
-<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Fixpoint</span> <span class="n">factorial</span> <span class="o">(</span><span class="n">n</span><span class="o">:</span><span class="n">nat</span><span class="o">)</span> <span class="o">:</span> <span class="n">nat</span> <span class="o">:=</span>
-<span class="k">match</span> <span class="n">n</span> <span class="k">with</span>
-<span class="o">|</span> <span class="n">O</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">S</span> <span class="n">O</span><span class="o">)</span>
-<span class="o">|</span> <span class="n">S</span> <span class="n">p</span> <span class="o">=&gt;</span> <span class="o">(</span><span class="n">S</span> <span class="n">p</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="n">factorial</span> <span class="n">p</span><span class="o">)</span>
-<span class="k">end</span><span class="o">.</span>
-</pre></div>
-</div>
-</section>
-<section id="ejemplo-definir-la-multiplicacion-de-dos-numeros-n-y-m-en-coq">
-<h3>Ejemplo: Definir la multiplicación de dos números <code class="docutils literal notranslate"><span class="pre">n</span></code> y <code class="docutils literal notranslate"><span class="pre">m</span></code> en Coq<a class="headerlink" href="#ejemplo-definir-la-multiplicacion-de-dos-numeros-n-y-m-en-coq" title="Link to this heading">#</a></h3>
-<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Fixpoint</span> <span class="n">multiplicar</span> <span class="o">(</span><span class="n">n</span> <span class="n">m</span><span class="o">:</span><span class="n">nat</span><span class="o">)</span> <span class="o">:</span> <span class="n">nat</span> <span class="o">:=</span>
-<span class="k">match</span> <span class="n">n</span> <span class="k">with</span>
-<span class="o">|</span> <span class="n">O</span> <span class="o">=&gt;</span> <span class="n">O</span>
-<span class="o">|</span> <span class="n">S</span> <span class="n">p</span> <span class="o">=&gt;</span> <span class="n">m</span> <span class="o">+</span> <span class="o">(</span><span class="n">multiplicar</span> <span class="n">p</span> <span class="n">m</span><span class="o">)</span>
-<span class="k">end</span><span class="o">.</span>
-</pre></div>
-</div>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicios-en-coq">
+<h1>Ejercicios en Coq<a class="headerlink" href="#ejercicios-en-coq" title="Link to this heading">#</a></h1>
+<p><strong>Exercise 1</strong><br />
+Demuestre que la premisa “Juan baila y canta” permite concluir que “Juan baila”.</p>
+<p><strong>Exercise 2</strong><br />
+Demuestre que la premisa “Juan baila” permite concluir que “Juan baila o canta”.</p>
+<p><strong>Exercise 3</strong><br />
+Demuestre que la premisa “Pedro no juega fútbol” permite concluir que “Si Pedro juega fútbol entonces él va ser ingeniero”.</p>
+<p><strong>Exercise 4</strong><br />
+Demuestre que las premisas “Catalina sale a la playa” y “Sandra va de compras” permiten concluir que “Si Catalina sale a la playa entonces Sandra va de compras”.</p>
+<p><strong>Exercise 5</strong><br />
+Demuestre que las premisas “Federico no sabe programar” y “Federico sabe programar o sabe jugar fútbol” permiten concluir que “Federico sabe jugar fútbol”.</p>
+<p><strong>Exercise 6</strong><br />
+Demuestre que las premisas “Si Alberto es un gran deportista gozará de mucha salud”, “Si Alberto goza de mucha salud tendrá una larga vida” permiten concluir que “Si Alberto es un gran deportista tendrá una larga vida”.</p>
+<p><strong>Exercise 7</strong><br />
+Demuestre que las premisas “Andrea sabe programar” y “Si Andrea sabe programar será una gran Ingeniera de Sistemas” permiten concluir que “Andrea será una gran Ingeniera de Sistemas”.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -614,20 +504,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Ejercicios.html"
+       href="demosCoq.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ejercicios Métodos formales</p>
+        <p class="prev-next-title">Coq</p>
       </div>
     </a>
     <a class="right-next"
-       href="Tacticas.html"
+       href="../../2_Conjuntos_Funciones/introConjuntosFunciones.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Demostraciones</p>
+        <p class="prev-next-title">Teoría de conjuntos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -637,30 +527,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-parametros">Funciones y parámetros</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-el-computo-de-funciones">Ejemplo sobre el cómputo de funciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sobre-definicion-inductiva-en-coq">Ejemplo sobre definición inductiva en Coq</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-verificacion-de-tipo-de-sucesor">Ejemplo de verificación de tipo de sucesor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-verificacion-de-tipo-de-add">Ejemplo de verificación de tipo de <code class="docutils literal notranslate"><span class="pre">add</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiendo-funciones-recursivas-en-coq">Definiendo funciones recursivas en Coq</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-definir-la-funcion-factorial-en-coq">Ejemplo: Definir la función factorial en Coq</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-definir-la-multiplicacion-de-dos-numeros-n-y-m-en-coq">Ejemplo: Definir la multiplicación de dos números <code class="docutils literal notranslate"><span class="pre">n</span></code> y <code class="docutils literal notranslate"><span class="pre">m</span></code> en Coq</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

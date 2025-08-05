@@ -227,3 +227,7 @@ apply Rsym.
 assumption.
 Qed.
 ```
+
+# Ejercicios
+
+[Demostraciones Coq](/1_Logica_Formal/Coq/CyEDSesión3-Ejercicios.pdf)

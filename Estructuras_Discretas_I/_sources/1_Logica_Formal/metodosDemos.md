@@ -289,3 +289,7 @@ Que es la fórmula para $n = k+1$. Por lo tanto, la afirmación es verdadera par
 ## Conclusión
 
 Cada método de demostración tiene su utilidad y aplicación dependiendo del tipo de problema a resolver. La práctica y la comprensión de estos métodos son fundamentales en la matemática y otras disciplinas científicas.
+
+# Ejercicios
+
+[Demostraciones Logica Formal](/1_Logica_Formal/CyEDSesión2-Ejercicios.pdf)

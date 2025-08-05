@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>La lógica formal &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>Ejercicios Métodos formales &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '1_Logica_Formal/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_Logica_Formal/Ejercicios';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Métodos de Demostración" href="metodosDemos.html" />
-    <link rel="prev" title="Notas de Clase" href="../intro.html" />
+    <link rel="next" title="Introducción a Coq" href="Coq/IntroCoq.html" />
+    <link rel="prev" title="Métodos de Demostración" href="metodosDemos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,10 +183,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logica Formal</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">La lógica formal</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">La lógica formal</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="metodosDemos.html">Métodos de Demostración</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Ejercicios.html">Ejercicios Métodos formales</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ejercicios Métodos formales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Coq/IntroCoq.html">Introducción a Coq</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Coq/Tacticas.html">Demostraciones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Coq/demosCoq.html">Coq</a></li>
@@ -331,7 +331,7 @@
       
       
       
-      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F1_Logica_Formal/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F1_Logica_Formal/Ejercicios.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +361,7 @@
       
       
       
-      <li><a href="../_sources/1_Logica_Formal/intro.md" target="_blank"
+      <li><a href="../_sources/1_Logica_Formal/Ejercicios.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,9 +432,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -445,20 +443,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>La lógica formal</h1>
+    <h1>Ejercicios Métodos formales</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-principal">Objetivo principal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos">Usos</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -468,19 +457,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="la-logica-formal">
-<h1>La lógica formal<a class="headerlink" href="#la-logica-formal" title="Link to this heading">#</a></h1>
-<p>es una rama de la filosofía y las matemáticas que estudia los principios del razonamiento válido mediante estructuras simbólicas precisas. A diferencia de la lógica informal, que se enfoca en la argumentación cotidiana y su contenido, la lógica formal abstrae el contenido de los enunciados y se centra únicamente en su forma, utilizando símbolos y reglas bien definidas.</p>
-<section id="objetivo-principal">
-<h2>Objetivo principal<a class="headerlink" href="#objetivo-principal" title="Link to this heading">#</a></h2>
-<p>Determinar si un argumento es válido, es decir, si la conclusión se sigue necesariamente de las premisas. Para ello, emplea sistemas formales como la lógica proposicional y la lógica de predicados, que permiten representar y analizar argumentos mediante fórmulas simbólicas.</p>
-</section>
-<section id="usos">
-<h2>Usos<a class="headerlink" href="#usos" title="Link to this heading">#</a></h2>
-<p>Esta disciplina es fundamental no solo en filosofía, sino también en áreas como la computación, la lingüística, las ciencias cognitivas y la inteligencia artificial, donde el análisis riguroso del razonamiento es esencial. Estudiar lógica formal proporciona herramientas poderosas para mejorar la claridad, coherencia y rigor en el pensamiento y la argumentación.</p>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="ejercicios-metodos-formales">
+<h1>Ejercicios Métodos formales<a class="headerlink" href="#ejercicios-metodos-formales" title="Link to this heading">#</a></h1>
+<p><strong>Ejercicio 1</strong><br />
+Demuestre que el cuadrado de un número par es un número par utilizando una demostración directa.</p>
+<p><strong>Ejercicio 2</strong><br />
+Demuestre que el cuadrado de un número par es un número par utilizando una demostración por reducción al absurdo.</p>
+<p><strong>Ejercicio 3</strong><br />
+Demuestre que todo entero impar es una diferencia de cuadrados utilizando una demostración directa.</p>
+<p><strong>Ejercicio 4</strong><br />
+Demuestre que la suma de dos impares es par.</p>
+<p><strong>Ejercicio 5</strong><br />
+Demuestre que si <span class="math notranslate nohighlight">\(n\)</span> es un entero y <span class="math notranslate nohighlight">\(3n + 2\)</span> es par, entonces <span class="math notranslate nohighlight">\(n\)</span> es par usando:</p>
+<ol class="arabic simple">
+<li><p>Una demostración indirecta.</p></li>
+<li><p>Una demostración por reducción al absurdo.</p></li>
+</ol>
+<p><strong>Ejercicio 6</strong><br />
+Demuestre que se cumple, o que no, que el producto de dos números irracionales es irracional.</p>
+<p><strong>Ejercicio 7</strong><br />
+Demuestre que se cumple, o que no, que el producto de dos números racionales es racional.</p>
+<p><strong>Ejercicio 8</strong><br />
+Demuestre que se cumple, o que no, que el producto de un número racional distinto de cero y un número irracional es un número irracional.</p>
+<p><strong>Ejercicio 9</strong><br />
+Demuestre que si <span class="math notranslate nohighlight">\(x\)</span> es un número racional distinto de cero, entonces <span class="math notranslate nohighlight">\(1/x\)</span> es racional.</p>
+<p><strong>Ejercicio 10</strong><br />
+Sea <span class="math notranslate nohighlight">\(n\)</span> un entero positivo, demuestre que <span class="math notranslate nohighlight">\(n\)</span> es par si y sólo si <span class="math notranslate nohighlight">\(7n + 4\)</span> es par.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -514,20 +516,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="metodosDemos.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Notas de Clase</p>
+        <p class="prev-next-title">Métodos de Demostración</p>
       </div>
     </a>
     <a class="right-next"
-       href="metodosDemos.html"
+       href="Coq/IntroCoq.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Métodos de Demostración</p>
+        <p class="prev-next-title">Introducción a Coq</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -537,22 +539,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-principal">Objetivo principal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos">Usos</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
