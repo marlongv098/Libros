@@ -292,4 +292,4 @@ Cada método de demostración tiene su utilidad y aplicación dependiendo del ti
 
 # Ejercicios
 
-[Demostraciones Logica Formal](/1_Logica_Formal/CyEDSesión2-Ejercicios.pdf)
+<!-- [Demostraciones Logica Formal](/1_Logica_Formal/CyEDSesión2-Ejercicios.pdf)-->

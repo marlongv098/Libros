@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Cuaderno1/preguntas_modelos_poblacionales';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cuaderno1/preguntas_modelos_matrices';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introducción" href="../Eje_tematico_2/2intro.html" />
-    <link rel="prev" title="Ecuaciones diferenciales de primer orden" href="../Eje_tematico_1/1d.html" />
+    <link rel="next" title="Introducción" href="../Eje_tematico_3/3intro.html" />
+    <link rel="prev" title="Resolución de Sistemas de Ecuaciones" href="../Eje_tematico_2/2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,21 +182,21 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Eje_tematico_1/1intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Entrega</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preguntas_modelos_poblacionales.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2b.html">Matrices</a></li>
@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preguntas_modelos_matrices.html">Entrega</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -308,7 +308,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCuaderno1/preguntas_modelos_poblacionales.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCuaderno1/preguntas_modelos_matrices.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@
       
       
       
-      <li><a href="../_sources/Cuaderno1/preguntas_modelos_poblacionales.md" target="_blank"
+      <li><a href="../_sources/Cuaderno1/preguntas_modelos_matrices.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,27 +432,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-una-poblacion-a-partir-de-modelos-de-variacion">Análisis de una Población a partir de Modelos de Variación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planteamiento-general">Planteamiento general</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-tecnica-comun-a-ambos-modelos">Parte técnica común a ambos modelos</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-1-modelo-logistico">Modelo 1: Modelo Logístico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-tecnicas">Preguntas técnicas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-2-modelo-lineal">Modelo 2: Modelo lineal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas técnicas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones">Recomendaciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-aplicado-al-modelo-logistico">Ejercicio aplicado al Modelo Logístico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto">Contexto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas">Preguntas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-aplicado-al-modelo-lineal">Ejercicio aplicado al Modelo Lineal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contexto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-limpieza">Variable Limpieza</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Preguntas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Preguntas</a></li>
 </ul>
 </li>
@@ -469,151 +461,178 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="entrega">
 <h1>Entrega<a class="headerlink" href="#entrega" title="Link to this heading">#</a></h1>
-<section id="analisis-de-una-poblacion-a-partir-de-modelos-de-variacion">
-<h2>Análisis de una Población a partir de Modelos de Variación<a class="headerlink" href="#analisis-de-una-poblacion-a-partir-de-modelos-de-variacion" title="Link to this heading">#</a></h2>
-<section id="planteamiento-general">
-<h3>Planteamiento general<a class="headerlink" href="#planteamiento-general" title="Link to this heading">#</a></h3>
-<p>Una universidad desea comprender cómo evoluciona su población estudiantil en el tiempo. Actualmente cuenta con registros históricos de ingresos, deserciones y graduaciones, y desea analizar esta evolución mediante distintos modelos matemáticos.</p>
-<p>Se propone modelar esta dinámica usando dos enfoques:</p>
+<section id="matrices">
+<h2>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Una empresa de transporte urbano administra cinco rutas principales: <span class="math notranslate nohighlight">\(R_{1}\)</span>, <span class="math notranslate nohighlight">\(R_{2}\)</span>, <span class="math notranslate nohighlight">\(R_{3}\)</span>, y <span class="math notranslate nohighlight">\(R_{4}\)</span>. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es:</p>
 <ol class="arabic simple">
-<li><p><strong>Modelo logístico</strong>, que considera que el crecimiento depende de la cantidad de estudiantes actuales pero se reduce al acercarse a una capacidad máxima debido a la saturación institucional.</p></li>
-<li><p><strong>Modelo lineal</strong>, que considera ingresos constantes y deserción proporcional al número de estudiantes activos.</p></li>
+<li><p>Conductores: 1200 €</p></li>
+<li><p>Autobuses: 90,000 €</p></li>
+<li><p>Combustible: 2 € por litro</p></li>
+<li><p>Mantenimiento: 500 € por revisión</p></li>
 </ol>
-<p>El objetivo es comparar ambos modelos, resolver sus ecuaciones, analizar el comportamiento de la población a lo largo del tiempo, y discutir sus implicaciones a nivel institucional.</p>
-</section>
-<hr class="docutils" />
-<section id="parte-tecnica-comun-a-ambos-modelos">
-<h3>Parte técnica común a ambos modelos<a class="headerlink" href="#parte-tecnica-comun-a-ambos-modelos" title="Link to this heading">#</a></h3>
-<p>Para cada modelo, los estudiantes deberán:</p>
+</li>
+<li><p>En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:</p>
 <ol class="arabic simple">
-<li><p>Encontrar la <strong>solución analítica general</strong> de la ecuación diferencial correspondiente.</p></li>
-<li><p>Estudiar el <strong>equilibrio poblacional</strong> y su estabilidad.</p></li>
-<li><p>Comparar la <strong>solución simbólica</strong> con la simulación gráfica.</p></li>
-<li><p>Evaluar el impacto de los parámetros en el comportamiento de la población.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{1}\)</span> = número de conductores asignados a una ruta</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{2}\)</span> = número de autobuses asignados</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{3}\)</span> = litros de combustible consumidos por ruta</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{4}\)</span> = número de revisiones de mantenimiento</p></li>
 </ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="modelo-1-modelo-logistico">
-<h2>Modelo 1: Modelo Logístico<a class="headerlink" href="#modelo-1-modelo-logistico" title="Link to this heading">#</a></h2>
-<p>El modelo logístico tiene la forma:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{dx}{dt} = ax - bx^2
-\]</div>
-<p>donde:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> es la población universitaria en el tiempo <span class="math notranslate nohighlight">\( t \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a\)</span> representa la tasa de crecimiento proporcional</p></li>
-<li><p><span class="math notranslate nohighlight">\(b\)</span> representa la deserción por saturación (proporcional al cuadrado de la población)</p></li>
-</ul>
-<section id="preguntas-tecnicas">
-<h3>Preguntas técnicas<a class="headerlink" href="#preguntas-tecnicas" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Encuentre la solución analítica de la ecuación</p>
-<div class="math notranslate nohighlight">
-\[ 
-   \frac{dx}{dt} = ax - bx^2
-   \]</div>
 </li>
-<li><p>¿Qué representa el equilibrio poblacional en este modelo?</p></li>
-<li><p>¿Se alcanza un valor estable? ¿En qué condiciones?</p></li>
-<li><p>¿Cómo se comporta la solución cuando <span class="math notranslate nohighlight">\(t \to \infty\)</span>?</p></li>
-<li><p>¿La solución simbólica coincide con el comportamiento gráfico?</p></li>
-<li><p>¿Cómo afecta el valor de <span class="math notranslate nohighlight">\(a\)</span> o <span class="math notranslate nohighlight">\(b\)</span> al crecimiento o decrecimiento de la población?</p></li>
-<li><p>¿Qué significa el término <span class="math notranslate nohighlight">\(bx^2\)</span> en la dinámica poblacional? ¿Es siempre negativo?</p></li>
+<li><p>Se sabe que los costos totales mensuales para algunas rutas (<span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_3\)</span>, y <span class="math notranslate nohighlight">\(R_4\)</span>) están dados por la combinación de estos recursos.</p>
+<ol class="arabic simple">
+<li><p>En la Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>) se emplean 1 conductor, 1 autobús, 1,000 litros de combustible y 1 revisión de mantenimiento. El costo total asciende a 350,000 €.</p></li>
+<li><p>En la Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>) se utilizan 1 conductor, 2 autobuses, 1,500 litros de combustible y algo más de mantenimiento. El costo total es 500,000 €.</p></li>
+<li><p>En la Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>) se necesitan 2 conductores, 1 autobús, 2,000 litros de combustible y 1 revisión de mantenimiento. El costo total es 420,000 €.</p></li>
+<li><p>En la Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>) se usan 1 conductor, 1 autobús, 1,000 litros de combustible y 2 revisiones de mantenimiento. El costo total es 380,000 €.</p></li>
 </ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="modelo-2-modelo-lineal">
-<h2>Modelo 2: Modelo lineal<a class="headerlink" href="#modelo-2-modelo-lineal" title="Link to this heading">#</a></h2>
-<p>Este modelo se representa por la ecuación:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{dx}{dt} = r - d x
-\]</div>
-<p>donde:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(r\)</span> es el ingreso constante de nuevos estudiantes por año</p></li>
-<li><p><span class="math notranslate nohighlight">\(d\)</span> es la tasa de deserción proporcional</p></li>
-<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> es la población universitaria en el tiempo <span class="math notranslate nohighlight">\(t\)</span></p></li>
-</ul>
-<section id="id1">
-<h3>Preguntas técnicas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Encuentre la solución analítica de la ecuación</p>
-<div class="math notranslate nohighlight">
-\[
-   \frac{dx}{dt} = r - dx
-   \]</div>
 </li>
-<li><p>¿Cuál es el valor de equilibrio de la población?</p></li>
-<li><p>¿Cómo varía la solución con diferentes valores iniciales <span class="math notranslate nohighlight">\(x(0)\)</span>?</p></li>
-<li><p>¿Cómo se comporta la población en el tiempo? ¿Crece, decrece o se estabiliza?</p></li>
-<li><p>¿Cómo afecta el valor de <span class="math notranslate nohighlight">\(r\)</span> o <span class="math notranslate nohighlight">\(d\)</span> al equilibrio poblacional?</p></li>
-<li><p>¿Qué ocurre si el ingreso <span class="math notranslate nohighlight">\(r\)</span> no alcanza a compensar la deserción?</p></li>
-<li><p>¿La solución simbólica se ajusta a los resultados de simulaciones numéricas?</p></li>
-</ol>
-</section>
-</section>
-<hr class="docutils" />
-<section id="recomendaciones">
-<h2>Recomendaciones<a class="headerlink" href="#recomendaciones" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Representar gráficamente cada modelo para distintos valores iniciales.</p></li>
-<li><p>Estimar el tiempo en que la población alcanza el <span class="math notranslate nohighlight">\(90%\)</span> del valor de equilibrio.</p></li>
-<li><p>Discutir cuál modelo se ajusta mejor a situaciones reales observadas en universidades.</p></li>
 </ul>
-</section>
-<hr class="docutils" />
-<section id="ejercicio-aplicado-al-modelo-logistico">
-<h2>Ejercicio aplicado al Modelo Logístico<a class="headerlink" href="#ejercicio-aplicado-al-modelo-logistico" title="Link to this heading">#</a></h2>
-<section id="contexto">
-<h3>Contexto<a class="headerlink" href="#contexto" title="Link to this heading">#</a></h3>
-<p>Una universidad reporta que su tasa de crecimiento anual es del <span class="math notranslate nohighlight">\(25%\)</span> gracias a su buena reputación. Sin embargo, estudios indican que cuando el número de estudiantes supera los <span class="math notranslate nohighlight">\(30,000\)</span>, los recursos se saturan y la deserción aumenta. Se estima que esta deserción por saturación puede modelarse con un coeficiente de <span class="math notranslate nohighlight">\(\frac{1}{120000}\)</span>.</p>
-<p>Con una población inicial de <span class="math notranslate nohighlight">\(10,000\)</span> estudiantes, se desea predecir el comportamiento de la población a lo largo de los años.</p>
-<p>El modelo a aplicar es:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{dx}{dt} = 0.25x - \frac{1}{120000}x^2
-\]</div>
-</section>
 <section id="preguntas">
 <h3>Preguntas<a class="headerlink" href="#preguntas" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>¿Cuál es la solución analítica de esta ecuación?</p></li>
-<li><p>¿Cuál es el valor de equilibrio poblacional?</p></li>
-<li><p>¿La población crecerá o decrecerá desde los <span class="math notranslate nohighlight">\(10,000\)</span> estudiantes? ¿Se estabiliza?</p></li>
-<li><p>¿Después de cuántos años se alcanza el <span class="math notranslate nohighlight">\(90%\)</span> del equilibrio?</p></li>
-<li><p>¿Qué ocurriría si la tasa de crecimiento aumentara al <span class="math notranslate nohighlight">\(30%\)</span>?</p></li>
-<li><p>Interprete el término cuadrático en este contexto: ¿por qué crece la deserción con el número de estudiantes?</p></li>
+<li><p>Plantee el sistema matricial <span class="math notranslate nohighlight">\(AX=B\)</span> correspondiente al problema.</p></li>
+<li><p>Resuelva el sistema usando métodos matriciales.</p></li>
 </ol>
 </section>
 </section>
-<hr class="docutils" />
-<section id="ejercicio-aplicado-al-modelo-lineal">
-<h2>Ejercicio aplicado al Modelo Lineal<a class="headerlink" href="#ejercicio-aplicado-al-modelo-lineal" title="Link to this heading">#</a></h2>
-<section id="id2">
-<h3>Contexto<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>Una universidad cuenta actualmente con <span class="math notranslate nohighlight">\(18,000\)</span> estudiantes. Cada año ingresan <span class="math notranslate nohighlight">\(2,000\)</span> nuevos estudiantes. Se estima que la tasa de deserción anual es del <span class="math notranslate nohighlight">\(15%\)</span> de la población activa. La universidad desea conocer si esta dinámica permitirá mantener o reducir la población en el largo plazo.</p>
-<p>El modelo a aplicar es:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{dx}{dt} = 2000 - 0.15x
-\]</div>
+<section id="variable-limpieza">
+<h2>Variable Limpieza<a class="headerlink" href="#variable-limpieza" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Considere la empresa de transporte con rutas <span class="math notranslate nohighlight">\(R_{1},…,R_{4}\)</span> y los recursos:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_{1}\)</span>: conductores (1200 €/mes c/u)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{2}\)</span>: autobuses (90 000 €/mes c/u)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{3}\)</span>: combustible (2 €/L)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{4}\)</span>: mantenimiento (500 € por revisión)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{5}\)</span>: limpieza profunda (200 € por servicio)</p></li>
+</ol>
+</li>
+<li><p>La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:</p>
+<ol class="arabic simple">
+<li><p>Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>): cada autobús realiza 1 limpieza profunda mensual.</p></li>
+<li><p>Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes (en promedio 0.5 más por autobús respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>).</p></li>
+<li><p>Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>): atraviesa zonas rurales y polvorientas, por lo que requiere 1.5 limpiezas adicionales respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
+<li><p>Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>): al operar en zonas centrales con alta rotación de pasajeros, se realizan 2 limpiezas adicionales respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
+</ol>
+</li>
+</ul>
+<section id="id1">
+<h3>Preguntas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.</p></li>
+<li><p>Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?.</p></li>
+</ul>
 </section>
+</section>
+<section id="grafos">
+<h2>Grafos<a class="headerlink" href="#grafos" title="Link to this heading">#</a></h2>
+<p>En una plataforma de redes sociales, cinco influencers (<span class="math notranslate nohighlight">\(I_{1}\)</span>,<span class="math notranslate nohighlight">\(I_{2}\)</span>,<span class="math notranslate nohighlight">\(I_{3}\)</span>,<span class="math notranslate nohighlight">\(I_{4}\)</span>,<span class="math notranslate nohighlight">\(I_{5}\)</span>) interactúan y afectan las opiniones de sus seguidores con distinta intensidad.</p>
+<ul class="simple">
+<li><p>Para modelar este comportamiento, se le asignaron pesos a cada conexión, donde:</p>
+<ol class="arabic simple">
+<li><p>Un peso alto indica mayor influencia sobre el otro influencer.</p></li>
+<li><p>Un peso bajo indica menor influencia.</p></li>
+</ol>
+</li>
+<li><p>La relación de influencia entre ellos se modela de la siguiente manera:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(I_{1}\)</span> influye en <span class="math notranslate nohighlight">\(I_{2}(0.8)\)</span>, <span class="math notranslate nohighlight">\(I_{4}(0.6)\)</span> y <span class="math notranslate nohighlight">\(I_{5}(0.7)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_{2}\)</span> influye en <span class="math notranslate nohighlight">\(I_{3}(0.9)\)</span> y <span class="math notranslate nohighlight">\(I_{4}(0.5)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_{3}\)</span> influye en <span class="math notranslate nohighlight">\(I_{1}(0.4)\)</span> y <span class="math notranslate nohighlight">\(I_{4}(0.8)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_{4}\)</span> influye en <span class="math notranslate nohighlight">\(I_{5}(0.9)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_{5}\)</span> influye en <span class="math notranslate nohighlight">\(I_{2}(0.6)\)</span> y <span class="math notranslate nohighlight">\(I_{3}(0.7)\)</span>.</p></li>
+</ol>
+</li>
+</ul>
+<p>La influencia puede representarse mediante un grafo dirigido, donde un arco de <span class="math notranslate nohighlight">\(I_{i}\)</span> a <span class="math notranslate nohighlight">\(I_{j\)</span> indica que <span class="math notranslate nohighlight">\(I_{i}\)</span> influye en <span class="math notranslate nohighlight">\(I_{j}\)</span> y el peso representa que tan fuerte es la conexión existente entre los influencers.</p>
+<section id="id2">
+<h3>Preguntas<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Representación de la Influencia:</p>
+<ol class="arabic simple">
+<li><p>Construya la matriz de adyacencia ponderada <span class="math notranslate nohighlight">\(W\)</span>, donde <span class="math notranslate nohighlight">\(W_{ij}\)</span> representa la influencia de <span class="math notranslate nohighlight">\(I_{i}\)</span> sobre <span class="math notranslate nohighlight">\(I_{j}\)</span></p></li>
+<li><p>Dibuje el grafo dirigido con pesos para visualizar la estructura de influencia.</p></li>
+</ol>
+</li>
+<li><p>Análisis de Influencia Global:</p>
+<ol class="arabic simple">
+<li><p>¿Qué influencer tiene la mayor suma de pesos salientes (es decir, influye más en los demás)?</p></li>
+<li><p>¿Qué influencer tiene la mayor suma de pesos entrantes (es decir, es más influenciado por otros)?</p></li>
+</ol>
+</li>
+<li><p>Impacto de un Influencer Clave:</p>
+<ol class="arabic simple">
+<li><p>Si <span class="math notranslate nohighlight">\(I_{1}\)</span> deja de publicar contenido, ¿cómo afecta la influencia en la red?</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(I_{5}\)</span> aumenta en un <span class="math notranslate nohighlight">\(50\%\)</span> su influencia sobre <span class="math notranslate nohighlight">\(I_{2}\)</span> e <span class="math notranslate nohighlight">\(I_{3}\)</span>, ¿cómo cambia la propagación de la información en la red?</p></li>
+</ol>
+</li>
+<li><p>Propagación de una Opinión o Producto Nuevo:</p>
+<ol class="arabic simple">
+<li><p>Supongamos que un nuevo producto es promocionado inicialmente solo por <span class="math notranslate nohighlight">\(I_{1}\)</span>. Modela la propagación del producto en la red considerando que cada influencer adopta el producto con una probabilidad proporcional a la influencia que recibe.</p></li>
+<li><p>¿Cuánto tiempo (en términos de pasos de propagación) tarda en llegar a todos los influencers?</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="markov">
+<h2>Markov<a class="headerlink" href="#markov" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Modelado de Comportamiento de Usuarios en una Página Web con Cadenas de Markov. Imagina una página web con 4 secciones (variables/estados) que un usuario puede visitar:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Inicio (I): Página principal.</p></li>
+<li><p>Productos (P): Catálogo de productos.</p></li>
+<li><p>Blog (B): Artículos informativos.</p></li>
+<li><p>Carrito (C): Página de compra.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Se quiere modelar las transiciones entre estas páginas como una Cadena de Markov para:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Predecir la próxima sección que visitará un usuario dado su estado actual.</p></li>
+<li><p>Calcular el estado de equilibrio (distribución estacionaria) para saber la proporción de tiempo que los usuarios pasan en cada página a largo plazo.</p></li>
+</ul>
+<p>Basado en datos históricos la matriz de transición del problema, la cual contiene las probabilidades de moverse de una pagina a otra, puede construirse con la siguiente información:</p>
+<p>a) Un usuario en Inicio tiene:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de probabilidad de quedarse en Inicio.</p></li>
+<li><p><span class="math notranslate nohighlight">\(40\%\)</span> de ir a Productos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(30\%\)</span> de ir al Blog.</p></li>
+<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir al Carrito.</p></li>
+</ul>
+<p>b) Un usuario en Producto tiene:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(30\%\)</span> de ir a Inicio.</p></li>
+<li><p><span class="math notranslate nohighlight">\(30\%\)</span> de quedarse en Productos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir al Blog.</p></li>
+<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir al Carrito.</p></li>
+</ul>
+<p>c) Un usuario en Blog tiene:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Inicio.</p></li>
+<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir a Productos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(50\%\)</span> de quedarse en Blog.</p></li>
+<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir al Carrito.</p></li>
+</ul>
+<p>d) Un usuario en Carrito tiene:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(40\%\)</span> de ir a Inicio.</p></li>
+<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Productos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Blog.</p></li>
+<li><p><span class="math notranslate nohighlight">\(40\%\)</span> de quedarse en Carrito.</p></li>
+</ul>
 <section id="id3">
 <h3>Preguntas<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Encuentre la solución analítica de la ecuación diferencial.</p></li>
-<li><p>¿Cuál es el valor de equilibrio poblacional?</p></li>
-<li><p>¿La población aumentará o disminuirá desde los <span class="math notranslate nohighlight">\(18,000\)</span> estudiantes?</p></li>
-<li><p>¿Después de cuántos años se estabiliza la población al <span class="math notranslate nohighlight">\(95%\)</span> del equilibrio?</p></li>
-<li><p>¿Qué ocurre si los ingresos suben a <span class="math notranslate nohighlight">\(2,500\)</span> estudiantes por año?</p></li>
-<li><p>¿Qué pasaría si se reduce la tasa de deserción al <span class="math notranslate nohighlight">\(10%\)</span>?</p></li>
-</ol>
-<hr class="docutils" />
+<p>Predicción de la próxima página:</p>
+<p>a) Si un usuario está actualmente en la página de Blog (B), ¿cuál es la probabilidad de que visite Carrito (C) en la siguiente paso?</p>
+<p>b) Encuentra el vector de estado estacionario del sistema. Se debe en cuenta que el vector satisface Tx=x donde T es la matriz de transición del problema y x es el vector de estado estacionario, donde la suma de los componentes del vector de estado estacionario debe ser igual a 1.</p>
+<p>c) Si un usuario está actualmente en Inicio (I), ¿cuál es la probabilidad de que esté en Carrito (C) después de 2 pasos?</p>
+<p>d) Si un usuario empieza en Productos (P), ¿qué página es más probable que visite después de 3 pasos?</p>
+<p>e) ¿Cuál es el número esperado de pasos que un usuario pasa en Blog (B) antes de ir a Carrito (C) por primera vez?</p>
+<p>f) Si la probabilidad <span class="math notranslate nohighlight">\(P(B\rightarrow C)\)</span> aumenta de 0.2 a 0.3, ¿cómo cambia la distribución estacionaria? Analizar el impacto de ajustes en la matriz de transición respecto a la matriz inicial.</p>
 </section>
 </section>
 </section>
@@ -649,16 +668,16 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Eje_tematico_1/1d.html"
+       href="../Eje_tematico_2/2d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ecuaciones diferenciales de primer orden</p>
+        <p class="prev-next-title">Resolución de Sistemas de Ecuaciones</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Eje_tematico_2/2intro.html"
+       href="../Eje_tematico_3/3intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -682,27 +701,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-una-poblacion-a-partir-de-modelos-de-variacion">Análisis de una Población a partir de Modelos de Variación</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planteamiento-general">Planteamiento general</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-tecnica-comun-a-ambos-modelos">Parte técnica común a ambos modelos</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-1-modelo-logistico">Modelo 1: Modelo Logístico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-tecnicas">Preguntas técnicas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-2-modelo-lineal">Modelo 2: Modelo lineal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas técnicas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones">Recomendaciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-aplicado-al-modelo-logistico">Ejercicio aplicado al Modelo Logístico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto">Contexto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas">Preguntas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-aplicado-al-modelo-lineal">Ejercicio aplicado al Modelo Lineal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Contexto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-limpieza">Variable Limpieza</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Preguntas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Preguntas</a></li>
 </ul>
 </li>

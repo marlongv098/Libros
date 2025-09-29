@@ -23,10 +23,9 @@ parts:
           - file: 1_Logica_Formal/metodosDemos.md
           - file: 1_Logica_Formal/Ejercicios.md
           - file: 1_Logica_Formal/Coq/IntroCoq.md
-          - file: 1_Logica_Formal/Coq/Tacticas.md 
-          - file: 1_Logica_Formal/Coq/demosCoq.md 
+          - file: 1_Logica_Formal/Coq/Tacticas.md
+          - file: 1_Logica_Formal/Coq/demosCoq.md
           - file: 1_Logica_Formal/Coq/EjerciciosCoq.md
-          
   - caption: Conjuntos
     chapters:
       - file: 2_Conjuntos_Funciones/introConjuntosFunciones.md
