@@ -23,7 +23,7 @@
   3. En la Ruta 3 ($R_{3}$) se necesitan 2 conductores, 1 autobús, 2,000 litros de combustible y 1 revisión de mantenimiento. El costo total es 420,000 €.
   4. En la Ruta 4 ($R_{4}$) se usan 1 conductor, 1 autobús, 1,000 litros de combustible y 2 revisiones de mantenimiento. El costo total es 380,000 €.
 
-### Preguntas Sistema.
+### Preguntas
 
   1. Plantee el sistema matricial $AX=B$ correspondiente al problema.
   2. Resuelva el sistema usando métodos matriciales.
@@ -69,7 +69,7 @@ En una plataforma de redes sociales, cinco influencers ($I_{1}$,$I_{2}$,$I_{3}$,
 
 La influencia puede representarse mediante un grafo dirigido, donde un arco de $I_{i}$ a $I_{j$ indica que $I_{i}$ influye en $I_{j}$ y el peso representa que tan fuerte es la conexión existente entre los influencers.
 
-### Preguntas del Ejercicio: 
+### Preguntas 
 
 - Representación de la Influencia: 
 
@@ -135,7 +135,7 @@ d) Un usuario en Carrito tiene:
   - $10\%$ de ir a Blog. 
   - $40\%$ de quedarse en Carrito.
 
-### Preguntas: 
+### Preguntas
 
 Predicción de la próxima página: 
 
