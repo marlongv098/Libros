@@ -39,6 +39,7 @@ parts:
             #title: Titulo tercer cuaderno # Corregido
           - file: Eje_tematico_2/2d.ipynb
             #title: Titulo cuarto cuaderno # Corregido
+          - file: Cuaderno1/preguntas_modelos_matrices.md
 
   - caption: Aplicaciones de la derivada. # Corregido
     chapters:
