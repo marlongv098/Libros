@@ -58,9 +58,9 @@ $0 \leq n \, \wedge \, Size(Stack) = n \, \wedge \, top = e_n$
   
   $\longrightarrow Stack$  
   
-	  - **Descripcion:** Construye una pila vacía.  
-	  - **Precondiciones:** Ninguna.  
-	  - **Postcondiciones:** La pila es $Stack = \emptyset$.  
+	- **Descripcion:** Construye una pila vacía.  
+	- **Precondiciones:** Ninguna.  
+	- **Postcondiciones:** La pila es $Stack = \emptyset$.  
   
 
 **Operaciones Modificadoras**  
