@@ -2,33 +2,35 @@
 
 ## Matrices
 
-• Una empresa de transporte urbano administra cinco rutas principales: $R_{1}$, $R_{2}$, $R_{3}$, y $R_{4}$. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es: 
+* Una empresa de transporte urbano administra cinco rutas principales: $R_{1}$, $R_{2}$, $R_{3}$, y $R_{4}$. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es: 
 
   1. Conductores: 1200 €
   2. Autobuses: 90,000 €
   3. Combustible: 2 € por litro 
   4. Mantenimiento: 500 € por revisión
 
-• En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:
+* En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:
 
   1. $x_{1}$ = número de conductores asignados a una ruta
   2. $x_{2}$ = número de autobuses asignados
   3. $x_{3}$ = litros de combustible consumidos por ruta
   4. $x_{4}$ = número de revisiones de mantenimiento
 
-• Se sabe que los costos totales mensuales para algunas rutas ($R_1$, $R_2$, $R_3$, y $R_4$) están dados por la combinación de estos recursos.
+* Se sabe que los costos totales mensuales para algunas rutas ($R_1$, $R_2$, $R_3$, y $R_4$) están dados por la combinación de estos recursos.
 
   1. En la Ruta 1 ($R_{1}$) se emplean 1 conductor, 1 autobús, 1,000 litros de combustible y 1 revisión de mantenimiento. El costo total asciende a 350,000 €.
   2. En la Ruta 2 ($R_{2}$) se utilizan 1 conductor, 2 autobuses, 1,500 litros de combustible y algo más de mantenimiento. El costo total es 500,000 €.
   3. En la Ruta 3 ($R_{3}$) se necesitan 2 conductores, 1 autobús, 2,000 litros de combustible y 1 revisión de mantenimiento. El costo total es 420,000 €.
   4. En la Ruta 4 ($R_{4}$) se usan 1 conductor, 1 autobús, 1,000 litros de combustible y 2 revisiones de mantenimiento. El costo total es 380,000 €.
 
-• Preguntas Sistema.
+### Preguntas Sistema.
 
   1. Plantee el sistema matricial $AX=B$ correspondiente al problema.
   2. Resuelva el sistema usando métodos matriciales.
+  
+## Variable Limpieza  
 
-• Considere la empresa de transporte con rutas $R_{1},…,R_{4}$ y los recursos:
+* Considere la empresa de transporte con rutas $R_{1},…,R_{4}$ y los recursos:
 
   1. $x_{1}$: conductores (1200 €/mes c/u)
   2. $x_{2}$: autobuses (90 000 €/mes c/u)
@@ -36,16 +38,17 @@
   4. $x_{4}$: mantenimiento (500 € por revisión)
   5. $x_{5}$: limpieza profunda (200 € por servicio)
 
-• La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:
+* La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:
 
   1. Ruta 1 ($R_{1}$): cada autobús realiza 1 limpieza profunda mensual.
   2. Ruta 2 ($R_{2}$): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes (en promedio 0.5 más por autobús respecto de $R_{1}$).
   3. Ruta 3 ($R_{3}$): atraviesa zonas rurales y polvorientas, por lo que requiere 1.5 limpiezas adicionales respecto de $R_{1}$.
   4. Ruta 4 ($R_{4}$): al operar en zonas centrales con alta rotación de pasajeros, se realizan 2 limpiezas adicionales respecto de $R_{1}$.
 
-– Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.
+### Preguntas
 
-– Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?. 
+* Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.
+* Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?. 
 
 ## Grafos
 
@@ -66,7 +69,7 @@ En una plataforma de redes sociales, cinco influencers ($I_{1}$,$I_{2}$,$I_{3}$,
 
 La influencia puede representarse mediante un grafo dirigido, donde un arco de $I_{i}$ a $I_{j$ indica que $I_{i}$ influye en $I_{j}$ y el peso representa que tan fuerte es la conexión existente entre los influencers.
 
-* Preguntas del Ejercicio: 
+### Preguntas del Ejercicio: 
 
 - Representación de la Influencia: 
 
@@ -132,7 +135,7 @@ d) Un usuario en Carrito tiene:
   - $10\%$ de ir a Blog. 
   - $40\%$ de quedarse en Carrito.
 
-Preguntas: 
+### Preguntas: 
 
 Predicción de la próxima página: 
 

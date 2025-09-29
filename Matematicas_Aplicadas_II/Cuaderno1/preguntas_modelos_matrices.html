@@ -432,9 +432,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-sistema">Preguntas Sistema.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-limpieza">Variable Limpieza</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas">Preguntas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-del-ejercicio">Preguntas del Ejercicio:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -450,33 +463,44 @@ document.write(`
 <h1>Entrega<a class="headerlink" href="#entrega" title="Link to this heading">#</a></h1>
 <section id="matrices">
 <h2>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h2>
-<p>• Una empresa de transporte urbano administra cinco rutas principales: <span class="math notranslate nohighlight">\(R_{1}\)</span>, <span class="math notranslate nohighlight">\(R_{2}\)</span>, <span class="math notranslate nohighlight">\(R_{3}\)</span>, y <span class="math notranslate nohighlight">\(R_{4}\)</span>. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es:</p>
+<ul class="simple">
+<li><p>Una empresa de transporte urbano administra cinco rutas principales: <span class="math notranslate nohighlight">\(R_{1}\)</span>, <span class="math notranslate nohighlight">\(R_{2}\)</span>, <span class="math notranslate nohighlight">\(R_{3}\)</span>, y <span class="math notranslate nohighlight">\(R_{4}\)</span>. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es:</p>
 <ol class="arabic simple">
 <li><p>Conductores: 1200 €</p></li>
 <li><p>Autobuses: 90,000 €</p></li>
 <li><p>Combustible: 2 € por litro</p></li>
 <li><p>Mantenimiento: 500 € por revisión</p></li>
 </ol>
-<p>• En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:</p>
+</li>
+<li><p>En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(x_{1}\)</span> = número de conductores asignados a una ruta</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_{2}\)</span> = número de autobuses asignados</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_{3}\)</span> = litros de combustible consumidos por ruta</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_{4}\)</span> = número de revisiones de mantenimiento</p></li>
 </ol>
-<p>• Se sabe que los costos totales mensuales para algunas rutas (<span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_3\)</span>, y <span class="math notranslate nohighlight">\(R_4\)</span>) están dados por la combinación de estos recursos.</p>
+</li>
+<li><p>Se sabe que los costos totales mensuales para algunas rutas (<span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_3\)</span>, y <span class="math notranslate nohighlight">\(R_4\)</span>) están dados por la combinación de estos recursos.</p>
 <ol class="arabic simple">
 <li><p>En la Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>) se emplean 1 conductor, 1 autobús, 1,000 litros de combustible y 1 revisión de mantenimiento. El costo total asciende a 350,000 €.</p></li>
 <li><p>En la Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>) se utilizan 1 conductor, 2 autobuses, 1,500 litros de combustible y algo más de mantenimiento. El costo total es 500,000 €.</p></li>
 <li><p>En la Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>) se necesitan 2 conductores, 1 autobús, 2,000 litros de combustible y 1 revisión de mantenimiento. El costo total es 420,000 €.</p></li>
 <li><p>En la Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>) se usan 1 conductor, 1 autobús, 1,000 litros de combustible y 2 revisiones de mantenimiento. El costo total es 380,000 €.</p></li>
 </ol>
-<p>• Preguntas Sistema.</p>
+</li>
+</ul>
+<section id="preguntas-sistema">
+<h3>Preguntas Sistema.<a class="headerlink" href="#preguntas-sistema" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Plantee el sistema matricial <span class="math notranslate nohighlight">\(AX=B\)</span> correspondiente al problema.</p></li>
 <li><p>Resuelva el sistema usando métodos matriciales.</p></li>
 </ol>
-<p>• Considere la empresa de transporte con rutas <span class="math notranslate nohighlight">\(R_{1},…,R_{4}\)</span> y los recursos:</p>
+</section>
+</section>
+<section id="variable-limpieza">
+<h2>Variable Limpieza<a class="headerlink" href="#variable-limpieza" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Considere la empresa de transporte con rutas <span class="math notranslate nohighlight">\(R_{1},…,R_{4}\)</span> y los recursos:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(x_{1}\)</span>: conductores (1200 €/mes c/u)</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_{2}\)</span>: autobuses (90 000 €/mes c/u)</p></li>
@@ -484,15 +508,23 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(x_{4}\)</span>: mantenimiento (500 € por revisión)</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_{5}\)</span>: limpieza profunda (200 € por servicio)</p></li>
 </ol>
-<p>• La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:</p>
+</li>
+<li><p>La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:</p>
 <ol class="arabic simple">
 <li><p>Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>): cada autobús realiza 1 limpieza profunda mensual.</p></li>
 <li><p>Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes (en promedio 0.5 más por autobús respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>).</p></li>
 <li><p>Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>): atraviesa zonas rurales y polvorientas, por lo que requiere 1.5 limpiezas adicionales respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
 <li><p>Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>): al operar en zonas centrales con alta rotación de pasajeros, se realizan 2 limpiezas adicionales respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
 </ol>
-<p>– Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.</p>
-<p>– Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?.</p>
+</li>
+</ul>
+<section id="preguntas">
+<h3>Preguntas<a class="headerlink" href="#preguntas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.</p></li>
+<li><p>Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?.</p></li>
+</ul>
+</section>
 </section>
 <section id="grafos">
 <h2>Grafos<a class="headerlink" href="#grafos" title="Link to this heading">#</a></h2>
@@ -515,9 +547,8 @@ document.write(`
 </li>
 </ul>
 <p>La influencia puede representarse mediante un grafo dirigido, donde un arco de <span class="math notranslate nohighlight">\(I_{i}\)</span> a <span class="math notranslate nohighlight">\(I_{j\)</span> indica que <span class="math notranslate nohighlight">\(I_{i}\)</span> influye en <span class="math notranslate nohighlight">\(I_{j}\)</span> y el peso representa que tan fuerte es la conexión existente entre los influencers.</p>
-<ul class="simple">
-<li><p>Preguntas del Ejercicio:</p></li>
-</ul>
+<section id="preguntas-del-ejercicio">
+<h3>Preguntas del Ejercicio:<a class="headerlink" href="#preguntas-del-ejercicio" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Representación de la Influencia:</p>
 <ol class="arabic simple">
@@ -544,6 +575,7 @@ document.write(`
 </ol>
 </li>
 </ul>
+</section>
 </section>
 <section id="markov">
 <h2>Markov<a class="headerlink" href="#markov" title="Link to this heading">#</a></h2>
@@ -592,7 +624,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Blog.</p></li>
 <li><p><span class="math notranslate nohighlight">\(40\%\)</span> de quedarse en Carrito.</p></li>
 </ul>
-<p>Preguntas:</p>
+<section id="id1">
+<h3>Preguntas:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Predicción de la próxima página:</p>
 <p>a) Si un usuario está actualmente en la página de Blog (B), ¿cuál es la probabilidad de que visite Carrito (C) en la siguiente paso?</p>
 <p>b) Encuentra el vector de estado estacionario del sistema. Se debe en cuenta que el vector satisface Tx=x donde T es la matriz de transición del problema y x es el vector de estado estacionario, donde la suma de los componentes del vector de estado estacionario debe ser igual a 1.</p>
@@ -600,6 +633,7 @@ document.write(`
 <p>d) Si un usuario empieza en Productos (P), ¿qué página es más probable que visite después de 3 pasos?</p>
 <p>e) ¿Cuál es el número esperado de pasos que un usuario pasa en Blog (B) antes de ir a Carrito (C) por primera vez?</p>
 <p>f) Si la probabilidad <span class="math notranslate nohighlight">\(P(B\rightarrow C)\)</span> aumenta de 0.2 a 0.3, ¿cómo cambia la distribución estacionaria? Analizar el impacto de ajustes en la matriz de transición respecto a la matriz inicial.</p>
+</section>
 </section>
 </section>
 
@@ -667,9 +701,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-sistema">Preguntas Sistema.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-limpieza">Variable Limpieza</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas">Preguntas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-del-ejercicio">Preguntas del Ejercicio:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
