@@ -47,10 +47,8 @@ $0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, ba
   
   - **Descripción:** Construye una cola vacía.  
   - **Precondiciones:** Ninguna.  
-  - **Postcondiciones:** 
+  - **Postcondiciones:** La cola es $Queue = \emptyset$
   
-  $Queue  = \emptyset$
-
 ---
 
 **Operaciones Modificadoras**
@@ -76,39 +74,41 @@ $0 \leq n \, \wedge \, Size(Queue) = n \, \wedge \, front = e_1  \, \wedge \, ba
     - $q = \langle e_2,e_3,e_4,...,e_{n-1} \rangle$.  
     - Elemento devuelto: $e_1$.
 
-### Operaciones adicionales en la Cola (Queue)
+**Operaciones Destructoras**
 
-### `front`
-- **Tipo:**  
-  $Queue \longrightarrow Element$
-- **Descripción:** Recupera el valor del elemento en el frente de la cola.  
-- **Precondiciones:**  
-  - $q \neq \emptyset$, es decir, $q = \langle e_1,e_2,e_3,...,e_n \rangle$  
-- **Postcondiciones:**  
-  - Retorna el elemento $e_1$.
-
----
-
-### `isEmpty`
-- **Descripción:** Determina si la cola $q$ está vacía o no.  
-- **Precondiciones:**  
-  - Existe una cola $q$  
-- **Postcondiciones:**  
-  - Retorna `True` si $q = \emptyset$ 
-  - Retorna `False` si $q \neq \emptyset$ 
-
----
-
-### Destructor de la Cola
-
-- **`~Queue`**
+- *~Queue*
   - **Descripción:** Destruye la cola $q$ y libera la memoria.
   - **Precondiciones:**  
     - Existe una cola $q$  
   - **Postcondiciones:**  
     - La cola es eliminada.
 
-## Axiomas que deben garantizar las operaciones de acceso en una Cola ADT
+**Operaciones adicionales en la Cola (Queue)**
+
+- *front*
+  - **Tipo:**  
+    $Queue \longrightarrow Element$
+  - **Descripción:** Recupera el valor del elemento en el frente de la cola.  
+  - **Precondiciones:**  
+    - $q \neq \emptyset$, es decir, $q = \langle e_1,e_2,e_3,...,e_n \rangle$  
+  - **Postcondiciones:**  
+    - Retorna el elemento $e_1$.
+
+---
+
+- *isEmpty*
+  - **Descripción:** Determina si la cola $q$ está vacía o no.  
+  - **Precondiciones:**  
+    - Existe una cola $q$  
+  - **Postcondiciones:**  
+    - Retorna `True` si $q = \emptyset$ 
+    - Retorna `False` si $q \neq \emptyset$ 
+
+---
+
+
+
+**Axiomas que deben garantizar las operaciones de acceso en una Cola ADT**
 
 Sea $q$ una cola y $e$ un elemento:
 

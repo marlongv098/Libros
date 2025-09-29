@@ -13,7 +13,7 @@
 
 ![Pila](/3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/Images/stack.png)  
 
-**¿Cuál sería una definición estructural de una pila? **  
+**¿Cuál sería una definición estructural de una pila?**  
 
 - Una pila puede estar **vacía**.  
 - O puede estar compuesta por dos partes:  
@@ -33,7 +33,7 @@
 
 ![Pila Recursiva](/3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/Images/stack1.png)  
 
-**Ejemplo **  
+**Ejemplo**  
 
 Sea $S = (7,(29,(11,\emptyset)))$, ¿es $S$ una pila válida?  
 
@@ -53,13 +53,17 @@ $0 \leq n \, \wedge \, Size(Stack) = n \, \wedge \, top = e_n$
 
 **Operaciones del Constructor**  
 
-- **Stack** $- \longrightarrow Stack$  
-	  - Construye una pila vacía.  
+- *Stack* 
+  -**Tipo:**
+  
+  $\longrightarrow Stack$  
+  
+	  - **Descripcion:** Construye una pila vacía.  
 	  - **Precondiciones:** Ninguna.  
-	  - **Postcondiciones:** La pila es $s = \emptyset$.  
+	  - **Postcondiciones:** La pila es $Stack = \emptyset$.  
   
 
-**Modificadores**  
+**Operaciones Modificadoras**  
 
 *push*
 
@@ -81,6 +85,18 @@ $Stack \longrightarrow Stack$
 - **Postcondiciones:**  
   - Pila $s =  \langle e_1,e_2,e_3,...,e_{n-1} \rangle$  
 
+**Operaciones Destructoras**
+
+*~Stack*
+$Stack \longrightarrow -$  
+- Destruye la pila $s$ liberando memoria.  
+- **Precondiciones:**  
+  - Pila $s$  
+- **Postcondiciones:**  
+  - Ninguna.  
+
+**Operaciones adicionales en la Pila (Stack)**
+  
 *top*
 
 $Stack \longrightarrow Element$  
@@ -97,17 +113,7 @@ $Stack \longrightarrow boolean$
   - Pila $s$  
 - **Postcondiciones:**  
   - `True` si $s = \emptyset$  
-  - `False` si $s \neq \emptyset$  
-
-**Destructores**
-
-*~Stack*
-$Stack \longrightarrow -$  
-- Destruye la pila $s$ liberando memoria.  
-- **Precondiciones:**  
-  - Pila $s$  
-- **Postcondiciones:**  
-  - Ninguna.  
+  - `False` si $s \neq \emptyset$   
 
 **Ejemplo de impresión de una pila**
 

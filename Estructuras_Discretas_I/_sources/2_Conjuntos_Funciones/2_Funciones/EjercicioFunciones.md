@@ -78,7 +78,7 @@ Sea $f$ una función de $A$ en $B$, y sean $S$ y $T$ subconjuntos de $B$. Demues
 2. $f^{-1}(S \cap T) = f^{-1}(S) \cap f^{-1}(T)$
 
 **Ejercicio 13**  
-Sea $f$ una función de $A$ en $B$. Sea $S$ un subconjunto de $B$. Muestre que $f^{-1}(S) = f^{-1}(S)$.
+Sea $f$ una función de $A$ en $B$. Sea $S$ un subconjunto de $B$. Muestre que $f^{-1}(S^c) = (f^{-1}(S))^c$.
 
 **Ejercicio 14**  
 Demuestre que si $x$ es un número real, entonces $\lceil x \rceil - \lfloor x \rfloor = 1$ si $x$ no es entero y $0$ si $x$ es un número entero.
