@@ -455,14 +455,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-adicionales-en-la-cola-queue">Operaciones adicionales en la Cola (Queue)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#front"><code class="docutils literal notranslate"><span class="pre">front</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isempty"><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#destructor-de-la-cola">Destructor de la Cola</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt">Axiomas que deben garantizar las operaciones de acceso en una Cola ADT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-implementar-la-cola-adt">¿Cómo implementar la Cola ADT?</a></li>
 </ul>
             </nav>
@@ -518,9 +511,8 @@ TAD Cola</p>
 <ul class="simple">
 <li><p><strong>Descripción:</strong> Construye una cola vacía.</p></li>
 <li><p><strong>Precondiciones:</strong> Ninguna.</p></li>
-<li><p><strong>Postcondiciones:</strong></p></li>
+<li><p><strong>Postcondiciones:</strong> La cola es <span class="math notranslate nohighlight">\(Queue = \emptyset\)</span></p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(Queue  = \emptyset\)</span></p>
 </li>
 </ul>
 <hr class="docutils" />
@@ -561,50 +553,9 @@ TAD Cola</p>
 </ul>
 </li>
 </ul>
-<section id="operaciones-adicionales-en-la-cola-queue">
-<h3>Operaciones adicionales en la Cola (Queue)<a class="headerlink" href="#operaciones-adicionales-en-la-cola-queue" title="Link to this heading">#</a></h3>
-</section>
-<section id="front">
-<h3><code class="docutils literal notranslate"><span class="pre">front</span></code><a class="headerlink" href="#front" title="Link to this heading">#</a></h3>
+<p><strong>Operaciones Destructoras</strong></p>
 <ul class="simple">
-<li><p><strong>Tipo:</strong><br />
-<span class="math notranslate nohighlight">\(Queue \longrightarrow Element\)</span></p></li>
-<li><p><strong>Descripción:</strong> Recupera el valor del elemento en el frente de la cola.</p></li>
-<li><p><strong>Precondiciones:</strong></p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(q \neq \emptyset\)</span>, es decir, <span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n \rangle\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>Postcondiciones:</strong></p>
-<ul>
-<li><p>Retorna el elemento <span class="math notranslate nohighlight">\(e_1\)</span>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="isempty">
-<h3><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code><a class="headerlink" href="#isempty" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Descripción:</strong> Determina si la cola <span class="math notranslate nohighlight">\(q\)</span> está vacía o no.</p></li>
-<li><p><strong>Precondiciones:</strong></p>
-<ul>
-<li><p>Existe una cola <span class="math notranslate nohighlight">\(q\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>Postcondiciones:</strong></p>
-<ul>
-<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> si <span class="math notranslate nohighlight">\(q = \emptyset\)</span></p></li>
-<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">False</span></code> si <span class="math notranslate nohighlight">\(q \neq \emptyset\)</span></p></li>
-</ul>
-</li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="destructor-de-la-cola">
-<h3>Destructor de la Cola<a class="headerlink" href="#destructor-de-la-cola" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">~Queue</span></code></strong></p>
+<li><p><em>~Queue</em></p>
 <ul>
 <li><p><strong>Descripción:</strong> Destruye la cola <span class="math notranslate nohighlight">\(q\)</span> y libera la memoria.</p></li>
 <li><p><strong>Precondiciones:</strong></p>
@@ -620,10 +571,47 @@ TAD Cola</p>
 </ul>
 </li>
 </ul>
-</section>
-</section>
-<section id="axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt">
-<h2>Axiomas que deben garantizar las operaciones de acceso en una Cola ADT<a class="headerlink" href="#axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt" title="Link to this heading">#</a></h2>
+<p><strong>Operaciones adicionales en la Cola (Queue)</strong></p>
+<ul class="simple">
+<li><p><em>front</em></p>
+<ul>
+<li><p><strong>Tipo:</strong><br />
+<span class="math notranslate nohighlight">\(Queue \longrightarrow Element\)</span></p></li>
+<li><p><strong>Descripción:</strong> Recupera el valor del elemento en el frente de la cola.</p></li>
+<li><p><strong>Precondiciones:</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(q \neq \emptyset\)</span>, es decir, <span class="math notranslate nohighlight">\(q = \langle e_1,e_2,e_3,...,e_n \rangle\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Postcondiciones:</strong></p>
+<ul>
+<li><p>Retorna el elemento <span class="math notranslate nohighlight">\(e_1\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><em>isEmpty</em></p>
+<ul>
+<li><p><strong>Descripción:</strong> Determina si la cola <span class="math notranslate nohighlight">\(q\)</span> está vacía o no.</p></li>
+<li><p><strong>Precondiciones:</strong></p>
+<ul>
+<li><p>Existe una cola <span class="math notranslate nohighlight">\(q\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Postcondiciones:</strong></p>
+<ul>
+<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> si <span class="math notranslate nohighlight">\(q = \emptyset\)</span></p></li>
+<li><p>Retorna <code class="docutils literal notranslate"><span class="pre">False</span></code> si <span class="math notranslate nohighlight">\(q \neq \emptyset\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Axiomas que deben garantizar las operaciones de acceso en una Cola ADT</strong></p>
 <p>Sea <span class="math notranslate nohighlight">\(q\)</span> una cola y <span class="math notranslate nohighlight">\(e\)</span> un elemento:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\((q.Queue()).isEmpty() = true\)</span></p></li>
@@ -710,14 +698,7 @@ TAD Cola</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-adicionales-en-la-cola-queue">Operaciones adicionales en la Cola (Queue)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#front"><code class="docutils literal notranslate"><span class="pre">front</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isempty"><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#destructor-de-la-cola">Destructor de la Cola</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomas-que-deben-garantizar-las-operaciones-de-acceso-en-una-cola-adt">Axiomas que deben garantizar las operaciones de acceso en una Cola ADT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-tad-cola-queue-adt">Definición del TAD Cola (Queue ADT)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-implementar-la-cola-adt">¿Cómo implementar la Cola ADT?</a></li>
 </ul>
   </nav></div>

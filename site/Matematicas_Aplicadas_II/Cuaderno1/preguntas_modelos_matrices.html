@@ -464,28 +464,20 @@ document.write(`
 <section id="matrices">
 <h2>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Una empresa de transporte urbano administra cinco rutas principales: <span class="math notranslate nohighlight">\(R_{1}\)</span>, <span class="math notranslate nohighlight">\(R_{2}\)</span>, <span class="math notranslate nohighlight">\(R_{3}\)</span>, y <span class="math notranslate nohighlight">\(R_{4}\)</span>. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es:</p>
-<ol class="arabic simple">
-<li><p>Conductores: 1200 €</p></li>
-<li><p>Autobuses: 90,000 €</p></li>
-<li><p>Combustible: 2 € por litro</p></li>
-<li><p>Mantenimiento: 500 € por revisión</p></li>
-</ol>
+<li><p>Una empresa de transporte urbano opera <span class="math notranslate nohighlight">\(4\)</span> rutas (<span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_3\)</span> y <span class="math notranslate nohighlight">\(R_4\)</span>). Cada ruta incurre mensualmente en costos por:</p>
+<ul>
+<li><p>Conductor: <span class="math notranslate nohighlight">\(C\)</span> (costos por turno de conductor).</p></li>
+<li><p>Autobús: <span class="math notranslate nohighlight">\(A\)</span> (costos por bus asignado; corresponde a arrendamiento/amortización).</p></li>
+<li><p>Combustible: <span class="math notranslate nohighlight">\(F\)</span> (cantidad de combustible consumido).</p></li>
+<li><p>Mantenimiento: <span class="math notranslate nohighlight">\(M\)</span> (costo mantenimiento programada).</p></li>
+</ul>
 </li>
-<li><p>En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:</p>
+<li><p>Para el mes analizado, la planificación operativa (unidades consumidas por ruta) y los costos totales mensuales por ruta son:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(x_{1}\)</span> = número de conductores asignados a una ruta</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{2}\)</span> = número de autobuses asignados</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{3}\)</span> = litros de combustible consumidos por ruta</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{4}\)</span> = número de revisiones de mantenimiento</p></li>
-</ol>
-</li>
-<li><p>Se sabe que los costos totales mensuales para algunas rutas (<span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_3\)</span>, y <span class="math notranslate nohighlight">\(R_4\)</span>) están dados por la combinación de estos recursos.</p>
-<ol class="arabic simple">
-<li><p>En la Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>) se emplean 1 conductor, 1 autobús, 1,000 litros de combustible y 1 revisión de mantenimiento. El costo total asciende a 350,000 €.</p></li>
-<li><p>En la Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>) se utilizan 1 conductor, 2 autobuses, 1,500 litros de combustible y algo más de mantenimiento. El costo total es 500,000 €.</p></li>
-<li><p>En la Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>) se necesitan 2 conductores, 1 autobús, 2,000 litros de combustible y 1 revisión de mantenimiento. El costo total es 420,000 €.</p></li>
-<li><p>En la Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>) se usan 1 conductor, 1 autobús, 1,000 litros de combustible y 2 revisiones de mantenimiento. El costo total es 380,000 €.</p></li>
+<li><p>En la Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>) se emplean 3 conductores, 3 autobuses, 5 hectolitros  de combustible y 1 revisión de mantenimiento. El costo total es 13770 euros.</p></li>
+<li><p>En la Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>) se utilizan 5 conductores, 3 autobuses, 3 hectolitros de combustible y 4 revisiones de mantenimiento. El costo total es 17512 euros.</p></li>
+<li><p>En la Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>) se necesitan 3 conductores, 3 autobuses, 5 hectolitros de combustible y 3 revisiones de mantenimiento. El costo total es 14270 euros.</p></li>
+<li><p>En la Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>) se usan 4 conductores, 2 autobuses, 4 hectolitros de combustible y 0 revisiones de mantenimiento. El costo total es 12016 euros.</p></li>
 </ol>
 </li>
 </ul>
@@ -499,22 +491,17 @@ document.write(`
 </section>
 <section id="variable-limpieza">
 <h2>Variable Limpieza<a class="headerlink" href="#variable-limpieza" title="Link to this heading">#</a></h2>
+<p>La empresa decide incorporar la variable limpieza sin modificar los costos totales. La limpieza profunda no se realiza de la misma manera en todas las rutas, pues depende de factores como la duración del recorrido, el número de pasajeros transportados y las condiciones ambientales:</p>
 <ul class="simple">
-<li><p>Considere la empresa de transporte con rutas <span class="math notranslate nohighlight">\(R_{1},…,R_{4}\)</span> y los recursos:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(x_{1}\)</span>: conductores (1200 €/mes c/u)</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{2}\)</span>: autobuses (90 000 €/mes c/u)</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{3}\)</span>: combustible (2 €/L)</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{4}\)</span>: mantenimiento (500 € por revisión)</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_{5}\)</span>: limpieza profunda (200 € por servicio)</p></li>
-</ol>
-</li>
-<li><p>La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:</p>
+<li><p>Limpieza: L (costo de limpieza).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Las intervenciones de limpieza planificadas por ruta son:</p>
 <ol class="arabic simple">
 <li><p>Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>): cada autobús realiza 1 limpieza profunda mensual.</p></li>
-<li><p>Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes (en promedio 0.5 más por autobús respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>).</p></li>
-<li><p>Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>): atraviesa zonas rurales y polvorientas, por lo que requiere 1.5 limpiezas adicionales respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
-<li><p>Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>): al operar en zonas centrales con alta rotación de pasajeros, se realizan 2 limpiezas adicionales respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
+<li><p>Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
+<li><p>Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>): aunque tiene poco flujo de pasajeros, atraviesa zonas rurales y polvorientas, por lo que requiere la misma cantidad de limpiezas que <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
+<li><p>Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>): al operar en zonas poco concurridas la rotación es baja, por lo que no se programan limpiezas todos los meses.</p></li>
 </ol>
 </li>
 </ul>

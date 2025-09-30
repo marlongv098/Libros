@@ -2,26 +2,19 @@
 
 ## Matrices
 
-* Una empresa de transporte urbano administra cinco rutas principales: $R_{1}$, $R_{2}$, $R_{3}$, y $R_{4}$. Para operar, cada ruta requiere una cierta combinación de 4 tipos de recursos: Conductores (CON), Autobuses (BUS), Combustible (COM), Mantenimiento (MAN). El costo unitario de cada recurso es: 
+* Una empresa de transporte urbano opera $4$ rutas ($R_1$, $R_2$, $R_3$ y $R_4$). Cada ruta incurre mensualmente en costos por:
 
-  1. Conductores: 1200 €
-  2. Autobuses: 90,000 €
-  3. Combustible: 2 € por litro 
-  4. Mantenimiento: 500 € por revisión
+  - Conductor: $C$ (costos por turno de conductor).
+  - Autobús: $A$ (costos por bus asignado; corresponde a arrendamiento/amortización).
+  - Combustible: $F$ (cantidad de combustible consumido).
+  - Mantenimiento: $M$ (costo mantenimiento programada).
 
-* En cada ruta se consumen cantidades distintas de estos recursos, lo cual genera un sistema de ecuaciones que representa el costo total mensual (en euros) de operación por ruta:
+* Para el mes analizado, la planificación operativa (unidades consumidas por ruta) y los costos totales mensuales por ruta son:
 
-  1. $x_{1}$ = número de conductores asignados a una ruta
-  2. $x_{2}$ = número de autobuses asignados
-  3. $x_{3}$ = litros de combustible consumidos por ruta
-  4. $x_{4}$ = número de revisiones de mantenimiento
-
-* Se sabe que los costos totales mensuales para algunas rutas ($R_1$, $R_2$, $R_3$, y $R_4$) están dados por la combinación de estos recursos.
-
-  1. En la Ruta 1 ($R_{1}$) se emplean 1 conductor, 1 autobús, 1,000 litros de combustible y 1 revisión de mantenimiento. El costo total asciende a 350,000 €.
-  2. En la Ruta 2 ($R_{2}$) se utilizan 1 conductor, 2 autobuses, 1,500 litros de combustible y algo más de mantenimiento. El costo total es 500,000 €.
-  3. En la Ruta 3 ($R_{3}$) se necesitan 2 conductores, 1 autobús, 2,000 litros de combustible y 1 revisión de mantenimiento. El costo total es 420,000 €.
-  4. En la Ruta 4 ($R_{4}$) se usan 1 conductor, 1 autobús, 1,000 litros de combustible y 2 revisiones de mantenimiento. El costo total es 380,000 €.
+  1. En la Ruta 1 ($R_{1}$) se emplean 3 conductores, 3 autobuses, 5 hectolitros  de combustible y 1 revisión de mantenimiento. El costo total es 13770 euros.
+  2. En la Ruta 2 ($R_{2}$) se utilizan 5 conductores, 3 autobuses, 3 hectolitros de combustible y 4 revisiones de mantenimiento. El costo total es 17512 euros.
+  3. En la Ruta 3 ($R_{3}$) se necesitan 3 conductores, 3 autobuses, 5 hectolitros de combustible y 3 revisiones de mantenimiento. El costo total es 14270 euros.
+  4. En la Ruta 4 ($R_{4}$) se usan 4 conductores, 2 autobuses, 4 hectolitros de combustible y 0 revisiones de mantenimiento. El costo total es 12016 euros.
 
 ### Preguntas
 
@@ -30,20 +23,17 @@
   
 ## Variable Limpieza  
 
-* Considere la empresa de transporte con rutas $R_{1},…,R_{4}$ y los recursos:
+La empresa decide incorporar la variable limpieza sin modificar los costos totales. La limpieza profunda no se realiza de la misma manera en todas las rutas, pues depende de factores como la duración del recorrido, el número de pasajeros transportados y las condiciones ambientales:
 
-  1. $x_{1}$: conductores (1200 €/mes c/u)
-  2. $x_{2}$: autobuses (90 000 €/mes c/u)
-  3. $x_{3}$: combustible (2 €/L)
-  4. $x_{4}$: mantenimiento (500 € por revisión)
-  5. $x_{5}$: limpieza profunda (200 € por servicio)
+  - Limpieza: L (costo de limpieza).
 
-* La limpieza profunda no se realiza igual en todas las rutas, pues depende de factores como duración del recorrido, número de pasajeros transportados y condiciones ambientales:
+  
+* Las intervenciones de limpieza planificadas por ruta son:
 
   1. Ruta 1 ($R_{1}$): cada autobús realiza 1 limpieza profunda mensual.
-  2. Ruta 2 ($R_{2}$): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes (en promedio 0.5 más por autobús respecto de $R_{1}$).
-  3. Ruta 3 ($R_{3}$): atraviesa zonas rurales y polvorientas, por lo que requiere 1.5 limpiezas adicionales respecto de $R_{1}$.
-  4. Ruta 4 ($R_{4}$): al operar en zonas centrales con alta rotación de pasajeros, se realizan 2 limpiezas adicionales respecto de $R_{1}$.
+  2. Ruta 2 ($R_{2}$): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes respecto de $R_{1}$.
+  3. Ruta 3 ($R_{3}$): aunque tiene poco flujo de pasajeros, atraviesa zonas rurales y polvorientas, por lo que requiere la misma cantidad de limpiezas que $R_{1}$.
+  4. Ruta 4 ($R_{4}$): al operar en zonas poco concurridas la rotación es baja, por lo que no se programan limpiezas todos los meses. 
 
 ### Preguntas
 

@@ -186,10 +186,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../1_Logica_Formal/intro.html">La lógica formal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/metodosDemos.html">Métodos de Demostración</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Ejercicios.html">Ejercicios Métodos formales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Coq/IntroCoq.html">Introducción a Coq</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Coq/Tacticas.html">Demostraciones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Coq/demosCoq.html">Coq</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../../../1_Logica_Formal/Coq/EjerciciosCoq.html">Ejercicios en Coq</a></li>
 </ul>
 </details></li>
 </ul>
@@ -478,7 +480,7 @@ document.write(`
 </ul>
 <p><strong>Representación visual de una pila</strong></p>
 <p><img alt="Pila" src="../../../_images/stack.png" /></p>
-<p>**¿Cuál sería una definición estructural de una pila? **</p>
+<p><strong>¿Cuál sería una definición estructural de una pila?</strong></p>
 <ul class="simple">
 <li><p>Una pila puede estar <strong>vacía</strong>.</p></li>
 <li><p>O puede estar compuesta por dos partes:<br />
@@ -496,7 +498,7 @@ document.write(`
 </ul>
 <p><strong>Otra representación visual</strong></p>
 <p><img alt="Pila Recursiva" src="../../../_images/stack1.png" /></p>
-<p>**Ejemplo **</p>
+<p><strong>Ejemplo</strong></p>
 <p>Sea <span class="math notranslate nohighlight">\(S = (7,(29,(11,\emptyset)))\)</span>, ¿es <span class="math notranslate nohighlight">\(S\)</span> una pila válida?</p>
 <section id="definicion-del-tad-pila-abstract-data-type">
 <h2>Definición del TAD Pila (Abstract Data Type)<a class="headerlink" href="#definicion-del-tad-pila-abstract-data-type" title="Link to this heading">#</a></h2>
@@ -507,13 +509,18 @@ document.write(`
 <p><strong>Invariante</strong></p>
 <p><span class="math notranslate nohighlight">\(0 \leq n \, \wedge \, Size(Stack) = n \, \wedge \, top = e_n\)</span></p>
 <p><strong>Operaciones del Constructor</strong></p>
+<ul>
+<li><p><em>Stack</em>
+-<strong>Tipo:</strong></p>
+<p><span class="math notranslate nohighlight">\(\longrightarrow Stack\)</span></p>
 <ul class="simple">
-<li><p><strong>Stack</strong> <span class="math notranslate nohighlight">\(- \longrightarrow Stack\)</span><br />
-- Construye una pila vacía.<br />
-- <strong>Precondiciones:</strong> Ninguna.<br />
-- <strong>Postcondiciones:</strong> La pila es <span class="math notranslate nohighlight">\(s = \emptyset\)</span>.</p></li>
+<li><p><strong>Descripcion:</strong> Construye una pila vacía.</p></li>
+<li><p><strong>Precondiciones:</strong> Ninguna.</p></li>
+<li><p><strong>Postcondiciones:</strong> La pila es <span class="math notranslate nohighlight">\(Stack = \emptyset\)</span>.</p></li>
 </ul>
-<p><strong>Modificadores</strong></p>
+</li>
+</ul>
+<p><strong>Operaciones Modificadoras</strong></p>
 <p><em>push</em></p>
 <p><span class="math notranslate nohighlight">\(Stack \times Element \longrightarrow Stack\)</span></p>
 <ul class="simple">
@@ -546,6 +553,23 @@ document.write(`
 </ul>
 </li>
 </ul>
+<p><strong>Operaciones Destructoras</strong></p>
+<p><em>~Stack</em>
+<span class="math notranslate nohighlight">\(Stack \longrightarrow -\)</span></p>
+<ul class="simple">
+<li><p>Destruye la pila <span class="math notranslate nohighlight">\(s\)</span> liberando memoria.</p></li>
+<li><p><strong>Precondiciones:</strong></p>
+<ul>
+<li><p>Pila <span class="math notranslate nohighlight">\(s\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Postcondiciones:</strong></p>
+<ul>
+<li><p>Ninguna.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Operaciones adicionales en la Pila (Stack)</strong></p>
 <p><em>top</em></p>
 <p><span class="math notranslate nohighlight">\(Stack \longrightarrow Element\)</span></p>
 <ul class="simple">
@@ -574,22 +598,6 @@ document.write(`
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> si <span class="math notranslate nohighlight">\(s = \emptyset\)</span></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> si <span class="math notranslate nohighlight">\(s \neq \emptyset\)</span></p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Destructores</strong></p>
-<p><em>~Stack</em>
-<span class="math notranslate nohighlight">\(Stack \longrightarrow -\)</span></p>
-<ul class="simple">
-<li><p>Destruye la pila <span class="math notranslate nohighlight">\(s\)</span> liberando memoria.</p></li>
-<li><p><strong>Precondiciones:</strong></p>
-<ul>
-<li><p>Pila <span class="math notranslate nohighlight">\(s\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>Postcondiciones:</strong></p>
-<ul>
-<li><p>Ninguna.</p></li>
 </ul>
 </li>
 </ul>
