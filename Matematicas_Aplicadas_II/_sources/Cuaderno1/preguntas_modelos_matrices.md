@@ -11,10 +11,10 @@
 
 * Para el mes analizado, la planificación operativa (unidades consumidas por ruta) y los costos totales mensuales por ruta son:
 
-  1. En la Ruta 1 ($R_{1}$) se emplean 3 conductores, 3 autobuses, 500 litros de combustible y 1 revisión de mantenimiento. El costo total es 13770 euros.
-  2. En la Ruta 2 ($R_{2}$) se utilizan 5 conductores, 3 autobuses, 300 litros de combustible y 4 revisiones de mantenimiento. El costo total es 17512 euros.
-  3. En la Ruta 3 ($R_{3}$) se necesitan 3 conductores, 3 autobuses, 500 litros de combustible y 3 revisiones de mantenimiento. El costo total es 14270 euros.
-  4. En la Ruta 4 ($R_{4}$) se usan 4 conductores, 2 autobuses, 400 litros de combustible y 0 revisiones de mantenimiento. El costo total es 12016 euros.
+  1. En la Ruta 1 ($R_{1}$) se emplean 3 conductores, 3 autobuses, 5 hectolitros  de combustible y 1 revisión de mantenimiento. El costo total es 13770 euros.
+  2. En la Ruta 2 ($R_{2}$) se utilizan 5 conductores, 3 autobuses, 3 hectolitros de combustible y 4 revisiones de mantenimiento. El costo total es 17512 euros.
+  3. En la Ruta 3 ($R_{3}$) se necesitan 3 conductores, 3 autobuses, 5 hectolitros de combustible y 3 revisiones de mantenimiento. El costo total es 14270 euros.
+  4. En la Ruta 4 ($R_{4}$) se usan 4 conductores, 2 autobuses, 4 hectolitros de combustible y 0 revisiones de mantenimiento. El costo total es 12016 euros.
 
 ### Preguntas
 
