@@ -71,8 +71,10 @@ parts:
       - file: 5_Grafos/IntroGRAFOS.md
         sections:
           - file: 5_Grafos/GRAFOS.md
-          - file: 5_Grafos/1_BFS/BFS.md
-          - file: 5_Grafos/2_DFS/DFS.md
+            sections:
+              - file: 5_Grafos/IntroBusquedaGrafos.md
+              - file: 5_Grafos/1_BFS/BFS.md
+              - file: 5_Grafos/2_DFS/DFS.md
           - file: 5_Grafos/3_Dijsktra/DIJSK.md
           - file: 5_Grafos/4_Floyd_Warshall/FLOYD.md
           - file: 5_Grafos/5_Prim/PRIM.md
