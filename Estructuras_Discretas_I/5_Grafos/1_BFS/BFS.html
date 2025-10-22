@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BFS &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>BFS (Búsqueda en Amplitud) &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '5_Grafos/1_BFS/BFS';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="DFS" href="../2_DFS/DFS.html" />
-    <link rel="prev" title="Problema Puentes de Könisberg" href="../GRAFOS.html" />
+    <link rel="next" title="DFS (Búsqueda en Profundidad)" href="../2_DFS/DFS.html" />
+    <link rel="prev" title="Búsquedas en grafos" href="../IntroBusquedaGrafos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -249,9 +251,12 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../IntroGRAFOS.html">Teoría de Grafos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../GRAFOS.html">Problema Puentes de Könisberg</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">BFS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2_DFS/DFS.html">DFS</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../GRAFOS.html">Problema Puentes de Könisberg</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../IntroBusquedaGrafos.html">Búsquedas en grafos</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">BFS (Búsqueda en Amplitud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_DFS/DFS.html">DFS (Búsqueda en Profundidad)</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../3_Dijsktra/DIJSK.html">Dijsktra</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../4_Floyd_Warshall/FLOYD.html">Floyd Warshall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../5_Prim/PRIM.html">Prim</a></li>
@@ -430,7 +435,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -441,11 +448,31 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BFS</h1>
+    <h1>BFS (Búsqueda en Amplitud)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuicion-del-bfs">Intuición del BFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-formal">Descripción formal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informacion-que-proporciona-el-arbol-bf">Información que proporciona el árbol BF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mecanismo-de-progreso-del-bfs">Mecanismo de progreso del BFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-del-arbol-bf">Construcción del árbol BF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suposiciones-antes-de-presentar-el-algoritmo">Suposiciones antes de presentar el algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-del-bfs">Pseudocódigo del BFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-visual-en-un-grafo-no-dirigido">Ejemplo visual en un grafo no dirigido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-paso-a-paso">Ejemplo paso a paso</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complejidad-temporal">Complejidad temporal</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -455,8 +482,152 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bfs">
-<h1>BFS<a class="headerlink" href="#bfs" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bfs-busqueda-en-amplitud">
+<h1>BFS (Búsqueda en Amplitud)<a class="headerlink" href="#bfs-busqueda-en-amplitud" title="Link to this heading">#</a></h1>
+<p><strong>¿Qué es el BFS?</strong></p>
+<ul class="simple">
+<li><p>El BFS o <em>búsqueda en amplitud (anchura)</em> es uno de los algoritmos más simples de búsqueda en grafos.</p></li>
+<li><p>Es el prototipo de muchos otros algoritmos importantes sobre grafos.</p></li>
+</ul>
+<section id="intuicion-del-bfs">
+<h2>Intuición del BFS<a class="headerlink" href="#intuicion-del-bfs" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Se comienza con un nodo origen y se exploran todos los vecinos de este nodo.</p></li>
+<li><p>A continuación, para cada uno de los vecinos se exploran sus respectivos vecinos adyacentes, y así sucesivamente hasta recorrer todo el grafo.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="descripcion-formal">
+<h2>Descripción formal<a class="headerlink" href="#descripcion-formal" title="Link to this heading">#</a></h2>
+<p>Dado un grafo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> y un vértice origen <span class="math notranslate nohighlight">\(s\)</span>:</p>
+<ul class="simple">
+<li><p>El BFS explora sistemáticamente las aristas de <span class="math notranslate nohighlight">\(G\)</span> para descubrir cada vértice alcanzable desde <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>Calcula la distancia mínima (en cantidad de vértices) de <span class="math notranslate nohighlight">\(s\)</span> a cada vértice alcanzable.</p></li>
+<li><p>Produce un árbol BF con <span class="math notranslate nohighlight">\(s\)</span> como raíz y todos los vértices alcanzables desde él.</p></li>
+<li><p>Funciona tanto para grafos dirigidos como no dirigidos.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="informacion-que-proporciona-el-arbol-bf">
+<h2>Información que proporciona el árbol BF<a class="headerlink" href="#informacion-que-proporciona-el-arbol-bf" title="Link to this heading">#</a></h2>
+<p>Para cada vértice <span class="math notranslate nohighlight">\(v\)</span> alcanzable desde <span class="math notranslate nohighlight">\(s\)</span>, el camino simple de <span class="math notranslate nohighlight">\(s\)</span> a <span class="math notranslate nohighlight">\(v\)</span> en el árbol BF <strong>corresponde al camino más corto</strong> (en número de aristas) de <span class="math notranslate nohighlight">\(s\)</span> a <span class="math notranslate nohighlight">\(v\)</span> en el grafo.</p>
+<hr class="docutils" />
+<p><strong>¿Por qué se llama búsqueda por anchura?</strong></p>
+<ul class="simple">
+<li><p>El algoritmo toma este nombre porque expande uniformemente la frontera entre los vértices descubiertos y los no descubiertos.</p></li>
+<li><p>Descubre todos los vértices a una distancia <span class="math notranslate nohighlight">\(k\)</span> desde <span class="math notranslate nohighlight">\(s\)</span> antes de descubrir alguno a distancia <span class="math notranslate nohighlight">\(k + 1\)</span>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="mecanismo-de-progreso-del-bfs">
+<h2>Mecanismo de progreso del BFS<a class="headerlink" href="#mecanismo-de-progreso-del-bfs" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>BFS colorea cada vértice de <strong>blanco</strong>, <strong>gris</strong> o <strong>negro</strong>.</p></li>
+<li><p>Todos los vértices comienzan como <strong>blancos</strong> y cambian de color a medida que se descubren.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Color</p></th>
+<th class="head"><p>Significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Blanco</p></td>
+<td><p>No descubierto</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gris</p></td>
+<td><p>Descubierto, pero con vecinos sin explorar</p></td>
+</tr>
+<tr class="row-even"><td><p>Negro</p></td>
+<td><p>Todos sus vecinos han sido explorados</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\((u, v) \in E\)</span> y <span class="math notranslate nohighlight">\(u\)</span> es negro, entonces <span class="math notranslate nohighlight">\(v\)</span> ya debe ser gris o negro.</p></li>
+<li><p>Los vértices grises representan la frontera entre descubiertos y no descubiertos.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="construccion-del-arbol-bf">
+<h2>Construcción del árbol BF<a class="headerlink" href="#construccion-del-arbol-bf" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Inicialmente, el árbol BF solo contiene la raíz, es decir, el vértice origen <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>Cuando la búsqueda descubre un vértice blanco <span class="math notranslate nohighlight">\(v\)</span> al explorar la lista de adyacencia de un vértice <span class="math notranslate nohighlight">\(u\)</span>, se añaden <span class="math notranslate nohighlight">\(v\)</span> y la arista <span class="math notranslate nohighlight">\((u, v)\)</span> al árbol.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> se convierte en el <strong>padre o predecesor</strong> de <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
+<li><p>Cada vértice tiene <strong>a lo sumo un padre</strong>, ya que se descubre una sola vez.</p></li>
+<li><p>Las relaciones de <strong>ancestro y descendiente</strong> se definen con respecto a la raíz <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="suposiciones-antes-de-presentar-el-algoritmo">
+<h2>Suposiciones antes de presentar el algoritmo<a class="headerlink" href="#suposiciones-antes-de-presentar-el-algoritmo" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El grafo de entrada <span class="math notranslate nohighlight">\(G = (V, E)\)</span> se representa mediante listas de adyacencia.</p></li>
+<li><p>A cada vértice se le asignan los siguientes atributos:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">u.color</span></code>: color del vértice</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u.π</span></code>: predecesor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u.d</span></code>: distancia desde el vértice origen <span class="math notranslate nohighlight">\(s\)</span></p></li>
+</ul>
+</li>
+<li><p>Se utiliza una cola <span class="math notranslate nohighlight">\(Q\)</span> para manejar los vértices grises.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="pseudocodigo-del-bfs">
+<h2>Pseudocódigo del BFS<a class="headerlink" href="#pseudocodigo-del-bfs" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2><img alt="Pseudocódigo BFS" src="../../_images/bfs.png" /><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</section>
+<section id="ejemplo-visual-en-un-grafo-no-dirigido">
+<h2>Ejemplo visual en un grafo no dirigido<a class="headerlink" href="#ejemplo-visual-en-un-grafo-no-dirigido" title="Link to this heading">#</a></h2>
+<p><img alt="BFS" src="../../_images/gr.png" /></p>
+<section id="ejemplo-paso-a-paso">
+<h3>Ejemplo paso a paso<a class="headerlink" href="#ejemplo-paso-a-paso" title="Link to this heading">#</a></h3>
+<p><img alt="BFS Ejemplo 1" src="../../_images/gr1.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr2.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr3.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr4.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr5.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr6.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr7.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr8.png" />
+<img alt="BFS Ejemplo 1" src="../../_images/gr9.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="complejidad-temporal">
+<h2>Complejidad temporal<a class="headerlink" href="#complejidad-temporal" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(V + E)\)</span></p></li>
+</ul>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V\)</span> = número de vértices</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> = número de aristas</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>¿Qué es un árbol BF?</strong></p>
+<ul class="simple">
+<li><p>El BFS construye un árbol de búsqueda en amplitud (árbol BF) a medida que recorre el grafo.</p></li>
+<li><p>Este árbol corresponde a los atributos de predecesores (<span class="math notranslate nohighlight">\(π\)</span>).</p></li>
+<li><p>Sea un grafo <span class="math notranslate nohighlight">\(G = (V, E)\)</span> con vértice origen <span class="math notranslate nohighlight">\(s\)</span>. Se define el <strong>subgrafo de predecesores</strong> <span class="math notranslate nohighlight">\(G_{π}\)</span> como:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+V_{π} = \{v \in V : v.π \neq NIL\} \cup \{s\}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E_{π} = \{(v.π, v) : v \in V_{π} - \{s\}\}
+\]</div>
+<ul class="simple">
+<li><p>El grafo de predecesores <span class="math notranslate nohighlight">\(G_{π}\)</span> es un <strong>árbol BF</strong> si <span class="math notranslate nohighlight">\(V_{π}\)</span> consiste en los vértices alcanzables desde <span class="math notranslate nohighlight">\(s\)</span>, y para todo <span class="math notranslate nohighlight">\(v \in V_{π}\)</span>, el subgrafo <span class="math notranslate nohighlight">\(G_{π}\)</span> contiene un único camino simple de <span class="math notranslate nohighlight">\(s\)</span> a <span class="math notranslate nohighlight">\(v\)</span> que también es el camino más corto en <span class="math notranslate nohighlight">\(G\)</span>.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -490,12 +661,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../GRAFOS.html"
+       href="../IntroBusquedaGrafos.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problema Puentes de Könisberg</p>
+        <p class="prev-next-title">Búsquedas en grafos</p>
       </div>
     </a>
     <a class="right-next"
@@ -503,7 +674,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">DFS</p>
+        <p class="prev-next-title">DFS (Búsqueda en Profundidad)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -513,6 +684,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intuicion-del-bfs">Intuición del BFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-formal">Descripción formal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informacion-que-proporciona-el-arbol-bf">Información que proporciona el árbol BF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mecanismo-de-progreso-del-bfs">Mecanismo de progreso del BFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion-del-arbol-bf">Construcción del árbol BF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suposiciones-antes-de-presentar-el-algoritmo">Suposiciones antes de presentar el algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-del-bfs">Pseudocódigo del BFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-visual-en-un-grafo-no-dirigido">Ejemplo visual en un grafo no dirigido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-paso-a-paso">Ejemplo paso a paso</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complejidad-temporal">Complejidad temporal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
