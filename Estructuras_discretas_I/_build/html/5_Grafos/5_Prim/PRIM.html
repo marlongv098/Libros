@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Prim &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>Algoritmo de Prim &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '5_Grafos/5_Prim/PRIM';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Kruskal" href="../6_Kruskal/KRUS.html" />
-    <link rel="prev" title="Floyd Warshall" href="../4_Floyd_Warshall/FLOYD.html" />
+    <link rel="prev" title="Árbol generador y Árbol generador mínimo" href="../ArbolGnerador.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -255,10 +257,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../2_DFS/DFS.html">DFS (Búsqueda en Profundidad)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="../3_Dijsktra/DIJSK.html">Dijsktra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../4_Floyd_Warshall/FLOYD.html">Floyd Warshall</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Prim</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../6_Kruskal/KRUS.html">Kruskal</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introGrafosponderados.html">Introducción a los Grafos Ponderados</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Dijsktra/Dijkstra.html">Algoritmo de Dijkstra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../4_Floyd_Warshall/Floyd-Warshall.html">Algoritmo de Floyd–Warshall</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../ArbolGnerador.html">Árbol generador y Árbol generador mínimo</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -433,7 +438,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -444,11 +451,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Prim</h1>
+    <h1>Algoritmo de Prim</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-general">Idea general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-boceto">Pseudocódigo (boceto)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-seguimiento">Ejemplo de seguimiento</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prim-con-cola-de-prioridad">Prim con cola de prioridad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-pasos-del-ejemplo">Más pasos del ejemplo</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -458,8 +480,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="prim">
-<h1>Prim<a class="headerlink" href="#prim" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="algoritmo-de-prim">
+<h1>Algoritmo de Prim<a class="headerlink" href="#algoritmo-de-prim" title="Link to this heading">#</a></h1>
+<section id="idea-general">
+<h2>Idea general<a class="headerlink" href="#idea-general" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Inicia desde cualquier vértice y va creciendo un árbol:</p>
+<ul>
+<li><p>En cada paso añade la arista de menor peso que conecta un vértice dentro del árbol con uno fuera del árbol (evitando ciclos).</p></li>
+</ul>
+</li>
+<li><p>Finaliza cuando se han añadido <span class="math notranslate nohighlight">\(n-1\)</span> aristas (siendo <span class="math notranslate nohighlight">\(n\)</span> el número de vértices).</p></li>
+</ul>
+</section>
+<section id="pseudocodigo-boceto">
+<h2>Pseudocódigo (boceto)<a class="headerlink" href="#pseudocodigo-boceto" title="Link to this heading">#</a></h2>
+<p><img alt="Prim pseudo" src="../../_images/prim.png" /></p>
+</section>
+<section id="consideraciones">
+<h2>Consideraciones<a class="headerlink" href="#consideraciones" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Si hay empates de peso, la elección de la arista no está determinada; para hacerlo determinista, ordena previamente las aristas por peso (y por un criterio secundario reproducible).</p></li>
+<li><p>Puede haber más de un MST en un grafo simple, conexo y ponderado.</p></li>
+</ul>
+<section id="ejemplo-de-seguimiento">
+<h3>Ejemplo de seguimiento<a class="headerlink" href="#ejemplo-de-seguimiento" title="Link to this heading">#</a></h3>
+<p><img alt="Grafo inicial" src="../../_images/spanning1.png" />
+<img alt="Evolucion MST" src="../../_images/spanning2.png" /></p>
+</section>
+</section>
+<section id="prim-con-cola-de-prioridad">
+<h2>Prim con cola de prioridad<a class="headerlink" href="#prim-con-cola-de-prioridad" title="Link to this heading">#</a></h2>
+<p><img alt="Prim colaPrioridad" src="../../_images/spanning1.png" /></p>
+</section>
+<section id="mas-pasos-del-ejemplo">
+<h2>Más pasos del ejemplo<a class="headerlink" href="#mas-pasos-del-ejemplo" title="Link to this heading">#</a></h2>
+<p><img alt="Ejemplo 1" src="../../_images/sp1.png" />
+<img alt="Ejemplo 2" src="../../_images/sp2.png" />
+<img alt="Ejemplo 3" src="../../_images/sp3.png" />
+<img alt="Ejemplo 4" src="../../_images/sp4.png" />
+<img alt="Ejemplo 5" src="../../_images/sp5.png" />
+<img alt="Ejemplo 6" src="../../_images/sp6.png" />
+<img alt="Ejemplo 7" src="../../_images/sp7.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -493,12 +556,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../4_Floyd_Warshall/FLOYD.html"
+       href="../ArbolGnerador.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Floyd Warshall</p>
+        <p class="prev-next-title">Árbol generador y Árbol generador mínimo</p>
       </div>
     </a>
     <a class="right-next"
@@ -516,6 +579,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-general">Idea general</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-boceto">Pseudocódigo (boceto)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-seguimiento">Ejemplo de seguimiento</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prim-con-cola-de-prioridad">Prim con cola de prioridad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-pasos-del-ejemplo">Más pasos del ejemplo</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

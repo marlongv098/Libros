@@ -75,7 +75,11 @@ parts:
               - file: 5_Grafos/IntroBusquedaGrafos.md
               - file: 5_Grafos/1_BFS/BFS.md
               - file: 5_Grafos/2_DFS/DFS.md
-          - file: 5_Grafos/3_Dijsktra/DIJSK.md
-          - file: 5_Grafos/4_Floyd_Warshall/FLOYD.md
-          - file: 5_Grafos/5_Prim/PRIM.md
-          - file: 5_Grafos/6_Kruskal/KRUS.md
+          - file: 5_Grafos/introGrafosponderados.md  
+            sections:
+              - file: 5_Grafos/3_Dijsktra/Dijkstra.md
+              - file: 5_Grafos/4_Floyd_Warshall/Floyd-Warshall.md
+          - file: 5_Grafos/ArbolGnerador.md
+            sections:
+              - file: 5_Grafos/5_Prim/PRIM.md
+              - file: 5_Grafos/6_Kruskal/KRUS.md
