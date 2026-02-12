@@ -82,4 +82,4 @@ parts:
           - file: 5_Grafos/ArbolGnerador.md
             sections:
               - file: 5_Grafos/5_Prim/PRIM.md
-              - file: 5_Grafos/6_Kruskal/KRUS.md
+              - file: 5_Grafos/6_Kruskal/Kruskal.md

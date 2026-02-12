@@ -601,7 +601,7 @@ r \cdot t, &amp; 0 \leq t &lt; 5 \\
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t_sym</span><span class="p">)</span> <span class="o">-</span> <span class="n">dxdt</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
 
-<span class="nn">File ~/jbook_env/lib/python3.10/site-packages/sympy/solvers/ode/ode.py:605,</span> in <span class="ni">dsolve</span><span class="nt">(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)</span>
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/sympy/solvers/ode/ode.py:605,</span> in <span class="ni">dsolve</span><span class="nt">(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">given_hint</span> <span class="o">=</span> <span class="n">hint</span>  <span class="c1"># hint given by the user</span>
 <span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># See the docstring of _desolve for more details.</span>
 <span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">hints</span> <span class="o">=</span> <span class="n">_desolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span>
@@ -610,7 +610,7 @@ r \cdot t, &amp; 0 \leq t &lt; 5 \\
 <span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="n">eq</span> <span class="o">=</span> <span class="n">hints</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="n">eq</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">609</span> <span class="n">all_</span> <span class="o">=</span> <span class="n">hints</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-<span class="nn">File ~/jbook_env/lib/python3.10/site-packages/sympy/solvers/deutils.py:209,</span> in <span class="ni">_desolve</span><span class="nt">(eq, func, hint, ics, simplify, prep, **kwargs)</span>
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/sympy/solvers/deutils.py:209,</span> in <span class="ni">_desolve</span><span class="nt">(eq, func, hint, ics, simplify, prep, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">205</span> <span class="c1"># Magic that should only be used internally.  Prevents classify_ode from</span>
 <span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="c1"># being called more than it needs to be by passing its results through</span>
 <span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="c1"># recursive calls.</span>
@@ -628,7 +628,7 @@ r \cdot t, &amp; 0 \leq t &lt; 5 \\
 <span class="g g-Whitespace">    </span><span class="mi">227</span>                         <span class="n">hint</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;match&#39;</span><span class="p">],</span>
 <span class="g g-Whitespace">    </span><span class="mi">228</span>                         <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]})</span>
 
-<span class="nn">File ~/jbook_env/lib/python3.10/site-packages/sympy/solvers/ode/ode.py:949,</span> in <span class="ni">classify_ode</span><span class="nt">(eq, func, dict, ics, prep, xi, eta, n, **kwargs)</span>
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/sympy/solvers/ode/ode.py:949,</span> in <span class="ni">classify_ode</span><span class="nt">(eq, func, dict, ics, prep, xi, eta, n, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="n">ics</span> <span class="o">=</span> <span class="n">sympify</span><span class="p">(</span><span class="n">ics</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="k">if</span> <span class="n">func</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">949</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;dsolve() and classify_ode() only &quot;</span>

@@ -1,17 +1,17 @@
 Traceback (most recent call last):
-  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/marlong/Library/Python/3.10/lib/python/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/nbclient/client.py", line 1304, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
     return loop.run_until_complete(inner)
   File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
     return future.result()
-  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/nbclient/client.py", line 1020, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/marlong/jbook_env/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -25,7 +25,6 @@ sp.pprint(sol)
 
 ------------------
 
-
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
 Cell [0;32mIn[6], line 6[0m
@@ -34,7 +33,7 @@ Cell [0;32mIn[6], line 6[0m
 [0;32m----> 6[0m sol [38;5;241m=[39m [43msp[49m[38;5;241;43m.[39;49m[43mdsolve[49m[43m([49m[43msp[49m[38;5;241;43m.[39;49m[43mDerivative[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mt_sym[49m[43m)[49m[43m [49m[38;5;241;43m-[39;49m[43m [49m[43mdxdt[49m[43m,[49m[43m [49m[43mx[49m[43m)[49m
 [1;32m      7[0m sp[38;5;241m.[39mpprint(sol)
 
-File [0;32m~/jbook_env/lib/python3.10/site-packages/sympy/solvers/ode/ode.py:605[0m, in [0;36mdsolve[0;34m(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)[0m
+File [0;32m~/Library/Python/3.10/lib/python/site-packages/sympy/solvers/ode/ode.py:605[0m, in [0;36mdsolve[0;34m(eq, func, hint, simplify, ics, xi, eta, x0, n, **kwargs)[0m
 [1;32m    602[0m given_hint [38;5;241m=[39m hint  [38;5;66;03m# hint given by the user[39;00m
 [1;32m    604[0m [38;5;66;03m# See the docstring of _desolve for more details.[39;00m
 [0;32m--> 605[0m hints [38;5;241m=[39m [43m_desolve[49m[43m([49m[43meq[49m[43m,[49m[43m [49m[43mfunc[49m[38;5;241;43m=[39;49m[43mfunc[49m[43m,[49m
@@ -43,7 +42,7 @@ File [0;32m~/jbook_env/lib/python3.10/site-packages/sympy/solvers/ode/ode.py:60
 [1;32m    608[0m eq [38;5;241m=[39m hints[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124meq[39m[38;5;124m'[39m, eq)
 [1;32m    609[0m all_ [38;5;241m=[39m hints[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mall[39m[38;5;124m'[39m, [38;5;28;01mFalse[39;00m)
 
-File [0;32m~/jbook_env/lib/python3.10/site-packages/sympy/solvers/deutils.py:209[0m, in [0;36m_desolve[0;34m(eq, func, hint, ics, simplify, prep, **kwargs)[0m
+File [0;32m~/Library/Python/3.10/lib/python/site-packages/sympy/solvers/deutils.py:209[0m, in [0;36m_desolve[0;34m(eq, func, hint, ics, simplify, prep, **kwargs)[0m
 [1;32m    205[0m [38;5;66;03m# Magic that should only be used internally.  Prevents classify_ode from[39;00m
 [1;32m    206[0m [38;5;66;03m# being called more than it needs to be by passing its results through[39;00m
 [1;32m    207[0m [38;5;66;03m# recursive calls.[39;00m
@@ -61,7 +60,7 @@ File [0;32m~/jbook_env/lib/python3.10/site-packages/sympy/solvers/deutils.py:20
 [1;32m    227[0m                         hint: kwargs[[38;5;124m'[39m[38;5;124mmatch[39m[38;5;124m'[39m],
 [1;32m    228[0m                         [38;5;124m'[39m[38;5;124morder[39m[38;5;124m'[39m: kwargs[[38;5;124m'[39m[38;5;124morder[39m[38;5;124m'[39m]})
 
-File [0;32m~/jbook_env/lib/python3.10/site-packages/sympy/solvers/ode/ode.py:949[0m, in [0;36mclassify_ode[0;34m(eq, func, dict, ics, prep, xi, eta, n, **kwargs)[0m
+File [0;32m~/Library/Python/3.10/lib/python/site-packages/sympy/solvers/ode/ode.py:949[0m, in [0;36mclassify_ode[0;34m(eq, func, dict, ics, prep, xi, eta, n, **kwargs)[0m
 [1;32m    946[0m ics [38;5;241m=[39m sympify(ics)
 [1;32m    948[0m [38;5;28;01mif[39;00m func [38;5;129;01mand[39;00m [38;5;28mlen[39m(func[38;5;241m.[39margs) [38;5;241m!=[39m [38;5;241m1[39m:
 [0;32m--> 949[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mdsolve() and classify_ode() only [39m[38;5;124m"[39m
@@ -70,4 +69,5 @@ File [0;32m~/jbook_env/lib/python3.10/site-packages/sympy/solvers/ode/ode.py:94
 [1;32m    953[0m     eq [38;5;241m=[39m eq[38;5;241m.[39mlhs [38;5;241m-[39m eq[38;5;241m.[39mrhs
 
 [0;31mValueError[0m: dsolve() and classify_ode() only work with functions of one variable, not x
+ValueError: dsolve() and classify_ode() only work with functions of one variable, not x
 
