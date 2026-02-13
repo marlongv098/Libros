@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Algoritmo de Dijkstra &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_Grafos/3_Dijsktra/Dijkstra';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Algoritmo de Floyd–Warshall" href="../4_Floyd_Warshall/Floyd-Warshall.html" />
+    <link rel="prev" title="Introducción a los Grafos Ponderados" href="../introGrafosponderados.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Notas Clase, Computación y estructuras Discretas I - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Notas Clase, Computación y estructuras Discretas I - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Notas de Clase
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logica Formal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_Logica_Formal/intro.html">La lógica formal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_Logica_Formal/metodosDemos.html">Métodos de Demostración</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../1_Logica_Formal/Ejercicios.html">Ejercicios Métodos formales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_Logica_Formal/Coq/IntroCoq.html">Introducción a Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_Logica_Formal/Coq/Tacticas.html">Demostraciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_Logica_Formal/Coq/demosCoq.html">Coq</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../1_Logica_Formal/Coq/EjerciciosCoq.html">Ejercicios en Coq</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conjuntos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2_Conjuntos_Funciones/introConjuntosFunciones.html">Teoría de conjuntos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.html">Fundamentos de Conjuntos</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../2_Conjuntos_Funciones/1_Conjuntos/EjerciciosConjuntos.html">Ejercicios Teoría de conjuntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.html">Interface Set</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2_Conjuntos_Funciones/2_Funciones/FuncionesIntro.html">Funciones</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2_Conjuntos_Funciones/2_Funciones/Funciones.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2_Conjuntos_Funciones/2_Funciones/Funciones_Tipos.html">Tipos de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2_Conjuntos_Funciones/2_Funciones/EjercicioFunciones.html">Ejercicios Funciones</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras No recursivas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/1_ComplejidadTemp/IntroENRecursiva.html">Estructuras No Recursivas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/ENRecursivas.html">Complejidad Algoritmica</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/ComTemporal.html">Análisis de Complejidad</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado/desacoplado.html">Desacoplado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/4_TAD/tad.html">Tipo Abstracto de Datos</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/introGenericos.html">Generics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.html">Listas Enlazadas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.html">Lista Enlazada Generica</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario.html">Diccionarios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/TablasHash.html">Tablas Hash</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/EstrucDatosSec.html">Estructuras de datos secuenciales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/4_EditorTexto/pilas.html">Pilas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/5_SistemaImpresion/colas.html">Colas</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../3_Estructuras_NO_Recursivas/3_Generics/6_GestorTareas/monticulos.html">Montículos</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras Recursivas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../4_Estructuras_Recursivas/IntroEstrucRecursivas.html">Estructuras Recursivas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../4_Estructuras_Recursivas/ARBOLNario.html">Arboles N-Arios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_Estructuras_Recursivas/1_ArbolBinario/ABB.html">Arboles Binarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_Estructuras_Recursivas/2_ArbolAVL/AVL.html">Arboles AVL</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../IntroGRAFOS.html">Teoría de Grafos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../GRAFOS.html">Problema Puentes de Könisberg</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../IntroBusquedaGrafos.html">Búsquedas en grafos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_BFS/BFS.html">BFS (Búsqueda en Amplitud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_DFS/DFS.html">DFS (Búsqueda en Profundidad)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../introGrafosponderados.html">Introducción a los Grafos Ponderados</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Algoritmo de Dijkstra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../4_Floyd_Warshall/Floyd-Warshall.html">Algoritmo de Floyd–Warshall</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../ArbolGnerador.html">Árbol generador y Árbol generador mínimo</a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/marlongv098/Estructuras" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F5_Grafos/3_Dijsktra/Dijkstra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/5_Grafos/3_Dijsktra/Dijkstra.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algoritmo de Dijkstra</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso-del-algoritmo">Paso a paso del algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcionamiento-general-del-algoritmo-de-dijkstra">Funcionamiento general del algoritmo de Dijkstra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-del-conjunto-distinguido-y-etiquetas">Idea del conjunto distinguido y etiquetas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-del-algoritmo-de-dijkstra">Pseudocódigo del algoritmo de Dijkstra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complejidad-temporal">Complejidad temporal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dijkstra-con-cola-de-prioridad">Dijkstra con cola de prioridad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seguimiento-del-algoritmo-de-dijkstra">Seguimiento del algoritmo de Dijkstra</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="algoritmo-de-dijkstra">
+<h1>Algoritmo de Dijkstra<a class="headerlink" href="#algoritmo-de-dijkstra" title="Link to this heading">#</a></h1>
+<p><strong>¿Que es el algoritmo de Dijkstra?</strong></p>
+<p>El algoritmo de Dijkstra es uno de los métodos más importantes para hallar un camino de longitud mínima entre dos vértices de un grafo ponderado.</p>
+<ul class="simple">
+<li><p>Fue descubierto por el matemático holandés <strong>Edsger Dijkstra</strong> en 1959.</p></li>
+<li><p>Resuelve el problema de caminos mínimos en <strong>grafos ponderados no dirigidos</strong> cuando <strong>todos los pesos son positivos</strong>.</p></li>
+<li><p>Puede adaptarse fácilmente para grafos <strong>dirigidos</strong>.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Ejemplo:</strong></p>
+<ul class="simple">
+<li><p>Longitud del camino más corto entre <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(z\)</span></p></li>
+</ul>
+<p><img alt="Ejemplo 1" src="../../_images/g4.png" /></p>
+<ul class="simple">
+<li><p>Aunque el camino más corto puede hallarse por simple inspección, desarrollaremos las ideas que nos servirán para entender el algoritmo de Dijkstra.</p></li>
+<li><p>Resolveremos el problema hallando la longitud del camino mínimo de <span class="math notranslate nohighlight">\(a\)</span> a cada vértice sucesivo, hasta llegar a <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="paso-a-paso-del-algoritmo">
+<h2>Paso a paso del algoritmo<a class="headerlink" href="#paso-a-paso-del-algoritmo" title="Link to this heading">#</a></h2>
+<p><img alt="Ejemplo 2" src="../../_images/g4.png" /></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Iteración</strong></p></th>
+<th class="head text-left"><p><strong>Acción principal</strong></p></th>
+<th class="head text-left"><p><strong>Cálculo y actualización de distancias</strong></p></th>
+<th class="head text-left"><p><strong>Conjunto ( S )</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>1</strong></p></td>
+<td class="text-left"><p><strong>Inicio en ( a )</strong></p></td>
+<td class="text-left"><p>Se inicializan las distancias:<br> ( dist[a]=0 ); los demás ( = \infty ).<br>No hay predecesores aún.</p></td>
+<td class="text-left"><p>( S = { a } )</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>2</strong></p></td>
+<td class="text-left"><p><strong>Desde ( a )</strong></p></td>
+<td class="text-left"><p>Vecinos de ( a ):<br>• ( b ) con peso 4 → ( dist[b]=4 )<br>• ( d ) con peso 2 → ( dist[d]=2 )<br>El menor es ( d ).</p></td>
+<td class="text-left"><p>( S = { a, d } )</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>3</strong></p></td>
+<td class="text-left"><p><strong>Desde ( d )</strong></p></td>
+<td class="text-left"><p>Vecinos de ( d ):<br>• ( e ) con peso 3 → ( dist[e]=2+3=5 )<br>Comparamos con los demás:<br>• ( dist[b]=4 ), ( dist[e]=5 ).<br>El menor es ( b ).</p></td>
+<td class="text-left"><p>( S = { a, d, b } )</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>4</strong></p></td>
+<td class="text-left"><p><strong>Desde ( b )</strong></p></td>
+<td class="text-left"><p>Vecinos de ( b ):<br>• ( c ) con peso 3 → ( dist[c]=4+3=7 )<br>Comparamos con ( dist[e]=5 ).<br>El menor es ( e ).</p></td>
+<td class="text-left"><p>( S = { a, d, b, e } )</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>5</strong></p></td>
+<td class="text-left"><p><strong>Desde ( e )</strong></p></td>
+<td class="text-left"><p>Vecinos de ( e ):<br>• ( z ) con peso 1 → ( dist[z]=5+1=6 )<br>El menor es ( z ).</p></td>
+<td class="text-left"><p>( S = { a, d, b, e, z } )</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>6</strong></p></td>
+<td class="text-left"><p><strong>Desde ( z )</strong></p></td>
+<td class="text-left"><p>Ya no hay nuevos vértices por visitar.<br>El proceso finaliza.</p></td>
+<td class="text-left"><p>( S = { a, d, b, e, z } )</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Resultado final</strong></p>
+<p>El algoritmo determina las distancias más cortas desde <span class="math notranslate nohighlight">\(a\)</span> a todos los vértices. En particular, el camino más corto de <span class="math notranslate nohighlight">\(a\)</span> a <span class="math notranslate nohighlight">\(z\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+a \xrightarrow{2} d \xrightarrow{3} e \xrightarrow{1} z
+\]</div>
+<p>Con un costo total mínimo:</p>
+<div class="math notranslate nohighlight">
+\[
+dist[z] = 2 + 3 + 1 = 6
+\]</div>
+<hr class="docutils" />
+<p><strong>¿Otra forma de encontrar el camino más corto?</strong></p>
+<ul class="simple">
+<li><p>Se podría obtener mediante <strong>fuerza bruta</strong>, examinando la longitud de cada posible camino de <span class="math notranslate nohighlight">\(a\)</span> a <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
+<li><p>Sin embargo, este enfoque es <strong>impráctico</strong> incluso para las máquinas cuando hay un gran número de vértices o aristas.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="funcionamiento-general-del-algoritmo-de-dijkstra">
+<h2>Funcionamiento general del algoritmo de Dijkstra<a class="headerlink" href="#funcionamiento-general-del-algoritmo-de-dijkstra" title="Link to this heading">#</a></h2>
+<p>El algoritmo determina la longitud del camino mínimo desde un vértice inicial (por ejemplo <span class="math notranslate nohighlight">\(a\)</span>) hasta todos los demás vértices del grafo.</p>
+<p><strong>Pasos principales:</strong></p>
+<ul class="simple">
+<li><p>Inicializa todos los vértices con distancia infinita, excepto el vértice inicial (<span class="math notranslate nohighlight">\(dist[a] = 0\)</span>).</p></li>
+<li><p>En cada iteración, selecciona el <strong>vértice no visitado con menor distancia</strong>.</p></li>
+<li><p>Actualiza las distancias de sus <strong>vértices adyacentes</strong> si se encuentra un camino más corto.</p></li>
+<li><p>Marca el vértice como <strong>visitado</strong> y repite el proceso hasta que todos los vértices estén procesados.</p></li>
+<li><p>El algoritmo se basa en una <strong>serie de iteraciones</strong> con un conjunto distinguido de vértices y un <strong>proceso de etiquetado</strong>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="idea-del-conjunto-distinguido-y-etiquetas">
+<h2>Idea del conjunto distinguido y etiquetas<a class="headerlink" href="#idea-del-conjunto-distinguido-y-etiquetas" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Se construye un conjunto de vértices <strong>visitados (S)</strong>, agregando uno nuevo en cada iteración.</p></li>
+<li><p>A cada vértice <span class="math notranslate nohighlight">\(w\)</span> se le asigna una <strong>etiqueta</strong> que representa la longitud del camino más corto desde <span class="math notranslate nohighlight">\(a\)</span> hasta <span class="math notranslate nohighlight">\(w\)</span>, pasando solo por vértices de <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>En cada paso, el vértice con <strong>etiqueta mínima</strong> se agrega al conjunto <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="pseudocodigo-del-algoritmo-de-dijkstra">
+<h2>Pseudocódigo del algoritmo de Dijkstra<a class="headerlink" href="#pseudocodigo-del-algoritmo-de-dijkstra" title="Link to this heading">#</a></h2>
+<p><img alt="Ejemplo 3" src="../../_images/dijkstra.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="complejidad-temporal">
+<h2>Complejidad temporal<a class="headerlink" href="#complejidad-temporal" title="Link to this heading">#</a></h2>
+<p>El algoritmo de Dijkstra realiza <span class="math notranslate nohighlight">\(O(n^2)\)</span> operaciones (sumas y comparaciones) para determinar la longitud del camino más corto entre dos vértices de un grafo ponderado <strong>simple, conexo y no dirigido</strong> con <span class="math notranslate nohighlight">\(n\)</span> vértices.</p>
+</section>
+<hr class="docutils" />
+<section id="dijkstra-con-cola-de-prioridad">
+<h2>Dijkstra con cola de prioridad<a class="headerlink" href="#dijkstra-con-cola-de-prioridad" title="Link to this heading">#</a></h2>
+<p>Una implementación más eficiente utiliza una cola de prioridad (por ejemplo, un heap) y arreglos para las distancias y los vértices previos.</p>
+<p><img alt="Ejemplo 4" src="../../_images/dijks.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="seguimiento-del-algoritmo-de-dijkstra">
+<h2>Seguimiento del algoritmo de Dijkstra<a class="headerlink" href="#seguimiento-del-algoritmo-de-dijkstra" title="Link to this heading">#</a></h2>
+<p><img alt="Ejemplo 5" src="../../_images/g7.png" /></p>
+<p>En esta versión del algoritmo, en lugar de recorrer todos los vértices para encontrar el de menor distancia provisional, se utiliza una cola de prioridad (PQ). Esto permite extraer el vértice con menor distancia en tiempo eficiente <span class="math notranslate nohighlight">\(O(log (V))\)</span>, reduciendo la complejidad total a <span class="math notranslate nohighlight">\(O((V + E)log (V))\)</span>.</p>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Paso</strong></p></th>
+<th class="head text-center"><p><strong>Vértice actual ((u))</strong></p></th>
+<th class="head text-left"><p><strong>distancia</strong></p></th>
+<th class="head text-left"><p><strong>previo</strong></p></th>
+<th class="head text-left"><p><strong>Cola de prioridad (PQ)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Inicio</strong></p></td>
+<td class="text-center"><p>—</p></td>
+<td class="text-left"><p>{0, ∞, ∞, ∞, ∞, ∞}</p></td>
+<td class="text-left"><p>{nil, nil, nil, nil, nil, nil}</p></td>
+<td class="text-left"><p>{a, c, b, d, e, z}</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>1</strong></p></td>
+<td class="text-center"><p>(a)</p></td>
+<td class="text-left"><p>{0, 4, 2, ∞, ∞, ∞}</p></td>
+<td class="text-left"><p>{nil, a, a, nil, nil, nil}</p></td>
+<td class="text-left"><p>{c, b, d, e, z}</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>2</strong></p></td>
+<td class="text-center"><p>(c)</p></td>
+<td class="text-left"><p>{0, 3, 2, 10, 12, ∞}</p></td>
+<td class="text-left"><p>{nil, c, a, c, c, nil}</p></td>
+<td class="text-left"><p>{b, d, e, z}</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>3</strong></p></td>
+<td class="text-center"><p>(b)</p></td>
+<td class="text-left"><p>{0, 3, 2, 8, 12, ∞}</p></td>
+<td class="text-left"><p>{nil, c, a, b, c, nil}</p></td>
+<td class="text-left"><p>{d, e, z}</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>4</strong></p></td>
+<td class="text-center"><p>(d)</p></td>
+<td class="text-left"><p>{0, 3, 2, 8, 10, 14}</p></td>
+<td class="text-left"><p>{nil, c, a, b, d, d}</p></td>
+<td class="text-left"><p>{e, z}</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>5</strong></p></td>
+<td class="text-center"><p>(e)</p></td>
+<td class="text-left"><p>{0, 3, 2, 8, 10, 13}</p></td>
+<td class="text-left"><p>{nil, c, a, b, d, e}</p></td>
+<td class="text-left"><p>{z}</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>6</strong></p></td>
+<td class="text-center"><p>(z)</p></td>
+<td class="text-left"><p>{0, 3, 2, 8, 10, 13}</p></td>
+<td class="text-left"><p>{nil, c, a, b, d, e}</p></td>
+<td class="text-left"><p>{ }</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p><strong>Interpretación</strong></p>
+<ul class="simple">
+<li><p>La <strong>columna <code class="docutils literal notranslate"><span class="pre">distancia</span></code></strong> muestra los valores actuales del vector de distancias desde (a).</p></li>
+<li><p>La <strong>columna <code class="docutils literal notranslate"><span class="pre">previo</span></code></strong> indica el vértice anterior en el camino más corto.</p></li>
+<li><p>La <strong>cola de prioridad (PQ)</strong> contiene los vértices <strong>no visitados</strong>, ordenados por su distancia provisional mínima.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Resultado final</strong></p>
+<p>El camino más corto de <span class="math notranslate nohighlight">\(a\)</span> a <span class="math notranslate nohighlight">\(z\)</span> encontrado por Dijkstra con cola de prioridad es:</p>
+<div class="math notranslate nohighlight">
+\[
+a \xrightarrow{2} c \xrightarrow{1} b \xrightarrow{5} d \xrightarrow{2} e \xrightarrow{3} z
+\]</div>
+<p>Con un <strong>costo total de:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+2 + 1 + 5 + 2 + 3 = 13
+\]</div>
+<hr class="docutils" />
+<p>Esta implementación con cola de prioridad mejora el rendimiento del algoritmo, especialmente en grafos grandes o dispersos, comparado con la versión que usa simples arreglos.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./5_Grafos/3_Dijsktra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../introGrafosponderados.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción a los Grafos Ponderados</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../4_Floyd_Warshall/Floyd-Warshall.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Algoritmo de Floyd–Warshall</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso-del-algoritmo">Paso a paso del algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcionamiento-general-del-algoritmo-de-dijkstra">Funcionamiento general del algoritmo de Dijkstra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-del-conjunto-distinguido-y-etiquetas">Idea del conjunto distinguido y etiquetas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-del-algoritmo-de-dijkstra">Pseudocódigo del algoritmo de Dijkstra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complejidad-temporal">Complejidad temporal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dijkstra-con-cola-de-prioridad">Dijkstra con cola de prioridad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seguimiento-del-algoritmo-de-dijkstra">Seguimiento del algoritmo de Dijkstra</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez, Andres Aristizabal.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
