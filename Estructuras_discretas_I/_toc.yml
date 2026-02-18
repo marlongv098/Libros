@@ -33,6 +33,7 @@ parts:
           - file: 2_Conjuntos_Funciones/1_Conjuntos/Conjuntos.md
           - file: 2_Conjuntos_Funciones/1_Conjuntos/EjerciciosConjuntos.md
           - file: 2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/InterfaceSet.md
+          - file: 2_Conjuntos_Funciones/1_Conjuntos/InterfaceSet/EjerciciosInterfaceSet.md
       - file: 2_Conjuntos_Funciones/2_Funciones/FuncionesIntro.md
         sections:
           - file: 2_Conjuntos_Funciones/2_Funciones/Funciones.md
