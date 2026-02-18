@@ -1,6 +1,12 @@
 # Interface Set
 
-Las colecciones que implementan la interfaz Set en Java permiten almacenar elementos sin duplicados, pero varían significativamente en su comportamiento interno y eficiencia. La siguiente tabla compara tres implementaciones comunes —HashSet, LinkedHashSet y TreeSet— destacando sus principales características y diferencias para facilitar su elección según el caso de uso.
+La interfaz Set es parte del framework de colecciones de Java (paquete java.util) y representa una colección de elementos únicos, es decir:
+
+* No permite elementos duplicados — si intentas agregar un elemento que ya existe no se duplica.
+* No define orden por índice; no puedes obtener elementos por posición como en una List.
+* Está diseñada para modelar matemáticamente la idea de un conjunto.
+
+La interfaz Set extiende Collection, por lo que hereda métodos como add, remove, contains, size, isEmpty y iterator. Las colecciones que implementan la interfaz Set en Java permiten almacenar elementos sin duplicados, pero varían significativamente en su comportamiento interno y eficiencia. La siguiente tabla compara tres implementaciones comunes —HashSet, LinkedHashSet y TreeSet— destacando sus principales características y diferencias para facilitar su elección según el caso de uso.
 
 | Características     | HashSet      | LinkedHashSet       | TreeSet          |
 |---------------------|-------------|---------------------|------------------|
@@ -10,10 +16,33 @@ Las colecciones que implementan la interfaz Set en Java permiten almacenar eleme
 | Permite (null)    | Sí, 1 valor  | Sí, 1 valor        | No               |
 | Estructura       | Tabla Hash  | Tabla Hash + Lista enlazada | Árbol Rojo-Negro |
 
-- [Tabla Hash](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/src/main/java/tablahash)
-- [Listas Enlazada](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas)
+## Algunos métodos clave que verás en la interfaz:
+
+* `boolean add(E e)` – Agrega un elemento si no está presente.
+* `boolean remove(Object o)` – Elimina un elemento del conjunto.
+* `boolean contains(Object o)` – Comprueba si el elemento está presente.
+* `int size()` – Retorna el número de elementos (cardinalidad).
+* `boolean isEmpty()` – Indica si el conjunto está vacío.
+* `Iterator<E> iterator()` – Permite recorrer los elementos.
+
+Además puedes usar métodos que operan con conjuntos completos, como:
+
+* `addAll(Collection<? extends E>)` — unión
+* `retainAll(Collection<?>)` — intersección
+* `removeAll(Collection<?>)` — diferencia
+
+### Ejemplo
+
+- [InterfaceSet](https://github.com/marlongv098/Estructuras/tree/master/2_Conjuntos_Funciones/1_Conjuntos/InterfaceSetUp)
+
+## Estructuras base
+
+- [Tabla Hash](https://marlongv098.github.io/Libros/Estructuras_Discretas_I/3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/TablasHash.html)
+- [Listas Enlazada](https://marlongv098.github.io/Libros/Estructuras_Discretas_I/3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.html)
 
 ## Árbol Rojo-Negro
+
+Comparación con de arbol Rojo-Negro con un arbol de busqueda binaria.
 
 | Características | BST                          | Árbol Rojo-Negro        |
 |---------------|-----------------------------|------------------------|
