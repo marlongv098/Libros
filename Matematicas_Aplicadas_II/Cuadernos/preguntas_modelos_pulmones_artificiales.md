@@ -15,7 +15,7 @@ Se supone que:
 2. Cada respiración se divide en:
    - Inspiración: $0 \le t \le t_i$
    - Espiración: $t_i \le t \le t_{tot}$
-3. Durante la inspiración el ventilador aplica presión constante $P_{app}.
+3. Durante la inspiración el ventilador aplica presión constante $P_{app}$.
 4. Durante la espiración la presión aplicada es cero.
 5. El pulmón se modela como un solo compartimento.
 6. El balance de presiones en la vía aérea es:
@@ -115,7 +115,7 @@ $$
 t_{tot} = 3 \; \text{seg}
 $$
 
-Grafique $V_i(t)$ y $V_e(t)$ en el intervalo:
+* Grafique $V_i(t)$ y $V_e(t)$ en el intervalo:
 
 $$
 0 \le t \le t_{tot}
@@ -130,8 +130,8 @@ $$
 P_m =\frac{1}{t_i} \int_0^{t_i}\left(\frac{V_i(t)}{C}\right) dt + P_{ex}
 $$
 
-Calcule esta cantidad usando la expresión obtenida en al resolver la ecuación diferencial 
-de inspiración para $$V_i(t)$$ con condición inicial $V_i(0)=0$
+* Calcule esta cantidad usando la expresión obtenida al resolver la ecuación diferencial 
+de inspiración para $V_i(t)$ con condición inicial $V_i(0)=0$
 
 
 ## 3. Preguntas de Reflexión y Análisis
@@ -143,7 +143,7 @@ R \frac{dV}{dt} + \frac{1}{C}V + P_{ex} = P_{aw}
 $$
 
   * ¿Qué sucede si la resistencia $R$ aumenta significativamente?  
-  * ¿Qué ocurre si la complianza $C$ disminuye?  
+  * ¿Qué ocurre si la complianza $C$ disminuye? la complianza es que tan facil se expande un pulmón cuando se le aplica presión
   * ¿Cómo se reflejarían estos cambios en la curva de volumen?
 
 ---
