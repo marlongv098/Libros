@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Eje_tematico_2/2d';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Entrega" href="../Cuaderno1/preguntas_modelos_matrices.html" />
+    <link rel="next" title="Introducción" href="../Eje_tematico_3/3intro.html" />
     <link rel="prev" title="Operaciones con matrices" href="2c.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,10 +187,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_poblacionales.html">Entrega</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
 </ul>
 </details></li>
 </ul>
@@ -205,7 +205,6 @@
 <li class="toctree-l2"><a class="reference internal" href="2c.html">Operaciones con matrices</a></li>
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Resolución de Sistemas de Ecuaciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_matrices.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -465,6 +464,33 @@ A + 3B + 2C = 150 \quad \text{(Horas de mano de obra disponibles)}
 <p>Queremos encontrar la cantidad de cada producto (<span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(C\)</span>) que se puede producir sin exceder los recursos disponibles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jax in /Users/marlong/Library/Python/3.10/lib/python/site-packages (0.6.2)
+Requirement already satisfied: jaxlib&lt;=0.6.2,&gt;=0.6.2 in /Users/marlong/Library/Python/3.10/lib/python/site-packages (from jax) (0.6.2)
+Requirement already satisfied: ml_dtypes&gt;=0.5.0 in /Users/marlong/Library/Python/3.10/lib/python/site-packages (from jax) (0.5.4)
+Requirement already satisfied: numpy&gt;=1.26 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from jax) (2.2.3)
+Requirement already satisfied: opt_einsum in /Users/marlong/Library/Python/3.10/lib/python/site-packages (from jax) (3.4.0)
+Requirement already satisfied: scipy&gt;=1.12 in /Users/marlong/Library/Python/3.10/lib/python/site-packages (from jax) (1.15.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">26.0.1</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3.10 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">jax.scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve</span>
@@ -489,15 +515,10 @@ A + 3B + 2C = 150 \quad \text{(Horas de mano de obra disponibles)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">jax.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jnp</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jax.scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Definimos la matriz de coeficientes (lado izquierdo del sistema)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;jax&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Producción óptima de cada producto:
+Producto A: 37.50 unidades
+Producto B: 62.50 unidades
+Producto C: -37.50 unidades
 </pre></div>
 </div>
 </div>
@@ -533,7 +554,7 @@ A + 3B + 2C = 150 \quad \text{(Horas de mano de obra disponibles)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/31193c26dfd3ed3d03c42634e14afc0561ab0eba6a529f04cdceec88cf3207fb.png" src="../_images/31193c26dfd3ed3d03c42634e14afc0561ab0eba6a529f04cdceec88cf3207fb.png" />
+<img alt="../_images/7e13a4ed3593d74382dfa8a00decefad0bcdf1c5463e848dcb777912dacb7a0f.png" src="../_images/7e13a4ed3593d74382dfa8a00decefad0bcdf1c5463e848dcb777912dacb7a0f.png" />
 </div>
 </div>
 </section>
@@ -579,11 +600,11 @@ A + 3B + 2C = 150 \quad \text{(Horas de mano de obra disponibles)}
       </div>
     </a>
     <a class="right-next"
-       href="../Cuaderno1/preguntas_modelos_matrices.html"
+       href="../Eje_tematico_3/3intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Entrega</p>
+        <p class="prev-next-title">Introducción</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

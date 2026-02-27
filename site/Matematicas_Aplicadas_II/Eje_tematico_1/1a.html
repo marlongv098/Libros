@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Eje_tematico_1/1a';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interpretación de la integral definida" href="1b.html" />
+    <link rel="next" title="Interpretación de la integral" href="1b.html" />
     <link rel="prev" title="Introducción" href="1intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,10 +187,10 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Teorema Fundamental del Cálculo</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1b.html">Interpretación de la integral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1c.html">Metodos numericos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="1d.html">Ecuaciones diferenciales de primer orden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_poblacionales.html">Entrega</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
 </ul>
 </details></li>
 </ul>
@@ -205,7 +205,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_matrices.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -587,10 +586,14 @@ F(b)-F(a)=F(x)|_a^b
 <div class="math notranslate nohighlight">
 \[\int{(lnx)^2} dx\]</div>
 <p>De la integral anterior se puede escoger <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(dv\)</span> de la siguiente manera:</p>
-<p>\begin{align*}
-u&amp;=(lnx)^2          &amp; dv=1dx \
-du&amp;=2lnx\frac{1}{x}dx         &amp;  v=x\
-\end{align*}</p>
+<div class="math notranslate nohighlight">
+\[
+u=(\ln x)^2, \quad dv=1dx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+du=2 (\ln x)\frac{1}{x}dx, \quad v=x
+\]</div>
 <p>gracias al anterior cambio en las variables se puede reescribir la integral inicial como sigue:</p>
 <div class="math notranslate nohighlight">
 \[\int{(lnx)^2} dx = x(lnx)^2-\int{2xlnx\frac{1}{x}}dx\]</div>
@@ -600,10 +603,14 @@ du&amp;=2lnx\frac{1}{x}dx         &amp;  v=x\
 <div class="math notranslate nohighlight">
 \[2\int{lnx}dx\]</div>
 <p>De nuevo se debe escoger <span class="math notranslate nohighlight">\(u\)</span>  y  <span class="math notranslate nohighlight">\(dv\)</span>  de la siguiente manera:</p>
-<p>\begin{align*}
-u&amp;=lnx          &amp; dv=1dx \
-du&amp;=\frac{1}{x}dx         &amp;  v=x\
-\end{align*}</p>
+<div class="math notranslate nohighlight">
+\[
+u=\ln x,\quad dv=dx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+du=\frac{1}{x}dx,\quad v=x
+\]</div>
 <p>gracias al anterior cambio en las variables se puede reescribir la integral inicial como sigue:</p>
 <div class="math notranslate nohighlight">
 \[\int{(lnx)^2} dx = x(lnx)^2-2(xlnx-\int{x\frac{1}{x}}dx)\]</div>
@@ -660,7 +667,7 @@ du&amp;=\frac{1}{x}dx         &amp;  v=x\
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Interpretación de la integral definida</p>
+        <p class="prev-next-title">Interpretación de la integral</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
