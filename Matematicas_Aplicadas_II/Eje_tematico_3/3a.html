@@ -187,10 +187,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_poblacionales.html">Entrega</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
 </ul>
 </details></li>
 </ul>
@@ -205,7 +205,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_matrices.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -444,7 +443,12 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-trazas">Definición Trazas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">Aplicaciones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traza-en-el-plano-yz">Traza en el plano <span class="math notranslate nohighlight">\(yz\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traza-en-el-plano-xz">Traza en el plano <span class="math notranslate nohighlight">\(xz\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traza-horizontal">Traza horizontal</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -474,7 +478,9 @@ document.write(`
 <h1>Cuádricas<a class="headerlink" href="#cuadricas" title="Link to this heading">#</a></h1>
 <p>Las superficies cuádricas son un tipo de superficie tridimensional que se puede definir como el conjunto de todos los puntos <span class="math notranslate nohighlight">\((x,y,z)\)</span> que satisfacen una ecuación polinómica de segundo grado en tres variables. En otras palabras, una superficie cuádrica es el lugar geométrico de los puntos que cumplen una ecuación de la forma:</p>
 <div class="math notranslate nohighlight">
-\[Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0\]</div>
+\[
+Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0
+\]</div>
 <p>donde <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(H\)</span>, <span class="math notranslate nohighlight">\(I\)</span> y <span class="math notranslate nohighlight">\(J\)</span> son constantes. Esta ecuación se conoce como la ecuación general de una superficie cuádrica.</p>
 <section id="formas-y-caracteristicas">
 <h2>Formas y Características<a class="headerlink" href="#formas-y-caracteristicas" title="Link to this heading">#</a></h2>
@@ -528,7 +534,9 @@ document.write(`
 <h2>Proceso analítico<a class="headerlink" href="#proceso-analitico" title="Link to this heading">#</a></h2>
 <p>Se considera la siguiente cuádrica:</p>
 <div class="math notranslate nohighlight">
-\[x^2 + y^2 - 2z^2 = 0\]</div>
+\[
+x^2 + y^2 - 2z^2 = 0
+\]</div>
 <p>Esta ecuación define una superficie en el espacio tridimensional llamada Cono. Se puede visualizar esta superficie como el lugar geométrico de todos los puntos <span class="math notranslate nohighlight">\((x,y,z)\)</span> que satisfacen la ecuación.</p>
 </section>
 <section id="curvas-en-el-espacio">
@@ -539,14 +547,20 @@ document.write(`
 <p>Las trazas de una cuadrica se calcular al realizar el corte de la cuadrica con cada uno de los ejes coordenados.</p>
 <p>si se hace <span class="math notranslate nohighlight">\(y=0\)</span>, obtenemos la ecuación:</p>
 <div class="math notranslate nohighlight">
-\[x^2 - 2z^2 = 0\]</div>
+\[
+x^2 - 2z^2 = 0
+\]</div>
 <p>Esta ecuación describe dos rectas en el plano  <span class="math notranslate nohighlight">\(xz\)</span>, con centro en el origen y ejes en las direcciones <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <p>Si se hace lo mismo para <span class="math notranslate nohighlight">\(x=0\)</span>, se obtiene la ecuación:dented block</p>
 <div class="math notranslate nohighlight">
-\[y^2 - 2z^2 = 1\]</div>
+\[
+y^2 - 2z^2 = 1
+\]</div>
 <p>Esta ecuación también describe una hipérbola en el plano <span class="math notranslate nohighlight">\(yz\)</span>, con centro en el origen y ejes en las direcciones <span class="math notranslate nohighlight">\(y\)</span> y <span class="math notranslate nohighlight">\(z\)</span>. Finalmente, si fijamos <span class="math notranslate nohighlight">\(z=0\)</span>, obtenemos la ecuación:</p>
 <div class="math notranslate nohighlight">
-\[x^2 + y^2 = 1\]</div>
+\[
+x^2 + y^2 = 1
+\]</div>
 <p>Esta ecuación describe un círculo en el plano <span class="math notranslate nohighlight">\(xy\)</span>, con centro en el origen y radio 1.</p>
 <p>Podemos combinar estas curvas de intersección para construir una imagen de la superficie cuádrica completa. En este caso, la superficie es una hipérbola de dos hojas, simétrica con respecto al plano <span class="math notranslate nohighlight">\(xy\)</span>, y con sus hojas extendiéndose hacia arriba y hacia abajo en la dirección <span class="math notranslate nohighlight">\(z\)</span>. La superficie también contiene el círculo en el plano <span class="math notranslate nohighlight">\(xy\)</span> que se mencionó anteriormente.</p>
 <p>Espero que este ejemplo haya sido más claro y haya ayudado a comprender mejor las superficies cuádricas.</p>
@@ -556,7 +570,10 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="definicion-trazas">
 <h1>Definición Trazas<a class="headerlink" href="#definicion-trazas" title="Link to this heading">#</a></h1>
 <p>Las trazas de una función cuádrica son las intersecciones de la superficie cuádrica con los planos coordenados. Es decir, si se tiene una función cuádrica de la forma:</p>
-<p><span class="math notranslate nohighlight">\(ax^2+by^2+cz^2+2dxy+2exz+2fyz+2gx+2hy+2iz+j=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+ax^2+by^2+cz^2+2dxy+2exz+2fyz+2gx+2hy+2iz+j=0
+\]</div>
 <p>Las trazas son las intersecciones de esta superficie con los planos <span class="math notranslate nohighlight">\(xy\)</span>, <span class="math notranslate nohighlight">\(xz\)</span> e <span class="math notranslate nohighlight">\(yz\)</span>, las cuales se obtienen fijando una de las coordenadas en cero y resolviendo para las otras dos. Por ejemplo:</p>
 <p>La traza <span class="math notranslate nohighlight">\(xy\)</span> se obtiene fijando <span class="math notranslate nohighlight">\(z=0\)</span> y resolviendo para <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>.
 La traza <span class="math notranslate nohighlight">\(xz\)</span> se obtiene fijando <span class="math notranslate nohighlight">\(y=0\)</span> y resolviendo para <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span>.
@@ -567,6 +584,51 @@ Cada una de estas trazas es una curva cuádrica en el plano correspondiente.</p>
 <p>Las superficies cuádricas son importantes en muchas áreas de las matemáticas y la física, incluyendo la geometría, el álgebra, la mecánica clásica y la teoría de la relatividad. Además, se utilizan en la modelización de fenómenos físicos y en el diseño de objetos y estructuras en ingeniería y arquitectura.</p>
 <section id="ejemplo">
 <h3>Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
+<p>Una antena parabólica tiene la forma de un paraboloide elíptico, cuya ecuación típica es:</p>
+<div class="math notranslate nohighlight">
+\[
+z=\frac{x^2}{a^2}+\frac{y^2}{b^2}
+\]</div>
+<p>Esta superficie tiene una propiedad fundamental:</p>
+<p>Todas las ondas que llegan paralelas al eje del paraboloide se reflejan hacia un punto fijo llamado foco. Esta propiedad es clave en:</p>
+<ul class="simple">
+<li><p>Antenas satelitales</p></li>
+<li><p>Radiotelescopios</p></li>
+<li><p>Sistemas de radar</p></li>
+<li><p>Reflectores solares</p></li>
+</ul>
+<section id="traza-en-el-plano-yz">
+<h4>Traza en el plano <span class="math notranslate nohighlight">\(yz\)</span><a class="headerlink" href="#traza-en-el-plano-yz" title="Link to this heading">#</a></h4>
+<p>Si <span class="math notranslate nohighlight">\(𝑥=0\)</span> se obtiene una parábola vertical</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{y^2}{b^2}
+\]</div>
+<p>La cual permite estudiar el perfil lateral del reflector.</p>
+</section>
+<section id="traza-en-el-plano-xz">
+<h4>Traza en el plano <span class="math notranslate nohighlight">\(xz\)</span><a class="headerlink" href="#traza-en-el-plano-xz" title="Link to this heading">#</a></h4>
+<p>si <span class="math notranslate nohighlight">\(y=0\)</span> se obtiene otra parabola</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x^2}{a^2}
+\]</div>
+<p>La cual permite verificar simetría y curvatura en la otra dirección.</p>
+</section>
+<section id="traza-horizontal">
+<h4>Traza horizontal<a class="headerlink" href="#traza-horizontal" title="Link to this heading">#</a></h4>
+<p>Si <span class="math notranslate nohighlight">\(z=c\)</span> se obtiene una elipse</p>
+<div class="math notranslate nohighlight">
+\[
+c=\frac{x^2}{a^2}+\frac{y^2}{b^2}
+\]</div>
+<p>La cual permite:</p>
+<ul class="simple">
+<li><p>Determinar el diámetro del plato a cierta altura.</p></li>
+<li><p>Calcular material necesario.</p></li>
+<li><p>Definir el borde de la antena.</p></li>
+</ul>
+</section>
 </section>
 </section>
 </section>
@@ -581,20 +643,30 @@ Cada una de estas trazas es una curva cuádrica en el plano correspondiente.</p>
 <h3>Cartesianas a polares<a class="headerlink" href="#cartesianas-a-polares" title="Link to this heading">#</a></h3>
 <p>Se puede observar que el radio es es la hipotenusa del triangulo rectangulo por tanto</p>
 <div class="math notranslate nohighlight">
-\[r^2=x^2+y^2\]</div>
+\[
+r^2=x^2+y^2
+\]</div>
 <div class="math notranslate nohighlight">
-\[r=\sqrt{x^2+y^2}\]</div>
+\[
+r=\sqrt{x^2+y^2}
+\]</div>
 <p>y el ángulo se encuentra usando la funcion tangente ya que esta me permite relacuionar <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(y\)</span></p>
 <div class="math notranslate nohighlight">
-\[\theta = arcotangente(\frac{x}{y}) \]</div>
+\[
+\theta = arcotangente(\frac{x}{y})
+\]</div>
 </section>
 <section id="polares-a-cartesianas">
 <h3>Polares a cartesianas<a class="headerlink" href="#polares-a-cartesianas" title="Link to this heading">#</a></h3>
 <p>Haciendo uso del triángulo rectángulo se obtienen las siguientes ecuaciones, las cuales permiten calcular las coordenadas rectangulares de un punto en el espacio a partir de sus coordenadas polares <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(y\)</span></p>
 <div class="math notranslate nohighlight">
-\[x=rcos(θ)\]</div>
+\[
+x=rcos(θ)
+\]</div>
 <div class="math notranslate nohighlight">
-\[y=rsen(θ)\]</div>
+\[
+y=rsen(θ)
+\]</div>
 </section>
 <section id="ecuaciones-polares-geogebra">
 <h3>Ecuaciones polares Geogebra<a class="headerlink" href="#ecuaciones-polares-geogebra" title="Link to this heading">#</a></h3>
@@ -706,7 +778,12 @@ Cada una de estas trazas es una curva cuádrica en el plano correspondiente.</p>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-trazas">Definición Trazas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">Aplicaciones</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traza-en-el-plano-yz">Traza en el plano <span class="math notranslate nohighlight">\(yz\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traza-en-el-plano-xz">Traza en el plano <span class="math notranslate nohighlight">\(xz\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traza-horizontal">Traza horizontal</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

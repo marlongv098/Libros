@@ -187,10 +187,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral definida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1b.html">Interpretación de la integral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1c.html">Metodos numericos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_poblacionales.html">Entrega</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
 </ul>
 </details></li>
 </ul>
@@ -205,7 +205,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Cuaderno1/preguntas_modelos_matrices.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -446,6 +445,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-en-varias">Derivada en varias</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciabilidad-y-continuidad">Diferenciabilidad y continuidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivacion-parcial-respecto-a-x">Derivación parcial respecto a <span class="math notranslate nohighlight">\(x\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-respecto-a-y">Derivada parcial respecto a <span class="math notranslate nohighlight">\(y\)</span></a></li>
 </ul>
 </li>
@@ -485,28 +485,45 @@ document.write(`
 <h2>Noción aproximación.<a class="headerlink" href="#nocion-aproximacion" title="Link to this heading">#</a></h2>
 <p>Recuerde que para una función <span class="math notranslate nohighlight">\(f\)</span> de una sola variable <span class="math notranslate nohighlight">\(x\)</span>, decimos que <span class="math notranslate nohighlight">\(f\)</span> es diferenciable en <span class="math notranslate nohighlight">\(a\)</span> si f es localmente lineal en <span class="math notranslate nohighlight">\(a\)</span>. Es decir, hay una constante <span class="math notranslate nohighlight">\(m\)</span> tal que para todo <span class="math notranslate nohighlight">\(h\)</span> suficientemente cercano a cero el cambio en <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(a\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[f (a+h)− f (a),\]</div>
+\[
+f (a+h)− f (a)
+\]</div>
 <p>está bien aproximado por <span class="math notranslate nohighlight">\(mh\)</span>.</p>
 <section id="bien-aproximado">
 <h3>Bien aproximado<a class="headerlink" href="#bien-aproximado" title="Link to this heading">#</a></h3>
 <p>Se quiere decir que la diferencia entre</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}f(a+h)− f (a)$$ y\\$$mh\end{aligned}\end{align} \]</div>
+\[
+f(a+h)− f (a)
+\]</div>
+<p>y</p>
+<div class="math notranslate nohighlight">
+\[
+mh
+\]</div>
 <p>es pequeña en comparación con <span class="math notranslate nohighlight">\(h\)</span> cuando <span class="math notranslate nohighlight">\(h\)</span> es pequeña. Es decir,</p>
 <div class="math notranslate nohighlight">
-\[\lim_{h→0}\frac{f (a+h)− f (a)− mh}{h}=0\]</div>
+\[
+\lim_{h→0}\frac{f (a+h)− f (a)− mh}{h}=0
+\]</div>
 </section>
 </section>
 <section id="definicion">
 <h2>Definición<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h2>
 <p>Se dice que una función <span class="math notranslate nohighlight">\(f\)</span> es diferenciable en <span class="math notranslate nohighlight">\(a\)</span> si</p>
 <div class="math notranslate nohighlight">
-\[\lim_{h→0} \frac{f (a+h)− f (a)}{h}=m\]</div>
+\[
+\lim_{h→0} \frac{f (a+h)− f (a)}{h}=m
+\]</div>
 <p>El número <span class="math notranslate nohighlight">\(m\)</span> se llama la derivada de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(a\)</span>, denotada <span class="math notranslate nohighlight">\(f'(a)\)</span>.</p>
 </section>
 <section id="aproximacion-lineal-una-variable">
 <h2>Aproximación lineal una variable<a class="headerlink" href="#aproximacion-lineal-una-variable" title="Link to this heading">#</a></h2>
-<p>la aproximación lineal de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(a\)</span> es $<span class="math notranslate nohighlight">\(f(a)+ f'(a)(x−a).\)</span>$</p>
+<p>la aproximación lineal de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(a\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[
+f(a)+ f'(a)(x−a)
+\]</div>
 <p>#Derivadas Funciones en varias variables.</p>
 </section>
 <section id="id1">
@@ -515,42 +532,78 @@ document.write(`
 donde <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(q\)</span> son números reales.</p>
 <section id="norma-de-un-vector-en-mathbb-r-2">
 <h3>Norma de un vector en <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span><a class="headerlink" href="#norma-de-un-vector-en-mathbb-r-2" title="Link to this heading">#</a></h3>
-<p>Recordamos la definición de norma de un vector
-$<span class="math notranslate nohighlight">\(||(h, k)|| = \sqrt{h^2 +k^2}.\)</span>$</p>
+<p>Recordamos la definición de norma de un vector</p>
+<div class="math notranslate nohighlight">
+\[
+||(h, k)|| = \sqrt{h^2 +k^2}
+\]</div>
 </section>
 </section>
 <section id="derivada-en-varias">
 <h2>Derivada en varias<a class="headerlink" href="#derivada-en-varias" title="Link to this heading">#</a></h2>
 <p>Una función <span class="math notranslate nohighlight">\(f\)</span> definida en un dominio de <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span> es diferenciable en <span class="math notranslate nohighlight">\((a,b)\)</span> si</p>
 <div class="math notranslate nohighlight">
-\[\lim_{||(h, k)|| →0} \frac{f (a+h,b+k)− f (a,b)-\ell(h,k)}{||(h, k)||}=0\]</div>
+\[
+\lim_{||(h, k)|| →0} \frac{f (a+h,b+k)− f (a,b)-\ell(h,k)}{||(h, k)||}=0
+\]</div>
 </section>
 <section id="diferenciabilidad-y-continuidad">
 <h2>Diferenciabilidad y continuidad<a class="headerlink" href="#diferenciabilidad-y-continuidad" title="Link to this heading">#</a></h2>
 <p>Si <span class="math notranslate nohighlight">\(f:\mathbb{R}^{2}→\mathbb{R}\)</span> es diferenciable en <span class="math notranslate nohighlight">\((a,b)\)</span> entonces es continua en  <span class="math notranslate nohighlight">\((a,b)\)</span>.</p>
-<p>##Derivación parcial respecto a <span class="math notranslate nohighlight">\(x\)</span></p>
+</section>
+<section id="derivacion-parcial-respecto-a-x">
+<h2>Derivación parcial respecto a <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#derivacion-parcial-respecto-a-x" title="Link to this heading">#</a></h2>
 <p>Supongamos que <span class="math notranslate nohighlight">\(f\)</span> es derivable en <span class="math notranslate nohighlight">\((a,b)\)</span> y <span class="math notranslate nohighlight">\((h, k) = ph + qk\)</span>. Hagamos <span class="math notranslate nohighlight">\(k = 0\)</span> entonces el límite</p>
 <div class="math notranslate nohighlight">
-\[\lim_{h →0} \frac{f (a+h,b)− f (a,b)-ph}{h}=0\]</div>
+\[
+\lim_{h →0} \frac{f (a+h,b)− f (a,b)-ph}{h}=0
+\]</div>
 <p>por tanto <span class="math notranslate nohighlight">\(f (x,b)\)</span> es una función diferenciable de una sola variable <span class="math notranslate nohighlight">\(x\)</span> en <span class="math notranslate nohighlight">\(a\)</span>, y</p>
 <div class="math notranslate nohighlight">
-\[\lim_{h →0} \frac{f (a+h,b)− f (a,b)-ph}{h}=p\]</div>
+\[
+\lim_{h →0} \frac{f (a+h,b)− f (a,b)-ph}{h}=p
+\]</div>
 <p>El número <span class="math notranslate nohighlight">\(p\)</span> se llama la derivada parcial de <span class="math notranslate nohighlight">\(f\)</span> con respecto a <span class="math notranslate nohighlight">\(x\)</span> en <span class="math notranslate nohighlight">\((a,b)\)</span> y se
-denota
-$<span class="math notranslate nohighlight">\(\frac{∂ f}{∂x}(a,b)\)</span><span class="math notranslate nohighlight">\( o \)</span>f_x(a,b)<span class="math notranslate nohighlight">\(.
-Por lo tanto \)</span><span class="math notranslate nohighlight">\(\frac{∂ f}{∂x}(a,b)\)</span><span class="math notranslate nohighlight">\( se encuentra manteniendo y igual a la constante \)</span>b<span class="math notranslate nohighlight">\( y derivando \)</span>f (x,b)<span class="math notranslate nohighlight">\(
-con respecto a \)</span>x<span class="math notranslate nohighlight">\( en \)</span>a$.</p>
+denota</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{∂ f}{∂x}(a,b)
+\]</div>
+<p>o</p>
+<div class="math notranslate nohighlight">
+\[
+f_x(a,b)
+\]</div>
+<p>Por lo tanto</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{∂ f}{∂x}(a,b)
+\]</div>
+<p>se encuentra manteniendo y igual a la constante <span class="math notranslate nohighlight">\(b\)</span> y derivando <span class="math notranslate nohighlight">\(f (x,b)\)</span>
+con respecto a <span class="math notranslate nohighlight">\(x\)</span> en <span class="math notranslate nohighlight">\(a\)</span>.</p>
 </section>
 <section id="derivada-parcial-respecto-a-y">
 <h2>Derivada parcial respecto a <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#derivada-parcial-respecto-a-y" title="Link to this heading">#</a></h2>
 <p>De manera similar, si se hace <span class="math notranslate nohighlight">\(h = 0\)</span> vemos que si <span class="math notranslate nohighlight">\(f\)</span> es diferenciable en <span class="math notranslate nohighlight">\((a,b)\)</span> entonces <span class="math notranslate nohighlight">\(f (a, y)\)</span> es una función diferenciable de <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\(b\)</span> y</p>
 <div class="math notranslate nohighlight">
-\[\lim_{k →0} \frac{f (a,b+k)− f (a,b)-qk}{k}=0\]</div>
+\[
+\lim_{k →0} \frac{f (a,b+k)− f (a,b)-qk}{k}=0
+\]</div>
 <p>así que eso</p>
 <div class="math notranslate nohighlight">
-\[\lim_{k →0} \frac{f (a+h,b)− f (a,b)}{h}=q\]</div>
+\[
+\lim_{k →0} \frac{f (a+h,b)− f (a,b)}{h}=q
+\]</div>
 <p>El número <span class="math notranslate nohighlight">\(q\)</span> se llama derivada parcial de <span class="math notranslate nohighlight">\(f\)</span> con respecto a <span class="math notranslate nohighlight">\(y\)</span> en <span class="math notranslate nohighlight">\((a,b)\)</span> y es denotado</p>
-<p>$<span class="math notranslate nohighlight">\(\frac{∂ f}{∂y}(a,b)\)</span><span class="math notranslate nohighlight">\( o \)</span>f_y(a,b)$.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{∂ f}{∂y}(a,b)
+\]</div>
+<p>o</p>
+<div class="math notranslate nohighlight">
+\[
+f_y(a,b)
+\]</div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="reglas-derivacion">
@@ -572,29 +625,47 @@ con respecto a \)</span>x<span class="math notranslate nohighlight">\( en \)</sp
 diferenciable en un conjunto abierto <span class="math notranslate nohighlight">\(U\)</span>, y sea <span class="math notranslate nohighlight">\(X(t) = (x(t),y(t))\)</span>  una función diferenciable
 de un intervalo abierto <span class="math notranslate nohighlight">\(I\)</span> a <span class="math notranslate nohighlight">\(U\)</span>. Entonces la composición <span class="math notranslate nohighlight">\(f(x(t), y(t))\)</span> es una función diferenciable de <span class="math notranslate nohighlight">\(I\)</span> a <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> y</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt}f(x(t), y(t))=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt},\]</div>
+\[
+\frac{d}{dt}f(x(t), y(t))=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}
+\]</div>
 <p>o equivalentemente</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt}f(x(t), y(t))=\nabla f(x(t),y(t))\cdot X'(t).\]</div>
+\[
+\frac{d}{dt}f(x(t), y(t))=\nabla f(x(t),y(t))\cdot X'(t)
+\]</div>
 <p>Para el caso <span class="math notranslate nohighlight">\(n-\)</span>dimensional tendríamos <span class="math notranslate nohighlight">\(f :\mathbb{R}^n→\mathbb{R}\)</span>  y sea <span class="math notranslate nohighlight">\(X(t) = (x_1(t),...,x_n(t))\)</span>, de donde</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt}f(X(t))=\frac{\partial f}{\partial x_1}\frac{dx_1}{dt}+...+\frac{\partial f}{\partial x_n}\frac{dx_n}{dt},\]</div>
+\[
+\frac{d}{dt}f(X(t))=\frac{\partial f}{\partial x_1}\frac{dx_1}{dt}+...+\frac{\partial f}{\partial x_n}\frac{dx_n}{dt}
+\]</div>
 <p>o equivalentemente</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt}f(X(t))=\nabla f(X(t))\cdot X'(t).\]</div>
+\[
+\frac{d}{dt}f(X(t))=\nabla f(X(t))\cdot X'(t)
+\]</div>
 </section>
 <section id="regla-de-la-cadena-n-variables">
 <h2>Regla de la cadena <span class="math notranslate nohighlight">\(n\)</span> variables.<a class="headerlink" href="#regla-de-la-cadena-n-variables" title="Link to this heading">#</a></h2>
 <p>Sea <span class="math notranslate nohighlight">\(U\)</span> un conjunto abierto en <span class="math notranslate nohighlight">\(\mathbb{R}^{k}\)</span>, y sea <span class="math notranslate nohighlight">\(V\)</span> un conjunto abierto establecido en <span class="math notranslate nohighlight">\(\mathbb{R}^{m}\)</span>. Suponga que</p>
 <div class="math notranslate nohighlight">
-\[X(T)=(x_1(t_1, . . . , t_k), . . . , x_m(t_1, . . . , t_k))\]</div>
-<p>es continuamente diferenciable en <span class="math notranslate nohighlight">\(U\)</span> y $<span class="math notranslate nohighlight">\(F(X) = y_1(x_1, . . . , x_m), . . . , y_n(x_1, . . . , x_m)\)</span>$</p>
+\[
+X(T)=(x_1(t_1, . . . , t_k), . . . , x_m(t_1, . . . , t_k))
+\]</div>
+<p>es continuamente diferenciable en <span class="math notranslate nohighlight">\(U\)</span> y</p>
+<div class="math notranslate nohighlight">
+\[
+F(X) = y_1(x_1, . . . , x_m), . . . , y_n(x_1, . . . , x_m)
+\]</div>
 <p>es continuamente derivable en <span class="math notranslate nohighlight">\(V\)</span>, y que el rango de <span class="math notranslate nohighlight">\(X\)</span> está contenido en <span class="math notranslate nohighlight">\(V\)</span>. Entonces la compuesta <span class="math notranslate nohighlight">\(F(X(T))\)</span> es continuamente diferenciable en <span class="math notranslate nohighlight">\(U\)</span> y la derivada de la compuesta es el producto de las matrices derivadas:</p>
 <div class="math notranslate nohighlight">
-\[D(F\circ X)(T)=DF(X(T))D(X(T))\]</div>
+\[
+D(F\circ X)(T)=DF(X(T))D(X(T))
+\]</div>
 <p>o equivalentemente</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial y_i}{\partial t_j}=\frac{\partial y_i}{\partial x_1}\frac{\partial x_1}{\partial t_j}+...+\frac{\partial y_i}{\partial x_m}\frac{\partial x_m}{\partial t_j},\]</div>
+\[
+\frac{\partial y_i}{\partial t_j}=\frac{\partial y_i}{\partial x_1}\frac{\partial x_1}{\partial t_j}+...+\frac{\partial y_i}{\partial x_m}\frac{\partial x_m}{\partial t_j}
+\]</div>
 </section>
 </section>
 
@@ -676,6 +747,7 @@ de un intervalo abierto <span class="math notranslate nohighlight">\(I\)</span> 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-en-varias">Derivada en varias</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciabilidad-y-continuidad">Diferenciabilidad y continuidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivacion-parcial-respecto-a-x">Derivación parcial respecto a <span class="math notranslate nohighlight">\(x\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-parcial-respecto-a-y">Derivada parcial respecto a <span class="math notranslate nohighlight">\(y\)</span></a></li>
 </ul>
 </li>
