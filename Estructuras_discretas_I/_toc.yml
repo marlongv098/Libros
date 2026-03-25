@@ -46,6 +46,7 @@ parts:
           - file: 3_Estructuras_NO_Recursivas/ENRecursivas.md
             sections:
               - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/ComTemporal.md
+              - file: 3_Estructuras_NO_Recursivas/1_ComplejidadTemp/src/EjerciciosComplej.md
           - file: 3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado/desacoplado.md
           - file: 3_Estructuras_NO_Recursivas/4_TAD/tad.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/introGenericos.md
