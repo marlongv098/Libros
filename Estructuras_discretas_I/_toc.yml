@@ -53,6 +53,7 @@ parts:
             sections:
               - file: 3_Estructuras_NO_Recursivas/3_Generics/1_ListasEnlazadas/listaEnlazada.md
               - file: 3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/listaEnlazada2.md
+              - file: 3_Estructuras_NO_Recursivas/3_Generics/2_LinkedListPersonas/EjercicioPersonas.md
           - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/diccionario.md
             sections:
               - file: 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario/TablasHash.md
