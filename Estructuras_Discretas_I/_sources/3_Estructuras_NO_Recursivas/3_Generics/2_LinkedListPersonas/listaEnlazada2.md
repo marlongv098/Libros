@@ -19,7 +19,7 @@ El diseño permite comprender de forma clara cómo construir una lista enlazada 
 
 ┃ ┃ ┣  📜  Persona.java
 
-┃ ┃ ┣  📜 PersonaGenerica.java
+┃ ┃ ┣  📜 Entidad.java
 
 ┃ ┣ 📂  estructuras
 
@@ -56,4 +56,7 @@ La carpeta test se creo como un directorio dentro de tu módulo principal. Luego
 * Si necesitas almacenar atributos de Persona que pueden variar en tipo de datos.
 * Si estás creando una biblioteca o framework que necesita ser muy flexible.
 * Si tu aplicación tiene una lógica muy compleja que se beneficia de la flexibilidad de los genéricos.
+
+# Ejercicio
+
 
