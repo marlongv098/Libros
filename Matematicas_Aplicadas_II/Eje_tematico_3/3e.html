@@ -194,7 +194,7 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectores y Matrices.</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
@@ -204,7 +204,10 @@
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/Modelos/matrices.html">Sistemas de Ecuaciones Lineales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/Modelos/grafo.html">Teoría de Gráficas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/Modelos/markov.html">Cadenas de Markov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Cuadernos/preguntas_modelos_matrices.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -890,7 +893,7 @@ Cer_b&amp;|&amp; 3 &amp; 1 &amp; 3 &amp; 2 &amp; 3 \
 Version: 2.10.3 
 Build Date: Dec 15 2019 
 
-command line - /Users/marlong/Library/Python/3.10/lib/python/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/gy/tr524sw56ynd5kmftbk5d2nw0000gn/T/e38ac85129ca44d0b13989f08dc8c7ad-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /var/folders/gy/tr524sw56ynd5kmftbk5d2nw0000gn/T/e38ac85129ca44d0b13989f08dc8c7ad-pulp.sol (default strategy 1)
+command line - /Users/marlong/Library/Python/3.10/lib/python/site-packages/pulp/apis/../solverdir/cbc/osx/i64/cbc /var/folders/gy/tr524sw56ynd5kmftbk5d2nw0000gn/T/d5eef44fb0be4802899b149d0de4b576-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /var/folders/gy/tr524sw56ynd5kmftbk5d2nw0000gn/T/d5eef44fb0be4802899b149d0de4b576-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
 At line 3 ROWS
 At line 12 COLUMNS
@@ -903,8 +906,8 @@ Option for timeMode changed from cpu to elapsed
 Continuous objective value is 8600 - 0.00 seconds
 Cgl0004I processed model has 7 rows, 10 columns (10 integer (0 of which binary)) and 20 elements
 Cutoff increment increased from 1e-05 to 0.9999
-Cbc0012I Integer solution of 8600 found by DiveCoefficient after 0 iterations and 0 nodes (0.01 seconds)
-Cbc0001I Search completed - best objective 8600, took 0 iterations and 0 nodes (0.01 seconds)
+Cbc0012I Integer solution of 8600 found by DiveCoefficient after 0 iterations and 0 nodes (0.02 seconds)
+Cbc0001I Search completed - best objective 8600, took 0 iterations and 0 nodes (0.02 seconds)
 Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 8600 to 8600
 Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
@@ -922,10 +925,10 @@ Objective value:                8600.00000000
 Enumerated nodes:               0
 Total iterations:               0
 Time (CPU seconds):             0.00
-Time (Wallclock seconds):       0.01
+Time (Wallclock seconds):       0.02
 
 Option for printingOptions changed from normal to all
-Total time (CPU seconds):       0.00   (Wallclock seconds):       0.02
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.03
 
 Status: Optimal
 ruta_Cervecería_A_Bar_1 = 300.0
