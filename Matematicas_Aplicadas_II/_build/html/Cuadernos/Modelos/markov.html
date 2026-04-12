@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cadenas de Markov &#8212; Matematicas Aplicadas II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cuadernos/Modelos/markov';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Entrega" href="../preguntas_modelos_matrices.html" />
+    <link rel="prev" title="Teoría de Gráficas" href="grafo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Matematicas Aplicadas II - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Matematicas Aplicadas II - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Notas de clase.
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1b.html">Interpretación de la integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1c.html">Metodos numericos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectores y Matrices.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Eje_tematico_2/2intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2a.html">Vectores</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2b.html">Matrices</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">Sistemas de Ecuaciones Lineales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grafo.html">Teoría de Gráficas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Cadenas de Markov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preguntas_modelos_matrices.html">Entrega</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la derivada.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Eje_tematico_3/3intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3a.html">Cuádricas</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3b.html">Diferenciación de funciones  en varias variables</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3c.html">Aproximación lineal</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3d.html">Funciones en varias variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3e.html">Optimización</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ejemplo de Entregas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Entregables/Enunciado.html">Propulsión de cohetes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Entregables/4_Cuaderno.html"><strong>RESPUESTAS</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCuadernos/Modelos/markov.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Cuadernos/Modelos/markov.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cadenas de Markov</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-fundamental">Definición fundamental</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidades-de-transicion-y-matriz-de-transicion">Probabilidades de transición y Matriz de Transición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-estado">Vector de estado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-del-sistema">Evolución del sistema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-probabilidad">Vector de probabilidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-regulares">Procesos regulares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergencia-de-matrices-regulares">Convergencia de matrices regulares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-estado-estacionario-unico">Vector de estado estacionario (único)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-metodos-para-calcular-mathbf-u">Dos métodos para calcular <span class="math notranslate nohighlight">\(\mathbf{u}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-conceptos-cubiertos">Resumen de Conceptos Cubiertos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cadenas-de-markov">
+<h1>Cadenas de Markov<a class="headerlink" href="#cadenas-de-markov" title="Link to this heading">#</a></h1>
+<section id="definicion-fundamental">
+<h2>Definición fundamental<a class="headerlink" href="#definicion-fundamental" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 150).</strong> Una <strong>cadena de Markov</strong> o <strong>proceso de Markov</strong> es aquel en el que la probabilidad de que el sistema esté en un estado particular en un periodo de observación dado, depende <strong>solamente</strong> de su estado en el periodo de observación <strong>inmediato anterior</strong>.</p>
+<ul class="simple">
+<li><p>Esta propiedad se conoce como la <strong>propiedad de Markov</strong> o <strong>propiedad sin memoria</strong>: el pasado no importa, solo el presente.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="probabilidades-de-transicion-y-matriz-de-transicion">
+<h2>Probabilidades de transición y Matriz de Transición<a class="headerlink" href="#probabilidades-de-transicion-y-matriz-de-transicion" title="Link to this heading">#</a></h2>
+<p>Sea un sistema con <span class="math notranslate nohighlight">\(n\)</span> estados posibles. Para <span class="math notranslate nohighlight">\(1 \leq i, j \leq n\)</span>, se define:</p>
+<div class="math notranslate nohighlight">
+\[t_{ij} = P(\text{el sistema pasa al estado } i \mid \text{actualmente está en el estado } j)\]</div>
+<p>Las <span class="math notranslate nohighlight">\(t_{ij}\)</span> son las <strong>probabilidades de transición</strong> y satisfacen:</p>
+<div class="math notranslate nohighlight">
+\[0 \leq t_{ij} \leq 1 \qquad \text{y} \qquad \sum_{i=1}^{n} t_{ij} = 1 \quad \forall j \tag{1}\]</div>
+<p>La condición (1) dice que <strong>cada columna</strong> de <span class="math notranslate nohighlight">\(T = [t_{ij}]\)</span> suma 1. La matriz <span class="math notranslate nohighlight">\(T\)</span> recibe los nombres de:</p>
+<ul class="simple">
+<li><p><strong>Matriz de transición</strong> (Kolman)</p></li>
+<li><p><strong>Matriz estocástica</strong> (por columnas)</p></li>
+<li><p><strong>Matriz de Markov</strong> o <strong>matriz de probabilidades</strong></p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="vector-de-estado">
+<h2>Vector de estado<a class="headerlink" href="#vector-de-estado" title="Link to this heading">#</a></h2>
+<p>El <strong>vector de estado</strong> en el periodo <span class="math notranslate nohighlight">\(k\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{x}^{(k)} = \begin{pmatrix} p_1^{(k)} \\ p_2^{(k)} \\ \vdots \\ p_n^{(k)} \end{pmatrix}\end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(p_j^{(k)}\)</span> es la probabilidad de que el sistema esté en el estado <span class="math notranslate nohighlight">\(j\)</span> en el periodo <span class="math notranslate nohighlight">\(k\)</span>. El vector <span class="math notranslate nohighlight">\(\mathbf{x}^{(0)}\)</span> es el <strong>vector de estado inicial</strong>.</p>
+<hr class="docutils" />
+</section>
+<section id="evolucion-del-sistema">
+<h2>Evolución del sistema<a class="headerlink" href="#evolucion-del-sistema" title="Link to this heading">#</a></h2>
+<p><strong>Teorema 2.4 (Kolman, p. 151).</strong> Si <span class="math notranslate nohighlight">\(T\)</span> es la matriz de transición de un proceso de Markov, entonces:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}^{(k+1)} = T\,\mathbf{x}^{(k)} \tag{2}\]</div>
+<p>Por inducción, se obtiene la fórmula general:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\mathbf{x}^{(n)} = T^n\,\mathbf{x}^{(0)}} \tag{3}\]</div>
+<p>La matriz de transición y el vector de estado inicial <strong>determinan completamente</strong> toda la evolución futura del sistema.</p>
+<hr class="docutils" />
+</section>
+<section id="vector-de-probabilidad">
+<h2>Vector de probabilidad<a class="headerlink" href="#vector-de-probabilidad" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 153).</strong> El vector <span class="math notranslate nohighlight">\(\mathbf{u} \in \mathbb{R}^n\)</span> es un <strong>vector de probabilidad</strong> si:</p>
+<div class="math notranslate nohighlight">
+\[u_i \geq 0 \quad (1 \leq i \leq n) \qquad \text{y} \qquad u_1 + u_2 + \cdots + u_n = 1\]</div>
+<p>Todo vector de estado es un vector de probabilidad.</p>
+<hr class="docutils" />
+</section>
+<section id="procesos-regulares">
+<h2>Procesos regulares<a class="headerlink" href="#procesos-regulares" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 153).</strong> Una matriz de transición <span class="math notranslate nohighlight">\(T\)</span> es <strong>regular</strong> si todas las entradas de alguna potencia <span class="math notranslate nohighlight">\(T^k\)</span> son positivas. Un proceso de Markov es <strong>regular</strong> si su matriz de transición lo es.</p>
+<p><strong>Criterio práctico:</strong> si todas las entradas de la propia <span class="math notranslate nohighlight">\(T\)</span> son positivas, entonces <span class="math notranslate nohighlight">\(T\)</span> es regular (pues <span class="math notranslate nohighlight">\(T^1\)</span> ya tiene entradas positivas).</p>
+<hr class="docutils" />
+</section>
+<section id="convergencia-de-matrices-regulares">
+<h2>Convergencia de matrices regulares<a class="headerlink" href="#convergencia-de-matrices-regulares" title="Link to this heading">#</a></h2>
+<p><strong>Teorema 2.5 (Kolman, p. 154).</strong> Si <span class="math notranslate nohighlight">\(T\)</span> es la matriz de transición de un proceso de Markov regular, entonces cuando <span class="math notranslate nohighlight">\(n \to \infty\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T^n \to A = \begin{pmatrix} u_1 &amp; u_1 &amp; \cdots &amp; u_1 \\ u_2 &amp; u_2 &amp; \cdots &amp; u_2 \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ u_n &amp; u_n &amp; \cdots &amp; u_n \end{pmatrix}\end{split}\]</div>
+<p>donde todas las columnas de <span class="math notranslate nohighlight">\(A\)</span> son idénticas y cada columna <span class="math notranslate nohighlight">\(\mathbf{u} = (u_1, \ldots, u_n)^T\)</span> es un vector de probabilidad con <span class="math notranslate nohighlight">\(u_i &gt; 0\)</span>.</p>
+<hr class="docutils" />
+</section>
+<section id="vector-de-estado-estacionario-unico">
+<h2>Vector de estado estacionario (único)<a class="headerlink" href="#vector-de-estado-estacionario-unico" title="Link to this heading">#</a></h2>
+<p><strong>Teorema 2.6 (Kolman, p. 154–155).</strong> Si <span class="math notranslate nohighlight">\(T\)</span> es una matriz de transición regular:</p>
+<p><strong>(a)</strong> Para cualquier vector de probabilidad <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[T^n \mathbf{x} \to \mathbf{u} \quad \text{cuando } n \to \infty\]</div>
+<p>es decir, <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> es el <strong>vector de estado estacionario</strong> (o de equilibrio).</p>
+<p><strong>(b)</strong> El vector <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> es el <strong>único</strong> vector de probabilidad que satisface:</p>
+<div class="math notranslate nohighlight">
+\[T\mathbf{u} = \mathbf{u} \tag{4}\]</div>
+<p><strong>Interpretación:</strong> a largo plazo, la distribución del sistema converge a <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> independientemente del estado inicial.</p>
+<hr class="docutils" />
+</section>
+<section id="dos-metodos-para-calcular-mathbf-u">
+<h2>Dos métodos para calcular <span class="math notranslate nohighlight">\(\mathbf{u}\)</span><a class="headerlink" href="#dos-metodos-para-calcular-mathbf-u" title="Link to this heading">#</a></h2>
+<p><strong>Método 1 — Iteración por potencias (Kolman, p. 155):</strong></p>
+<ol class="arabic simple">
+<li><p>Calcular <span class="math notranslate nohighlight">\(T^n \mathbf{x}^{(0)}\)</span> para <span class="math notranslate nohighlight">\(n\)</span> creciente.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> es el límite de esta sucesión.</p></li>
+</ol>
+<p><strong>Método 2 — Sistema homogéneo (Kolman, p. 155–156):</strong></p>
+<p>La ecuación <span class="math notranslate nohighlight">\(T\mathbf{u} = \mathbf{u}\)</span> equivale a:
+$<span class="math notranslate nohighlight">\((I_n - T)\mathbf{u} = \mathbf{0} \tag{5}\)</span>$</p>
+<ol class="arabic simple">
+<li><p>Resolver el sistema homogéneo (5).</p></li>
+<li><p>De la familia de soluciones, seleccionar la única que satisface <span class="math notranslate nohighlight">\(u_1 + u_2 + \cdots + u_n = 1\)</span>.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="codigo-python">
+<h2>Código Python:<a class="headerlink" href="#codigo-python" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fractions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fraction</span>
+
+<span class="c1"># ─── Matriz de transición ───────────────────────────────────────────────────</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.70</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">55</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. VERIFICACIÓN CONDICIÓN ESTOCÁSTICA (cols suman 1)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Suma columnas:&quot;</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. EVOLUCIÓN DE ESTADOS (Método 1 — iteración)&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   x^(</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">) = [</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">T</span> <span class="o">@</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. MÉTODO 2 — Sistema (I - T)u = 0 con normalización&quot;</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">T</span>
+<span class="n">A_aug</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">A_aug</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A_aug</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   u = </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Suma: </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">.10f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Error ||Tu - u|| = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. CONVERGENCIA DE T^n&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">]:</span>
+    <span class="n">Tn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">   T^</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">Tn</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. CASO NO REGULAR — Ejemplo oscilante&quot;</span><span class="p">)</span>
+<span class="n">T_star</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">x_osc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   x^(0) = </span><span class="si">{</span><span class="n">x_osc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">x_osc</span> <span class="o">=</span> <span class="n">T_star</span> <span class="o">@</span> <span class="n">x_osc</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   x^(</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">x_osc</span><span class="si">}</span><span class="s2">  ← </span><span class="si">{</span><span class="s1">&#39;OSCILA&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;       &#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="resumen-de-conceptos-cubiertos">
+<h2>Resumen de Conceptos Cubiertos<a class="headerlink" href="#resumen-de-conceptos-cubiertos" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepto</p></th>
+<th class="head"><p>Referencia Kolman</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Definición de cadena / proceso de Markov</p></td>
+<td><p>Def., p. 150</p></td>
+</tr>
+<tr class="row-odd"><td><p>Probabilidades de transición <span class="math notranslate nohighlight">\(t_{ij}\)</span></p></td>
+<td><p>p. 150, ec. (1)</p></td>
+</tr>
+<tr class="row-even"><td><p>Matriz de transición / estocástica</p></td>
+<td><p>pp. 150–151</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vector de estado <span class="math notranslate nohighlight">\(\mathbf{x}^{(k)}\)</span> y vector inicial</p></td>
+<td><p>p. 151</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Teorema 2.4:</strong> <span class="math notranslate nohighlight">\(\mathbf{x}^{(k+1)} = T\mathbf{x}^{(k)}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}^{(n)} = T^n\mathbf{x}^{(0)}\)</span></p></td>
+<td><p>p. 151</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vector de probabilidad</p></td>
+<td><p>Def., p. 153</p></td>
+</tr>
+<tr class="row-even"><td><p>Matriz de transición regular</p></td>
+<td><p>Def., p. 153</p></td>
+</tr>
+<tr class="row-odd"><td><p>Proceso NO regular — oscilación</p></td>
+<td><p>Ejemplo 5, p. 153</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Teorema 2.5:</strong> convergencia <span class="math notranslate nohighlight">\(T^n \to A\)</span></p></td>
+<td><p>p. 154</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Teorema 2.6:</strong> unicidad del vector estacionario <span class="math notranslate nohighlight">\(\mathbf{u}\)</span></p></td>
+<td><p>pp. 154–155</p></td>
+</tr>
+<tr class="row-even"><td><p>Método 1: iteración de potencias</p></td>
+<td><p>p. 155</p></td>
+</tr>
+<tr class="row-odd"><td><p>Método 2: sistema <span class="math notranslate nohighlight">\((I-T)\mathbf{u}=\mathbf{0}\)</span> + normalización</p></td>
+<td><p>pp. 155–156</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Cuadernos/Modelos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="grafo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Teoría de Gráficas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../preguntas_modelos_matrices.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Entrega</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-fundamental">Definición fundamental</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidades-de-transicion-y-matriz-de-transicion">Probabilidades de transición y Matriz de Transición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-estado">Vector de estado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolucion-del-sistema">Evolución del sistema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-probabilidad">Vector de probabilidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-regulares">Procesos regulares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergencia-de-matrices-regulares">Convergencia de matrices regulares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-estado-estacionario-unico">Vector de estado estacionario (único)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dos-metodos-para-calcular-mathbf-u">Dos métodos para calcular <span class="math notranslate nohighlight">\(\mathbf{u}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-conceptos-cubiertos">Resumen de Conceptos Cubiertos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

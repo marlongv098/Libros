@@ -27,7 +27,7 @@ parts:
             #title: Título cuarto capitulo # Corregido
           - file: Cuadernos/preguntas_modelos_pulmones_artificiales.md
 
-  - caption: Aplicaciones de los vectores y las matrices.
+  - caption: Vectores y Matrices.
     chapters:
       - file: Eje_tematico_2/2intro.md
         sections:
@@ -37,9 +37,15 @@ parts:
             #title: Titulo segundo cuaderno # Corregido
           - file: Eje_tematico_2/2c.ipynb
             #title: Titulo tercer cuaderno # Corregido
-          - file: Eje_tematico_2/2d.ipynb
+            #- file: Eje_tematico_2/2d.ipynb
             #title: Titulo cuarto cuaderno # Corregido
-          - file: Cuaderno1/preguntas_modelos_matrices.md
+          - file: Cuadernos/Modelos/matrices.md
+            #
+          - file: Cuadernos/Modelos/grafo.md
+            #
+          - file: Cuadernos/Modelos/markov.md
+            #
+          - file: Cuadernos/preguntas_modelos_matrices.md
 
   - caption: Aplicaciones de la derivada. # Corregido
     chapters:
@@ -55,6 +61,7 @@ parts:
             #title: Titulo cuarto cuaderno # Corregido
           - file: Eje_tematico_3/3e.ipynb
             #title: Titulo quinto cuaderno # Corregido
+            
 
   - caption: Ejemplo de Entregas
     chapters:

@@ -1,0 +1,807 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Teoría de Gráficas &#8212; Matematicas Aplicadas II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cuadernos/Modelos/grafo';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cadenas de Markov" href="markov.html" />
+    <link rel="prev" title="Sistemas de Ecuaciones Lineales" href="matrices.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Matematicas Aplicadas II - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Matematicas Aplicadas II - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Notas de clase.
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1b.html">Interpretación de la integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1c.html">Metodos numericos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectores y Matrices.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Eje_tematico_2/2intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2a.html">Vectores</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2b.html">Matrices</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="matrices.html">Sistemas de Ecuaciones Lineales</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Teoría de Gráficas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov.html">Cadenas de Markov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preguntas_modelos_matrices.html">Entrega</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la derivada.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Eje_tematico_3/3intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3a.html">Cuádricas</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3b.html">Diferenciación de funciones  en varias variables</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3c.html">Aproximación lineal</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3d.html">Funciones en varias variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3e.html">Optimización</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ejemplo de Entregas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Entregables/Enunciado.html">Propulsión de cohetes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Entregables/4_Cuaderno.html"><strong>RESPUESTAS</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCuadernos/Modelos/grafo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Cuadernos/Modelos/grafo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Teoría de Gráficas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-fundamental">Definición fundamental</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-adyacencia">Matriz de adyacencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-en-sociologia-y-comunicaciones">Modelos en sociología y comunicaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-en-multiples-etapas">Acceso en múltiples etapas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clanes">Clanes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectorias-y-grafos-fuertemente-conexos">Trayectorias y grafos fuertemente conexos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-terminos-clave">Resumen de términos clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-conceptos-cubiertos">Resumen de Conceptos Cubiertos</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="teoria-de-graficas">
+<h1>Teoría de Gráficas<a class="headerlink" href="#teoria-de-graficas" title="Link to this heading">#</a></h1>
+<section id="definicion-fundamental">
+<h2>Definición fundamental<a class="headerlink" href="#definicion-fundamental" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 125).</strong> Una <strong>digráfica</strong> (o gráfica dirigida) <span class="math notranslate nohighlight">\(G\)</span> consiste en un conjunto finito de <strong>vértices</strong> (o nodos) <span class="math notranslate nohighlight">\(\{P_1, P_2, \ldots, P_n\}\)</span> y un conjunto de <strong>arcos</strong> (aristas dirigidas). Cada arco <span class="math notranslate nohighlight">\(P_iP_j\)</span> es un par ordenado: va <em>de</em> <span class="math notranslate nohighlight">\(P_i\)</span> <em>a</em> <span class="math notranslate nohighlight">\(P_j\)</span>. La arista <span class="math notranslate nohighlight">\(P_iP_j\)</span> es diferente de <span class="math notranslate nohighlight">\(P_jP_i\)</span>.</p>
+<p>Las digráficas modelan situaciones donde la relación entre dos elementos <strong>no es necesariamente recíproca</strong>: influencia social, comunicación, dominancia, flujos de información.</p>
+<hr class="docutils" />
+</section>
+<section id="matriz-de-adyacencia">
+<h2>Matriz de adyacencia<a class="headerlink" href="#matriz-de-adyacencia" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 126).</strong> La <strong>matriz de adyacencia</strong> de una digráfica <span class="math notranslate nohighlight">\(G\)</span> con <span class="math notranslate nohighlight">\(n\)</span> vértices es la matriz <span class="math notranslate nohighlight">\(A(G) = [a_{ij}]\)</span> de <span class="math notranslate nohighlight">\(n \times n\)</span> donde:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a_{ij} = \begin{cases} 1 &amp; \text{si existe el arco } P_iP_j \\ 0 &amp; \text{en otro caso} \end{cases}\end{split}\]</div>
+<p><strong>Propiedades estructurales:</strong></p>
+<ul class="simple">
+<li><p>La diagonal principal es completamente cero: <span class="math notranslate nohighlight">\(a_{ii} = 0\)</span> para todo <span class="math notranslate nohighlight">\(i\)</span> (ningún vértice tiene arco hacia sí mismo).</p></li>
+<li><p>La suma de la fila <span class="math notranslate nohighlight">\(i\)</span> cuenta cuántos vértices <span class="math notranslate nohighlight">\(P_i\)</span> influye directamente (<strong>grado de salida</strong>).</p></li>
+<li><p>La suma de la columna <span class="math notranslate nohighlight">\(j\)</span> cuenta cuántos vértices influyen directamente en <span class="math notranslate nohighlight">\(P_j\)</span> (<strong>grado de entrada</strong>).</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="modelos-en-sociologia-y-comunicaciones">
+<h2>Modelos en sociología y comunicaciones<a class="headerlink" href="#modelos-en-sociologia-y-comunicaciones" title="Link to this heading">#</a></h2>
+<p>Kolman (p. 127) identifica tres tipos principales de relación modelable con digráficas:</p>
+<ol class="arabic simple">
+<li><p><strong>Acceso:</strong> <span class="math notranslate nohighlight">\(P_i\)</span> tiene acceso a <span class="math notranslate nohighlight">\(P_j\)</span> (no necesariamente recíproco). Ejemplo: teléfonos de emergencia en autopistas.</p></li>
+<li><p><strong>Influencia:</strong> <span class="math notranslate nohighlight">\(P_i\)</span> influye en <span class="math notranslate nohighlight">\(P_j\)</span> (si <span class="math notranslate nohighlight">\(P_i\)</span> influye en <span class="math notranslate nohighlight">\(P_j\)</span>, <span class="math notranslate nohighlight">\(P_j\)</span> podría o no influir en <span class="math notranslate nohighlight">\(P_i\)</span>).</p></li>
+<li><p><strong>Dominancia:</strong> para cada par, uno domina al otro pero no ambos. Estas son las <strong>digráficas de dominancia</strong> o <strong>gráficas de torneo</strong>.</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="acceso-en-multiples-etapas">
+<h2>Acceso en múltiples etapas<a class="headerlink" href="#acceso-en-multiples-etapas" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 128).</strong> <span class="math notranslate nohighlight">\(P_i\)</span> tiene <strong>acceso en <span class="math notranslate nohighlight">\(r\)</span> etapas</strong> a <span class="math notranslate nohighlight">\(P_k\)</span> si existe una sucesión <span class="math notranslate nohighlight">\(P_i, P_{j_1}, P_{j_2}, \ldots, P_{j_{r-1}}, P_k\)</span> tal que cada par consecutivo está conectado por un arco.
+<strong>Teorema 2.1 (Kolman, p. 128).</strong> Sea <span class="math notranslate nohighlight">\(A(G)\)</span> la matriz de adyacencia de una digráfica <span class="math notranslate nohighlight">\(G\)</span> y sea <span class="math notranslate nohighlight">\(B_r = [A(G)]^r\)</span> la <span class="math notranslate nohighlight">\(r\)</span>-ésima potencia. Entonces el elemento <span class="math notranslate nohighlight">\((i,j)\)</span> de <span class="math notranslate nohighlight">\(B_r\)</span> es el <strong>número de formas</strong> en que <span class="math notranslate nohighlight">\(P_i\)</span> tiene acceso a <span class="math notranslate nohighlight">\(P_j\)</span> en <strong>exactamente <span class="math notranslate nohighlight">\(r\)</span> etapas</strong>.
+<strong>Corolario:</strong> Si definimos la matriz acumulada</p>
+<div class="math notranslate nohighlight">
+\[C = A(G) + [A(G)]^2 + \cdots + [A(G)]^r\]</div>
+<p>entonces <span class="math notranslate nohighlight">\(c_{ij}\)</span> es el número de formas en que <span class="math notranslate nohighlight">\(P_i\)</span> tiene acceso a <span class="math notranslate nohighlight">\(P_j\)</span> en <strong>una, dos, …, o <span class="math notranslate nohighlight">\(r\)</span> etapas</strong>. Esto modela la <strong>propagación de rumores, tendencias o influencia indirecta</strong>.</p>
+<hr class="docutils" />
+</section>
+<section id="clanes">
+<h2>Clanes<a class="headerlink" href="#clanes" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 129).</strong> En una digráfica, un <strong>clan</strong> es un subconjunto <strong>maximal</strong> <span class="math notranslate nohighlight">\(S\)</span> de vértices tal que:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|S| \geq 3\)</span>.</p></li>
+<li><p>Para todo <span class="math notranslate nohighlight">\(P_i, P_j \in S\)</span>, existe el arco <span class="math notranslate nohighlight">\(P_iP_j\)</span> <strong>y</strong> el arco <span class="math notranslate nohighlight">\(P_jP_i\)</span> (acceso mutuo).</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> es maximal: no existe <span class="math notranslate nohighlight">\(T \supsetneq S\)</span> que satisfaga (b).</p></li>
+</ul>
+<p><strong>Procedimiento para detectar clanes (Kolman, p. 130):</strong></p>
+<p><strong>Paso 1.</strong> Construir la <strong>matriz simétrica</strong> <span class="math notranslate nohighlight">\(S = [s_{ij}]\)</span> donde:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_{ij} = s_{ji} = \begin{cases} 1 &amp; \text{si } a_{ij} = 1 \text{ y } a_{ji} = 1 \\ 0 &amp; \text{en otro caso}\end{cases}\end{split}\]</div>
+<p><strong>Paso 2.</strong> Calcular <span class="math notranslate nohighlight">\(S^3 = [s_{ij}^{(3)}]\)</span>.</p>
+<p><strong>Teorema 2.2 (Kolman, p. 130).</strong> <span class="math notranslate nohighlight">\(P_i\)</span> pertenece a un clan <strong>si y sólo si</strong> <span class="math notranslate nohighlight">\(s_{ii}^{(3)} &gt; 0\)</span>.</p>
+<p><strong>Intuición:</strong> <span class="math notranslate nohighlight">\(s_{ii}^{(3)} &gt; 0\)</span> significa que <span class="math notranslate nohighlight">\(P_i\)</span> puede alcanzarse a sí mismo en tres pasos dentro del grafo simétrico, lo que garantiza la existencia de un triángulo mutuo <span class="math notranslate nohighlight">\(P_i \to P_j \to P_k \to P_i\)</span>.</p>
+<hr class="docutils" />
+</section>
+<section id="trayectorias-y-grafos-fuertemente-conexos">
+<h2>Trayectorias y grafos fuertemente conexos<a class="headerlink" href="#trayectorias-y-grafos-fuertemente-conexos" title="Link to this heading">#</a></h2>
+<p><strong>Definición (Kolman, p. 132).</strong> Una <strong>trayectoria</strong> (o camino) de <span class="math notranslate nohighlight">\(P_i\)</span> a <span class="math notranslate nohighlight">\(P_k\)</span> es una sucesión de vértices <strong>distintos</strong> <span class="math notranslate nohighlight">\(P_i, P_{a}, P_{b}, \ldots, P_{r}, P_k\)</span> unidos por arcos dirigidos consecutivos.</p>
+<p><strong>Definición (Kolman, p. 132).</strong> La digráfica <span class="math notranslate nohighlight">\(G\)</span> es <strong>fuertemente conexa</strong> si para cualesquiera dos vértices <span class="math notranslate nohighlight">\(P_i\)</span> y <span class="math notranslate nohighlight">\(P_j\)</span> (con <span class="math notranslate nohighlight">\(i \neq j\)</span>) existe una trayectoria dirigida de <span class="math notranslate nohighlight">\(P_i\)</span> a <span class="math notranslate nohighlight">\(P_j\)</span>.</p>
+<p><strong>Teorema 2.3 (Kolman, p. 133).</strong> Una digráfica con <span class="math notranslate nohighlight">\(n\)</span> vértices es fuertemente conexa <strong>si y sólo si</strong> la matriz</p>
+<div class="math notranslate nohighlight">
+\[E = A(G) + [A(G)]^2 + \cdots + [A(G)]^{n-1}\]</div>
+<p>no tiene ninguna entrada igual a cero.</p>
+<p><strong>Procedimiento (Kolman, p. 133):</strong></p>
+<p><strong>Paso 1.</strong> Calcular <span class="math notranslate nohighlight">\(E = A(G) + [A(G)]^2 + \cdots + [A(G)]^{n-1}\)</span>.</p>
+<p><strong>Paso 2.</strong> <span class="math notranslate nohighlight">\(G\)</span> es fuertemente conexa <span class="math notranslate nohighlight">\(\iff\)</span> toda entrada de <span class="math notranslate nohighlight">\(E\)</span> es positiva.</p>
+<hr class="docutils" />
+</section>
+<section id="resumen-de-terminos-clave">
+<h2>Resumen de términos clave<a class="headerlink" href="#resumen-de-terminos-clave" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Término</p></th>
+<th class="head"><p>Significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Digráfica (gráfica dirigida)</p></td>
+<td><p>Grafo con arcos ordenados</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vértices (nodos)</p></td>
+<td><p>Elementos de la red</p></td>
+</tr>
+<tr class="row-even"><td><p>Arcos dirigidos</p></td>
+<td><p>Relaciones con dirección <span class="math notranslate nohighlight">\(P_i \to P_j\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Matriz de adyacencia <span class="math notranslate nohighlight">\(A(G)\)</span></p></td>
+<td><p>Representación matricial de la digráfica</p></td>
+</tr>
+<tr class="row-even"><td><p>Acceso en <span class="math notranslate nohighlight">\(r\)</span> etapas</p></td>
+<td><p>Alcance indirecto a través de <span class="math notranslate nohighlight">\(r\)</span> intermediarios</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clan</p></td>
+<td><p>Subgrupo maximal de influencia mutua (<span class="math notranslate nohighlight">\(\geq 3\)</span> nodos)</p></td>
+</tr>
+<tr class="row-even"><td><p>Fuertemente conexa</p></td>
+<td><p>Toda la red es alcanzable desde cualquier nodo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="codigo-python">
+<h2>Código Python:<a class="headerlink" href="#codigo-python" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># ─── Matriz de adyacencia ─────────────────────────────────────────────────</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="s1">&#39;C5&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">55</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PARTE 2 — Grados de salida y entrada&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grados de salida:&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grados de entrada:&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">labels</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span> <span class="n">A</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">PARTE 3 — Potencias de A(G)&quot;</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">A</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A^2:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A2</span><span class="p">)</span>
+<span class="n">C_acc</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">A2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A + A^2:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">C_acc</span><span class="p">)</span>
+
+<span class="c1"># Caminos C1-&gt;C2 en 2 pasos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Caminos C1-&gt;C2 en exactamente 2 pasos:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  C1 -&gt; C</span><span class="si">{</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> -&gt; C2&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">PARTE 4 — Clanes (Teorema 2.2)&quot;</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+               <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+<span class="n">S3</span> <span class="o">=</span> <span class="n">S</span> <span class="o">@</span> <span class="n">S</span> <span class="o">@</span> <span class="n">S</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S^3:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">S3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diagonal de S^3:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">S3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pertenecen a un clan:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">S3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">PARTE 5 — Conexión fuerte (Teorema 2.3)&quot;</span><span class="p">)</span>
+<span class="n">A3</span> <span class="o">=</span> <span class="n">A2</span> <span class="o">@</span> <span class="n">A</span>
+<span class="n">A4</span> <span class="o">=</span> <span class="n">A3</span> <span class="o">@</span> <span class="n">A</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">A2</span> <span class="o">+</span> <span class="n">A3</span> <span class="o">+</span> <span class="n">A4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E = A+A²+A³+A⁴:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fuertemente conexa:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">E</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">PARTE 6 — Sin C1&quot;</span><span class="p">)</span>
+<span class="n">A_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A(G&#39;) sin C1:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A_p</span><span class="p">)</span>
+<span class="n">A_p2</span> <span class="o">=</span> <span class="n">A_p</span> <span class="o">@</span> <span class="n">A_p</span>
+<span class="n">A_p3</span> <span class="o">=</span> <span class="n">A_p2</span> <span class="o">@</span> <span class="n">A_p</span>
+<span class="n">Ep</span> <span class="o">=</span> <span class="n">A_p</span> <span class="o">+</span> <span class="n">A_p2</span> <span class="o">+</span> <span class="n">A_p3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E&#39;:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Ep</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;G&#39; fuertemente conexa:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">Ep</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="resumen-de-conceptos-cubiertos">
+<h2>Resumen de Conceptos Cubiertos<a class="headerlink" href="#resumen-de-conceptos-cubiertos" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepto</p></th>
+<th class="head"><p>Referencia Kolman</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Digráfica, vértices, arcos</p></td>
+<td><p>Def., p. 125</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matriz de adyacencia <span class="math notranslate nohighlight">\(A(G)\)</span></p></td>
+<td><p>p. 126</p></td>
+</tr>
+<tr class="row-even"><td><p>Grado de salida / grado de entrada</p></td>
+<td><p>p. 127</p></td>
+</tr>
+<tr class="row-odd"><td><p>Modelos de influencia en sociología</p></td>
+<td><p>p. 127</p></td>
+</tr>
+<tr class="row-even"><td><p>Acceso en <span class="math notranslate nohighlight">\(r\)</span> etapas</p></td>
+<td><p>Def., p. 128</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Teorema 2.1:</strong> <span class="math notranslate nohighlight">\([A(G)]^r\)</span> cuenta caminos</p></td>
+<td><p>p. 128</p></td>
+</tr>
+<tr class="row-even"><td><p>Acumulado <span class="math notranslate nohighlight">\(A + A^2 + \cdots + A^r\)</span></p></td>
+<td><p>p. 128, ec. (1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Definición de clan</p></td>
+<td><p>Def., p. 129</p></td>
+</tr>
+<tr class="row-even"><td><p>Matriz simétrica <span class="math notranslate nohighlight">\(S\)</span> para clanes</p></td>
+<td><p>p. 130</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Teorema 2.2:</strong> <span class="math notranslate nohighlight">\(s_{ii}^{(3)} &gt; 0 \iff C_i \in\)</span> clan</p></td>
+<td><p>p. 130</p></td>
+</tr>
+<tr class="row-even"><td><p>Trayectoria / camino en digráfica</p></td>
+<td><p>Def., p. 132</p></td>
+</tr>
+<tr class="row-odd"><td><p>Digráfica fuertemente conexa</p></td>
+<td><p>Def., p. 132</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Teorema 2.3:</strong> criterio matricial conexión fuerte</p></td>
+<td><p>p. 133</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eliminación de nodo — robustez de la red</p></td>
+<td><p>Aplicación</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Cuadernos/Modelos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matrices.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sistemas de Ecuaciones Lineales</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markov.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cadenas de Markov</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-fundamental">Definición fundamental</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-adyacencia">Matriz de adyacencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-en-sociologia-y-comunicaciones">Modelos en sociología y comunicaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-en-multiples-etapas">Acceso en múltiples etapas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clanes">Clanes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectorias-y-grafos-fuertemente-conexos">Trayectorias y grafos fuertemente conexos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-terminos-clave">Resumen de términos clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-de-conceptos-cubiertos">Resumen de Conceptos Cubiertos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

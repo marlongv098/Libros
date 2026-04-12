@@ -21,26 +21,27 @@ Todo debe hacerse usando una lista enlazada genérica como estructura de datos.
 
  ┣ estructuras/
 
- ┃ ┣  Nodo.java                  (Generica)
+   ┣  Nodo.java                  (Generica)
 
- ┃ ┣  ListaEnlazada.java         (Generica)
+   ┣  ListaEnlazada.java         (Generica)
 
  ┣  modelo/
 
- ┃ ┣ Ciudadano.java             (id: String)
+   ┣ Ciudadano.java             (id: String)
 
- ┃ ┣  Estudiante.java            (id: Integer)
+   ┣  Estudiante.java            (id: Integer)
 
- ┣  Producto.java              (id: String, precio: double)
+   ┣  Producto.java              (id: String, precio: double)
 
 
  ┣ gestor/
 
- ┃ ┣  Gestor.java                (Gestor<T> con ListaEnlazada<T>)
+   ┣  Gestor.java                (Gestor<T> con ListaEnlazada<T>)
 
  ┣  ui/
 
- ┃ ┣  Main.java                  (Debe de haber al menos un: agregar, obtener, eliminar y buscar por cada uno de los modelos)
+   ┣  Main.java                  (Debe de haber al menos un: agregar, obtener, eliminar y buscar por cada uno de los modelos)
+
 
     
 ## Tenga en cuenta lo siguiente: 

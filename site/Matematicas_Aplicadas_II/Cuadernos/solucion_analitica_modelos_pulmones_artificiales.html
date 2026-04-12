@@ -194,7 +194,7 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectores y Matrices.</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
@@ -204,7 +204,10 @@
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modelos/matrices.html">Sistemas de Ecuaciones Lineales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modelos/grafo.html">Teoría de Gráficas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modelos/markov.html">Cadenas de Markov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preguntas_modelos_matrices.html">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -460,7 +463,7 @@ document.write(`
 \[
 R \frac{dV_i}{dt} + \frac{1}{C} V_i + P_{ex} = P_{app}
 \]</div>
-<p>Restamos $<span class="math notranslate nohighlight">\(P_{ex}\)</span>$:</p>
+<p>Restamos <span class="math notranslate nohighlight">\(P_{ex}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 R \frac{dV_i}{dt} + \frac{1}{C} V_i = P_{app} - P_{ex}
@@ -474,73 +477,47 @@ R \frac{dV_i}{dt} + \frac{1}{C} V_i = P_{app} - P_{ex}
 <p>Factor integrante:</p>
 <div class="math notranslate nohighlight">
 \[
-\mu(t) = e^{\int \frac{1}{RC} dt}
-= e^{t/(RC)}
+\mu(t) = e^{\int \frac{1}{RC} dt} = e^{t/(RC)}
 \]</div>
 <p>Multiplicamos toda la ecuación:</p>
 <div class="math notranslate nohighlight">
 \[
-e^{t/(RC)} \frac{dV_i}{dt}
-+ \frac{1}{RC} e^{t/(RC)} V_i
-=
-\frac{P_{app}-P_{ex}}{R} e^{t/(RC)}
+e^{t/(RC)} \frac{dV_i}{dt} + \frac{1}{RC} e^{t/(RC)} V_i = \frac{P_{app}-P_{ex}}{R} e^{t/(RC)}
 \]</div>
 <p>Lado izquierdo es derivada de producto:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{d}{dt}
-\left(
-V_i e^{t/(RC)}
-\right)
-=
-\frac{P_{app}-P_{ex}}{R} e^{t/(RC)}
+\frac{d}{dt} \left(V_i e^{t/(RC)} \right) = \frac{P_{app}-P_{ex}}{R} e^{t/(RC)}
 \]</div>
 <p>Integramos:</p>
 <div class="math notranslate nohighlight">
 \[
-V_i e^{t/(RC)}
-=
-\frac{P_{app}-P_{ex}}{R}
-\int e^{t/(RC)} dt
-+ K
+V_i e^{t/(RC)} = \frac{P_{app}-P_{ex}}{R} \int e^{t/(RC)} dt + K
 \]</div>
 <p>Calculamos la integral:</p>
 <div class="math notranslate nohighlight">
 \[
-\int e^{t/(RC)} dt
-=
-RC e^{t/(RC)}
+\int e^{t/(RC)} dt = RC e^{t/(RC)}
 \]</div>
 <p>Entonces:</p>
 <div class="math notranslate nohighlight">
 \[
-V_i e^{t/(RC)}
-=
-\frac{P_{app}-P_{ex}}{R}
-RC e^{t/(RC)}
-+ K
+V_i e^{t/(RC)} = \frac{P_{app}-P_{ex}}{R} RC e^{t/(RC)} + K
 \]</div>
 <p>Simplificamos:</p>
 <div class="math notranslate nohighlight">
 \[
-V_i e^{t/(RC)}
-=
-C (P_{app}-P_{ex}) e^{t/(RC)} + K
+V_i e^{t/(RC)} = C (P_{app}-P_{ex}) e^{t/(RC)} + K
 \]</div>
 <p>Despejamos:</p>
 <div class="math notranslate nohighlight">
 \[
-V_i(t)
-=
-C (P_{app}-P_{ex})
-+
-K e^{-t/(RC)}
+V_i(t) = C (P_{app}-P_{ex}) + K e^{-t/(RC)}
 \]</div>
-<p>Usamos condición $<span class="math notranslate nohighlight">\(V_i(0)=0\)</span>$:</p>
+<p>Usamos condición <span class="math notranslate nohighlight">\(V_i(0)=0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-0 =
-C (P_{app}-P_{ex}) + K
+0 = C (P_{app}-P_{ex}) + K
 \]</div>
 <p>Entonces:</p>
 <div class="math notranslate nohighlight">
@@ -550,12 +527,7 @@ K = - C (P_{app}-P_{ex})
 <p>Solución final:</p>
 <div class="math notranslate nohighlight">
 \[
-V_i(t)
-=
-C (P_{app}-P_{ex})
-\left(
-1 - e^{-t/(RC)}
-\right)
+V_i(t) = C (P_{app}-P_{ex}) \left(1 - e^{-t/(RC)} \right)
 \]</div>
 </section>
 <hr class="docutils" />
@@ -585,40 +557,22 @@ e^{t/(RC)}
 <p>Solución general:</p>
 <div class="math notranslate nohighlight">
 \[
-V_e(t)
-=
-- C P_{ex}
-+
-K e^{-t/(RC)}
+V_e(t) = - C P_{ex} + K e^{-t/(RC)}
 \]</div>
-<p>Usamos condición $<span class="math notranslate nohighlight">\(V_e(t_i)=V_T\)</span>$:</p>
+<p>Usamos condición <span class="math notranslate nohighlight">\(V_e(t_i)=V_T\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-V_T =
-- C P_{ex}
-+
-K e^{-t_i/(RC)}
+V_T = - C P_{ex} + K e^{-t_i/(RC)}
 \]</div>
 <p>Despejamos K:</p>
 <div class="math notranslate nohighlight">
 \[
-K =
-\left(
-V_T + C P_{ex}
-\right)
-e^{t_i/(RC)}
+K = \left(V_T + C P_{ex} \right) e^{t_i/(RC)}
 \]</div>
 <p>Entonces:</p>
 <div class="math notranslate nohighlight">
 \[
-V_e(t)
-=
-- C P_{ex}
-+
-\left(
-V_T + C P_{ex}
-\right)
-e^{-(t-t_i)/(RC)}
+V_e(t) = - C P_{ex} + \left(V_T + C P_{ex} \right) e^{-(t-t_i)/(RC)}
 \]</div>
 </section>
 <hr class="docutils" />
@@ -632,11 +586,7 @@ V_i(t_i)=V_T
 <p>Entonces:</p>
 <div class="math notranslate nohighlight">
 \[
-V_T =
-C (P_{app}-P_{ex})
-\left(
-1 - e^{-t_i/(RC)}
-\right)
+V_T = C (P_{app}-P_{ex}) \left(1 - e^{-t_i/(RC)} \right)
 \]</div>
 <p>Ahora usamos condición final:</p>
 <div class="math notranslate nohighlight">
@@ -646,21 +596,13 @@ V_e(t_{tot})=0
 <p>Sustituimos:</p>
 <div class="math notranslate nohighlight">
 \[
-0 =
-- C P_{ex}
-+
-\left(
-V_T + C P_{ex}
-\right)
-e^{-(t_{tot}-t_i)/(RC)}
+0 = - C P_{ex} + \left(V_T + C P_{ex} \right) e^{-(t_{tot}-t_i)/(RC)}
 \]</div>
-<p>Despejamos cuidadosamente y sustituimos $<span class="math notranslate nohighlight">\(V_T\)</span>$.</p>
+<p>Despejamos cuidadosamente y sustituimos <span class="math notranslate nohighlight">\(V_T\)</span>.</p>
 <p>Después de simplificar algebraicamente se obtiene:</p>
 <div class="math notranslate nohighlight">
 \[
-P_{ex} =
-\frac{(e^{t_i/(RC)}-1)P_{app}}
-{e^{t_{tot}/(RC)}-1}
+P_{ex} = \frac{(e^{t_i/(RC)}-1)P_{app}} {e^{t_{tot}/(RC)}-1}
 \]</div>
 </section>
 <hr class="docutils" />
@@ -679,21 +621,11 @@ RC = 10 \times 0.02 = 0.2
 <p>Las funciones quedan:</p>
 <div class="math notranslate nohighlight">
 \[
-V_i(t)
-=
-0.02(20-P_{ex})
-\left(
-1 - e^{-5t}
-\right)
+V_i(t) = 0.02(20-P_{ex}) \left(1 - e^{-5t} \right)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-V_e(t)
-=
--0.02P_{ex}
-+
-(V_T+0.02P_{ex})
-e^{-5(t-1)}
+V_e(t) = -0.02P_{ex} + (V_T+0.02P_{ex}) e^{-5(t-1)}
 \]</div>
 </section>
 <hr class="docutils" />
@@ -702,31 +634,17 @@ e^{-5(t-1)}
 <p>Recordemos:</p>
 <div class="math notranslate nohighlight">
 \[
-P_m =
-\frac{1}{t_i}
-\int_0^{t_i}
-\left(
-\frac{V_i(t)}{C}
-\right)
-dt
-+ P_{ex}
+P_m = \frac{1}{t_i} \int_0^{t_i} \left(\frac{V_i(t)}{C} \right)dt + P_{ex}
 \]</div>
 <p>Sustituimos:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{V_i(t)}{C}
-=
-(P_{app}-P_{ex})
-(1 - e^{-t/(RC)})
+\frac{V_i(t)}{C} = (P_{app}-P_{ex}) (1 - e^{-t/(RC)})
 \]</div>
 <p>Entonces:</p>
 <div class="math notranslate nohighlight">
 \[
-P_m =
-\frac{P_{app}-P_{ex}}{t_i}
-\int_0^{t_i}
-(1 - e^{-t/(RC)}) dt
-+ P_{ex}
+P_m = \frac{P_{app}-P_{ex}}{t_i} \int_0^{t_i} (1 - e^{-t/(RC)}) dt + P_{ex}
 \]</div>
 <p>Integramos término a término:</p>
 <div class="math notranslate nohighlight">
@@ -735,20 +653,12 @@ P_m =
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\int_0^{t_i} e^{-t/(RC)} dt
-=
-RC (1 - e^{-t_i/(RC)})
+\int_0^{t_i} e^{-t/(RC)} dt = RC (1 - e^{-t_i/(RC)})
 \]</div>
 <p>Sustituimos:</p>
 <div class="math notranslate nohighlight">
 \[
-P_m =
-(P_{app}-P_{ex})
-\left(
-1 - \frac{RC}{t_i}
-(1 - e^{-t_i/(RC)})
-\right)
-+ P_{ex}
+P_m = (P_{app}-P_{ex}) \left(1 - \frac{RC}{t_i} (1 - e^{-t_i/(RC)})\right) + P_{ex}
 \]</div>
 <p>Esta es la expresión final de la presión alveolar media.</p>
 </section>

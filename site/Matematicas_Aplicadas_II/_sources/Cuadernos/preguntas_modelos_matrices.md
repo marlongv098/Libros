@@ -1,143 +1,70 @@
 # Entrega
 
-## Matrices
+## Taller de Ebanistería
 
-* Una empresa de transporte urbano opera $4$ rutas ($R_1$, $R_2$, $R_3$ y $R_4$). Cada ruta incurre mensualmente en costos por:
+**Contexto.** 
 
-  - Conductor: $C$ (costos por turno de conductor).
-  - Autobús: $A$ (costos por bus asignado; corresponde a arrendamiento/amortización).
-  - Combustible: $F$ (cantidad de combustible consumido).
-  - Mantenimiento: $M$ (costo mantenimiento programada).
+Un taller de ebanistería fabrica tres tipos de muebles: **sillas** ($x_1$), **mesas de café** ($x_2$), **mesas de comedor** ($x_3$) y **estantes** ($x_4$). Cada pieza pasa secuencialmente por tres estaciones de trabajo: **lijado** ($L$), **pintura** ($P$) y **barnizado** ($B$). Los tiempos de procesamiento en minutos por unidad son:
 
-* Para el mes analizado, la planificación operativa (unidades consumidas por ruta) y los costos totales mensuales por ruta son:
+| Estación | Silla ($x_1$) | Mesa café ($x_2$) | Mesa comedor ($x_3$) | Estante ($x_4$) |
+|:---:|:---:|:---:|:---:|:---:|
+| Lijado ($L$) | 10 | 12 | 15 | 20 |
+| Pintura ($P$) | 6 | 8 | 12 | 14 |
+| Barnizado ($B$) | 12 | 12 | 18 | 24 |
 
-  1. En la Ruta 1 ($R_{1}$) se emplean 3 conductores, 3 autobuses, 5 hectolitros  de combustible y 1 revisión de mantenimiento. El costo total es 13770 euros.
-  2. En la Ruta 2 ($R_{2}$) se utilizan 5 conductores, 3 autobuses, 3 hectolitros de combustible y 4 revisiones de mantenimiento. El costo total es 17512 euros.
-  3. En la Ruta 3 ($R_{3}$) se necesitan 3 conductores, 3 autobuses, 5 hectolitros de combustible y 3 revisiones de mantenimiento. El costo total es 14270 euros.
-  4. En la Ruta 4 ($R_{4}$) se usan 4 conductores, 2 autobuses, 4 hectolitros de combustible y 0 revisiones de mantenimiento. El costo total es 12016 euros.
+La disponibilidad semanal de cada estación es: lijado **16 h** (960 min), pintura **11 h** (660 min), barnizado **18 h** (1 080 min). 
 
-### Preguntas
+**Preguntas**
 
-  1. Plantee el sistema matricial $AX=B$ correspondiente al problema.
-  2. Resuelva el sistema usando métodos matriciales.
+1. El gerente desea conocer **todas** las combinaciones de producción que operan a plena capacidad. 
+2. Se debe tener en cuenta que el gerente desea que todas las combinaciones posibles sean enteras. 
+
+## Red de influencia en un comité de evaluación
+
+**Contexto**
+
+Cinco investigadores — Romero ($C_1$), Salcedo ($C_2$), Torres ($C_3$), Ureña ($C_4$) y Vega ($C_5$) — integran el comité de evaluación de proyectos de investigación de una universidad. A lo largo de múltiples sesiones de deliberación, el coordinador del comité ha registrado las siguientes relaciones de influencia: cuando un investigador respalda públicamente la postura de otro durante las discusiones, se establece un arco dirigido entre ellos.
+
+- Romero ($C_1$) influye en Salcedo ($C_2$), Torres ($C_3$) y Ureña ($C_4$).
+- Salcedo ($C_2$) influye en Romero ($C_1$) y Torres ($C_3$).
+- Torres ($C_3$) influye en Romero ($C_1$), Salcedo ($C_2$) y Vega ($C_5$).
+- Ureña ($C_4$) influye en Salcedo ($C_2$) y Vega ($C_5$).
+- Vega ($C_5$) influye en Torres ($C_3$) y Ureña ($C_4$).
+
+**Preguntas**
+
+  1. Trace el grafo $G$ de la red usando NetworkX. Cada nodo es un investigador y cada arco $C_i \to C_j$ indica que $C_i$ influye en $C_j$.
+  2. Construya la matriz de adyacencia $A(G) = [a_{ij}]$ de $5 \times 5$.
+  3. ¿Qué investigador(es) tienen mayor grado de salida (influyen en más personas)?
+  4. ¿Qué investigador(es) tienen mayor grado de entrada (son más influenciados)?
+  5. Calcule $[A(G)]^2$. Interprete $b_{12}^{(2)}$ y $b_{44}^{(2)}$.
+  6. Forme $C = A(G) + [A(G)]^2$ e identifique pares sin acceso en $\leq 2$ etapas. Que sugiere el resultado obtenido. Haga todos los análisis del problema.
+  7. Determine si hay un clan dentro del grafo. **Clan** Construya una matriz $S$ tal que  $s_{ij} = 1$ si y sólo si $a_{ij} = 1$ y $a_{ji} = 1$ (influencia mutua). La matrix $S$ es simetrica. Calcule $S^3$ que resultado obtiene. Interprete la información de la matriz obtenida. 
+  8. Interprete el resultado obtenido al determinar si $G$ es fuertemente conexa calculando 
   
-## Variable Limpieza  
-
-La empresa decide incorporar la variable limpieza sin modificar los costos totales. La limpieza profunda no se realiza de la misma manera en todas las rutas, pues depende de factores como la duración del recorrido, el número de pasajeros transportados y las condiciones ambientales:
-
-  - Limpieza: L (costo de limpieza).
-
+  $$E = A(G) + [A(G)]^2 + [A(G)]^3 + [A(G)]^4$$ 
+  9. Suponga que $C_1$ abandona la red. Analice si la red restante $G'$ sobre $\{C_2, C_3, C_4, C_5\}$ sigue siendo fuertemente conexa.
   
-* Las intervenciones de limpieza planificadas por ruta son:
+## Dinámica de Calificaciones Crediticias
 
-  1. Ruta 1 ($R_{1}$): cada autobús realiza 1 limpieza profunda mensual.
-  2. Ruta 2 ($R_{2}$): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes respecto de $R_{1}$.
-  3. Ruta 3 ($R_{3}$): aunque tiene poco flujo de pasajeros, atraviesa zonas rurales y polvorientas, por lo que requiere la misma cantidad de limpiezas que $R_{1}$.
-  4. Ruta 4 ($R_{4}$): al operar en zonas poco concurridas la rotación es baja, por lo que no se programan limpiezas todos los meses. 
+**Contexto** 
 
-### Preguntas
+Una firma de análisis financiero clasifica a sus clientes corporativos en tres categorías de riesgo crediticio: A (bajo riesgo), B (riesgo medio) y C (alto riesgo). Con base en datos históricos trimestrales, se han estimado las siguientes probabilidades de transición entre categorías:
 
-* Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.
-* Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?. 
+  * De los clientes en categoría A: el $70\%$ permanece en A, el $20\%$ degrada a B y el $10\%$ degrada a C.
+  * De los clientes en categoría B: el $40\%$ mejora a A, el $40\%$ permanece en B y el $20\%$ degrada a C.
+  * De los clientes en categoría C: el $20\%$ mejora a A, el $30\%$ mejora a B y el $50\%$ permanece en C.
 
-## Grafos
+**Preguntas**
 
-En una plataforma de redes sociales, cinco influencers ($I_{1}$,$I_{2}$,$I_{3}$,$I_{4}$,$I_{5}$) interactúan y afectan las opiniones de sus seguidores con distinta intensidad.
-
-* Para modelar este comportamiento, se le asignaron pesos a cada conexión, donde:
-
-  1. Un peso alto indica mayor influencia sobre el otro influencer. 
-  2. Un peso bajo indica menor influencia.
-
-* La relación de influencia entre ellos se modela de la siguiente manera:
-
-  1. $I_{1}$ influye en $I_{2}(0.8)$, $I_{4}(0.6)$ y $I_{5}(0.7)$. 
-  2. $I_{2}$ influye en $I_{3}(0.9)$ y $I_{4}(0.5)$. 
-  3. $I_{3}$ influye en $I_{1}(0.4)$ y $I_{4}(0.8)$.
-  4. $I_{4}$ influye en $I_{5}(0.9)$. 
-  5. $I_{5}$ influye en $I_{2}(0.6)$ y $I_{3}(0.7)$.
-
-La influencia puede representarse mediante un grafo dirigido, donde un arco de $I_{i}$ a $I_{j$ indica que $I_{i}$ influye en $I_{j}$ y el peso representa que tan fuerte es la conexión existente entre los influencers.
-
-### Preguntas 
-
-- Representación de la Influencia: 
-
-  1. Construya la matriz de adyacencia ponderada $W$, donde $W_{ij}$ representa la influencia de $I_{i}$ sobre $I_{j}$ 
-  2. Dibuje el grafo dirigido con pesos para visualizar la estructura de influencia.
-
-- Análisis de Influencia Global: 
-
-  1. ¿Qué influencer tiene la mayor suma de pesos salientes (es decir, influye más en los demás)? 
-  2. ¿Qué influencer tiene la mayor suma de pesos entrantes (es decir, es más influenciado por otros)? 
-
-- Impacto de un Influencer Clave: 
-
-  1. Si $I_{1}$ deja de publicar contenido, ¿cómo afecta la influencia en la red?
-  2. Si $I_{5}$ aumenta en un $50\%$ su influencia sobre $I_{2}$ e $I_{3}$, ¿cómo cambia la propagación de la información en la red?
-
-- Propagación de una Opinión o Producto Nuevo: 
-
-  1. Supongamos que un nuevo producto es promocionado inicialmente solo por $I_{1}$. Modela la propagación del producto en la red considerando que cada influencer adopta el producto con una probabilidad proporcional a la influencia que recibe. 
-  2. ¿Cuánto tiempo (en términos de pasos de propagación) tarda en llegar a todos los influencers?
-
-## Markov
-
-1. Modelado de Comportamiento de Usuarios en una Página Web con Cadenas de Markov. Imagina una página web con 4 secciones (variables/estados) que un usuario puede visitar:
-
-  - Inicio (I): Página principal. 
-  - Productos (P): Catálogo de productos. 
-  - Blog (B): Artículos informativos. 
-  - Carrito (C): Página de compra. 
-
-2. Se quiere modelar las transiciones entre estas páginas como una Cadena de Markov para:
-
-  - Predecir la próxima sección que visitará un usuario dado su estado actual. 
-  - Calcular el estado de equilibrio (distribución estacionaria) para saber la proporción de tiempo que los usuarios pasan en cada página a largo plazo.
-
-Basado en datos históricos la matriz de transición del problema, la cual contiene las probabilidades de moverse de una pagina a otra, puede construirse con la siguiente información:
-
-a) Un usuario en Inicio tiene: 
-
-  - $20\%$ de probabilidad de quedarse en Inicio. 
-  - $40\%$ de ir a Productos. 
-  - $30\%$ de ir al Blog. 
-  - $10\%$ de ir al Carrito. 
-
-b) Un usuario en Producto tiene: 
-
-  - $30\%$ de ir a Inicio. 
-  - $30\%$ de quedarse en Productos. 
-  - $20\%$ de ir al Blog. 
-  - $20\%$ de ir al Carrito.
-
-c) Un usuario en Blog tiene: 
-
-  - $10\%$ de ir a Inicio. 
-  - $20\%$ de ir a Productos. 
-  - $50\%$ de quedarse en Blog. 
-  - $20\%$ de ir al Carrito.
-
-d) Un usuario en Carrito tiene: 
-
-  - $40\%$ de ir a Inicio. 
-  - $10\%$ de ir a Productos. 
-  - $10\%$ de ir a Blog. 
-  - $40\%$ de quedarse en Carrito.
-
-### Preguntas
-
-Predicción de la próxima página: 
-
-a) Si un usuario está actualmente en la página de Blog (B), ¿cuál es la probabilidad de que visite Carrito (C) en la siguiente paso?
-
-b) Encuentra el vector de estado estacionario del sistema. Se debe en cuenta que el vector satisface Tx=x donde T es la matriz de transición del problema y x es el vector de estado estacionario, donde la suma de los componentes del vector de estado estacionario debe ser igual a 1. 
-
-c) Si un usuario está actualmente en Inicio (I), ¿cuál es la probabilidad de que esté en Carrito (C) después de 2 pasos? 
-
-d) Si un usuario empieza en Productos (P), ¿qué página es más probable que visite después de 3 pasos? 
-
-e) ¿Cuál es el número esperado de pasos que un usuario pasa en Blog (B) antes de ir a Carrito (C) por primera vez?
-
-f) Si la probabilidad $P(B\rightarrow C)$ aumenta de 0.2 a 0.3, ¿cómo cambia la distribución estacionaria? Analizar el impacto de ajustes en la matriz de transición respecto a la matriz inicial.
-
+  1. Con la información anterior, construya la matriz de transición $T$ del proceso de Markov. Verifique que satisface la condición estocástica (Suma de los vectores columnas es igual a 1 y ningún elemento de la matriz es negativo).
+  2. Suponga que al inicio del estudio la distribución del portafolio es: $50\%$ en categoría A, $30\%$ en B y $20\%$ en C. Calcule los vectores de estado $x^1$ $x^2$ y $x^3$. interprete el resultado
+  3. Determine si el proceso de Markov es regular. existe un único vector de estado estacionario $u$ con $u_i > 0$, y el sistema converge a él para cualquier distribución inicial
+  4. Calcular de forma iterativa y haciendo uso de python cuantos trimestres tarda en alcanzar el sistema de estado estacionario. Teniendo en cuenta que el vector es de estado estacionario es:
+  
+  $$\begin{pmatrix} 0.51064 \\ 0.27660 \\ 0.21277 \end{pmatrix}$$
+  
+  5. El resultado anterior depende del vector de esta inicial. Explique su repuesta.  
+  6. Calcule exactamente el vector de estado estacionario $u$ resolviendo $(I-T)u=0$ de forma analítica.(Haciendo uso de Gauss_Jordan).
+  7. Verifique sus cálculos con un programa de pytho que realice el proceso de Gauss_Jordan.
+  8. Deacuerdo a los análisis hechos, cual seria la conclusión de la firma de análisis finaciero. 

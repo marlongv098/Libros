@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistemas de Ecuaciones Lineales &#8212; Matematicas Aplicadas II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cuadernos/Modelos/matrices';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Teoría de Gráficas" href="grafo.html" />
+    <link rel="prev" title="Operaciones con matrices" href="../../Eje_tematico_2/2c.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Matematicas Aplicadas II - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Matematicas Aplicadas II - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Notas de clase.
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la integral y las ecuaciones diferenciales.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Eje_tematico_1/1intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1a.html">Teorema Fundamental del Cálculo</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1b.html">Interpretación de la integral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1c.html">Metodos numericos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_1/1d.html">Ecuaciones diferenciales de primer orden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preguntas_modelos_pulmones_artificiales.html">Modelación Matemática de la Ventilación Mecánica</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectores y Matrices.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../Eje_tematico_2/2intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2a.html">Vectores</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2b.html">Matrices</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sistemas de Ecuaciones Lineales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grafo.html">Teoría de Gráficas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markov.html">Cadenas de Markov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preguntas_modelos_matrices.html">Entrega</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de la derivada.</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Eje_tematico_3/3intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3a.html">Cuádricas</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3b.html">Diferenciación de funciones  en varias variables</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3c.html">Aproximación lineal</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3d.html">Funciones en varias variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Eje_tematico_3/3e.html">Optimización</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ejemplo de Entregas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Entregables/Enunciado.html">Propulsión de cohetes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Entregables/4_Cuaderno.html"><strong>RESPUESTAS</strong></a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCuadernos/Modelos/matrices.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Cuadernos/Modelos/matrices.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sistemas de Ecuaciones Lineales</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-ecuaciones-lineales-y-forma-matricial">Sistema de ecuaciones lineales y forma matricial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-aumentada-y-operaciones-elementales-por-filas">Matriz aumentada y operaciones elementales por filas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forma-escalonada-reducida-por-filas-rref">Forma escalonada reducida por filas (RREF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-existencia-y-unicidad">Teorema de existencia y unicidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sistemas-de-ecuaciones-lineales">
+<h1>Sistemas de Ecuaciones Lineales<a class="headerlink" href="#sistemas-de-ecuaciones-lineales" title="Link to this heading">#</a></h1>
+<section id="sistema-de-ecuaciones-lineales-y-forma-matricial">
+<h2>Sistema de ecuaciones lineales y forma matricial<a class="headerlink" href="#sistema-de-ecuaciones-lineales-y-forma-matricial" title="Link to this heading">#</a></h2>
+<p>Un sistema de <span class="math notranslate nohighlight">\(m\)</span> ecuaciones lineales con <span class="math notranslate nohighlight">\(n\)</span> incógnitas tiene la forma:</p>
+<div class="math notranslate nohighlight">
+\[a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1\]</div>
+<div class="math notranslate nohighlight">
+\[a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2\]</div>
+<div class="math notranslate nohighlight">
+\[\vdots\]</div>
+<div class="math notranslate nohighlight">
+\[a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m\]</div>
+<p>En forma matricial compacta: <span class="math notranslate nohighlight">\(AX = B\)</span>, donde <span class="math notranslate nohighlight">\(A = [a_{ij}]\)</span> es la <strong>matriz de coeficientes</strong> de <span class="math notranslate nohighlight">\(m \times n\)</span>, <span class="math notranslate nohighlight">\(X\)</span> es el vector de incógnitas y <span class="math notranslate nohighlight">\(B\)</span> el vector de términos independientes.</p>
+<hr class="docutils" />
+</section>
+<section id="matriz-aumentada-y-operaciones-elementales-por-filas">
+<h2>Matriz aumentada y operaciones elementales por filas<a class="headerlink" href="#matriz-aumentada-y-operaciones-elementales-por-filas" title="Link to this heading">#</a></h2>
+<p>La <strong>matriz aumentada</strong> <span class="math notranslate nohighlight">\([A \mid B]\)</span> condensa toda la información del sistema. Las tres <strong>operaciones elementales por filas</strong> (Kolman, §1.2) que preservan el conjunto solución son:</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(F_{ij}\)</span></strong>: intercambiar las filas <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(F_i(c)\)</span></strong>: multiplicar la fila <span class="math notranslate nohighlight">\(i\)</span> por un escalar <span class="math notranslate nohighlight">\(c \neq 0\)</span>.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(F_{ij}(c)\)</span></strong>: reemplazar <span class="math notranslate nohighlight">\(R_i \leftarrow R_i + c\,R_j\)</span>.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="forma-escalonada-reducida-por-filas-rref">
+<h2>Forma escalonada reducida por filas (RREF)<a class="headerlink" href="#forma-escalonada-reducida-por-filas-rref" title="Link to this heading">#</a></h2>
+<p>Una matriz está en <strong>RREF</strong> (Kolman, §1.2) si:</p>
+<ol class="arabic simple">
+<li><p>Las filas de ceros (si las hay) están al fondo.</p></li>
+<li><p>El primer elemento no cero de cada fila no nula (el <strong>pivote</strong>) es 1.</p></li>
+<li><p>Cada pivote está a la derecha del pivote de la fila anterior.</p></li>
+<li><p>Cada pivote es el único elemento no cero en su columna.</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="teorema-de-existencia-y-unicidad">
+<h2>Teorema de existencia y unicidad<a class="headerlink" href="#teorema-de-existencia-y-unicidad" title="Link to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(r = \text{rango}(A)\)</span> y <span class="math notranslate nohighlight">\(r^* = \text{rango}([A \mid B])\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Condición</p></th>
+<th class="head text-center"><p>Tipo de solución</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(r^* &gt; r\)</span></p></td>
+<td class="text-center"><p><strong>Inconsistente</strong> (sin solución)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(r^* = r = n\)</span></p></td>
+<td class="text-center"><p><strong>Solución única</strong></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(r^* = r &lt; n\)</span></p></td>
+<td class="text-center"><p><strong>Infinitas soluciones</strong> (<span class="math notranslate nohighlight">\(n - r\)</span> variables libres)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="codigo-python">
+<h2>Código Python:<a class="headerlink" href="#codigo-python" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">Rational</span>
+
+<span class="c1"># ─── SISTEMA 1: 3×3 ──────────────────────────────────────────────────────────</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">55</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SISTEMA 1 — 3×3 (solución única)&quot;</span><span class="p">)</span>
+
+<span class="n">A3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">6</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">12</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">]])</span>
+<span class="n">b3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">960</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det(A) = </span><span class="si">{</span><span class="n">A3</span><span class="o">.</span><span class="n">det</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rango(A) = </span><span class="si">{</span><span class="n">A3</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">aug3</span> <span class="o">=</span> <span class="n">A3</span><span class="o">.</span><span class="n">row_join</span><span class="p">(</span><span class="n">b3</span><span class="p">)</span>
+<span class="n">rref3</span><span class="p">,</span> <span class="n">piv3</span> <span class="o">=</span> <span class="n">aug3</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RREF:&quot;</span><span class="p">,</span> <span class="n">rref3</span><span class="p">)</span>
+<span class="c1"># Solución: x1=30, x2=30, x3=20</span>
+
+<span class="n">x3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Verificación A*x = b:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">A3</span> <span class="o">*</span> <span class="n">x3</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot;==&quot;</span><span class="p">,</span> <span class="n">b3</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># ─── SISTEMA 2: 3×4 ──────────────────────────────────────────────────────────</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">55</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SISTEMA 2 — 3×4 (infinitas soluciones)&quot;</span><span class="p">)</span>
+
+<span class="n">A4</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">6</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">24</span><span class="p">]])</span>
+<span class="n">b4</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">960</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+
+<span class="n">aug4</span> <span class="o">=</span> <span class="n">A4</span><span class="o">.</span><span class="n">row_join</span><span class="p">(</span><span class="n">b4</span><span class="p">)</span>
+<span class="n">rref4</span><span class="p">,</span> <span class="n">piv4</span> <span class="o">=</span> <span class="n">aug4</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rango(A4):&quot;</span><span class="p">,</span> <span class="n">A4</span><span class="o">.</span><span class="n">rank</span><span class="p">(),</span> <span class="s2">&quot;| rango(aug):&quot;</span><span class="p">,</span> <span class="n">aug4</span><span class="o">.</span><span class="n">rank</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variables libres:&quot;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">A4</span><span class="o">.</span><span class="n">rank</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RREF:&quot;</span><span class="p">,</span> <span class="n">rref4</span><span class="p">)</span>
+
+<span class="c1"># Solución general con t libre</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Solución general (x4 = t):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  x1 = 30 - t&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  x2 = 30&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  x3 = 20 - (2/3)t&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  x4 = t&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verificación para varios valores de t</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Planes concretos (verificación):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">]:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">30</span> <span class="o">-</span> <span class="n">t</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span> <span class="o">-</span> <span class="n">Rational</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">])</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="n">A4</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">check</span> <span class="o">==</span> <span class="n">b4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  t=</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">: x=</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="si">}</span><span class="s2">  ✓&quot;</span> <span class="k">if</span> <span class="n">ok</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;  t=</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">: ERROR&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Cuadernos/Modelos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../Eje_tematico_2/2c.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Operaciones con matrices</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="grafo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Teoría de Gráficas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-ecuaciones-lineales-y-forma-matricial">Sistema de ecuaciones lineales y forma matricial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-aumentada-y-operaciones-elementales-por-filas">Matriz aumentada y operaciones elementales por filas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forma-escalonada-reducida-por-filas-rref">Forma escalonada reducida por filas (RREF)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-existencia-y-unicidad">Teorema de existencia y unicidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#codigo-python">Código Python:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marlon Gomez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

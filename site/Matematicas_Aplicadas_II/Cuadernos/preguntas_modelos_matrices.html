@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Cuadernos/preguntas_modelos_matrices';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introducción" href="../Eje_tematico_3/3intro.html" />
+    <link rel="prev" title="Cadenas de Markov" href="Modelos/markov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -194,9 +194,9 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aplicaciones de los vectores y las matrices.</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectores y Matrices.</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Eje_tematico_2/2intro.html">Introducción</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2a.html">Vectores</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2b.html">Matrices</a></li>
@@ -204,7 +204,10 @@
 
 <li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2c.html">Operaciones con matrices</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Eje_tematico_2/2d.html">Resolución de Sistemas de Ecuaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modelos/matrices.html">Sistemas de Ecuaciones Lineales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modelos/grafo.html">Teoría de Gráficas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modelos/markov.html">Cadenas de Markov</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Entrega</a></li>
 </ul>
 </details></li>
 </ul>
@@ -431,22 +434,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas">Preguntas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-limpieza">Variable Limpieza</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Preguntas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Preguntas</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taller-de-ebanisteria">Taller de Ebanistería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#red-de-influencia-en-un-comite-de-evaluacion">Red de influencia en un comité de evaluación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-de-calificaciones-crediticias">Dinámica de Calificaciones Crediticias</a></li>
 </ul>
             </nav>
         </div>
@@ -460,166 +450,100 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="entrega">
 <h1>Entrega<a class="headerlink" href="#entrega" title="Link to this heading">#</a></h1>
-<section id="matrices">
-<h2>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Una empresa de transporte urbano opera <span class="math notranslate nohighlight">\(4\)</span> rutas (<span class="math notranslate nohighlight">\(R_1\)</span>, <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_3\)</span> y <span class="math notranslate nohighlight">\(R_4\)</span>). Cada ruta incurre mensualmente en costos por:</p>
-<ul>
-<li><p>Conductor: <span class="math notranslate nohighlight">\(C\)</span> (costos por turno de conductor).</p></li>
-<li><p>Autobús: <span class="math notranslate nohighlight">\(A\)</span> (costos por bus asignado; corresponde a arrendamiento/amortización).</p></li>
-<li><p>Combustible: <span class="math notranslate nohighlight">\(F\)</span> (cantidad de combustible consumido).</p></li>
-<li><p>Mantenimiento: <span class="math notranslate nohighlight">\(M\)</span> (costo mantenimiento programada).</p></li>
-</ul>
-</li>
-<li><p>Para el mes analizado, la planificación operativa (unidades consumidas por ruta) y los costos totales mensuales por ruta son:</p>
+<section id="taller-de-ebanisteria">
+<h2>Taller de Ebanistería<a class="headerlink" href="#taller-de-ebanisteria" title="Link to this heading">#</a></h2>
+<p><strong>Contexto.</strong></p>
+<p>Un taller de ebanistería fabrica tres tipos de muebles: <strong>sillas</strong> (<span class="math notranslate nohighlight">\(x_1\)</span>), <strong>mesas de café</strong> (<span class="math notranslate nohighlight">\(x_2\)</span>), <strong>mesas de comedor</strong> (<span class="math notranslate nohighlight">\(x_3\)</span>) y <strong>estantes</strong> (<span class="math notranslate nohighlight">\(x_4\)</span>). Cada pieza pasa secuencialmente por tres estaciones de trabajo: <strong>lijado</strong> (<span class="math notranslate nohighlight">\(L\)</span>), <strong>pintura</strong> (<span class="math notranslate nohighlight">\(P\)</span>) y <strong>barnizado</strong> (<span class="math notranslate nohighlight">\(B\)</span>). Los tiempos de procesamiento en minutos por unidad son:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Estación</p></th>
+<th class="head text-center"><p>Silla (<span class="math notranslate nohighlight">\(x_1\)</span>)</p></th>
+<th class="head text-center"><p>Mesa café (<span class="math notranslate nohighlight">\(x_2\)</span>)</p></th>
+<th class="head text-center"><p>Mesa comedor (<span class="math notranslate nohighlight">\(x_3\)</span>)</p></th>
+<th class="head text-center"><p>Estante (<span class="math notranslate nohighlight">\(x_4\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Lijado (<span class="math notranslate nohighlight">\(L\)</span>)</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>15</p></td>
+<td class="text-center"><p>20</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Pintura (<span class="math notranslate nohighlight">\(P\)</span>)</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>14</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Barnizado (<span class="math notranslate nohighlight">\(B\)</span>)</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p>24</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La disponibilidad semanal de cada estación es: lijado <strong>16 h</strong> (960 min), pintura <strong>11 h</strong> (660 min), barnizado <strong>18 h</strong> (1 080 min).</p>
+<p><strong>Preguntas</strong></p>
 <ol class="arabic simple">
-<li><p>En la Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>) se emplean 3 conductores, 3 autobuses, 5 hectolitros  de combustible y 1 revisión de mantenimiento. El costo total es 13770 euros.</p></li>
-<li><p>En la Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>) se utilizan 5 conductores, 3 autobuses, 3 hectolitros de combustible y 4 revisiones de mantenimiento. El costo total es 17512 euros.</p></li>
-<li><p>En la Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>) se necesitan 3 conductores, 3 autobuses, 5 hectolitros de combustible y 3 revisiones de mantenimiento. El costo total es 14270 euros.</p></li>
-<li><p>En la Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>) se usan 4 conductores, 2 autobuses, 4 hectolitros de combustible y 0 revisiones de mantenimiento. El costo total es 12016 euros.</p></li>
-</ol>
-</li>
-</ul>
-<section id="preguntas">
-<h3>Preguntas<a class="headerlink" href="#preguntas" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Plantee el sistema matricial <span class="math notranslate nohighlight">\(AX=B\)</span> correspondiente al problema.</p></li>
-<li><p>Resuelva el sistema usando métodos matriciales.</p></li>
+<li><p>El gerente desea conocer <strong>todas</strong> las combinaciones de producción que operan a plena capacidad.</p></li>
+<li><p>Se debe tener en cuenta que el gerente desea que todas las combinaciones posibles sean enteras.</p></li>
 </ol>
 </section>
+<section id="red-de-influencia-en-un-comite-de-evaluacion">
+<h2>Red de influencia en un comité de evaluación<a class="headerlink" href="#red-de-influencia-en-un-comite-de-evaluacion" title="Link to this heading">#</a></h2>
+<p><strong>Contexto</strong></p>
+<p>Cinco investigadores — Romero (<span class="math notranslate nohighlight">\(C_1\)</span>), Salcedo (<span class="math notranslate nohighlight">\(C_2\)</span>), Torres (<span class="math notranslate nohighlight">\(C_3\)</span>), Ureña (<span class="math notranslate nohighlight">\(C_4\)</span>) y Vega (<span class="math notranslate nohighlight">\(C_5\)</span>) — integran el comité de evaluación de proyectos de investigación de una universidad. A lo largo de múltiples sesiones de deliberación, el coordinador del comité ha registrado las siguientes relaciones de influencia: cuando un investigador respalda públicamente la postura de otro durante las discusiones, se establece un arco dirigido entre ellos.</p>
+<ul class="simple">
+<li><p>Romero (<span class="math notranslate nohighlight">\(C_1\)</span>) influye en Salcedo (<span class="math notranslate nohighlight">\(C_2\)</span>), Torres (<span class="math notranslate nohighlight">\(C_3\)</span>) y Ureña (<span class="math notranslate nohighlight">\(C_4\)</span>).</p></li>
+<li><p>Salcedo (<span class="math notranslate nohighlight">\(C_2\)</span>) influye en Romero (<span class="math notranslate nohighlight">\(C_1\)</span>) y Torres (<span class="math notranslate nohighlight">\(C_3\)</span>).</p></li>
+<li><p>Torres (<span class="math notranslate nohighlight">\(C_3\)</span>) influye en Romero (<span class="math notranslate nohighlight">\(C_1\)</span>), Salcedo (<span class="math notranslate nohighlight">\(C_2\)</span>) y Vega (<span class="math notranslate nohighlight">\(C_5\)</span>).</p></li>
+<li><p>Ureña (<span class="math notranslate nohighlight">\(C_4\)</span>) influye en Salcedo (<span class="math notranslate nohighlight">\(C_2\)</span>) y Vega (<span class="math notranslate nohighlight">\(C_5\)</span>).</p></li>
+<li><p>Vega (<span class="math notranslate nohighlight">\(C_5\)</span>) influye en Torres (<span class="math notranslate nohighlight">\(C_3\)</span>) y Ureña (<span class="math notranslate nohighlight">\(C_4\)</span>).</p></li>
+</ul>
+<p><strong>Preguntas</strong></p>
+<ol class="arabic simple">
+<li><p>Trace el grafo <span class="math notranslate nohighlight">\(G\)</span> de la red usando NetworkX. Cada nodo es un investigador y cada arco <span class="math notranslate nohighlight">\(C_i \to C_j\)</span> indica que <span class="math notranslate nohighlight">\(C_i\)</span> influye en <span class="math notranslate nohighlight">\(C_j\)</span>.</p></li>
+<li><p>Construya la matriz de adyacencia <span class="math notranslate nohighlight">\(A(G) = [a_{ij}]\)</span> de <span class="math notranslate nohighlight">\(5 \times 5\)</span>.</p></li>
+<li><p>¿Qué investigador(es) tienen mayor grado de salida (influyen en más personas)?</p></li>
+<li><p>¿Qué investigador(es) tienen mayor grado de entrada (son más influenciados)?</p></li>
+<li><p>Calcule <span class="math notranslate nohighlight">\([A(G)]^2\)</span>. Interprete <span class="math notranslate nohighlight">\(b_{12}^{(2)}\)</span> y <span class="math notranslate nohighlight">\(b_{44}^{(2)}\)</span>.</p></li>
+<li><p>Forme <span class="math notranslate nohighlight">\(C = A(G) + [A(G)]^2\)</span> e identifique pares sin acceso en <span class="math notranslate nohighlight">\(\leq 2\)</span> etapas. Que sugiere el resultado obtenido. Haga todos los análisis del problema.</p></li>
+<li><p>Determine si hay un clan dentro del grafo. <strong>Clan</strong> Construya una matriz <span class="math notranslate nohighlight">\(S\)</span> tal que  <span class="math notranslate nohighlight">\(s_{ij} = 1\)</span> si y sólo si <span class="math notranslate nohighlight">\(a_{ij} = 1\)</span> y <span class="math notranslate nohighlight">\(a_{ji} = 1\)</span> (influencia mutua). La matrix <span class="math notranslate nohighlight">\(S\)</span> es simetrica. Calcule <span class="math notranslate nohighlight">\(S^3\)</span> que resultado obtiene. Interprete la información de la matriz obtenida.</p></li>
+<li><p>Interprete el resultado obtenido al determinar si <span class="math notranslate nohighlight">\(G\)</span> es fuertemente conexa calculando</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[E = A(G) + [A(G)]^2 + [A(G)]^3 + [A(G)]^4\]</div>
+<ol class="arabic simple" start="9">
+<li><p>Suponga que <span class="math notranslate nohighlight">\(C_1\)</span> abandona la red. Analice si la red restante <span class="math notranslate nohighlight">\(G'\)</span> sobre <span class="math notranslate nohighlight">\(\{C_2, C_3, C_4, C_5\}\)</span> sigue siendo fuertemente conexa.</p></li>
+</ol>
 </section>
-<section id="variable-limpieza">
-<h2>Variable Limpieza<a class="headerlink" href="#variable-limpieza" title="Link to this heading">#</a></h2>
-<p>La empresa decide incorporar la variable limpieza sin modificar los costos totales. La limpieza profunda no se realiza de la misma manera en todas las rutas, pues depende de factores como la duración del recorrido, el número de pasajeros transportados y las condiciones ambientales:</p>
+<section id="dinamica-de-calificaciones-crediticias">
+<h2>Dinámica de Calificaciones Crediticias<a class="headerlink" href="#dinamica-de-calificaciones-crediticias" title="Link to this heading">#</a></h2>
+<p><strong>Contexto</strong></p>
+<p>Una firma de análisis financiero clasifica a sus clientes corporativos en tres categorías de riesgo crediticio: A (bajo riesgo), B (riesgo medio) y C (alto riesgo). Con base en datos históricos trimestrales, se han estimado las siguientes probabilidades de transición entre categorías:</p>
 <ul class="simple">
-<li><p>Limpieza: L (costo de limpieza).</p></li>
+<li><p>De los clientes en categoría A: el <span class="math notranslate nohighlight">\(70\%\)</span> permanece en A, el <span class="math notranslate nohighlight">\(20\%\)</span> degrada a B y el <span class="math notranslate nohighlight">\(10\%\)</span> degrada a C.</p></li>
+<li><p>De los clientes en categoría B: el <span class="math notranslate nohighlight">\(40\%\)</span> mejora a A, el <span class="math notranslate nohighlight">\(40\%\)</span> permanece en B y el <span class="math notranslate nohighlight">\(20\%\)</span> degrada a C.</p></li>
+<li><p>De los clientes en categoría C: el <span class="math notranslate nohighlight">\(20\%\)</span> mejora a A, el <span class="math notranslate nohighlight">\(30\%\)</span> mejora a B y el <span class="math notranslate nohighlight">\(50\%\)</span> permanece en C.</p></li>
 </ul>
-<ul class="simple">
-<li><p>Las intervenciones de limpieza planificadas por ruta son:</p>
+<p><strong>Preguntas</strong></p>
 <ol class="arabic simple">
-<li><p>Ruta 1 (<span class="math notranslate nohighlight">\(R_{1}\)</span>): cada autobús realiza 1 limpieza profunda mensual.</p></li>
-<li><p>Ruta 2 (<span class="math notranslate nohighlight">\(R_{2}\)</span>): por ser la ruta con mayor flujo de pasajeros, cada autobús recibe una limpieza adicional al mes respecto de <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
-<li><p>Ruta 3 (<span class="math notranslate nohighlight">\(R_{3}\)</span>): aunque tiene poco flujo de pasajeros, atraviesa zonas rurales y polvorientas, por lo que requiere la misma cantidad de limpiezas que <span class="math notranslate nohighlight">\(R_{1}\)</span>.</p></li>
-<li><p>Ruta 4 (<span class="math notranslate nohighlight">\(R_{4}\)</span>): al operar en zonas poco concurridas la rotación es baja, por lo que no se programan limpiezas todos los meses.</p></li>
+<li><p>Con la información anterior, construya la matriz de transición <span class="math notranslate nohighlight">\(T\)</span> del proceso de Markov. Verifique que satisface la condición estocástica (Suma de los vectores columnas es igual a 1 y ningún elemento de la matriz es negativo).</p></li>
+<li><p>Suponga que al inicio del estudio la distribución del portafolio es: <span class="math notranslate nohighlight">\(50\%\)</span> en categoría A, <span class="math notranslate nohighlight">\(30\%\)</span> en B y <span class="math notranslate nohighlight">\(20\%\)</span> en C. Calcule los vectores de estado <span class="math notranslate nohighlight">\(x^1\)</span> <span class="math notranslate nohighlight">\(x^2\)</span> y <span class="math notranslate nohighlight">\(x^3\)</span>. interprete el resultado</p></li>
+<li><p>Determine si el proceso de Markov es regular. existe un único vector de estado estacionario <span class="math notranslate nohighlight">\(u\)</span> con <span class="math notranslate nohighlight">\(u_i &gt; 0\)</span>, y el sistema converge a él para cualquier distribución inicial</p></li>
+<li><p>Calcular de forma iterativa y haciendo uso de python cuantos trimestres tarda en alcanzar el sistema de estado estacionario. Teniendo en cuenta que el vector es de estado estacionario es:</p></li>
 </ol>
-</li>
-</ul>
-<section id="id1">
-<h3>Preguntas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Al sistema ya planteado debe incorporarle la variable limpieza. El costo de limpieza no debe afectar el costo total.</p></li>
-<li><p>Resuelva el nuevo sistema. Que concluciones puede sacar de este nuevo sistema?.</p></li>
-</ul>
-</section>
-</section>
-<section id="grafos">
-<h2>Grafos<a class="headerlink" href="#grafos" title="Link to this heading">#</a></h2>
-<p>En una plataforma de redes sociales, cinco influencers (<span class="math notranslate nohighlight">\(I_{1}\)</span>,<span class="math notranslate nohighlight">\(I_{2}\)</span>,<span class="math notranslate nohighlight">\(I_{3}\)</span>,<span class="math notranslate nohighlight">\(I_{4}\)</span>,<span class="math notranslate nohighlight">\(I_{5}\)</span>) interactúan y afectan las opiniones de sus seguidores con distinta intensidad.</p>
-<ul class="simple">
-<li><p>Para modelar este comportamiento, se le asignaron pesos a cada conexión, donde:</p>
-<ol class="arabic simple">
-<li><p>Un peso alto indica mayor influencia sobre el otro influencer.</p></li>
-<li><p>Un peso bajo indica menor influencia.</p></li>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} 0.51064 \\ 0.27660 \\ 0.21277 \end{pmatrix}\end{split}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>El resultado anterior depende del vector de esta inicial. Explique su repuesta.</p></li>
+<li><p>Calcule exactamente el vector de estado estacionario <span class="math notranslate nohighlight">\(u\)</span> resolviendo <span class="math notranslate nohighlight">\((I-T)u=0\)</span> de forma analítica.(Haciendo uso de Gauss_Jordan).</p></li>
+<li><p>Verifique sus cálculos con un programa de pytho que realice el proceso de Gauss_Jordan.</p></li>
+<li><p>Deacuerdo a los análisis hechos, cual seria la conclusión de la firma de análisis finaciero.</p></li>
 </ol>
-</li>
-<li><p>La relación de influencia entre ellos se modela de la siguiente manera:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(I_{1}\)</span> influye en <span class="math notranslate nohighlight">\(I_{2}(0.8)\)</span>, <span class="math notranslate nohighlight">\(I_{4}(0.6)\)</span> y <span class="math notranslate nohighlight">\(I_{5}(0.7)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(I_{2}\)</span> influye en <span class="math notranslate nohighlight">\(I_{3}(0.9)\)</span> y <span class="math notranslate nohighlight">\(I_{4}(0.5)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(I_{3}\)</span> influye en <span class="math notranslate nohighlight">\(I_{1}(0.4)\)</span> y <span class="math notranslate nohighlight">\(I_{4}(0.8)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(I_{4}\)</span> influye en <span class="math notranslate nohighlight">\(I_{5}(0.9)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(I_{5}\)</span> influye en <span class="math notranslate nohighlight">\(I_{2}(0.6)\)</span> y <span class="math notranslate nohighlight">\(I_{3}(0.7)\)</span>.</p></li>
-</ol>
-</li>
-</ul>
-<p>La influencia puede representarse mediante un grafo dirigido, donde un arco de <span class="math notranslate nohighlight">\(I_{i}\)</span> a <span class="math notranslate nohighlight">\(I_{j\)</span> indica que <span class="math notranslate nohighlight">\(I_{i}\)</span> influye en <span class="math notranslate nohighlight">\(I_{j}\)</span> y el peso representa que tan fuerte es la conexión existente entre los influencers.</p>
-<section id="id2">
-<h3>Preguntas<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Representación de la Influencia:</p>
-<ol class="arabic simple">
-<li><p>Construya la matriz de adyacencia ponderada <span class="math notranslate nohighlight">\(W\)</span>, donde <span class="math notranslate nohighlight">\(W_{ij}\)</span> representa la influencia de <span class="math notranslate nohighlight">\(I_{i}\)</span> sobre <span class="math notranslate nohighlight">\(I_{j}\)</span></p></li>
-<li><p>Dibuje el grafo dirigido con pesos para visualizar la estructura de influencia.</p></li>
-</ol>
-</li>
-<li><p>Análisis de Influencia Global:</p>
-<ol class="arabic simple">
-<li><p>¿Qué influencer tiene la mayor suma de pesos salientes (es decir, influye más en los demás)?</p></li>
-<li><p>¿Qué influencer tiene la mayor suma de pesos entrantes (es decir, es más influenciado por otros)?</p></li>
-</ol>
-</li>
-<li><p>Impacto de un Influencer Clave:</p>
-<ol class="arabic simple">
-<li><p>Si <span class="math notranslate nohighlight">\(I_{1}\)</span> deja de publicar contenido, ¿cómo afecta la influencia en la red?</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(I_{5}\)</span> aumenta en un <span class="math notranslate nohighlight">\(50\%\)</span> su influencia sobre <span class="math notranslate nohighlight">\(I_{2}\)</span> e <span class="math notranslate nohighlight">\(I_{3}\)</span>, ¿cómo cambia la propagación de la información en la red?</p></li>
-</ol>
-</li>
-<li><p>Propagación de una Opinión o Producto Nuevo:</p>
-<ol class="arabic simple">
-<li><p>Supongamos que un nuevo producto es promocionado inicialmente solo por <span class="math notranslate nohighlight">\(I_{1}\)</span>. Modela la propagación del producto en la red considerando que cada influencer adopta el producto con una probabilidad proporcional a la influencia que recibe.</p></li>
-<li><p>¿Cuánto tiempo (en términos de pasos de propagación) tarda en llegar a todos los influencers?</p></li>
-</ol>
-</li>
-</ul>
-</section>
-</section>
-<section id="markov">
-<h2>Markov<a class="headerlink" href="#markov" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Modelado de Comportamiento de Usuarios en una Página Web con Cadenas de Markov. Imagina una página web con 4 secciones (variables/estados) que un usuario puede visitar:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Inicio (I): Página principal.</p></li>
-<li><p>Productos (P): Catálogo de productos.</p></li>
-<li><p>Blog (B): Artículos informativos.</p></li>
-<li><p>Carrito (C): Página de compra.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>Se quiere modelar las transiciones entre estas páginas como una Cadena de Markov para:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Predecir la próxima sección que visitará un usuario dado su estado actual.</p></li>
-<li><p>Calcular el estado de equilibrio (distribución estacionaria) para saber la proporción de tiempo que los usuarios pasan en cada página a largo plazo.</p></li>
-</ul>
-<p>Basado en datos históricos la matriz de transición del problema, la cual contiene las probabilidades de moverse de una pagina a otra, puede construirse con la siguiente información:</p>
-<p>a) Un usuario en Inicio tiene:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de probabilidad de quedarse en Inicio.</p></li>
-<li><p><span class="math notranslate nohighlight">\(40\%\)</span> de ir a Productos.</p></li>
-<li><p><span class="math notranslate nohighlight">\(30\%\)</span> de ir al Blog.</p></li>
-<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir al Carrito.</p></li>
-</ul>
-<p>b) Un usuario en Producto tiene:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(30\%\)</span> de ir a Inicio.</p></li>
-<li><p><span class="math notranslate nohighlight">\(30\%\)</span> de quedarse en Productos.</p></li>
-<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir al Blog.</p></li>
-<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir al Carrito.</p></li>
-</ul>
-<p>c) Un usuario en Blog tiene:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Inicio.</p></li>
-<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir a Productos.</p></li>
-<li><p><span class="math notranslate nohighlight">\(50\%\)</span> de quedarse en Blog.</p></li>
-<li><p><span class="math notranslate nohighlight">\(20\%\)</span> de ir al Carrito.</p></li>
-</ul>
-<p>d) Un usuario en Carrito tiene:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(40\%\)</span> de ir a Inicio.</p></li>
-<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Productos.</p></li>
-<li><p><span class="math notranslate nohighlight">\(10\%\)</span> de ir a Blog.</p></li>
-<li><p><span class="math notranslate nohighlight">\(40\%\)</span> de quedarse en Carrito.</p></li>
-</ul>
-<section id="id3">
-<h3>Preguntas<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>Predicción de la próxima página:</p>
-<p>a) Si un usuario está actualmente en la página de Blog (B), ¿cuál es la probabilidad de que visite Carrito (C) en la siguiente paso?</p>
-<p>b) Encuentra el vector de estado estacionario del sistema. Se debe en cuenta que el vector satisface Tx=x donde T es la matriz de transición del problema y x es el vector de estado estacionario, donde la suma de los componentes del vector de estado estacionario debe ser igual a 1.</p>
-<p>c) Si un usuario está actualmente en Inicio (I), ¿cuál es la probabilidad de que esté en Carrito (C) después de 2 pasos?</p>
-<p>d) Si un usuario empieza en Productos (P), ¿qué página es más probable que visite después de 3 pasos?</p>
-<p>e) ¿Cuál es el número esperado de pasos que un usuario pasa en Blog (B) antes de ir a Carrito (C) por primera vez?</p>
-<p>f) Si la probabilidad <span class="math notranslate nohighlight">\(P(B\rightarrow C)\)</span> aumenta de 0.2 a 0.3, ¿cómo cambia la distribución estacionaria? Analizar el impacto de ajustes en la matriz de transición respecto a la matriz inicial.</p>
-</section>
 </section>
 </section>
 
@@ -653,6 +577,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Modelos/markov.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cadenas de Markov</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Eje_tematico_3/3intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introducción</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -669,22 +611,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas">Preguntas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-limpieza">Variable Limpieza</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Preguntas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafos">Grafos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Preguntas</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov">Markov</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Preguntas</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taller-de-ebanisteria">Taller de Ebanistería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#red-de-influencia-en-un-comite-de-evaluacion">Red de influencia en un comité de evaluación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-de-calificaciones-crediticias">Dinámica de Calificaciones Crediticias</a></li>
 </ul>
   </nav></div>
 
