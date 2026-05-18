@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>La lógica formal &#8212; Notas Clase, Computación y estructuras Discretas I</title>
+    <title>Recorridos sobre Grafos &#8212; Notas Clase, Computación y estructuras Discretas I</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '1_Logica_Formal/intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_Grafos/PreguntasGrafos';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Métodos de Demostración" href="metodosDemos.html" />
-    <link rel="prev" title="Notas de Clase" href="../intro.html" />
+    <link rel="next" title="Introducción a los Grafos Ponderados" href="introGrafosponderados.html" />
+    <link rel="prev" title="DFS (Búsqueda en Profundidad)" href="2_DFS/DFS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,16 +180,16 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logica Formal</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">La lógica formal</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="metodosDemos.html">Métodos de Demostración</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_Logica_Formal/intro.html">La lógica formal</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/metodosDemos.html">Métodos de Demostración</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Ejercicios.html">Ejercicios Métodos formales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coq/IntroCoq.html">Introducción a Coq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coq/Tacticas.html">Demostraciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Coq/demosCoq.html">Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Ejercicios.html">Ejercicios Métodos formales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Coq/IntroCoq.html">Introducción a Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Coq/Tacticas.html">Demostraciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Coq/demosCoq.html">Coq</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Coq/EjerciciosCoq.html">Ejercicios en Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_Logica_Formal/Coq/EjerciciosCoq.html">Ejercicios en Coq</a></li>
 </ul>
 </details></li>
 </ul>
@@ -253,21 +251,21 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grafos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../5_Grafos/IntroGRAFOS.html">Teoría de Grafos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../5_Grafos/GRAFOS.html">Problema Puentes de Könisberg</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../5_Grafos/IntroBusquedaGrafos.html">Búsquedas en grafos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../5_Grafos/1_BFS/BFS.html">BFS (Búsqueda en Amplitud)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../5_Grafos/2_DFS/DFS.html">DFS (Búsqueda en Profundidad)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../5_Grafos/PreguntasGrafos.html">Recorridos sobre Grafos</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="IntroGRAFOS.html">Teoría de Grafos</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="GRAFOS.html">Problema Puentes de Könisberg</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IntroBusquedaGrafos.html">Búsquedas en grafos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1_BFS/BFS.html">BFS (Búsqueda en Amplitud)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2_DFS/DFS.html">DFS (Búsqueda en Profundidad)</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Recorridos sobre Grafos</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../5_Grafos/introGrafosponderados.html">Introducción a los Grafos Ponderados</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../5_Grafos/3_Dijsktra/Dijkstra.html">Algoritmo de Dijkstra</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../5_Grafos/4_Floyd_Warshall/Floyd-Warshall.html">Algoritmo de Floyd–Warshall</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="introGrafosponderados.html">Introducción a los Grafos Ponderados</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="3_Dijsktra/Dijkstra.html">Algoritmo de Dijkstra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_Floyd_Warshall/Floyd-Warshall.html">Algoritmo de Floyd–Warshall</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="../5_Grafos/ArbolGnerador.html">Árbol generador y Árbol generador mínimo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArbolGnerador.html">Árbol generador y Árbol generador mínimo</a></li>
 
 </ul>
 </details></li>
@@ -342,7 +340,7 @@
       
       
       
-      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F1_Logica_Formal/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/marlongv098/Estructuras/issues/new?title=Issue%20on%20page%20%2F5_Grafos/PreguntasGrafos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,7 +370,7 @@
       
       
       
-      <li><a href="../_sources/1_Logica_Formal/intro.md" target="_blank"
+      <li><a href="../_sources/5_Grafos/PreguntasGrafos.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -456,7 +454,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>La lógica formal</h1>
+    <h1>Recorridos sobre Grafos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,8 +464,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-principal">Objetivo principal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos">Usos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-bfs-dfs-dijkstra">Algoritmos: BFS · DFS · Dijkstra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-1-ejecucion-y-trazabilidad-bfs">Pregunta 1 — Ejecución y trazabilidad (BFS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-2-timestamps-y-clasificacion-de-aristas-dfs">Pregunta 2 — Timestamps y clasificación de aristas (DFS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-3-bfs-vs-dfs-complejidad-y-estructura">Pregunta 3 — BFS vs. DFS: complejidad y estructura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-4-de-bfs-a-dijkstra-caminos-minimos-con-pesos">Pregunta 4 — De BFS a Dijkstra: caminos mínimos con pesos</a></li>
 </ul>
             </nav>
         </div>
@@ -479,19 +480,119 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="la-logica-formal">
-<h1>La lógica formal<a class="headerlink" href="#la-logica-formal" title="Link to this heading">#</a></h1>
-<p>es una rama de la filosofía y las matemáticas que estudia los principios del razonamiento válido mediante estructuras simbólicas precisas. A diferencia de la lógica informal, que se enfoca en la argumentación cotidiana y su contenido, la lógica formal abstrae el contenido de los enunciados y se centra únicamente en su forma, utilizando símbolos y reglas bien definidas.</p>
-<section id="objetivo-principal">
-<h2>Objetivo principal<a class="headerlink" href="#objetivo-principal" title="Link to this heading">#</a></h2>
-<p>Determinar si un argumento es válido, es decir, si la conclusión se sigue necesariamente de las premisas. Para ello, emplea sistemas formales como la lógica proposicional y la lógica de predicados, que permiten representar y analizar argumentos mediante fórmulas simbólicas.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="recorridos-sobre-grafos">
+<h1>Recorridos sobre Grafos<a class="headerlink" href="#recorridos-sobre-grafos" title="Link to this heading">#</a></h1>
+<section id="algoritmos-bfs-dfs-dijkstra">
+<h2>Algoritmos: BFS · DFS · Dijkstra<a class="headerlink" href="#algoritmos-bfs-dfs-dijkstra" title="Link to this heading">#</a></h2>
 </section>
-<section id="usos">
-<h2>Usos<a class="headerlink" href="#usos" title="Link to this heading">#</a></h2>
-<p>Esta disciplina es fundamental no solo en filosofía, sino también en áreas como la computación, la lingüística, las ciencias cognitivas y la inteligencia artificial, donde el análisis riguroso del razonamiento es esencial. Estudiar lógica formal proporciona herramientas poderosas para mejorar la claridad, coherencia y rigor en el pensamiento y la argumentación.</p>
-</section>
-<div class="toctree-wrapper compound">
+<hr class="docutils" />
+<section id="pregunta-1-ejecucion-y-trazabilidad-bfs">
+<h2>Pregunta 1 — Ejecución y trazabilidad (BFS)<a class="headerlink" href="#pregunta-1-ejecucion-y-trazabilidad-bfs" title="Link to this heading">#</a></h2>
+<p><img alt="BFS" src="../_images/gr.png" /></p>
+<p>Dado el siguiente grafo no dirigido con vértices <code class="docutils literal notranslate"><span class="pre">{r,</span> <span class="pre">s,</span> <span class="pre">t,</span> <span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">w,</span> <span class="pre">x,</span> <span class="pre">y}</span></code> y listas de adyacencia según la Figura 22.3 del texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>r — s    r — v    s — w    w — t    w — x
+t — u    t — x    x — u    x — y    u — y
+</pre></div>
 </div>
+<ul class="simple">
+<li><p><strong>a)</strong> Ejecuta <code class="docutils literal notranslate"><span class="pre">BFS(G,</span> <span class="pre">s)</span></code> paso a paso. Para cada vértice alcanzable indica:</p>
+<ul>
+<li><p>El valor de <code class="docutils literal notranslate"><span class="pre">v.d</span></code> (distancia mínima desde la fuente <code class="docutils literal notranslate"><span class="pre">s</span></code>)</p></li>
+<li><p>El predecesor <code class="docutils literal notranslate"><span class="pre">v.π</span></code></p></li>
+<li><p>El conjunto de <strong>tree edges</strong> que forman el árbol BFS resultante</p></li>
+</ul>
+</li>
+<li><p><strong>b)</strong> El Teorema 22.5 garantiza que <code class="docutils literal notranslate"><span class="pre">v.d</span> <span class="pre">=</span> <span class="pre">δ(s,</span> <span class="pre">v)</span></code> al terminar BFS. Explica en qué paso del algoritmo se establece <code class="docutils literal notranslate"><span class="pre">v.d</span></code> y por qué ese valor ya no cambia.</p></li>
+<li><p><strong>c)</strong> ¿Puede el <strong>árbol BFS</strong> obtenido variar si se reordena la lista de adyacencia de algún vértice? ¿Varían también las distancias <code class="docutils literal notranslate"><span class="pre">d</span></code>? Justifica apoyándote en el Ejercicio 22.2-5.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="pregunta-2-timestamps-y-clasificacion-de-aristas-dfs">
+<h2>Pregunta 2 — Timestamps y clasificación de aristas (DFS)<a class="headerlink" href="#pregunta-2-timestamps-y-clasificacion-de-aristas-dfs" title="Link to this heading">#</a></h2>
+<p><img alt="DFS" src="../_images/DFS_ejercicio.png" /></p>
+<p>Dado el grafo dirigido con vértices <code class="docutils literal notranslate"><span class="pre">{q,</span> <span class="pre">r,</span> <span class="pre">s,</span> <span class="pre">t,</span> <span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">w,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z}</span></code>:</p>
+<ul class="simple">
+<li><p><strong>a)</strong> Ejecuta <code class="docutils literal notranslate"><span class="pre">DFS(G)</span></code> asumiendo <strong>orden alfabético</strong> tanto en el ciclo principal como en cada lista de adyacencia. Para cada vértice registra los timestamps <code class="docutils literal notranslate"><span class="pre">v.d</span></code> (descubrimiento) y <code class="docutils literal notranslate"><span class="pre">v.f</span></code> (finalización).</p></li>
+<li><p><strong>b)</strong> Clasifica <strong>cada arista</strong> del grafo en una de las cuatro categorías definidas por DFS:</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo</p></th>
+<th class="head"><p>Condición sobre timestamps</p></th>
+<th class="head"><p>Color del destino al explorar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Tree edge</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">u.d</span> <span class="pre">&lt;</span> <span class="pre">v.d</span> <span class="pre">&lt;</span> <span class="pre">v.f</span> <span class="pre">&lt;</span> <span class="pre">u.f</span></code></p></td>
+<td><p>WHITE</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Back edge</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v.d</span> <span class="pre">≤</span> <span class="pre">u.d</span> <span class="pre">&lt;</span> <span class="pre">u.f</span> <span class="pre">≤</span> <span class="pre">v.f</span></code></p></td>
+<td><p>GRAY</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Forward edge</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">u.d</span> <span class="pre">&lt;</span> <span class="pre">v.d</span> <span class="pre">&lt;</span> <span class="pre">v.f</span> <span class="pre">&lt;</span> <span class="pre">u.f</span></code> (no tree)</p></td>
+<td><p>BLACK</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cross edge</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v.d</span> <span class="pre">&lt;</span> <span class="pre">v.f</span> <span class="pre">&lt;</span> <span class="pre">u.d</span> <span class="pre">&lt;</span> <span class="pre">u.f</span></code></p></td>
+<td><p>BLACK</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>c)</strong> ¿Qué tipo de arista <strong>nunca aparece</strong> en un DFS sobre un grafo <strong>no dirigido</strong>?.</p>
+</section>
+<hr class="docutils" />
+<section id="pregunta-3-bfs-vs-dfs-complejidad-y-estructura">
+<h2>Pregunta 3 — BFS vs. DFS: complejidad y estructura<a class="headerlink" href="#pregunta-3-bfs-vs-dfs-complejidad-y-estructura" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>a) Representación por matriz de adyacencia.</strong> Ambos algoritmos tienen complejidad <code class="docutils literal notranslate"><span class="pre">Θ(V</span> <span class="pre">+</span> <span class="pre">E)</span></code> sobre listas de adyacencia. ¿Qué sucede con esa complejidad si el grafo se representa con <strong>matriz de adyacencia</strong>?</p>
+<ul>
+<li><p>Demuéstralo para BFS.</p></li>
+<li><p>Argumenta el caso análogo para DFS.</p></li>
+</ul>
+</li>
+<li><p><strong>b) Árbol vs. Bosque.</strong> BFS produce un único árbol BFS desde la fuente <code class="docutils literal notranslate"><span class="pre">s</span></code>. DFS puede producir un <strong>bosque</strong> de árboles. ¿A qué se debe esta diferencia estructural? ¿Bajo qué condición sobre el grafo G garantiza DFS producir un único árbol?</p></li>
+<li><p><strong>c) Detección de bipartición.</strong> ¿Cuál de los dos algoritmos usarías para determinar si un grafo no dirigido es <strong>bipartito</strong>? Describe el criterio de clasificación de vértices en dos conjuntos y justifica por qué BFS es la elección natural. <strong>Pista:</strong> Un grafo es bipartito si y sólo si no contiene ciclos de longitud impar.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="pregunta-4-de-bfs-a-dijkstra-caminos-minimos-con-pesos">
+<h2>Pregunta 4 — De BFS a Dijkstra: caminos mínimos con pesos<a class="headerlink" href="#pregunta-4-de-bfs-a-dijkstra-caminos-minimos-con-pesos" title="Link to this heading">#</a></h2>
+<p>BFS computa distancias mínimas <strong>en número de aristas</strong> en grafos no ponderados. El algoritmo de Dijkstra generaliza esta idea a grafos con <strong>pesos no negativos</strong> en las aristas.</p>
+<ul class="simple">
+<li><p><strong>a) Contraejemplo.</strong> Construye un grafo dirigido con <strong>4 vértices</strong> y pesos distintos en sus aristas donde BFS devuelva una ruta con menor número de saltos pero mayor costo que la ruta óptima en peso. ¿Cuál es la raíz del problema?</p></li>
+<li><p><strong>b) Invariante de Dijkstra.</strong> El algoritmo mantiene un conjunto <code class="docutils literal notranslate"><span class="pre">S</span></code> de vértices con distancia definitiva y una <strong>cola de prioridad mínima</strong> <code class="docutils literal notranslate"><span class="pre">Q</span></code>. Describe el invariante de ciclo que garantiza la corrección y argumenta por qué la condición de <strong>pesos no negativos</strong> es indispensable. ¿Qué falla exactamente si existe una arista <code class="docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">v)</span></code> con peso negativo?</p></li>
+<li><p><strong>c) Análisis de complejidad.</strong> Compara las siguientes variantes y explica en qué escenario (grafo <strong>disperso</strong> vs. <strong>denso</strong>) conviene cada una:</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variante</p></th>
+<th class="head"><p>Complejidad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BFS (no ponderado)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">O(V</span> <span class="pre">+</span> <span class="pre">E)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dijkstra con array simple</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">O(V²)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Dijkstra con min-heap binario</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">O((V</span> <span class="pre">+</span> <span class="pre">E)</span> <span class="pre">log</span> <span class="pre">V)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dijkstra con heap de Fibonacci</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">O(V</span> <span class="pre">log</span> <span class="pre">V</span> <span class="pre">+</span> <span class="pre">E)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>d) Relación con BFS.</strong> Explica concretamente qué estructura de datos reemplaza a la <strong>cola FIFO</strong> de BFS en Dijkstra y cómo ese cambio generaliza el algoritmo de grafos no ponderados a ponderados.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -507,7 +608,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./1_Logica_Formal"
+            path: "./5_Grafos"
         },
         predefinedOutput: true
     }
@@ -525,20 +626,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="2_DFS/DFS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Notas de Clase</p>
+        <p class="prev-next-title">DFS (Búsqueda en Profundidad)</p>
       </div>
     </a>
     <a class="right-next"
-       href="metodosDemos.html"
+       href="introGrafosponderados.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Métodos de Demostración</p>
+        <p class="prev-next-title">Introducción a los Grafos Ponderados</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -558,8 +659,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-principal">Objetivo principal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos">Usos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-bfs-dfs-dijkstra">Algoritmos: BFS · DFS · Dijkstra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-1-ejecucion-y-trazabilidad-bfs">Pregunta 1 — Ejecución y trazabilidad (BFS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-2-timestamps-y-clasificacion-de-aristas-dfs">Pregunta 2 — Timestamps y clasificación de aristas (DFS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-3-bfs-vs-dfs-complejidad-y-estructura">Pregunta 3 — BFS vs. DFS: complejidad y estructura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pregunta-4-de-bfs-a-dijkstra-caminos-minimos-con-pesos">Pregunta 4 — De BFS a Dijkstra: caminos mínimos con pesos</a></li>
 </ul>
   </nav></div>
 
