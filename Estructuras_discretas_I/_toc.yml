@@ -78,6 +78,7 @@ parts:
               - file: 5_Grafos/IntroBusquedaGrafos.md
               - file: 5_Grafos/1_BFS/BFS.md
               - file: 5_Grafos/2_DFS/DFS.md
+              - file: 5_Grafos/PreguntasGrafos.md
           - file: 5_Grafos/introGrafosponderados.md  
             sections:
               - file: 5_Grafos/3_Dijsktra/Dijkstra.md
